@@ -1,0 +1,9 @@
+{
+  "skill_name": "fact-extract",
+  "scope": "workspace",
+  "version": "1.0",
+  "purpose": "Extract statements and provenance details from collected texts.",
+  "input": "Raw files in 01_collection/",
+  "output": "Draft fact JSON files",
+  "dependencies": []
+}

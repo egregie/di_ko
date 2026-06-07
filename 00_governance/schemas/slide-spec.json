@@ -1,0 +1,40 @@
+{
+  "id": "deck01-s03",
+  "layout": "two_columns_image_left",
+  "section": "Ретиноиды",
+  "title": "Механизм действия ретинола",
+  "subtitle": "Влияние на эпидермис и дерму на клеточном уровне",
+  "body": [
+    {
+      "type": "bullet",
+      "text": "Ускорение дифференцировки кератиноцитов"
+    },
+    {
+      "type": "bullet",
+      "text": "Подавление металлопротеиназ"
+    }
+  ],
+  "media": {
+    "type": "image",
+    "asset": "retinol_RAR_RXR.png",
+    "fit": "cover",
+    "caption": "Связывание ретиноевой кислоты с RAR/RXR"
+  },
+  "components": {
+    "alert": {
+      "kind": "warning",
+      "title": "Противопоказание",
+      "text": "Беременность, лактация"
+    }
+  },
+  "disclaimers": [
+    "Только для практикующих специалистов",
+    "Требует SPF-защиты"
+  ],
+  "source_refs": [
+    "retinol",
+    "fact_0001",
+    "SRC-0001"
+  ],
+  "notes": ""
+}

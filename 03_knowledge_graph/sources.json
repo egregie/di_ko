@@ -1,0 +1,17 @@
+{
+  "sources": [
+    {"source_id":"SRC-A001","name":"PubMed / MEDLINE","type":"database","url":"https://pubmed.ncbi.nlm.nih.gov/","tier":"A","pmid":"","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A002","name":"Cochrane Library","type":"database","url":"https://www.cochranelibrary.com/","tier":"A","pmid":"","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A003","name":"NIH / MedlinePlus","type":"reference","url":"https://medlineplus.gov/","tier":"A","pmid":"","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A004","name":"FDA","type":"regulator","url":"https://www.fda.gov/","tier":"A","pmid":"","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A005","name":"EMA","type":"regulator","url":"https://www.ema.europa.eu/","tier":"A","pmid":"","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A006","name":"JAAD (J. Am. Acad. Dermatology)","type":"journal","url":"https://www.jaad.org/","tier":"A","pmid":"","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A007","name":"British Journal of Dermatology","type":"journal","url":"https://academic.oup.com/bjd","tier":"A","pmid":"","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A008","name":"DermNet","type":"reference","url":"https://dermnetnz.org/","tier":"A","pmid":"","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-B001","name":"Wikipedia","type":"encyclopedia","url":"https://en.wikipedia.org/","tier":"B","pmid":"","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-B002","name":"Encyclopaedia Britannica","type":"encyclopedia","url":"https://www.britannica.com/","tier":"B","pmid":"","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-B003","name":"INCI Decoder","type":"reference","url":"https://incidecoder.com/","tier":"B","pmid":"","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-B004","name":"EU CosIng","type":"database","url":"https://ec.europa.eu/growth/tools-databases/cosing/","tier":"B","pmid":"","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-C001","name":"r/SkincareAddiction","type":"forum","url":"https://www.reddit.com/r/SkincareAddiction/","tier":"C","pmid":"","doi":"","accessed":"2026-06-07"}
+  ]
+}

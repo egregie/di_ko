@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0001",
+  "statement": "Retinol increases epidermal turnover",
+  "entity_id": "retinol",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-0001"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

@@ -1,0 +1,9 @@
+{
+  "skill_name": "find-skills",
+  "scope": "workspace",
+  "version": "1.0",
+  "purpose": "Locate and install new capabilities from the skills registry.",
+  "input": "Search query",
+  "output": "Installed skill folders",
+  "dependencies": []
+}

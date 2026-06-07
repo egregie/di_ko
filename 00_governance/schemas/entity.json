@@ -1,0 +1,29 @@
+{
+  "entity_id": "retinol",
+  "entity_type": "Ingredient",
+  "title": "Retinol",
+  "aliases": [
+    "vitamin A",
+    "retinoid"
+  ],
+  "belongs_to": [
+    "retinoids"
+  ],
+  "used_for": [
+    "anti_aging",
+    "acne"
+  ],
+  "contraindications": [
+    "pregnancy",
+    "lactation"
+  ],
+  "tags": [
+    "collagen",
+    "cell_turnover"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0001"
+  ],
+  "updated": "2026-06-07"
+}

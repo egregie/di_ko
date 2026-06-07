@@ -1,0 +1,11 @@
+{
+  "skill_name": "ontology-guard",
+  "scope": "workspace",
+  "version": "1.0",
+  "purpose": "Verify graph updates match ontology taxonomy and normalize aliases.",
+  "input": "Graph updates",
+  "output": "Normalized identifiers and schema-validated files",
+  "dependencies": [
+    "ops/scripts/validate_graph.py"
+  ]
+}

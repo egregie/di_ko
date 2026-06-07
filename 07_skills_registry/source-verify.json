@@ -1,0 +1,11 @@
+{
+  "skill_name": "source-verify",
+  "scope": "workspace",
+  "version": "1.0",
+  "purpose": "Verify fact assertions against EBM levels and sources.",
+  "input": "Consolidated fact JSON files",
+  "output": "Verified fact JSON records",
+  "dependencies": [
+    "ops/scripts/verification_agent.py"
+  ]
+}

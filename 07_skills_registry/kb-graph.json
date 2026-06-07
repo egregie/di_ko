@@ -1,0 +1,11 @@
+{
+  "skill_name": "kb-graph",
+  "scope": "workspace",
+  "version": "1.0",
+  "purpose": "Write verified records into Git-tracked knowledge graph folder structures.",
+  "input": "Verified records",
+  "output": "Updated entities/facts/relationships JSON files and graph index",
+  "dependencies": [
+    "ops/scripts/validate_graph.py"
+  ]
+}

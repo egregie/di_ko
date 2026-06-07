@@ -1,0 +1,9 @@
+{
+  "skill_name": "research-collect",
+  "scope": "workspace",
+  "version": "1.0",
+  "purpose": "Download and collect raw documents locally.",
+  "input": "Source list",
+  "output": "Local raw files in 01_collection/",
+  "dependencies": []
+}

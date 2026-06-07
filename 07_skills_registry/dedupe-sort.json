@@ -1,0 +1,11 @@
+{
+  "skill_name": "dedupe-sort",
+  "scope": "workspace",
+  "version": "1.0",
+  "purpose": "Consolidate and sort facts by evidence levels.",
+  "input": "Draft fact JSON files in 02_processing/",
+  "output": "Deduplicated fact files",
+  "dependencies": [
+    "ops/scripts/dedupe_sort.py"
+  ]
+}

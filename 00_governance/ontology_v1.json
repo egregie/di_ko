@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "entity_types": [
+    "Ingredient", "Active", "Drug", "Disease", "Condition", "Procedure",
+    "Device", "AnatomicalStructure", "Protocol", "Study", "Source",
+    "Concept", "Fact", "Image", "Diagram", "Presentation", "Slide",
+    "Layout", "Template"
+  ],
+  "relationship_types": [
+    "is_a", "belongs_to", "part_of", "contains", "treats", "causes",
+    "used_for", "contraindicated_for", "interacts_with", "supports",
+    "contradicts", "references", "derived_from", "has_evidence", "related_to"
+  ],
+  "evidence_levels": {
+    "A": "systematic review / meta-analysis / RCT",
+    "B": "cohort / clinical guideline",
+    "C": "expert consensus / case series",
+    "D": "anecdotal / blog — rejected for clinical slides"
+  },
+  "source_tiers": {
+    "A": ["PubMed","Cochrane","NIH","FDA","EMA","peer-reviewed journals"],
+    "B": ["Wikipedia","Britannica","textbooks","INCI/CosIng","manufacturer docs"],
+    "C": ["Reddit","professional forums","industry communities"],
+    "D": ["general blogs / SEO — context only, never a fact source"]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "skill_name": "source-discovery",
+  "scope": "workspace",
+  "version": "1.0",
+  "purpose": "Discover scientific and secondary sources for cosmetology/dermatology topics.",
+  "input": "Topic/keyword string",
+  "output": "JSON list of candidate sources",
+  "dependencies": [
+    "ops/scripts/search_kb.py"
+  ]
+}
