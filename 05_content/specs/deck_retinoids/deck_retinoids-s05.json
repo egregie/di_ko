@@ -1,0 +1,41 @@
+{
+  "id": "deck_retinoids-s05",
+  "layout": "two_columns_image",
+  "section": "Ретиноиды",
+  "title": "Клиническая эффективность при акне и фотостарении",
+  "subtitle": "Доказанные результаты клинических исследований",
+  "body": [
+    {
+      "type": "bullet",
+      "text": "Золотой стандарт лечения фотоповреждения кожи (tretinoin - Fact 0005)"
+    },
+    {
+      "type": "bullet",
+      "text": "Нормализация кератинизации фолликулов для терапии акне (tretinoin - Fact 0006)"
+    },
+    {
+      "type": "bullet",
+      "text": "Высокая эффективность тазаротена 0.1% при выраженном фотоповреждении кожи (tazarotene - Fact 0010)"
+    }
+  ],
+  "media": {
+    "type": "image",
+    "asset": "clinical_placeholder.png",
+    "fit": "cover",
+    "caption": "Результаты гистологического улучшения"
+  },
+  "components": {},
+  "disclaimers": [
+    "Только для практикующих специалистов"
+  ],
+  "source_refs": [
+    "tretinoin",
+    "tazarotene",
+    "fact_0005",
+    "fact_0006",
+    "fact_0010",
+    "SRC-A010",
+    "SRC-A012"
+  ],
+  "notes": "Клиническая эффективность"
+}

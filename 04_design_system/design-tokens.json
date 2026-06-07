@@ -1,0 +1,46 @@
+{
+  "color": {
+    "bg": "#F8F6F4",
+    "bgAlt": "#E6D2CA",
+    "sage": "#D7E0CE",
+    "herbal": "#6D8470",
+    "dark": "#2C3440",
+    "text": "#3D4A40",
+    "border": "#D7E0CE",
+    "warn": "#9E6A5A",
+    "focusRing": "rgba(109,132,112,0.13)"
+  },
+  "policy": {
+    "zeroBlack": true,
+    "forbidden": [
+      "#000000",
+      "#FFFFFF"
+    ]
+  },
+  "font": {
+    "family": "Arimo",
+    "weights": [
+      400,
+      500,
+      700
+    ],
+    "lineHeightMin": 1.5,
+    "labelTrackEm": 0.2
+  },
+  "radius": {
+    "btn": 8,
+    "btnLg": 12,
+    "card": 16,
+    "badge": 100
+  },
+  "type": {
+    "display": 52,
+    "h1": 36,
+    "h2": 26,
+    "h3": 20,
+    "label": 10,
+    "body": 15,
+    "bodySm": 13,
+    "caption": 11
+  }
+}

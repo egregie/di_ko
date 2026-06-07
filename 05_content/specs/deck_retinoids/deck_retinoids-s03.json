@@ -1,0 +1,39 @@
+{
+  "id": "deck_retinoids-s03",
+  "layout": "two_columns_image",
+  "section": "Ретиноиды",
+  "title": "Механизм действия на клеточном уровне",
+  "subtitle": "Связывание с ядерными рецепторами и влияние на синтез коллагена",
+  "body": [
+    {
+      "type": "bullet",
+      "text": "Связывание с RAR и RXR: Регулируют экспрессию ключевых генов кожи (Fact 0001)"
+    },
+    {
+      "type": "bullet",
+      "text": "Стимуляция синтеза проколлагена I и III типов (Fact 0004)"
+    },
+    {
+      "type": "bullet",
+      "text": "Подавление металлопротеиназ для защиты дермального матрикса от разрушения (Fact 0004)"
+    }
+  ],
+  "media": {
+    "type": "image",
+    "asset": "mechanism_placeholder.png",
+    "fit": "cover",
+    "caption": "Связывание с RAR/RXR рецепторами"
+  },
+  "components": {},
+  "disclaimers": [
+    "Только для практикующих специалистов"
+  ],
+  "source_refs": [
+    "retinoids",
+    "retinol",
+    "fact_0001",
+    "fact_0004",
+    "SRC-A009"
+  ],
+  "notes": "Механизмы"
+}

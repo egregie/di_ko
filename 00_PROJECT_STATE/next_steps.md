@@ -1,8 +1,8 @@
 # Next Steps
 
-- **Phase 3 — Presentation System**:
-  - Unfreeze the `04_design_system/` directory.
-  - Formulate design-tokens.json, layouts.json, and layout templates mapping presentation formats.
-- **Phase 4 — Narrative & Render**:
-  - Set up Narrative Builder (A08) and Presentation Architect (A09) agents to generate slide specs.
-  - Implement rendering logic (HTML to PDF and python-pptx).
+- **Phase 2.5 — Collection Hardening**:
+  - Integrate automated PMID checks (from Phase 1.5 logic) directly into the A02 collector and A05 verifier agents to prevent invalid facts from entering the processing pipeline.
+  - Scale the verified collection pipeline to remaining dermatological topics (acids, peptides, etc.).
+- **Phase 3 — Full Design System & PDF/PPTX Templates**:
+  - Implement additional slide layouts (up to 10 total layouts).
+  - Setup narrative-build (A08) and slide-spec-build (A09) dynamic generation.

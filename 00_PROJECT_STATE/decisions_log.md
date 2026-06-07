@@ -6,3 +6,5 @@
 - **DEC-004**: Cognitive Density Mode. Configure Caveman modes (verbose full for research/extraction, terse ultra for integration/validation) by role.
 - **DEC-005**: Walkthrough Format Standard. Establish a standard machine-readable markdown template for external review auditing (Claude).
 - **DEC-006**: Automatic Graph Index Builder. Implement build_index.py to automate graph index compilation and prevent copy-paste synchronization errors.
+- **DEC-007**: Confidence Policy. Set the confidence score of facts marked as WEAK to 0.80 to reflect partial or indirect abstract evidence.
+- **DEC-008**: Collection Hardening. Identify source collection and fact verification (A02/A05) as the primary quality bottleneck, planning automated PMID validation before scaling to other topics.

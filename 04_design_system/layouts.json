@@ -1,0 +1,28 @@
+{
+  "layouts": [
+    {
+      "name": "cover",
+      "description": "Cover slide with a title and optional subtitle, centered layout."
+    },
+    {
+      "name": "two_columns_image",
+      "description": "Two columns layout: text content on one side and media image on the other side."
+    },
+    {
+      "name": "three_cards",
+      "description": "Three horizontal cards showing comparisons or grouped info."
+    },
+    {
+      "name": "contraindication_alert",
+      "description": "Large alert layout for warnings or contraindications with distinct warning colors."
+    },
+    {
+      "name": "quote",
+      "description": "Large centered quote layout with italic text and source details."
+    },
+    {
+      "name": "summary",
+      "description": "Simple grid or bulleted layout for summarising key takeaways."
+    }
+  ]
+}
