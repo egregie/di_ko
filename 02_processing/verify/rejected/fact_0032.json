@@ -10,9 +10,9 @@
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-07",
-  "verified_via": "cache",
-  "verified_at": "2026-06-07T18:23:29.134367Z",
-  "source_title": "Vitamin C and its derivatives induce collagen type I deposition in human fibroblasts.",
-  "audit_verdict": "SUPPORTED",
+  "verified_via": "live",
+  "verified_at": "2026-06-07T18:36:31.017669Z",
+  "source_title": "Effect of vitamin C and its derivatives on collagen synthesis and cross-linking by normal human...",
+  "audit_verdict": "UNSUPPORTED",
   "evidence_ok": true
 }

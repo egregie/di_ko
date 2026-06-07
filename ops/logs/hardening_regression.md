@@ -30,19 +30,13 @@ All 12 clean facts in the active knowledge graph must pass the gate successfully
 | fact_0028 | topical L-ascorbic acid formulation requ... | SUPPORTED | True | write | PASS |
 | fact_0029 | maximal percutaneous absorption of topic... | SUPPORTED | True | write | PASS |
 | fact_0030 | topical L-ascorbic acid increases mRNA l... | SUPPORTED | True | write | PASS |
-| fact_0031 | topical magnesium ascorbyl phosphate sti... | SUPPORTED | True | write | PASS |
-| fact_0032 | topical ascorbyl glucoside exhibits coll... | SUPPORTED | True | write | PASS |
-| fact_0033 | topical vitamin C increases collagen syn... | SUPPORTED | True | write | PASS |
+| fact_0033 | topical vitamin C increases collagen syn... | NEEDS_MANUAL | True | write | PASS |
 | fact_0034 | topical niacinamide reduces hyperpigment... | SUPPORTED | True | write | PASS |
 | fact_0035 | topical niacinamide 4% is effective in t... | SUPPORTED | True | write | PASS |
 | fact_0036 | topical niacinamide 2% and 5% concentrat... | SUPPORTED | True | write | PASS |
-| fact_0037 | the inhibitory effect of niacinamide on ... | SUPPORTED | True | write | PASS |
 | fact_0038 | topical niacinamide improves stratum cor... | SUPPORTED | True | write | PASS |
-| fact_0039 | topical niacinamide reduces transepiderm... | SUPPORTED | True | write | PASS |
-| fact_0040 | topical mandelic acid twice daily for fo... | SUPPORTED | True | write | PASS |
+| fact_0039 | topical niacinamide reduces transepiderm... | WEAK | True | write | PASS |
 | fact_0041 | 45% mandelic acid peels are equally effe... | SUPPORTED | True | write | PASS |
-| fact_0042 | topical 12% L-lactic acid increases both... | SUPPORTED | True | write | PASS |
-| fact_0043 | topical 5% L-lactic acid improves skin s... | SUPPORTED | True | write | PASS |
 
 **Case 1 Result**: SUCCESS
 

@@ -100,8 +100,24 @@ def main():
                                 else:
                                     cache_file = None
                                     
-                                if cache_file and not os.path.exists(cache_file):
+                                if not cache_file:
+                                    errors.append(f"Fact file '{filename}' has verified_via='cache' but no valid identifier (PMID/DOI) in source '{src_id}'.")
+                                elif not os.path.exists(cache_file):
                                     errors.append(f"Fact file '{filename}' has verified_via='cache' but cache file '{os.path.basename(cache_file)}' is missing.")
+                                else:
+                                    # Verify provenance inside cache file
+                                    try:
+                                        with open(cache_file, "r", encoding="utf-8") as cf:
+                                            cache_data = json.load(cf)
+                                        if not cache_data.get("fetched"):
+                                            errors.append(f"Fact file '{filename}' has verified_via='cache' but cache file '{os.path.basename(cache_file)}' has fetched != true.")
+                                        else:
+                                            required_provenance = ["source_url", "http_status", "fetched_at", "raw_hash"]
+                                            missing_provenance = [field for field in required_provenance if field not in cache_data]
+                                            if missing_provenance:
+                                                errors.append(f"Fact file '{filename}' has verified_via='cache' but cache file '{os.path.basename(cache_file)}' is missing provenance fields: {missing_provenance}.")
+                                    except Exception as ce:
+                                        errors.append(f"Fact file '{filename}' failed to parse cache file '{os.path.basename(cache_file)}': {ce}")
                 except Exception as e:
                     errors.append(f"Fact file '{filename}' validation failed: {e}")
 

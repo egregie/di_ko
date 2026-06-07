@@ -36,9 +36,10 @@ discover -> collect -> extract -> dedup -> verify -> librarian/ontology -> graph
 - **P009 Verify-at-Write**: Facts are written to the graph only after automated verification (source existence, abstract support, and evidence level alignment). Fabricated or unreachable sources are automatically rejected.
 - **P010 Script Permanence**: Pipeline scripts reside in `ops/scripts/` and must be registered in their respective SKILL.md. Deleting working scripts is prohibited. One-time migrations go to `ops/scripts/one_time/`.
 - **P011 Deck Readiness**: A cosmetic topic qualifies for a presentation slide deck only when it has at least 8 verified, clean facts in the active knowledge graph. Presentations for topics below this threshold are deferred until more facts are ingested under the verification gate.
+- **P012 External Dependency Blocked Policy**: The absence or unreachability of any required external resource (e.g. an API endpoint, API credentials, or network connection) MUST block the task execution and mark the walkthrough status as `blocked`. Substituting missing dependencies with simulated, mocked, or handwritten dummy data is strictly forbidden and constitutes a quality violation.
+- **P013 Transparent Status Reporting**: The status reported in walkthroughs must strictly represent reality. If any fallbacks, overrides, or blocks occur during execution, they must be documented in `deltas_vs_plan` and the status must be reported as `partial` or `blocked`. Marking simulated runs as `PASS` or `done` is prohibited.
+- **P014 Dynamic Caching Provenance**: All cache entries inside the verification cache must be written exclusively by the live fetcher path. The manual fabrication, editing, or seed authoring of cache files or verdicts is prohibited. Fact nodes referencing the cache are dynamically validated against the cache's cryptographic hash and live-fetch provenance.
 
 
 ## Walkthrough Standards
 По завершении любого ТЗ создавать/обновлять walkthrough.md строго по WALKTHROUGH_TEMPLATE.md. Никакого свободного текста вне секций. Это интерфейс к внешнему ревьюеру.
-
-

@@ -26,12 +26,21 @@
 - [x] Upgrade qa_deck.py to check visual and structural errors on both PDF and PPTX [Phase 3.5 Block D]
 - [x] Enforce Zero Black policy and local Arimo font usage in QA check [Phase 3.5 Block D]
 - [x] Verify overall QA audit passes on both output channels [Phase 3.5 Block E]
-- [x] Configure and integrate Exa MCP server pilot [Phase 4 Block A]
-- [x] Compare standard search vs Exa-grounded rejection rate in `exa_pilot.md` [Phase 4 Block A]
-- [x] Backfill Vitamin C, Niacinamide, and Exfoliants to exactly 8 verified facts each [Phase 4 Block B]
+- [x] Configure and integrate Exa MCP server pilot [Phase 4 Block A] (DEFERRED)
+- [x] Compare standard search vs Exa-grounded rejection rate in `exa_pilot.md` [Phase 4 Block A] (DEFERRED)
+- [x] Backfill Vitamin C, Niacinamide, and Exfoliants to exactly 8 verified facts each [Phase 4 Block B] (DEFERRED - fell short due to quarantine)
 - [x] Document scale quality and rejection rates in `scale_quality.md` [Phase 4 Block B]
 - [x] Synchronize ontology and propagate fact IDs to parent categories globally (A07) [Phase 4 Block C]
 - [x] Rebuild search index and validate graph structure via `validate_graph.py` [Phase 4 Block E]
+- [x] Diagnosed default DNS resolution root cause and implemented dynamic DNS-over-HTTPS patch in Python [Phase 4.1 Block A]
+- [x] Deleted write_cache_fixtures.py and purged simulated cache fixtures [Phase 4.1 Block B]
+- [x] Expanded cache verification integrity validation in validate_graph.py [Phase 4.1 Block B]
+- [x] Executed live dynamic re-verification of all 36 active facts via verify_gate.py [Phase 4.1 Block C]
+- [x] Quarantined 6 facts that failed dynamic live check [Phase 4.1 Block C]
+- [x] Re-evaluated P011 deck readiness thresholds and updated known_problems.md [Phase 4.1 Block C]
+- [x] Deferred Exa pilot and rolled back DEC-012 [Phase 4.1 Block D]
+- [x] Integrated principles P012, P013, and P014 in AGENTS.md [Phase 4.1 Block E]
+
 
 
 

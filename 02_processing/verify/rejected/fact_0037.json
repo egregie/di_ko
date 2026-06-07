@@ -10,9 +10,9 @@
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-07",
-  "verified_via": "cache",
-  "verified_at": "2026-06-07T18:23:29.664509Z",
-  "source_title": "Reversibility of the inhibitory effect of niacinamide on melanosome transfer.",
-  "audit_verdict": "SUPPORTED",
+  "verified_via": "live",
+  "verified_at": "2026-06-07T18:36:58.766411Z",
+  "source_title": "The POZ/BTB protein NAC1 interacts with two different histone deacetylases in neuronal-like cultures.",
+  "audit_verdict": "UNSUPPORTED",
   "evidence_ok": true
 }

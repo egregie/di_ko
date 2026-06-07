@@ -402,20 +402,6 @@
       "evidence_level": "A",
       "path": "facts/fact_0030.json"
     },
-    "fact_0031": {
-      "fact_id": "fact_0031",
-      "statement": "topical magnesium ascorbyl phosphate stimulates collagen synthesis in dermal fibroblasts",
-      "entity_id": "magnesium_ascorbyl_phosphate",
-      "evidence_level": "A",
-      "path": "facts/fact_0031.json"
-    },
-    "fact_0032": {
-      "fact_id": "fact_0032",
-      "statement": "topical ascorbyl glucoside exhibits collagen-stimulating properties in human dermal fibroblasts",
-      "entity_id": "ascorbyl_glucoside",
-      "evidence_level": "A",
-      "path": "facts/fact_0032.json"
-    },
     "fact_0033": {
       "fact_id": "fact_0033",
       "statement": "topical vitamin C increases collagen synthesis in human skin across various age groups",
@@ -444,13 +430,6 @@
       "evidence_level": "A",
       "path": "facts/fact_0036.json"
     },
-    "fact_0037": {
-      "fact_id": "fact_0037",
-      "statement": "the inhibitory effect of niacinamide on melanosome transfer is reversible",
-      "entity_id": "niacinamide",
-      "evidence_level": "A",
-      "path": "facts/fact_0037.json"
-    },
     "fact_0038": {
       "fact_id": "fact_0038",
       "statement": "topical niacinamide improves stratum corneum barrier function and provides clinical benefits in subjects with rosacea",
@@ -465,33 +444,12 @@
       "evidence_level": "A",
       "path": "facts/fact_0039.json"
     },
-    "fact_0040": {
-      "fact_id": "fact_0040",
-      "statement": "topical mandelic acid twice daily for four weeks increases lower eyelid skin elasticity and firmness",
-      "entity_id": "mandelic_acid",
-      "evidence_level": "A",
-      "path": "facts/fact_0040.json"
-    },
     "fact_0041": {
       "fact_id": "fact_0041",
       "statement": "45% mandelic acid peels are equally effective as 30% salicylic acid peels for mild-to-moderate acne vulgaris with better safety profile",
       "entity_id": "mandelic_acid",
       "evidence_level": "A",
       "path": "facts/fact_0041.json"
-    },
-    "fact_0042": {
-      "fact_id": "fact_0042",
-      "statement": "topical 12% L-lactic acid increases both epidermal and dermal thickness and skin firmness after three months",
-      "entity_id": "lactic_acid",
-      "evidence_level": "A",
-      "path": "facts/fact_0042.json"
-    },
-    "fact_0043": {
-      "fact_id": "fact_0043",
-      "statement": "topical 5% L-lactic acid improves skin smoothness and decreases fine lines but does not produce dermal changes",
-      "entity_id": "lactic_acid",
-      "evidence_level": "A",
-      "path": "facts/fact_0043.json"
     }
   },
   "relationships": {

@@ -11,6 +11,7 @@
 - **DEC-009**: Automated Verification Gate. Mandate that all clinical facts must pass the verify-at-write gate (source existence, abstract support, and evidence level alignment check) to be eligible for knowledge graph ingestion. Any unverified or mismatching facts are automatically rejected.
 - **DEC-010**: Ingestion Quality Baseline. Record that Batch 1 live audit revealed a 27.3% fact rejection rate (specifically 33.3% for Vitamin C and Niacinamide, and 100.0% for cross-topic interactions). This is due to previous collection pipelines pulling unsupported claims. We will address the root-cause in Phase 4 by transitioning to Exa-grounded web search collection.
 - **DEC-011**: Verification Gate Hardening. Require that all facts undergo dynamic validation (fetching live PubMed abstracts and running keyword overlap checks) without hardcoded mock lists in production code, recording verification metadata (`verified_via`, `verified_at`, `source_title`) directly on the fact node.
-- **DEC-012**: Exa-Grounded Search Adoption. Retain the Exa MCP server pathway for active ingredient data collection. Standard search rejection rate was 25.0%, whereas Exa-grounded search achieved 0.0% rejection rate against the baseline 27.3%, significantly reducing semantic false positives and proof misalignment.
+- **DEC-012**: Exa-Grounded Search Deferred. Exa integration is deferred because the API key is not configured and the pilot was simulated. Retaining Exa MCP server config in disabled mode; live A/B-pathway pilot comparison remains pending user configuration of EXA_API_KEY.
+
 
 

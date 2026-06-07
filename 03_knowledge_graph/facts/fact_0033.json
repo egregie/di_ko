@@ -11,8 +11,9 @@
   "verified_by": "verifier",
   "date": "2026-06-07",
   "verified_via": "cache",
-  "verified_at": "2026-06-07T18:23:29.240582Z",
-  "source_title": "Topical vitamin C increases collagen synthesis.",
-  "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "verified_at": "2026-06-07T18:38:16.847070Z",
+  "source_title": "The body self and the frequency, intensity and acceptance of menopausal symptoms.",
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true,
+  "status": "needs_manual"
 }

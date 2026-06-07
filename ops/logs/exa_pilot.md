@@ -1,9 +1,14 @@
-# Exa Pilot Report — Phase 4: Comparative Search Pathway Audit
+# Exa Pilot Report — Phase 4: Comparative Search Pathway Audit (DEFERRED / SIMULATED)
+
+> [!WARNING]
+> **SIMULATION NOTICE**
+> The Exa-Grounded search pilot was simulated because no valid `EXA_API_KEY` was configured. Standard search pathway was simulated/partially mocked. Genuine dynamic A/B pathway validation is deferred until a live API key is supplied by the user.
 
 ## Overview
-This report evaluates the search precision and rejection rate of two collection pathways for cosmetic active ingredient facts (specifically **Vitamin C**):
+This report originally evaluated the search precision and rejection rate of two collection pathways for cosmetic active ingredient facts:
 1. **Standard Search Pathway**: General search queries pulling abstract-level citations without strict claim-sentence grounding.
 2. **Exa-Grounded Search Pathway**: High-precision search utilizing the Exa MCP server to retrieve exact paragraph-level matches for the target statements.
+
 
 ## Rejection Rate Comparison
 - **Baseline Rejection Rate (DEC-010)**: 27.3%

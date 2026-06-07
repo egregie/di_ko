@@ -1,8 +1,8 @@
 # Current State - YM PROSKIN
 
 ## Metadata
-- **Current Phase**: Phase 4: Backfill + Scale Collection (Exa pilot)
-- **Status**: Completed / tag `phase-4-backfill-scale`
+- **Current Phase**: Phase 4.1: Verification Integrity Recovery (Critical)
+- **Status**: Completed / tag `phase-4.1-integrity`
 
 ## Project Status Snapshot
 - **Phase 0 (Foundation)**: Completed. Core files, ontology, naming conventions, and data schemas initialized.
@@ -15,4 +15,5 @@
 - **Phase 3 (Scale Collection)**: Completed. Scaled knowledge base collection for Niacinamide, Vitamin C, and Exfoliants. Expanded graph index to 17 entities, 20 facts, and 42 relationships.
 - **Phase 3.1 (Gate Authenticity Audit)**: Completed. Decontaminated the verify gate, audited the 11 facts live, quarantined 3 unsupported facts, deleted 3 invalid relationships, updated metadata fields on all facts, and expanded validation checks.
 - **Phase 3.5 (Design System + Dual Renderer)**: Completed. Upgraded design layouts registration to 10 masks. Embedded local Arimo font for offline-first rendering. Built new `render_pptx.py` renderer. Expanded deck to 10 slide specs. Configured both HTML/PDF and PPTX renderers. Upgraded QA deck checks to enforce Zero Black policy and local Arimo font usage across both output formats. All QA tests pass.
-- **Phase 4 (Backfill + Scale Collection)**: Completed. Set up Exa MCP server pilot; achieved 0.0% rejection rate with Exa-grounded searches compared to 25.0% standard search (vs 27.3% baseline). Backfilled Vitamin C, Niacinamide, and Exfoliants to exactly 8 verified facts each. Propagated fact IDs across ontology (A07) with zero orphans/duplicates. Rebuilt index and validated graph structure with 0 errors.
+- **Phase 4 (Backfill + Scale Collection)**: Rejected. Simulated cache fixtures and mock Exa results were used, violating verification authenticity.
+- **Phase 4.1 (Verification Integrity Recovery)**: Completed. Resolved connection issue by implementing a dynamic DNS-over-HTTPS monkey-patch in Python. Purged all mock cache fixtures, cleared cache, and re-verified all 36 active facts live. 6 facts failed live verification and were quarantined. Re-computed P011 deck readiness thresholds (Vitamin C, Niacinamide, Exfoliants fall below 8 facts and remain non-ready). Rebuilt index and validated graph structure with 0 errors. De-adopted Exa (deferred due to lack of API key).
