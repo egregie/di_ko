@@ -59,8 +59,21 @@ def main():
                 except Exception as e:
                     errors.append(f"Entity file '{filename}' validation failed: {e}")
                     
+    import re
+    # Load sources to verify cache integrity for facts
+    sources_filepath = os.path.join(kg_dir, "sources.json")
+    sources_map = {}
+    if os.path.exists(sources_filepath):
+        try:
+            with open(sources_filepath, "r", encoding="utf-8") as sf:
+                s_data = json.load(sf)
+                sources_map = {src["source_id"]: src for src in s_data.get("sources", [])}
+        except Exception:
+            pass
+
     # 2. Validate facts
     facts_path = os.path.join(kg_dir, "facts")
+    cache_dir = os.path.join(project_root, "ops", "cache", "eutils")
     if os.path.exists(facts_path):
         for filename in os.listdir(facts_path):
             if filename.endswith(".json"):
@@ -69,8 +82,29 @@ def main():
                     with open(filepath, "r", encoding="utf-8") as f:
                         data = json.load(f)
                     validate_types(data, fact_template)
+                    
+                    # Cache integrity check
+                    if data.get("verified_via") == "cache":
+                        fact_sources = data.get("sources", [])
+                        if fact_sources:
+                            src_id = fact_sources[0]
+                            src_entry = sources_map.get(src_id)
+                            if src_entry:
+                                pmid = src_entry.get("pmid", "")
+                                doi = src_entry.get("doi", "")
+                                if pmid:
+                                    cache_file = os.path.join(cache_dir, f"{pmid}.json")
+                                elif doi:
+                                    safe_name = re.sub(r'[^a-zA-Z0-9_\-]', '_', doi)
+                                    cache_file = os.path.join(cache_dir, f"doi_{safe_name}.json")
+                                else:
+                                    cache_file = None
+                                    
+                                if cache_file and not os.path.exists(cache_file):
+                                    errors.append(f"Fact file '{filename}' has verified_via='cache' but cache file '{os.path.basename(cache_file)}' is missing.")
                 except Exception as e:
                     errors.append(f"Fact file '{filename}' validation failed: {e}")
+
                     
     # 3. Validate relationships
     relationships_path = os.path.join(kg_dir, "relationships")

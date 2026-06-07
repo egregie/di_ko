@@ -11,5 +11,8 @@
   "verified_by": "verifier",
   "date": "2026-06-07",
   "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "evidence_ok": true,
+  "verified_via": "cache",
+  "verified_at": "2026-06-07T15:32:58.058325Z",
+  "source_title": "Sodium L-ascorbyl-2-phosphate 5% lotion for the treatment of acne vulgaris: a randomized, double-blind, controlled trial."
 }

@@ -11,6 +11,9 @@
   "verified_by": "verifier",
   "date": "2026-06-07",
   "audit_flag": "weak",
-  "audit_verdict": "WEAK",
-  "evidence_ok": true
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true,
+  "verified_via": "cache",
+  "verified_at": "2026-06-07T15:32:56.091270Z",
+  "source_title": "The mechanism of action of topical retinoids."
 }

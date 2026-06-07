@@ -11,5 +11,8 @@
   "verified_by": "verifier",
   "date": "2026-06-07",
   "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "evidence_ok": true,
+  "verified_via": "cache",
+  "verified_at": "2026-06-07T15:32:57.277439Z",
+  "source_title": "Pregnancy outcomes following first-trimester exposure to topical retinoids: a systematic review and meta-analysis."
 }

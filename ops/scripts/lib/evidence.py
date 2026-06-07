@@ -3,6 +3,7 @@ import json
 import time
 import urllib.request
 import urllib.parse
+import urllib.error
 import re
 
 EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
@@ -13,123 +14,18 @@ PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "..", ".."))
 CACHE_DIR = os.path.join(PROJECT_ROOT, "ops", "cache", "eutils")
 os.makedirs(CACHE_DIR, exist_ok=True)
 
-# List of known statements from evidence_audit_results.json for exact mapping
-KNOWN_VERDICTS = {
-    # Clean/Supported facts
-    "retinoids regulate gene transcription by binding to rar and rxr nuclear receptors": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "tretinoin binds directly to nuclear retinoic acid receptors (rars) without metabolic conversion": {
-        "verdict": "WEAK",
-        "evidence_ok": True
-    },
-    "retinol stimulates collagen synthesis and inhibits matrix metalloproteinases (mmps) to reduce dermal degradation": {
-        "verdict": "WEAK",
-        "evidence_ok": True
-    },
-    "tretinoin is the gold standard for clinical improvement of photoaged skin": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "tretinoin normalizes keratinocyte differentiation to prevent follicular occlusion in acne vulgaris": {
-        "verdict": "WEAK",
-        "evidence_ok": True
-    },
-    "adapalene selectively binds to retinoic acid receptors rar-beta and rar-gamma": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "tazarotene selectively binds to nuclear retinoic acid receptors rar-beta and rar-gamma": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "tazarotene 0.1% cream is effective for treating facial photodamage, including fine wrinkles and hyperpigmentation": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "retinaldehyde requires only a single metabolic conversion step to active retinoic acid in keratinocytes": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "topical retinaldehyde improves skin hydration, elasticity, and reduces wrinkle depth": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "retinyl palmitate nano-formulation reduces inflammatory and non-inflammatory lesions in mild acne": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "topical retinoids are contraindicated during pregnancy due to potential teratogenic risks": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    # New facts for Phase 3 Batch 1
-    "glycolic acid and salicylic acid combination improves mild to moderate acne": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "salicylic-mandelic acid peels are effective for active acne lesions and post-acne hyperpigmentation": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "topical 30% salicylic acid peels reduce fine lines, hyperpigmentation, and skin roughness in photoaged skin": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "glycolic acid peels clinical application improves mild facial photoaging": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "topical l-ascorbic acid promotes collagen synthesis and protects against ultraviolet-induced photodamage": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "topical 5% sodium ascorbyl phosphate lotion is effective for acne vulgaris management": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "topical combination of sodium ascorbyl phosphate and retinol shows synergistic efficacy in acne treatment": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "topical niacinamide enhances ceramide synthesis and improves skin barrier function": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "topical niacinamide reduces inflammatory lesions and regulates sebum excretion in acne vulgaris": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "niacinamide pre-treatment improves skin tolerability and reduces irritation from topical retinoids": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    "concurrent application of retinoids and alpha-hydroxy acids (ahas) increases risk of localized skin irritation": {
-        "verdict": "SUPPORTED",
-        "evidence_ok": True
-    },
-    # Rejected facts
-    "retinol undergoes a two-step enzymatic oxidation to become active all-trans retinoic acid": {
-        "verdict": "UNSUPPORTED",
-        "evidence_ok": False
-    },
-    "adapalene exhibits lower irritation potential and superior photostability compared to tretinoin": {
-        "verdict": "UNSUPPORTED",
-        "evidence_ok": False
-    },
-    "retinyl palmitate is a stable retinoid ester requiring three conversion steps, making it less potent but gentler": {
-        "verdict": "UNSUPPORTED",
-        "evidence_ok": False
-    },
-    "topical retinol application can induce localized skin irritation, erythema, and dryness during initial retinoid adaptation": {
-        "verdict": "UNSUPPORTED",
-        "evidence_ok": False
-    }
-}
+def log_api_call(url: str, status: str):
+    """
+    Log api calls to verify_api_calls.log.
+    """
+    log_path = os.path.join(PROJECT_ROOT, "ops", "logs", "verify_api_calls.log")
+    os.makedirs(os.path.dirname(log_path), exist_ok=True)
+    timestamp = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    with open(log_path, "a", encoding="utf-8") as f:
+        f.write(f"{timestamp} | GET | {url} | {status}\n")
 
 def clean_statement_key(text):
-    # Normalize statement string for dictionary matching
+    # Normalize statement string
     s = text.strip().lower()
     s = re.sub(r'\s+', ' ', s)
     # Remove final dot if any
@@ -142,7 +38,7 @@ def get_safe_filename(identifier):
     safe = re.sub(r'[^a-zA-Z0-9_\-]', '_', identifier)
     return safe
 
-def check_source(identifier: str) -> dict:
+def check_source(identifier: str, force_live: bool = False) -> dict:
     """
     Check if a source exists by PMID or DOI.
     Returns: {exists: bool, title: str, pubtype: list, abstract: str}
@@ -160,8 +56,8 @@ def check_source(identifier: str) -> dict:
         safe_name = get_safe_filename(identifier)
         cache_file = os.path.join(CACHE_DIR, f"doi_{safe_name}.json")
         
-    # Check cache
-    if os.path.exists(cache_file):
+    # Check cache if not forced live
+    if not force_live and os.path.exists(cache_file):
         try:
             with open(cache_file, "r", encoding="utf-8") as f:
                 return json.load(f)
@@ -177,6 +73,7 @@ def check_source(identifier: str) -> dict:
         try:
             req = urllib.request.Request(summary_url, headers={'User-Agent': 'Mozilla/5.0'})
             with urllib.request.urlopen(req, timeout=20) as r:
+                log_api_call(summary_url, "200")
                 data = json.load(r)
             
             rec = data.get("result", {}).get(str(identifier))
@@ -189,11 +86,21 @@ def check_source(identifier: str) -> dict:
                 time.sleep(0.34) # throttle limit
                 abstract_url = f"{EUTILS}/efetch.fcgi?db=pubmed&id={identifier}&rettype=abstract&retmode=text"
                 req_abs = urllib.request.Request(abstract_url, headers={'User-Agent': 'Mozilla/5.0'})
-                with urllib.request.urlopen(req_abs, timeout=20) as r_abs:
-                    result["abstract"] = r_abs.read().decode('utf-8').strip()
+                try:
+                    with urllib.request.urlopen(req_abs, timeout=20) as r_abs:
+                        log_api_call(abstract_url, "200")
+                        result["abstract"] = r_abs.read().decode('utf-8').strip()
+                except urllib.error.HTTPError as e:
+                    log_api_call(abstract_url, str(e.code))
+                except Exception:
+                    log_api_call(abstract_url, "ERROR")
             
+        except urllib.error.HTTPError as e:
+            log_api_call(summary_url, str(e.code))
+            print(f"Error fetching PMID {identifier}: HTTP {e.code}")
+            result["exists"] = False
         except Exception as e:
-            # Source not found or network error
+            log_api_call(summary_url, "ERROR")
             print(f"Error fetching PMID {identifier}: {e}")
             result["exists"] = False
             
@@ -203,6 +110,7 @@ def check_source(identifier: str) -> dict:
         try:
             req = urllib.request.Request(url, headers={'User-Agent': 'mailto:admin@ym-proskin.local'})
             with urllib.request.urlopen(req, timeout=20) as r:
+                log_api_call(url, "200")
                 data = json.load(r)
             
             msg = data.get("message", {})
@@ -213,7 +121,12 @@ def check_source(identifier: str) -> dict:
             # Note: Crossref works don't always contain abstracts, keep empty
             result["abstract"] = ""
             
+        except urllib.error.HTTPError as e:
+            log_api_call(url, str(e.code))
+            print(f"Error fetching DOI {identifier}: HTTP {e.code}")
+            result["exists"] = False
         except Exception as e:
+            log_api_call(url, "ERROR")
             print(f"Error fetching DOI {identifier}: {e}")
             result["exists"] = False
             
@@ -232,16 +145,23 @@ def assess_claim(statement: str, abstract: str) -> str:
     Assess if statement is supported by abstract.
     Returns: SUPPORTED, WEAK, UNSUPPORTED, or NEEDS_MANUAL
     """
-    # 1. First, check if this matches a known statement from the audited facts
-    normalized_statement = clean_statement_key(statement)
-    if normalized_statement in KNOWN_VERDICTS:
-        return KNOWN_VERDICTS[normalized_statement]["verdict"]
-
     # If abstract is empty/missing (e.g. books or non-PubMed items), it needs manual audit
     if not abstract:
         return "NEEDS_MANUAL"
 
-    # 2. Preprocess statement and abstract words for a general overlap heuristic
+    # Normalize aliases/synonyms at keyword extraction stage
+    def normalize_word(w):
+        w = w.lower()
+        if w in ("nicotinamide", "niacinamide", "nicotinic"):
+            return "niacinamide"
+        if w in ("ascorbic", "ascorbate", "ascorbyl", "ascorbyl_glucoside"):
+            return "ascorbic"
+        if w in ("retinol", "tretinoin", "adapalene", "tazarotene", "retinaldehyde", "palmitate", "retinoid", "retinoids"):
+            return "retinoid"
+        return w
+
+
+    # Preprocess statement and abstract words for a general overlap heuristic
     def get_keywords(text):
         # keeps words of length >= 3
         words = re.findall(r'\b[a-zA-Z]{3,}\b', text.lower())
@@ -251,7 +171,7 @@ def assess_claim(statement: str, abstract: str) -> str:
             "was", "been", "has", "have", "had", "not", "but", "efficacy", "safety",
             "study", "clinical", "results", "patients", "treatment", "effects"
         }
-        return set(w for w in words if w not in stopwords)
+        return set(normalize_word(w) for w in words if w not in stopwords)
 
     s_words = get_keywords(statement)
     a_words = get_keywords(abstract)
@@ -264,6 +184,8 @@ def assess_claim(statement: str, abstract: str) -> str:
         "salicylic", "glycolic", "lactic", "benzoyl", "peroxide", "sulfur", "clindamycin",
         "azelaic"
     }
+    # map core_subjects through normalize_word
+    core_subjects = set(normalize_word(w) for w in core_subjects)
     statement_subjects = s_words.intersection(core_subjects)
     
     # If a core subject/ingredient mentioned in the statement is missing from the abstract, return UNSUPPORTED
@@ -291,8 +213,6 @@ def evidence_ok(level: str, pubtype: list) -> bool:
     """
     Check if publication types support the required EBM level.
     """
-    # First, let's check if the statement key check handles exact audited mapping
-    # (in assess_claim, but we can also use KNOWN_VERDICTS for checking here)
     if not pubtype:
         return False
         

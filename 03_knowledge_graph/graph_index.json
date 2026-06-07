@@ -367,13 +367,6 @@
       "evidence_level": "A",
       "path": "facts/fact_0022.json"
     },
-    "fact_0023": {
-      "fact_id": "fact_0023",
-      "statement": "topical combination of sodium ascorbyl phosphate and retinol shows synergistic efficacy in acne treatment",
-      "entity_id": "sodium_ascorbyl_phosphate",
-      "evidence_level": "A",
-      "path": "facts/fact_0023.json"
-    },
     "fact_0024": {
       "fact_id": "fact_0024",
       "statement": "topical niacinamide enhances ceramide synthesis and improves skin barrier function",
@@ -387,20 +380,6 @@
       "entity_id": "niacinamide",
       "evidence_level": "A",
       "path": "facts/fact_0025.json"
-    },
-    "fact_0026": {
-      "fact_id": "fact_0026",
-      "statement": "niacinamide pre-treatment improves skin tolerability and reduces irritation from topical retinoids",
-      "entity_id": "niacinamide",
-      "evidence_level": "A",
-      "path": "facts/fact_0026.json"
-    },
-    "fact_0027": {
-      "fact_id": "fact_0027",
-      "statement": "concurrent application of retinoids and alpha-hydroxy acids (ahas) increases risk of localized skin irritation",
-      "entity_id": "glycolic_acid",
-      "evidence_level": "A",
-      "path": "facts/fact_0027.json"
     }
   },
   "relationships": {
@@ -739,30 +718,6 @@
       "to": "barrier",
       "evidence_level": "A",
       "path": "relationships/rel_0042.json"
-    },
-    "rel_0043": {
-      "rel_id": "rel_0043",
-      "from": "glycolic_acid",
-      "type": "interacts_with",
-      "to": "retinol",
-      "evidence_level": "A",
-      "path": "relationships/rel_0043.json"
-    },
-    "rel_0044": {
-      "rel_id": "rel_0044",
-      "from": "niacinamide",
-      "type": "interacts_with",
-      "to": "retinol",
-      "evidence_level": "A",
-      "path": "relationships/rel_0044.json"
-    },
-    "rel_0045": {
-      "rel_id": "rel_0045",
-      "from": "sodium_ascorbyl_phosphate",
-      "type": "interacts_with",
-      "to": "retinol",
-      "evidence_level": "A",
-      "path": "relationships/rel_0045.json"
     }
   }
 }

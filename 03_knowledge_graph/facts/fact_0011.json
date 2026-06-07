@@ -2,7 +2,7 @@
   "fact_id": "fact_0011",
   "statement": "Retinaldehyde requires only a single metabolic conversion step to active retinoic acid in keratinocytes.",
   "entity_id": "retinaldehyde",
-  "confidence": 0.96,
+  "confidence": 0.8,
   "evidence_level": "A",
   "sources": [
     "SRC-A015"
@@ -10,6 +10,10 @@
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-07",
-  "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "audit_verdict": "WEAK",
+  "evidence_ok": true,
+  "verified_via": "cache",
+  "verified_at": "2026-06-07T15:32:56.912410Z",
+  "source_title": "Clinical use of topical retinaldehyde on photoaged skin.",
+  "audit_flag": "weak"
 }

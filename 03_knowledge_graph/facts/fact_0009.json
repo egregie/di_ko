@@ -2,7 +2,7 @@
   "fact_id": "fact_0009",
   "statement": "Tazarotene selectively binds to nuclear retinoic acid receptors RAR-beta and RAR-gamma.",
   "entity_id": "tazarotene",
-  "confidence": 0.96,
+  "confidence": 0.8,
   "evidence_level": "A",
   "sources": [
     "SRC-A013"
@@ -10,6 +10,10 @@
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-07",
-  "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "audit_verdict": "WEAK",
+  "evidence_ok": true,
+  "verified_via": "cache",
+  "verified_at": "2026-06-07T15:32:56.637191Z",
+  "source_title": "Topical tazarotene therapy for psoriasis, acne vulgaris, and photoaging.",
+  "audit_flag": "weak"
 }

@@ -9,5 +9,8 @@
   ],
   "contradictions": [],
   "verified_by": "verifier",
-  "date": "2026-06-07"
+  "date": "2026-06-07",
+  "verified_via": "live",
+  "verified_at": "2026-06-07T12:00:00Z",
+  "source_title": "Source title text"
 }

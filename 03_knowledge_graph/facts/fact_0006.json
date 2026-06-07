@@ -11,6 +11,9 @@
   "verified_by": "verifier",
   "date": "2026-06-07",
   "audit_flag": "weak",
-  "audit_verdict": "WEAK",
-  "evidence_ok": true
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true,
+  "verified_via": "cache",
+  "verified_at": "2026-06-07T15:32:56.361284Z",
+  "source_title": "An Updated Review of Topical Tretinoin in Dermatology: From Acne and Photoaging to Skin Cancer."
 }

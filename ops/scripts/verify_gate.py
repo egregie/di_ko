@@ -1,7 +1,8 @@
 import sys
 import os
 import json
-import shutil
+import datetime
+import argparse
 
 # Configure python path to find the lib module
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -19,12 +20,25 @@ def write_json(path, data):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
+def truncate_title(title, max_words=15):
+    if not title:
+        return ""
+    # Remove newlines and multiple spaces
+    title_clean = " ".join(title.split())
+    words = title_clean.split()
+    if len(words) > max_words:
+        return " ".join(words[:max_words]) + "..."
+    return title_clean
+
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: python verify_gate.py <candidate_fact_json_path>")
-        sys.exit(2)
-        
-    candidate_path = sys.argv[1]
+    parser = argparse.ArgumentParser(description="Verify Fact Gate")
+    parser.add_argument("candidate_path", type=str, help="Path to candidate fact JSON")
+    parser.add_argument("--force-live", "--no-cache", action="store_true", help="Ignore cache and fetch live")
+    args = parser.parse_args()
+    
+    candidate_path = args.candidate_path
+    force_live = args.force_live
+    
     if not os.path.exists(candidate_path):
         print(f"Error: Candidate file {candidate_path} not found.")
         sys.exit(2)
@@ -87,7 +101,7 @@ def main():
             continue
             
         # Call evidence library
-        check_res = evidence.check_source(identifier)
+        check_res = evidence.check_source(identifier, force_live=force_live)
         if not check_res.get("exists"):
             source_results.append({
                 "source_id": src_id,
@@ -119,6 +133,7 @@ def main():
         })
         
     # Aggregate results
+    best_source = None
     if not source_results:
         # No sources could be resolved
         verdict = "SOURCE_NOT_FOUND"
@@ -127,7 +142,6 @@ def main():
         # Determine aggregate verdict: SUPPORTED > WEAK > NEEDS_MANUAL > UNSUPPORTED > SOURCE_NOT_FOUND
         verdict_precedence = ["SUPPORTED", "WEAK", "NEEDS_MANUAL", "UNSUPPORTED", "SOURCE_NOT_FOUND"]
         
-        best_source = None
         for v in verdict_precedence:
             matches = [s for s in source_results if s["verdict"] == v]
             if matches:
@@ -147,6 +161,14 @@ def main():
     target_reject_path = os.path.join(project_root, "02_processing", "verify", "rejected", f"{fact_id}.json")
     
     action = "reject"
+    
+    # Add verification provenance metadata
+    fact["verified_via"] = "live" if force_live else "cache"
+    fact["verified_at"] = datetime.datetime.utcnow().isoformat() + "Z"
+    if best_source and best_source.get("title"):
+        fact["source_title"] = truncate_title(best_source["title"])
+    else:
+        fact["source_title"] = ""
     
     if verdict in ("SOURCE_NOT_FOUND", "UNSUPPORTED"):
         action = "reject"
@@ -198,7 +220,7 @@ def main():
             write_json(target_graph_path, fact)
             if os.path.exists(target_reject_path):
                 os.remove(target_reject_path)
-
+ 
     # Print JSON output to stdout
     output = {
         "fact_id": fact_id,
@@ -212,6 +234,6 @@ def main():
         sys.exit(1)
     else:
         sys.exit(0)
-
+ 
 if __name__ == "__main__":
     main()

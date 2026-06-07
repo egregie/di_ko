@@ -10,3 +10,11 @@
 - [x] Create 15 relationships linking classes and cross-topic interactions [Phase 3 Block 4]
 - [x] Rebuild index, run validate_graph.py, and verify cross-topic retriever queries [Phase 3 Block 5]
 - [x] Document rejection rates in ops/logs/scale_quality_batch1.md [Phase 3 Block 6]
+- [x] Decontaminate verification library (remove KNOWN_VERDICTS, add alias normalization, isolate test fixtures) [Phase 3.1 Block A]
+- [x] Implement --force-live caching bypass and live API logging in verify_gate.py [Phase 3.1 Block B]
+- [x] Perform live audit on 11 Batch 1 facts and generate gate_authenticity_batch1.md [Phase 3.1 Block C]
+- [x] Reconcile unsupported facts (quarantine) and remove invalid relationships [Phase 3.1 Block D]
+- [x] Add verification provenance metadata fields to all facts and update fact.json schema [Phase 3.1 Block E]
+- [x] Expand validate_graph.py integrity checks and fix existing facts schema alignment [Phase 3.1 Block F]
+- [x] Document shortfalls in known_problems.md, update scale_quality_batch1.md metrics, rebuild index, run regression [Phase 3.1 Block G]
+
