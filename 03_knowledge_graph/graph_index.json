@@ -402,13 +402,6 @@
       "evidence_level": "A",
       "path": "facts/fact_0030.json"
     },
-    "fact_0033": {
-      "fact_id": "fact_0033",
-      "statement": "topical vitamin C increases collagen synthesis in human skin across various age groups",
-      "entity_id": "vitamin_c",
-      "evidence_level": "A",
-      "path": "facts/fact_0033.json"
-    },
     "fact_0034": {
       "fact_id": "fact_0034",
       "statement": "topical niacinamide reduces hyperpigmentation by suppressing melanosome transfer from melanocytes to keratinocytes",

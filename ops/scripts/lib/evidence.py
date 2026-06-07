@@ -9,40 +9,30 @@ import socket
 import hashlib
 import datetime
 
-# DNS Patch: Resolve eutils.ncbi.nlm.nih.gov via Google DoH or fallback IP
-_eutils_ip = None
-
-def get_eutils_ip():
-    global _eutils_ip
-    if _eutils_ip:
-        return _eutils_ip
-    try:
-        req = urllib.request.Request(
-            "https://dns.google/resolve?name=eutils.ncbi.nlm.nih.gov",
-            headers={"User-Agent": "Mozilla/5.0"}
-        )
-        with urllib.request.urlopen(req, timeout=5) as r:
-            data = json.loads(r.read().decode("utf-8"))
-            for ans in data.get("Answer", []):
-                if ans.get("type") == 1: # A record
-                    _eutils_ip = ans.get("data")
-                    return _eutils_ip
-    except Exception:
-        pass
-    _eutils_ip = "34.107.134.59" # fallback
-    return _eutils_ip
-
+# Happy Eyeballs / IPv6 connectivity workaround: Force IPv4 for eutils.ncbi.nlm.nih.gov
 orig_getaddrinfo = socket.getaddrinfo
 
-def custom_getaddrinfo(host, port, *args, **kwargs):
-    if host == "eutils.ncbi.nlm.nih.gov":
-        ip = get_eutils_ip()
-        return orig_getaddrinfo(ip, port, *args, **kwargs)
-    return orig_getaddrinfo(host, port, *args, **kwargs)
+def custom_getaddrinfo(host, port, family=0, type=0, proto=0, flags=0):
+    if host == "eutils.ncbi.nlm.nih.gov" and family == 0:
+        return orig_getaddrinfo(host, port, socket.AF_INET, type, proto, flags)
+    return orig_getaddrinfo(host, port, family, type, proto, flags)
 
 socket.getaddrinfo = custom_getaddrinfo
 
 EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+
+# Process-level rate limiter: NCBI requests limit is <= 3 req/s
+_last_ncbi_request_time = 0.0
+
+def throttle_ncbi():
+    global _last_ncbi_request_time
+    now = time.time()
+    elapsed = now - _last_ncbi_request_time
+    wait_time = 0.35 - elapsed
+    if wait_time > 0:
+        time.sleep(wait_time)
+    _last_ncbi_request_time = time.time()
+
 
 
 # Determine paths relative to this file (ops/scripts/lib/evidence.py)
@@ -109,10 +99,14 @@ def check_source(identifier: str, force_live: bool = False) -> dict:
     
     if is_pmid:
         # Entrez esummary
-        summary_url = f"{EUTILS}/esummary.fcgi?db=pubmed&id={identifier}&retmode=json"
+        summary_url = f"{EUTILS}/esummary.fcgi?db=pubmed&id={identifier}&retmode=json&tool=ym_proskin&email=admin@ym-proskin.local"
         fetched_url = summary_url
         try:
-            req = urllib.request.Request(summary_url, headers={'User-Agent': 'Mozilla/5.0'})
+            throttle_ncbi()
+            req = urllib.request.Request(
+                summary_url, 
+                headers={'User-Agent': 'ym-proskin-collector/1.0 (mailto:admin@ym-proskin.local)'}
+            )
             with urllib.request.urlopen(req, timeout=20) as r:
                 log_api_call(summary_url, "200")
                 data = json.load(r)
@@ -124,9 +118,12 @@ def check_source(identifier: str, force_live: bool = False) -> dict:
                 result["pubtype"] = rec.get("pubtype", [])
                 
                 # Fetch abstract too
-                time.sleep(0.34) # throttle limit
-                abstract_url = f"{EUTILS}/efetch.fcgi?db=pubmed&id={identifier}&rettype=abstract&retmode=text"
-                req_abs = urllib.request.Request(abstract_url, headers={'User-Agent': 'Mozilla/5.0'})
+                abstract_url = f"{EUTILS}/efetch.fcgi?db=pubmed&id={identifier}&rettype=abstract&retmode=text&tool=ym_proskin&email=admin@ym-proskin.local"
+                throttle_ncbi()
+                req_abs = urllib.request.Request(
+                    abstract_url, 
+                    headers={'User-Agent': 'ym-proskin-collector/1.0 (mailto:admin@ym-proskin.local)'}
+                )
                 try:
                     with urllib.request.urlopen(req_abs, timeout=20) as r_abs:
                         log_api_call(abstract_url, "200")
@@ -189,7 +186,6 @@ def check_source(identifier: str, force_live: bool = False) -> dict:
     except Exception as e:
         print(f"Cache write error: {e}")
         
-    time.sleep(0.34) # throttle limit
     return result
 
 

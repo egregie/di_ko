@@ -10,15 +10,17 @@
   - `fact_0023`: SAP + Retinol synergy (cites PMID 19165682, which is actually about tranexamic acid for post-cesarean section bleeding).
   - `fact_0026`: Niacinamide + Retinoid synergy (cites PMID 17147561, which is a general Niacinamide review lacking retinoid tolerability details).
   - `fact_0027`: AHA + Retinoid irritation (cites PMID 32250551, which is about Glycolic/Salicylic acid combination and lacks retinoid reference).
-- **Quarantined Facts (Phase 4.1)**:
+- **Quarantined Facts (Phase 4.1 / 4.2)**:
   - `fact_0031`: Magnesium Ascorbyl Phosphate collagen stimulation (cites PMID 18505499, which is unsupported).
   - `fact_0032`: Ascorbyl Glucoside collagen properties (cites PMID 18505499, which is unsupported).
+  - `fact_0033`: Vitamin C collagen synthesis across age groups (cites PMID 26327894, which is about menopausal symptoms).
   - `fact_0037`: Niacinamide melanosome transfer reversibility (cites PMID 16033423, which is unrelated/unsupported).
   - `fact_0040`: Mandelic Acid viscoelasticity (cites PMID 30513568, which is unrelated/unsupported).
   - `fact_0042`: Lactic Acid epidermal/dermal thickness (cites PMID 8854589, which is unrelated/unsupported).
   - `fact_0043`: Lactic Acid smoothness and fine lines (cites PMID 8854589, which is unrelated/unsupported).
-- **Per-Topic Fact Shortfall (Phase 4.1)**:
-  - Vitamin C (6 verified facts), Niacinamide (7 verified facts), and Exfoliants (5 verified facts) are below the target deck-readiness threshold of ≥8 verified facts per topic. These topics remain non-deck-ready (P011) and their slide decks are deferred until more facts can be ingested under a live verification gate.
+- **Per-Topic Fact Shortfall (Phase 4.2)**:
+  - Vitamin C (5 verified facts), Niacinamide (7 verified facts), and Exfoliants (5 verified facts) are below the target deck-readiness threshold of ≥8 verified facts per topic. These topics remain non-deck-ready (P011) and their slide decks are deferred until more facts can be ingested under a live verification gate.
+
 
 
 

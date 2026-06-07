@@ -40,6 +40,15 @@
 - [x] Re-evaluated P011 deck readiness thresholds and updated known_problems.md [Phase 4.1 Block C]
 - [x] Deferred Exa pilot and rolled back DEC-012 [Phase 4.1 Block D]
 - [x] Integrated principles P012, P013, and P014 in AGENTS.md [Phase 4.1 Block E]
+- [x] Rolled back Google DNS-over-HTTPS monkey-patch [Phase 4.2 Block 0]
+- [x] Captured connection error with tracebacks showing unreachable IPv6 networks [Phase 4.2 Block 0]
+- [x] Implemented forced IPv4 connection workaround in socket.getaddrinfo [Phase 4.2 Block 0]
+- [x] Implemented custom NCBI parameters (tool, email) and custom User-Agent in evidence.py [Phase 4.2 Block 0]
+- [x] Enforced global process-level rate limiting (≤3 req/s) [Phase 4.2 Block 0]
+- [x] Documented connection misdiagnosis and fixes in lessons.md [Phase 4.2 Block 0]
+- [x] Cleared cache and re-verified 30 facts live, quarantining fact_0033 [Phase 4.2 Block 0]
+- [x] Rebuilt graph index and validated database with 0 errors [Phase 4.2 Block 0]
+
 
 
 

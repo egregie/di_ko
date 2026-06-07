@@ -1,12 +1,12 @@
 # Current State - YM PROSKIN
 
 ## Metadata
-- **Current Phase**: Phase 4.1: Verification Integrity Recovery (Critical)
-- **Status**: Completed / tag `phase-4.1-integrity`
+- **Current Phase**: Phase 4.2: Verification Engine Refinement (Honest EUtils Fetch)
+- **Status**: Completed / tag `phase-4.2-fetch-refine`
 
 ## Project Status Snapshot
 - **Phase 0 (Foundation)**: Completed. Core files, ontology, naming conventions, and data schemas initialized.
-- **Phase 0.5 (Cleanup & Reconcile)**: Completed. Consolidated agent skill folders under standard `.agents/skills/` path, seeded initial sources register, created validation script, and ported pharma_v2 scripts.
+- **Phase 0.5 (Cleanup & Reconcile)**: Completed. Consolidated agent skill folders under standard `.agents/skills/` path, seeded initial sources register, created validation script, and pharma_v2 scripts.
 - **Phase 0.7 (Operating & Cognitive Layer)**: Completed. Installed RTK, retriever, context builder, Caveman configurations, and set up working memory protocol.
 - **Phase 1 (Knowledge Collection: Pilot: Retinoids)**: Completed. Ingested 7 canonical entities, 16 verified facts, 30 relationships, and real PMIDs. Built automatic graph index compiler and verified output.
 - **Phase 1.5 (Evidence Audit: Ground-Truth Gate)**: Completed. Audited 16 facts against live PubMed abstract API. Audit count results: remaining(12) = clean(9) + weak(3), rejected(4). Unsupported facts moved to quarantine and index compiled. Validator passes with 0 errors.
@@ -16,4 +16,5 @@
 - **Phase 3.1 (Gate Authenticity Audit)**: Completed. Decontaminated the verify gate, audited the 11 facts live, quarantined 3 unsupported facts, deleted 3 invalid relationships, updated metadata fields on all facts, and expanded validation checks.
 - **Phase 3.5 (Design System + Dual Renderer)**: Completed. Upgraded design layouts registration to 10 masks. Embedded local Arimo font for offline-first rendering. Built new `render_pptx.py` renderer. Expanded deck to 10 slide specs. Configured both HTML/PDF and PPTX renderers. Upgraded QA deck checks to enforce Zero Black policy and local Arimo font usage across both output formats. All QA tests pass.
 - **Phase 4 (Backfill + Scale Collection)**: Rejected. Simulated cache fixtures and mock Exa results were used, violating verification authenticity.
-- **Phase 4.1 (Verification Integrity Recovery)**: Completed. Resolved connection issue by implementing a dynamic DNS-over-HTTPS monkey-patch in Python. Purged all mock cache fixtures, cleared cache, and re-verified all 36 active facts live. 6 facts failed live verification and were quarantined. Re-computed P011 deck readiness thresholds (Vitamin C, Niacinamide, Exfoliants fall below 8 facts and remain non-ready). Rebuilt index and validated graph structure with 0 errors. De-adopted Exa (deferred due to lack of API key).
+- **Phase 4.1 (Verification Integrity Recovery)**: Completed (with misdiagnosis). Workaround using DoH proxy monkeypatch implemented, cache purged, and 36 facts audited live (6 facts quarantined).
+- **Phase 4.2 (Verification Engine Refinement)**: Completed. DNS-over-HTTPS monkeypatch rolled back. Connection issue correctly identified as local DNS router failing dual-stack IPv6/AAAA requests. Implemented clean AF_INET IPv4-only socket getaddrinfo override, custom NCBI parameters (tool, email), custom User-Agent, and process-level throttling. Re-verified 30 facts live, quarantining fact_0033. Rebuilt index (29 active facts) and validated graph with 0 errors.

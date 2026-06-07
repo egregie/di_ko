@@ -10,10 +10,10 @@
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-07",
-  "verified_via": "cache",
-  "verified_at": "2026-06-07T18:38:16.847070Z",
+  "verified_via": "live",
+  "verified_at": "2026-06-07T19:19:32.564726Z",
   "source_title": "The body self and the frequency, intensity and acceptance of menopausal symptoms.",
-  "audit_verdict": "NEEDS_MANUAL",
+  "audit_verdict": "UNSUPPORTED",
   "evidence_ok": true,
   "status": "needs_manual"
 }

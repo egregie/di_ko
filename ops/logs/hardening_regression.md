@@ -30,7 +30,6 @@ All 12 clean facts in the active knowledge graph must pass the gate successfully
 | fact_0028 | topical L-ascorbic acid formulation requ... | SUPPORTED | True | write | PASS |
 | fact_0029 | maximal percutaneous absorption of topic... | SUPPORTED | True | write | PASS |
 | fact_0030 | topical L-ascorbic acid increases mRNA l... | SUPPORTED | True | write | PASS |
-| fact_0033 | topical vitamin C increases collagen syn... | NEEDS_MANUAL | True | write | PASS |
 | fact_0034 | topical niacinamide reduces hyperpigment... | SUPPORTED | True | write | PASS |
 | fact_0035 | topical niacinamide 4% is effective in t... | SUPPORTED | True | write | PASS |
 | fact_0036 | topical niacinamide 2% and 5% concentrat... | SUPPORTED | True | write | PASS |
