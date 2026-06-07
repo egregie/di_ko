@@ -35,6 +35,8 @@ discover -> collect -> extract -> dedup -> verify -> librarian/ontology -> graph
 - **P008 No Entity Without Ontology**: Canonical definitions and aliases must conform to `ontology_v1.json` via the ontology-guard agent.
 - **P009 Verify-at-Write**: Facts are written to the graph only after automated verification (source existence, abstract support, and evidence level alignment). Fabricated or unreachable sources are automatically rejected.
 - **P010 Script Permanence**: Pipeline scripts reside in `ops/scripts/` and must be registered in their respective SKILL.md. Deleting working scripts is prohibited. One-time migrations go to `ops/scripts/one_time/`.
+- **P011 Deck Readiness**: A cosmetic topic qualifies for a presentation slide deck only when it has at least 8 verified, clean facts in the active knowledge graph. Presentations for topics below this threshold are deferred until more facts are ingested under the verification gate.
+
 
 ## Walkthrough Standards
 По завершении любого ТЗ создавать/обновлять walkthrough.md строго по WALKTHROUGH_TEMPLATE.md. Никакого свободного текста вне секций. Это интерфейс к внешнему ревьюеру.

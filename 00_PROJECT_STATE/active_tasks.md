@@ -17,4 +17,14 @@
 - [x] Add verification provenance metadata fields to all facts and update fact.json schema [Phase 3.1 Block E]
 - [x] Expand validate_graph.py integrity checks and fix existing facts schema alignment [Phase 3.1 Block F]
 - [x] Document shortfalls in known_problems.md, update scale_quality_batch1.md metrics, rebuild index, run regression [Phase 3.1 Block G]
+- [x] Register all 10 layouts in layouts.json [Phase 3.5 Block A]
+- [x] Embed local Arimo font (ttf 400/500/700) for HTML and python-pptx offline [Phase 3.5 Block A]
+- [x] Refactor render_deck.py and compile_pdf.js to support 10 new layout formats [Phase 3.5 Block B]
+- [x] Implement render_pptx.py presentation generator supporting 10 layouts [Phase 3.5 Block B]
+- [x] Define deck_retinoids_v2 slide specs (10 slides) utilizing only clean retinoid facts [Phase 3.5 Block C]
+- [x] Include pregnant/lactation precaution warnings slide and disclaimer references on clinical slides [Phase 3.5 Block C]
+- [x] Upgrade qa_deck.py to check visual and structural errors on both PDF and PPTX [Phase 3.5 Block D]
+- [x] Enforce Zero Black policy and local Arimo font usage in QA check [Phase 3.5 Block D]
+- [x] Verify overall QA audit passes on both output channels [Phase 3.5 Block E]
+
 

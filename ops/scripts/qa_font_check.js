@@ -6,8 +6,9 @@ async function main() {
     const page = await browser.newPage();
     
     // Resolve absolute path to the local HTML file
-    const htmlPath = path.resolve(__dirname, '..', '..', '06_render', 'out', 'deck_retinoids.html');
+    const htmlPath = path.resolve(__dirname, '..', '..', '06_render', 'out', 'deck_retinoids_v2.html');
     const fileUrl = `file://${htmlPath.replace(/\\/g, '/')}`;
+
     
     console.log(`Loading file URL in Playwright: ${fileUrl}`);
     await page.goto(fileUrl, { waitUntil: 'load' });

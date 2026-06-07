@@ -2,27 +2,43 @@
   "layouts": [
     {
       "name": "cover",
-      "description": "Cover slide with a title and optional subtitle, centered layout."
+      "description": "Cover slide with a category, main title, subtitle, and an image."
+    },
+    {
+      "name": "section_divider",
+      "description": "Section divider slide with category tag, section title, and optional subtitle."
     },
     {
       "name": "two_columns_image",
-      "description": "Two columns layout: text content on one side and media image on the other side."
+      "description": "Two columns: text bullets on the left and a media box on the right."
     },
     {
       "name": "three_cards",
-      "description": "Three horizontal cards showing comparisons or grouped info."
+      "description": "Grid of three horizontal cards showing comparisons or grouped info."
+    },
+    {
+      "name": "timeline_protocol",
+      "description": "Vertical or horizontal progression timeline showing steps or conversion pathway."
+    },
+    {
+      "name": "comparison",
+      "description": "Side-by-side comparison of two ingredients or concepts."
+    },
+    {
+      "name": "statistics",
+      "description": "Display of three statistics items with large numbers, labels, and descriptions."
+    },
+    {
+      "name": "quote_callout",
+      "description": "Large styled quote layout with subtitle and source details."
     },
     {
       "name": "contraindication_alert",
-      "description": "Large alert layout for warnings or contraindications with distinct warning colors."
-    },
-    {
-      "name": "quote",
-      "description": "Large centered quote layout with italic text and source details."
+      "description": "High-priority warning alert box with an icon for contraindications."
     },
     {
       "name": "summary",
-      "description": "Simple grid or bulleted layout for summarising key takeaways."
+      "description": "Bulleted list in a styled card box for key takeaways."
     }
   ]
 }

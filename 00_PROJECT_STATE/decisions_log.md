@@ -9,4 +9,6 @@
 - **DEC-007**: Confidence Policy. Set the confidence score of facts marked as WEAK to 0.80 to reflect partial or indirect abstract evidence.
 - **DEC-008**: Collection Hardening. Identify source collection and fact verification (A02/A05) as the primary quality bottleneck, planning automated PMID validation before scaling to other topics.
 - **DEC-009**: Automated Verification Gate. Mandate that all clinical facts must pass the verify-at-write gate (source existence, abstract support, and evidence level alignment check) to be eligible for knowledge graph ingestion. Any unverified or mismatching facts are automatically rejected.
+- **DEC-010**: Ingestion Quality Baseline. Record that Batch 1 live audit revealed a 27.3% fact rejection rate (specifically 33.3% for Vitamin C and Niacinamide, and 100.0% for cross-topic interactions). This is due to previous collection pipelines pulling unsupported claims. We will address the root-cause in Phase 4 by transitioning to Exa-grounded web search collection.
+- **DEC-011**: Verification Gate Hardening. Require that all facts undergo dynamic validation (fetching live PubMed abstracts and running keyword overlap checks) without hardcoded mock lists in production code, recording verification metadata (`verified_via`, `verified_at`, `source_title`) directly on the fact node.
 

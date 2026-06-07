@@ -7,7 +7,7 @@ def main():
     project_root = os.path.abspath(os.path.join(script_dir, "..", ".."))
     
     tokens_path = os.path.join(project_root, "04_design_system", "design-tokens.json")
-    specs_dir = os.path.join(project_root, "05_content", "specs", "deck_retinoids")
+    specs_dir = os.path.join(project_root, "05_content", "specs", "deck_retinoids_v2")
     out_dir = os.path.join(project_root, "06_render", "out")
     os.makedirs(out_dir, exist_ok=True)
     
@@ -20,7 +20,7 @@ def main():
     type_scale = tokens["type"]
     
     # Read all slide specs in order
-    spec_files = sorted(glob.glob(os.path.join(specs_dir, "deck_retinoids-s*.json")))
+    spec_files = sorted(glob.glob(os.path.join(specs_dir, "deck_retinoids_v2-s*.json")))
     slides_html = []
     
     for sf in spec_files:
@@ -49,6 +49,7 @@ def main():
         slide_content = ""
         
         if layout == "cover":
+            media_caption = media.get('caption', 'YM PROSKIN')
             slide_content = f"""
             <div class="slide cover-layout">
                 <div class="header-group">
@@ -58,14 +59,24 @@ def main():
                 </div>
                 <div class="cover-media">
                     <div class="media-box placeholder-media">
-                        <span class="media-caption">{media.get('caption', '')}</span>
+                        <span class="media-caption">{media_caption}</span>
                     </div>
                 </div>
                 {disc_html}
             </div>
             """
             
-        elif layout == "quote":
+        elif layout == "section_divider":
+            slide_content = f"""
+            <div class="slide section-divider-layout">
+                <span class="category-tag">{slide.get('section', '')}</span>
+                <h1 class="divider-title">{title}</h1>
+                <p class="divider-subtitle">{subtitle}</p>
+                {disc_html}
+            </div>
+            """
+            
+        elif layout == "quote_callout":
             quote_text = ""
             for item in body:
                 if item.get("type") == "quote":
@@ -90,6 +101,7 @@ def main():
             for item in body:
                 if item.get("type") == "bullet":
                     bullets += f'<li>{item.get("text", "")}</li>'
+            media_caption = media.get('caption', '')
             slide_content = f"""
             <div class="slide two-columns-layout">
                 <div class="slide-header">
@@ -104,7 +116,7 @@ def main():
                     </div>
                     <div class="column-right">
                         <div class="media-box placeholder-media">
-                            <span class="media-caption">{media.get('caption', '')}</span>
+                            <span class="media-caption">{media_caption}</span>
                         </div>
                     </div>
                 </div>
@@ -131,6 +143,89 @@ def main():
                 </div>
                 <div class="cards-grid">
                     {cards}
+                </div>
+                {sources_html}
+                {disc_html}
+            </div>
+            """
+            
+        elif layout == "timeline_protocol":
+            steps_html = ""
+            step_idx = 0
+            for item in body:
+                if item.get("type") == "step":
+                    step_idx += 1
+                    steps_html += f"""
+                    <div class="timeline-step">
+                        <div class="step-num">{step_idx}</div>
+                        <h3 class="step-label">{item.get('label', '')}</h3>
+                        <p class="step-desc">{item.get('desc', '')}</p>
+                    </div>
+                    """
+            slide_content = f"""
+            <div class="slide timeline-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">{title}</h2>
+                    <p class="slide-subtitle">{subtitle}</p>
+                </div>
+                <div class="timeline-container">
+                    {steps_html}
+                </div>
+                {sources_html}
+                {disc_html}
+            </div>
+            """
+            
+        elif layout == "comparison":
+            left_label, left_text = "", ""
+            right_label, right_text = "", ""
+            for item in body:
+                if item.get("type") == "compare_left":
+                    left_label = item.get("label", "")
+                    left_text = item.get("text", "")
+                elif item.get("type") == "compare_right":
+                    right_label = item.get("label", "")
+                    right_text = item.get("text", "")
+            slide_content = f"""
+            <div class="slide comparison-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">{title}</h2>
+                    <p class="slide-subtitle">{subtitle}</p>
+                </div>
+                <div class="comparison-grid">
+                    <div class="compare-card compare-left">
+                        <span class="compare-label">{left_label}</span>
+                        <p class="compare-text">{left_text}</p>
+                    </div>
+                    <div class="compare-card compare-right">
+                        <span class="compare-label">{right_label}</span>
+                        <p class="compare-text">{right_text}</p>
+                    </div>
+                </div>
+                {sources_html}
+                {disc_html}
+            </div>
+            """
+            
+        elif layout == "statistics":
+            stats_html = ""
+            for item in body:
+                if item.get("type") == "stat_item":
+                    stats_html += f"""
+                    <div class="stat-card">
+                        <span class="stat-number">{item.get('number', '')}</span>
+                        <h3 class="stat-label">{item.get('label', '')}</h3>
+                        <p class="stat-desc">{item.get('desc', '')}</p>
+                    </div>
+                    """
+            slide_content = f"""
+            <div class="slide statistics-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">{title}</h2>
+                    <p class="slide-subtitle">{subtitle}</p>
+                </div>
+                <div class="stats-grid">
+                    {stats_html}
                 </div>
                 {sources_html}
                 {disc_html}
@@ -187,7 +282,7 @@ def main():
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>YM PROSKIN — Ретиноиды</title>
+    <title>YM PROSKIN — Ретиноиды v2</title>
     <style>
         @font-face {{
             font-family: '{font["family"]}';
@@ -374,7 +469,29 @@ def main():
             height: 320px;
         }}
         
-        /* 2. Quote */
+        /* 2. Section Divider */
+        .section-divider-layout {{
+            background-color: var(--bg-alt);
+            padding: 80px 40px;
+            justify-content: center;
+        }}
+        
+        .divider-title {{
+            font-size: var(--fs-display);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 24px 0 16px 0;
+            line-height: 1.1;
+        }}
+        
+        .divider-subtitle {{
+            font-size: var(--fs-h3);
+            color: var(--text);
+            margin: 0;
+            font-weight: 500;
+        }}
+        
+        /* 3. Quote Callout */
         .quote-layout .quote-container {{
             margin-top: 40px;
             display: flex;
@@ -399,7 +516,7 @@ def main():
             font-weight: 500;
         }}
         
-        /* 3. Two columns */
+        /* 4. Two columns */
         .two-columns-layout .columns-grid {{
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -407,7 +524,7 @@ def main():
             height: 300px;
         }}
         
-        /* 4. Three cards */
+        /* 5. Three cards */
         .three-cards-layout .cards-grid {{
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -438,7 +555,118 @@ def main():
             margin: 0;
         }}
         
-        /* 5. Alert */
+        /* 6. Timeline Protocol */
+        .timeline-layout .timeline-container {{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }}
+        
+        .timeline-step {{
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 20px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }}
+        
+        .step-num {{
+            font-size: var(--fs-caption);
+            background-color: var(--herbal);
+            color: var(--bg);
+            border-radius: var(--radius-badge);
+            padding: 4px 10px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }}
+        
+        .step-label {{
+            font-size: var(--fs-body);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+        }}
+        
+        .step-desc {{
+            font-size: var(--fs-caption);
+            color: var(--text);
+            margin: 0;
+        }}
+        
+        /* 7. Comparison */
+        .comparison-layout .comparison-grid {{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            height: 300px;
+        }}
+        
+        .compare-card {{
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            border: 1px solid var(--border);
+            box-sizing: border-box;
+        }}
+        
+        .compare-label {{
+            font-size: var(--fs-h3);
+            font-weight: 700;
+            color: var(--herbal);
+            display: block;
+            margin-bottom: 16px;
+        }}
+        
+        .compare-text {{
+            font-size: var(--fs-body);
+            color: var(--text);
+            margin: 0;
+        }}
+        
+        /* 8. Statistics */
+        .statistics-layout .stats-grid {{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }}
+        
+        .stat-card {{
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }}
+        
+        .stat-number {{
+            font-size: var(--fs-display);
+            font-weight: 700;
+            color: var(--herbal);
+            line-height: 1;
+            margin-bottom: 12px;
+        }}
+        
+        .stat-label {{
+            font-size: var(--fs-h3);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+        }}
+        
+        .stat-desc {{
+            font-size: var(--fs-body-sm);
+            color: var(--text);
+            margin: 0;
+        }}
+        
+        /* 9. Alert */
         .alert-layout .alert-box {{
             background-color: var(--bg-alt);
             border: 2px solid var(--warn);
@@ -473,7 +701,7 @@ def main():
             font-weight: 500;
         }}
         
-        /* 6. Summary */
+        /* 10. Summary */
         .summary-layout .summary-box {{
             background-color: var(--bg-alt);
             border-radius: var(--radius-card);
@@ -495,7 +723,7 @@ def main():
 </html>
 """
     
-    out_html_path = os.path.join(out_dir, "deck_retinoids.html")
+    out_html_path = os.path.join(out_dir, "deck_retinoids_v2.html")
     with open(out_html_path, "w", encoding="utf-8") as f:
         f.write(html_template)
     print(f"HTML presentation written successfully to {out_html_path}")

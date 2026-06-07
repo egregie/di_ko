@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>YM PROSKIN — Ретиноиды v2</title>
+    <style>
+        @font-face {
+            font-family: 'Arimo';
+            font-style: normal;
+            font-weight: 100 900;
+            src: url('../../04_design_system/fonts/Arimo[wght].ttf') format('truetype');
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&display=swap');
+        
+        :root {
+            --bg: #F8F6F4;
+            --bg-alt: #E6D2CA;
+            --sage: #D7E0CE;
+            --herbal: #6D8470;
+            --dark: #2C3440;
+            --text: #3D4A40;
+            --border: #D7E0CE;
+            --warn: #9E6A5A;
+            
+            --font-family: 'Arimo', sans-serif;
+            --lh-min: 1.5;
+            
+            --radius-btn: 8px;
+            --radius-card: 16px;
+            --radius-badge: 100px;
+            
+            --fs-display: 52px;
+            --fs-h1: 36px;
+            --fs-h2: 26px;
+            --fs-h3: 20px;
+            --fs-label: 10px;
+            --fs-body: 15px;
+            --fs-body-sm: 13px;
+            --fs-caption: 11px;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark);
+            font-family: var(--font-family);
+            color: var(--text);
+            line-height: var(--lh-min);
+            box-sizing: border-box;
+        }
+        
+        .slide {
+            width: 1024px;
+            height: 576px;
+            background-color: var(--bg);
+            position: relative;
+            box-sizing: border-box;
+            padding: 40px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-bottom: 20px; /* spacing in HTML view */
+        }
+        
+        @media print {
+            body {
+                background-color: transparent;
+            }
+            .slide {
+                margin-bottom: 0;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Typography Elements */
+        .slide-header {
+            margin-bottom: 24px;
+        }
+        
+        .slide-title {
+            font-size: var(--fs-h2);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+            letter-spacing: -0.01em;
+        }
+        
+        .slide-subtitle {
+            font-size: var(--fs-body);
+            color: var(--herbal);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* Bullets */
+        .bullets-list {
+            margin: 0;
+            padding-left: 20px;
+            font-size: var(--fs-body);
+        }
+        
+        .bullets-list li {
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        
+        /* Footer Metadata */
+        .disclaimers {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            font-size: var(--fs-caption);
+            color: var(--herbal);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+        }
+        
+        .sources-ref {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            font-size: var(--fs-caption);
+            color: var(--text);
+            font-weight: 500;
+        }
+        
+        /* Media box */
+        .media-box {
+            background-color: var(--sage);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            color: var(--herbal);
+            font-size: var(--fs-body-sm);
+            font-weight: 500;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Layout specific styles */
+        
+        /* 1. Cover */
+        .cover-layout {
+            background-color: var(--bg-alt);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .cover-layout .header-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .category-tag {
+            font-size: var(--fs-label);
+            font-weight: 700;
+            color: var(--herbal);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 12px;
+        }
+        
+        .display-title {
+            font-size: var(--fs-h1);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 16px 0;
+            line-height: 1.2;
+        }
+        
+        .cover-layout .subtitle-text {
+            font-size: var(--fs-body);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        .cover-media {
+            height: 320px;
+        }
+        
+        /* 2. Section Divider */
+        .section-divider-layout {
+            background-color: var(--bg-alt);
+            padding: 80px 40px;
+            justify-content: center;
+        }
+        
+        .divider-title {
+            font-size: var(--fs-display);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 24px 0 16px 0;
+            line-height: 1.1;
+        }
+        
+        .divider-subtitle {
+            font-size: var(--fs-h3);
+            color: var(--text);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* 3. Quote Callout */
+        .quote-layout .quote-container {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 40px;
+        }
+        
+        .quote-mark {
+            font-size: 80px;
+            color: var(--sage);
+            line-height: 0.1;
+            font-family: serif;
+        }
+        
+        .quote-text {
+            font-size: var(--fs-h3);
+            font-style: italic;
+            color: var(--dark);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* 4. Two columns */
+        .two-columns-layout .columns-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            height: 300px;
+        }
+        
+        /* 5. Three cards */
+        .three-cards-layout .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }
+        
+        .three-cards-layout .card {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border: 1px solid var(--border);
+        }
+        
+        .card-title {
+            font-size: var(--fs-h3);
+            color: var(--dark);
+            margin: 0 0 12px 0;
+            font-weight: 700;
+        }
+        
+        .card-text {
+            font-size: var(--fs-body-sm);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 6. Timeline Protocol */
+        .timeline-layout .timeline-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }
+        
+        .timeline-step {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 20px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }
+        
+        .step-num {
+            font-size: var(--fs-caption);
+            background-color: var(--herbal);
+            color: var(--bg);
+            border-radius: var(--radius-badge);
+            padding: 4px 10px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .step-label {
+            font-size: var(--fs-body);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+        }
+        
+        .step-desc {
+            font-size: var(--fs-caption);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 7. Comparison */
+        .comparison-layout .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            height: 300px;
+        }
+        
+        .compare-card {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            border: 1px solid var(--border);
+            box-sizing: border-box;
+        }
+        
+        .compare-label {
+            font-size: var(--fs-h3);
+            font-weight: 700;
+            color: var(--herbal);
+            display: block;
+            margin-bottom: 16px;
+        }
+        
+        .compare-text {
+            font-size: var(--fs-body);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 8. Statistics */
+        .statistics-layout .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }
+        
+        .stat-card {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+        
+        .stat-number {
+            font-size: var(--fs-display);
+            font-weight: 700;
+            color: var(--herbal);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        
+        .stat-label {
+            font-size: var(--fs-h3);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+        }
+        
+        .stat-desc {
+            font-size: var(--fs-body-sm);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 9. Alert */
+        .alert-layout .alert-box {
+            background-color: var(--bg-alt);
+            border: 2px solid var(--warn);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .alert-icon {
+            font-size: 48px;
+        }
+        
+        .alert-content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .alert-box-title {
+            font-size: var(--fs-h3);
+            color: var(--warn);
+            margin: 0 0 8px 0;
+            font-weight: 700;
+        }
+        
+        .alert-box-text {
+            font-size: var(--fs-body);
+            color: var(--text);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* 10. Summary */
+        .summary-layout .summary-box {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            height: 300px;
+            box-sizing: border-box;
+            border: 1px solid var(--border);
+        }
+        
+        .summary-list li {
+            margin-bottom: 16px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="slide cover-layout">
+                <div class="header-group">
+                    <span class="category-tag">Ретиноиды</span>
+                    <h1 class="display-title">YM PROSKIN · Ретиноиды v2</h1>
+                    <p class="subtitle-text">Терапевтический профиль, механизмы действия и клинические протоколы</p>
+                </div>
+                <div class="cover-media">
+                    <div class="media-box placeholder-media">
+                        <span class="media-caption">Ретиноиды в дерматологии</span>
+                    </div>
+                </div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide section-divider-layout">
+                <span class="category-tag">Часть 1</span>
+                <h1 class="divider-title">Механизмы и Кинетика</h1>
+                <p class="divider-subtitle">Клеточные рецепторы и пути метаболической конверсии</p>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide quote-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Ядерные Рецепторы</h2>
+                    <p class="slide-subtitle">Основной путь транскрипции генов</p>
+                </div>
+                <div class="quote-container">
+                    <span class="quote-mark">“</span>
+                    <p class="quote-text">Ретиноиды регулируют генную транскрипцию путем связывания с ядерными рецепторами RAR и RXR.</p>
+                </div>
+                <div class="sources-ref">Источники: fact_0001, SRC-A009</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide timeline-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Путь Метаболической Конверсии</h2>
+                    <p class="slide-subtitle">Каскад окисления ретиноидов в кератиноцитах</p>
+                </div>
+                <div class="timeline-container">
+                    
+                    <div class="timeline-step">
+                        <div class="step-num">1</div>
+                        <h3 class="step-label">Ретилпальмитат</h3>
+                        <p class="step-desc">Слабый эфир, требует 3 шага конверсии до ретиноевой кислоты.</p>
+                    </div>
+                    
+                    <div class="timeline-step">
+                        <div class="step-num">2</div>
+                        <h3 class="step-label">Ретинол</h3>
+                        <p class="step-desc">Стимулирует коллаген, требует 2 шага метаболического превращения.</p>
+                    </div>
+                    
+                    <div class="timeline-step">
+                        <div class="step-num">3</div>
+                        <h3 class="step-label">Ретинальдегид</h3>
+                        <p class="step-desc">Высокоактивный ретиналь, требует всего 1 шаг конверсии.</p>
+                    </div>
+                    
+                    <div class="timeline-step">
+                        <div class="step-num">4</div>
+                        <h3 class="step-label">Ретиноевая кислота</h3>
+                        <p class="step-desc">Активный третиноин, связывается напрямую с рецепторами.</p>
+                    </div>
+                    
+                </div>
+                <div class="sources-ref">Источники: fact_0002, fact_0004, fact_0011</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide two-columns-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Терапия Третиноином</h2>
+                    <p class="slide-subtitle">Клинические эффекты золотого стандарта коррекции</p>
+                </div>
+                <div class="columns-grid">
+                    <div class="column-left">
+                        <ul class="bullets-list">
+                            <li>Третиноин связывается напрямую с рецепторами rars без метаболической конверсии.</li><li>Является золотым стандартом для клинического улучшения фотоповрежденной кожи.</li><li>Нормализует дифференцировку кератиноцитов для предотвращения окклюзии фолликулов.</li>
+                        </ul>
+                    </div>
+                    <div class="column-right">
+                        <div class="media-box placeholder-media">
+                            <span class="media-caption">Эффект третиноина на эпидермис</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0002, fact_0005, fact_0006</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide comparison-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Сравнение Селективных Форм</h2>
+                    <p class="slide-subtitle">Адапален против Тазаротена</p>
+                </div>
+                <div class="comparison-grid">
+                    <div class="compare-card compare-left">
+                        <span class="compare-label">Адапален</span>
+                        <p class="compare-text">Селективно связывается с rar-beta и rar-gamma рецепторами, снижает риск раздражений.</p>
+                    </div>
+                    <div class="compare-card compare-right">
+                        <span class="compare-label">Тазаротен</span>
+                        <p class="compare-text">Связывается с rar-beta и rar-gamma, крем 0.1% клинически эффективен при фотоповреждении.</p>
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0007, fact_0009, fact_0010</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide three-cards-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Безрецептурные Формы</h2>
+                    <p class="slide-subtitle">Биологическая активность ретинола, ретиналя и эфиров</p>
+                </div>
+                <div class="cards-grid">
+                    
+                    <div class="card">
+                        <h3 class="card-title">Ретинальдегид</h3>
+                        <p class="card-text">Улучшает гидратацию и эластичность кожи, требует одного метаболического шага.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">Ретинол</h3>
+                        <p class="card-text">Стимулирует синтез коллагена и ингибирует матриксные металлопротеиназы.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">Ретилпальмитат</h3>
+                        <p class="card-text">Мягкая нано-форма, снижает воспалительные и невоспалительные акне-поражения.</p>
+                    </div>
+                    
+                </div>
+                <div class="sources-ref">Источники: fact_0004, fact_0011, fact_0012, fact_0014</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide statistics-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Клинические Метрики</h2>
+                    <p class="slide-subtitle">Параметры эффективности ретиноидов третьего поколения</p>
+                </div>
+                <div class="stats-grid">
+                    
+                    <div class="stat-card">
+                        <span class="stat-number">0.1%</span>
+                        <h3 class="stat-label">Тазаротен</h3>
+                        <p class="stat-desc">Концентрация крема, доказавшая эффективность при глубоких морщинах.</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <span class="stat-number">1 шаг</span>
+                        <h3 class="stat-label">Ретинальдегид</h3>
+                        <p class="stat-desc">Конверсия до активной кислоты, минимизирует раздражения.</p>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <span class="stat-number">12 фкт</span>
+                        <h3 class="stat-label">Проверенная база</h3>
+                        <p class="stat-desc">Клинически подтвержденных фактов в нашем графе ретиноидов.</p>
+                    </div>
+                    
+                </div>
+                <div class="sources-ref">Источники: fact_0010, fact_0011, fact_0012</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide alert-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Безопасность и Ограничения</h2>
+                    <p class="slide-subtitle">Меры предосторожности в клинической практике</p>
+                </div>
+                <div class="alert-box">
+                    <div class="alert-icon">⚠️</div>
+                    <div class="alert-content">
+                        <h3 class="alert-box-title">Абсолютное противопоказание: Беременность и лактация</h3>
+                        <p class="alert-box-text">Топические ретиноиды противопоказаны к применению в период беременности и лактации из-за потенциальных рисков системной тератогенности.</p>
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0015, SRC-A018</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide summary-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Терапевтические Выводы</h2>
+                    <p class="slide-subtitle">Сводное резюме клинических рекомендаций по ретиноидам</p>
+                </div>
+                <div class="summary-box">
+                    <ul class="bullets-list summary-list">
+                        <li>Назначение конкретного ретиноида определяется целями терапии и чувствительностью кожи.</li><li>Селективные агонисты (адапален, тазаротен) предпочтительны при целевой монотерапии.</li><li>Необходимо строго контролировать применение и исключать пациентов в группе риска.</li>
+                    </ul>
+                </div>
+                <div class="sources-ref">Источники: fact_0001, fact_0007, fact_0015</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div>
+</body>
+</html>

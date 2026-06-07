@@ -1,0 +1,20 @@
+{
+  "id": "deck_retinoids_v2-s01",
+  "layout": "cover",
+  "section": "Ретиноиды",
+  "title": "YM PROSKIN · Ретиноиды v2",
+  "subtitle": "Терапевтический профиль, механизмы действия и клинические протоколы",
+  "body": [],
+  "media": {
+    "type": "image",
+    "asset": "cover_placeholder.png",
+    "fit": "cover",
+    "caption": "Ретиноиды в дерматологии"
+  },
+  "components": {},
+  "disclaimers": [
+    "Только для практикующих специалистов"
+  ],
+  "source_refs": [],
+  "notes": "Титульный слайд"
+}

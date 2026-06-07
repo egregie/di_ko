@@ -1,8 +1,8 @@
 # Current State - YM PROSKIN
 
 ## Metadata
-- **Current Phase**: Phase 2.5: Collection Hardening
-- **Status**: Completed / tag `phase-2.5-hardening`
+- **Current Phase**: Phase 3.5: Design System + Dual Renderer
+- **Status**: Completed / tag `phase-3.5-dual-render`
 
 ## Project Status Snapshot
 - **Phase 0 (Foundation)**: Completed. Core files, ontology, naming conventions, and data schemas initialized.
@@ -12,4 +12,7 @@
 - **Phase 1.5 (Evidence Audit: Ground-Truth Gate)**: Completed. Audited 16 facts against live PubMed abstract API. Audit count results: remaining(12) = clean(9) + weak(3), rejected(4). Unsupported facts moved to quarantine and index compiled. Validator passes with 0 errors.
 - **Phase 2 (Pilot Render Slice: Retinoids Deck)**: Completed. Unfrozen design system, created design-tokens.json and layouts.json. Generated 7 slide-specs citing non-quarantined facts, compiled to HTML/CSS, printed to PDF via Playwright Chromium, and verified via QA audit checks.
 - **Phase 2.5 (Collection Hardening)**: Completed. Transitioned EBM verification into an automated write gate (`verify_gate.py` registered in A05). Created `ops/scripts/lib/evidence.py` with caching and claim support checks. Hardened A02 collector guidelines. Restored `qa_deck.py` with offline Arimo webfont checks. Run regression tests showing correct write/reject/quarantine behavior.
+- **Phase 3 (Scale Collection)**: Completed. Scaled knowledge base collection for Niacinamide, Vitamin C, and Exfoliants. Expanded graph index to 17 entities, 20 facts, and 42 relationships.
+- **Phase 3.1 (Gate Authenticity Audit)**: Completed. Decontaminated the verify gate, audited the 11 facts live, quarantined 3 unsupported facts, deleted 3 invalid relationships, updated metadata fields on all facts, and expanded validation checks.
+- **Phase 3.5 (Design System + Dual Renderer)**: Completed. Upgraded design layouts registration to 10 masks. Embedded local Arimo font for offline-first rendering. Built new `render_pptx.py` renderer. Expanded deck to 10 slide specs. Configured both HTML/PDF and PPTX renderers. Upgraded QA deck checks to enforce Zero Black policy and local Arimo font usage across both output formats. All QA tests pass.
 
