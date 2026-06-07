@@ -31,3 +31,7 @@ Before writing any entities, facts, or relationships to the graph, execute the v
 `python ops/scripts/validate_graph.py`
 Any validation failure must halt the integration and reject the write.
 
+## Caveman Mode
+`ultra`
+
+

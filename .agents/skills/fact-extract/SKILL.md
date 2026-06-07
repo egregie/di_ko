@@ -26,3 +26,7 @@ This skill processes raw text/PDF files in the collection area to extract explic
    - Source reference ID (from sources register).
    - Indicated confidence score (0.0 to 1.0).
 3. Save output files in the `02_processing/` directory for verification.
+
+## Caveman Mode
+`full`
+

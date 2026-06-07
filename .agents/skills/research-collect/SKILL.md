@@ -27,3 +27,7 @@ This skill automates raw content gathering from discovered sources (using HTTP r
 Use the database retrieval and metadata extraction helper logic adapted from `pharma_v2`:
 - Script: `ops/scripts/search_kb.py`
 
+## Caveman Mode
+`full`
+
+

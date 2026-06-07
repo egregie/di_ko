@@ -29,3 +29,7 @@ Before approving modifications or writing to the graph, execute the validator sc
 `python ops/scripts/validate_graph.py`
 Any validation failure must block the approval and reject the write.
 
+## Caveman Mode
+`ultra`
+
+

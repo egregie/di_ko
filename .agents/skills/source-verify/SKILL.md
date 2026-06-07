@@ -32,3 +32,7 @@ This skill validates clinical facts against EBM validation criteria. It assigns 
 Use the validation rules and contrast criteria logic from:
 - Script: `ops/scripts/verification_agent.py`
 
+## Caveman Mode
+`full`
+
+

@@ -27,3 +27,7 @@ This skill consolidates draft fact JSON files from the processing area. It merge
 To execute deduplication and sorting, run the automated script:
 `python ops/scripts/dedupe_sort.py`
 
+## Caveman Mode
+`ultra`
+
+

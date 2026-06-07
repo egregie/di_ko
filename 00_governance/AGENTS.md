@@ -23,3 +23,17 @@ specialists. One graph -> many outputs.
 ## Pipeline
 discover -> collect -> extract -> dedup -> verify -> librarian/ontology -> graph
    (later) -> narrative -> architect -> build -> QA. Each stage logs to ops/logs.
+
+## Principles
+- **P001 Schema First**: Data model templates dictate integration properties.
+- **P002 Knowledge Graph Before Templates**: Database and index creation take priority over slide templates.
+- **P003 Context Discipline**: RTK compresses CLI-proxy output; the Retriever returns only 20–50 relevant nodes from the graph index, preventing large-scale DB reading overhead.
+- **P004 Concise by Mode**: Enable Caveman ultra mode for production integration roles and off/full mode for research/verification roles.
+- **P005 Persistent Working Memory**: Every agent reads and maintains project metadata records under `00_PROJECT_STATE/`.
+- **P006 Every Agent Leaves Logs**: Track processes under `ops/logs/` and update project state log.
+- **P007 No Fact Without Source**: Facts require an evidence_level and at least 2 independent sources or 1 peer-reviewed journal reference.
+- **P008 No Entity Without Ontology**: Canonical definitions and aliases must conform to `ontology_v1.json` via the ontology-guard agent.
+
+## Walkthrough Standards
+По завершении любого ТЗ создавать/обновлять walkthrough.md строго по WALKTHROUGH_TEMPLATE.md. Никакого свободного текста вне секций. Это интерфейс к внешнему ревьюеру.
+

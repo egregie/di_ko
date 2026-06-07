@@ -32,3 +32,7 @@ This skill searches and lists references for target topics within cosmetology an
 Use the database search logic adapted from `pharma_v2`:
 - Script: `ops/scripts/search_kb.py`
 
+## Caveman Mode
+`full`
+
+
