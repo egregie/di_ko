@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0031",
+  "statement": "topical magnesium ascorbyl phosphate stimulates collagen synthesis in dermal fibroblasts",
+  "entity_id": "magnesium_ascorbyl_phosphate",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A030"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

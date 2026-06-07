@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0029",
+  "statement": "maximal percutaneous absorption of topical L-ascorbic acid occurs at a concentration of 20%",
+  "entity_id": "vitamin_c",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A028"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07",
+  "verified_via": "cache",
+  "verified_at": "2026-06-07T18:23:28.792047Z",
+  "source_title": "Topical L-ascorbic acid: percutaneous absorption studies.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

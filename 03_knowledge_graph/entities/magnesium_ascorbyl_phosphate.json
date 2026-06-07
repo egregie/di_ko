@@ -18,6 +18,8 @@
     "brightening"
   ],
   "evidence_level": "A",
-  "fact_ids": [],
+  "fact_ids": [
+    "fact_0031"
+  ],
   "updated": "2026-06-07"
 }

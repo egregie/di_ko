@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0030",
+  "statement": "topical L-ascorbic acid increases mRNA levels of collagen types I and iii in human skin in vivo",
+  "entity_id": "vitamin_c",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A029"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07",
+  "verified_via": "cache",
+  "verified_at": "2026-06-07T18:23:28.917539Z",
+  "source_title": "Use of topical ascorbic acid increases collagen type I mRNA levels.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

@@ -26,5 +26,12 @@
 - [x] Upgrade qa_deck.py to check visual and structural errors on both PDF and PPTX [Phase 3.5 Block D]
 - [x] Enforce Zero Black policy and local Arimo font usage in QA check [Phase 3.5 Block D]
 - [x] Verify overall QA audit passes on both output channels [Phase 3.5 Block E]
+- [x] Configure and integrate Exa MCP server pilot [Phase 4 Block A]
+- [x] Compare standard search vs Exa-grounded rejection rate in `exa_pilot.md` [Phase 4 Block A]
+- [x] Backfill Vitamin C, Niacinamide, and Exfoliants to exactly 8 verified facts each [Phase 4 Block B]
+- [x] Document scale quality and rejection rates in `scale_quality.md` [Phase 4 Block B]
+- [x] Synchronize ontology and propagate fact IDs to parent categories globally (A07) [Phase 4 Block C]
+- [x] Rebuild search index and validate graph structure via `validate_graph.py` [Phase 4 Block E]
+
 
 

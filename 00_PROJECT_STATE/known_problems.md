@@ -10,6 +10,5 @@
   - `fact_0023`: SAP + Retinol synergy (cites PMID 19165682, which is actually about tranexamic acid for post-cesarean section bleeding).
   - `fact_0026`: Niacinamide + Retinoid synergy (cites PMID 17147561, which is a general Niacinamide review lacking retinoid tolerability details).
   - `fact_0027`: AHA + Retinoid irritation (cites PMID 32250551, which is about Glycolic/Salicylic acid combination and lacks retinoid reference).
-- **Per-Topic Fact Shortfall**:
-  - Exfoliants (4 verified facts), Vitamin C (2 verified facts: `fact_0021`, `fact_0022`), and Niacinamide (2 verified facts: `fact_0024`, `fact_0025`) are below the target threshold of ≥10 verified facts per topic. This is caused by the strict decontamination of the verify gate (removal of `KNOWN_VERDICTS` answer key) and the quarantine of facts with invalid PMID citations.
+
 

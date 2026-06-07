@@ -18,6 +18,9 @@
     "mild_exfoliation"
   ],
   "evidence_level": "A",
-  "fact_ids": [],
+  "fact_ids": [
+    "fact_0042",
+    "fact_0043"
+  ],
   "updated": "2026-06-07"
 }

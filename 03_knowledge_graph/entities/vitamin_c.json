@@ -20,7 +20,13 @@
   "evidence_level": "A",
   "fact_ids": [
     "fact_0021",
-    "fact_0022"
+    "fact_0022",
+    "fact_0028",
+    "fact_0029",
+    "fact_0030",
+    "fact_0031",
+    "fact_0032",
+    "fact_0033"
   ],
   "updated": "2026-06-07"
 }

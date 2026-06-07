@@ -20,3 +20,7 @@
 2026-06-07T13:09:28Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=17147561&rettype=abstract&retmode=text | 200
 2026-06-07T13:09:29Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=32250551&retmode=json | 200
 2026-06-07T13:09:30Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=32250551&rettype=abstract&retmode=text | 200
+2026-06-07T18:19:32Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=18505499&retmode=json | ERROR
+2026-06-07T18:19:33Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=26327894&retmode=json | ERROR
+2026-06-07T18:19:33Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=11207686&retmode=json | ERROR
+2026-06-07T18:19:34Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=11407971&retmode=json | ERROR

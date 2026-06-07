@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0028",
+  "statement": "topical L-ascorbic acid formulation requires a pH of less than 3.5 to achieve percutaneous absorption",
+  "entity_id": "vitamin_c",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A028"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

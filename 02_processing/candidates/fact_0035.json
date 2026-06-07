@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0035",
+  "statement": "topical niacinamide 4% is effective in treating melasma with comparable efficacy to 4% hydroquinone but with fewer side effects",
+  "entity_id": "niacinamide",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A033"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0042",
+  "statement": "topical 12% L-lactic acid increases both epidermal and dermal thickness and skin firmness after three months",
+  "entity_id": "lactic_acid",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A039"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

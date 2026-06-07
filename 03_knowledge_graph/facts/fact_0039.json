@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0039",
+  "statement": "topical niacinamide reduces transepidermal water loss and increases epidermal stratum corneum hydration",
+  "entity_id": "niacinamide",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A036"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07",
+  "verified_via": "cache",
+  "verified_at": "2026-06-07T18:23:29.877111Z",
+  "source_title": "Topical niacinamide enhances the epidermal barrier.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

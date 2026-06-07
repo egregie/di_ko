@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0040",
+  "statement": "topical mandelic acid twice daily for four weeks increases lower eyelid skin elasticity and firmness",
+  "entity_id": "mandelic_acid",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A037"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

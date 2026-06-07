@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0032",
+  "statement": "topical ascorbyl glucoside exhibits collagen-stimulating properties in human dermal fibroblasts",
+  "entity_id": "ascorbyl_glucoside",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A030"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07",
+  "verified_via": "cache",
+  "verified_at": "2026-06-07T18:23:29.134367Z",
+  "source_title": "Vitamin C and its derivatives induce collagen type I deposition in human fibroblasts.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

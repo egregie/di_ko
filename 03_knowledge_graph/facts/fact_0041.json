@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0041",
+  "statement": "45% mandelic acid peels are equally effective as 30% salicylic acid peels for mild-to-moderate acne vulgaris with better safety profile",
+  "entity_id": "mandelic_acid",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A038"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07",
+  "verified_via": "cache",
+  "verified_at": "2026-06-07T18:23:30.097837Z",
+  "source_title": "Comparison of 45% mandelic acid versus 30% salicylic acid peels in mild-to-moderate acne.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

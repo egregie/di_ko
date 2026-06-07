@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0038",
+  "statement": "topical niacinamide improves stratum corneum barrier function and provides clinical benefits in subjects with rosacea",
+  "entity_id": "niacinamide",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A035"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

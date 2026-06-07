@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0037",
+  "statement": "the inhibitory effect of niacinamide on melanosome transfer is reversible",
+  "entity_id": "niacinamide",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A034"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07",
+  "verified_via": "cache",
+  "verified_at": "2026-06-07T18:23:29.664509Z",
+  "source_title": "Reversibility of the inhibitory effect of niacinamide on melanosome transfer.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

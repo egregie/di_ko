@@ -31,6 +31,18 @@
     {"source_id":"SRC-A024","name":"SAP monotherapy for acne vulgaris RCT","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/20367669/","tier":"A","pmid":"20367669","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-A025","name":"SAP + Retinol synergy for acne vulgaris","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/19165682/","tier":"A","pmid":"19165682","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-A026","name":"Niacinamide barrier function and acne clinical review","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/17147561/","tier":"A","pmid":"17147561","doi":"","accessed":"2026-06-07"},
-    {"source_id":"SRC-A027","name":"Niacinamide in acne treatment review","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/28220628/","tier":"A","pmid":"28220628","doi":"","accessed":"2026-06-07"}
+    {"source_id":"SRC-A027","name":"Niacinamide in acne treatment review","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/28220628/","tier":"A","pmid":"28220628","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A028","name":"Pinnell 2001 (L-ascorbic acid absorption studies)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/11207686/","tier":"A","pmid":"11207686","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A029","name":"Kang 2001 (Topical Vitamin C collagen mRNA studies)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/11407971/","tier":"A","pmid":"11407971","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A030","name":"Fibroblast collagen synthesis (Vitamin C derivatives)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/18505499/","tier":"A","pmid":"18505499","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A031","name":"Vitamin C ultrasound collagen synthesis study","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/26327894/","tier":"A","pmid":"26327894","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A032","name":"Feldmann 2002 (Niacinamide pigmentation study)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/12100180/","tier":"A","pmid":"12100180","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A033","name":"Navarrete-Solis 2011 (Niacinamide vs Hydroquinone melasma)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/21822427/","tier":"A","pmid":"21822427","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A034","name":"Melanosome transfer reversibility study","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/16033423/","tier":"A","pmid":"16033423","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A035","name":"Draelos 2005 (Niacinamide barrier function in rosacea)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/16209160/","tier":"A","pmid":"16209160","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A036","name":"Bissett 2002 (Niacinamide epidermal barrier review)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/12498532/","tier":"A","pmid":"12498532","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A037","name":"Efficacy of topical mandelic acid on skin viscoelasticity","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/30513568/","tier":"A","pmid":"30513568","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A038","name":"Comparison of 45% mandelic acid vs 30% salicylic acid peels","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/31553119/","tier":"A","pmid":"31553119","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A039","name":"Smith 1996 (AHA photoaged skin study)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/8854589/","tier":"A","pmid":"8854589","doi":"","accessed":"2026-06-07"}
   ]
 }
