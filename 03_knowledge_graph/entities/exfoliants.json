@@ -1,0 +1,27 @@
+{
+  "entity_id": "exfoliants",
+  "entity_type": "Concept",
+  "title": "Exfoliants",
+  "aliases": [
+    "chemical exfoliants",
+    "exfoliators"
+  ],
+  "belongs_to": [],
+  "used_for": [
+    "acne",
+    "photoaging"
+  ],
+  "contraindications": [],
+  "tags": [
+    "desquamation",
+    "turnover"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0017",
+    "fact_0018",
+    "fact_0019",
+    "fact_0020"
+  ],
+  "updated": "2026-06-07"
+}

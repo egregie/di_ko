@@ -1,0 +1,15 @@
+{
+  "fact_id": "fact_0017",
+  "statement": "glycolic acid and salicylic acid combination improves mild to moderate acne",
+  "entity_id": "glycolic_acid",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A019"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

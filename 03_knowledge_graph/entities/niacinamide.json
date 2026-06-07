@@ -1,0 +1,26 @@
+{
+  "entity_id": "niacinamide",
+  "entity_type": "Ingredient",
+  "title": "Niacinamide",
+  "aliases": [
+    "vitamin B3",
+    "nicotinamide"
+  ],
+  "belongs_to": [],
+  "used_for": [
+    "acne",
+    "barrier"
+  ],
+  "contraindications": [],
+  "tags": [
+    "barrier_repair",
+    "anti_inflammatory"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0024",
+    "fact_0025",
+    "fact_0026"
+  ],
+  "updated": "2026-06-07"
+}

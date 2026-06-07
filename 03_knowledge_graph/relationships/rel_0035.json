@@ -1,0 +1,11 @@
+{
+  "rel_id": "rel_0035",
+  "from": "exfoliants",
+  "type": "used_for",
+  "to": "acne",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A019",
+    "SRC-A020"
+  ]
+}

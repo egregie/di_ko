@@ -1,0 +1,23 @@
+{
+  "entity_id": "ascorbyl_glucoside",
+  "entity_type": "Ingredient",
+  "title": "Ascorbyl Glucoside",
+  "aliases": [
+    "AA-2G"
+  ],
+  "belongs_to": [
+    "vitamin_c"
+  ],
+  "used_for": [
+    "photoaging",
+    "hyperpigmentation"
+  ],
+  "contraindications": [],
+  "tags": [
+    "glucose_stabilized_vitamin_c",
+    "slow_release"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [],
+  "updated": "2026-06-07"
+}

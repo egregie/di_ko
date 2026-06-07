@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0039",
+  "from": "ascorbyl_glucoside",
+  "type": "belongs_to",
+  "to": "vitamin_c",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A023"
+  ]
+}

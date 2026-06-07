@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0040",
+  "from": "vitamin_c",
+  "type": "used_for",
+  "to": "photoaging",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A023"
+  ]
+}

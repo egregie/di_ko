@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0023",
+  "statement": "topical combination of sodium ascorbyl phosphate and retinol shows synergistic efficacy in acne treatment",
+  "entity_id": "sodium_ascorbyl_phosphate",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A025"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

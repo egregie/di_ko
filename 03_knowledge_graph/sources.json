@@ -22,6 +22,15 @@
     {"source_id":"SRC-A015","name":"Saurat 1999 (Retinaldehyde clinical evidence)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/10473961/","tier":"A","pmid":"10473961","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-A016","name":"UVB photoaging (Retinyl palmitate mechanism)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/37927602/","tier":"A","pmid":"37927602","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-A017","name":"Clinical study for acne (Retinyl palmitate split-face)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/34211271/","tier":"A","pmid":"34211271","doi":"","accessed":"2026-06-07"},
-    {"source_id":"SRC-A018","name":"Systematic review pregnancy safety (Topical retinoids)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/26215715/","tier":"A","pmid":"26215715","doi":"","accessed":"2026-06-07"}
+    {"source_id":"SRC-A018","name":"Systematic review pregnancy safety (Topical retinoids)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/26215715/","tier":"A","pmid":"26215715","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A019","name":"Combined effects of glycolic acid and salicylic acid on acne","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/32250551/","tier":"A","pmid":"32250551","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A020","name":"Glycolic vs Salicylic-Mandelic peels for acne","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/19076192/","tier":"A","pmid":"19076192","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A021","name":"Salicylic acid peels for photoaging","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/9537006/","tier":"A","pmid":"9537006","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A022","name":"Clinical improvement of photoaged skin with 50% glycolic acid","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/8634809/","tier":"A","pmid":"8634809","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A023","name":"Topical Vitamin C in dermatology review","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/29104718/","tier":"A","pmid":"29104718","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A024","name":"SAP monotherapy for acne vulgaris RCT","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/20367669/","tier":"A","pmid":"20367669","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A025","name":"SAP + Retinol synergy for acne vulgaris","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/19165682/","tier":"A","pmid":"19165682","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A026","name":"Niacinamide barrier function and acne clinical review","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/17147561/","tier":"A","pmid":"17147561","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A027","name":"Niacinamide in acne treatment review","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/28220628/","tier":"A","pmid":"28220628","doi":"","accessed":"2026-06-07"}
   ]
 }

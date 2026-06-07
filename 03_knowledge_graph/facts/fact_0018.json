@@ -1,0 +1,15 @@
+{
+  "fact_id": "fact_0018",
+  "statement": "salicylic-mandelic acid peels are effective for active acne lesions and post-acne hyperpigmentation",
+  "entity_id": "salicylic_acid",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A020"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

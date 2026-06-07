@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0038",
+  "from": "magnesium_ascorbyl_phosphate",
+  "type": "belongs_to",
+  "to": "vitamin_c",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A023"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "entity_id": "salicylic_acid",
+  "entity_type": "Ingredient",
+  "title": "Salicylic Acid",
+  "aliases": [
+    "BHA",
+    "beta-hydroxy acid"
+  ],
+  "belongs_to": [
+    "exfoliants"
+  ],
+  "used_for": [
+    "acne",
+    "photoaging"
+  ],
+  "contraindications": [],
+  "tags": [
+    "sebum_soluble",
+    "comedolytic"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0017",
+    "fact_0018",
+    "fact_0019"
+  ],
+  "updated": "2026-06-07"
+}

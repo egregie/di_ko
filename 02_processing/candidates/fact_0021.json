@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0021",
+  "statement": "topical l-ascorbic acid promotes collagen synthesis and protects against ultraviolet-induced photodamage",
+  "entity_id": "vitamin_c",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A023"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

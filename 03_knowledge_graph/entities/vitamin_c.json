@@ -1,0 +1,27 @@
+{
+  "entity_id": "vitamin_c",
+  "entity_type": "Concept",
+  "title": "Vitamin C",
+  "aliases": [
+    "ascorbic acid",
+    "L-ascorbic acid",
+    "ascorbate"
+  ],
+  "belongs_to": [],
+  "used_for": [
+    "photoaging",
+    "hyperpigmentation"
+  ],
+  "contraindications": [],
+  "tags": [
+    "antioxidant",
+    "collagen_booster"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0021",
+    "fact_0022",
+    "fact_0023"
+  ],
+  "updated": "2026-06-07"
+}

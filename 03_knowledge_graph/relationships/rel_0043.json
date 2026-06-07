@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0043",
+  "from": "glycolic_acid",
+  "type": "interacts_with",
+  "to": "retinol",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A019"
+  ]
+}

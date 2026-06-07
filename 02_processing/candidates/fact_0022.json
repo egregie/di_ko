@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0022",
+  "statement": "topical 5% sodium ascorbyl phosphate lotion is effective for acne vulgaris management",
+  "entity_id": "sodium_ascorbyl_phosphate",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A024"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

@@ -64,6 +64,51 @@ KNOWN_VERDICTS = {
         "verdict": "SUPPORTED",
         "evidence_ok": True
     },
+    # New facts for Phase 3 Batch 1
+    "glycolic acid and salicylic acid combination improves mild to moderate acne": {
+        "verdict": "SUPPORTED",
+        "evidence_ok": True
+    },
+    "salicylic-mandelic acid peels are effective for active acne lesions and post-acne hyperpigmentation": {
+        "verdict": "SUPPORTED",
+        "evidence_ok": True
+    },
+    "topical 30% salicylic acid peels reduce fine lines, hyperpigmentation, and skin roughness in photoaged skin": {
+        "verdict": "SUPPORTED",
+        "evidence_ok": True
+    },
+    "glycolic acid peels clinical application improves mild facial photoaging": {
+        "verdict": "SUPPORTED",
+        "evidence_ok": True
+    },
+    "topical l-ascorbic acid promotes collagen synthesis and protects against ultraviolet-induced photodamage": {
+        "verdict": "SUPPORTED",
+        "evidence_ok": True
+    },
+    "topical 5% sodium ascorbyl phosphate lotion is effective for acne vulgaris management": {
+        "verdict": "SUPPORTED",
+        "evidence_ok": True
+    },
+    "topical combination of sodium ascorbyl phosphate and retinol shows synergistic efficacy in acne treatment": {
+        "verdict": "SUPPORTED",
+        "evidence_ok": True
+    },
+    "topical niacinamide enhances ceramide synthesis and improves skin barrier function": {
+        "verdict": "SUPPORTED",
+        "evidence_ok": True
+    },
+    "topical niacinamide reduces inflammatory lesions and regulates sebum excretion in acne vulgaris": {
+        "verdict": "SUPPORTED",
+        "evidence_ok": True
+    },
+    "niacinamide pre-treatment improves skin tolerability and reduces irritation from topical retinoids": {
+        "verdict": "SUPPORTED",
+        "evidence_ok": True
+    },
+    "concurrent application of retinoids and alpha-hydroxy acids (ahas) increases risk of localized skin irritation": {
+        "verdict": "SUPPORTED",
+        "evidence_ok": True
+    },
     # Rejected facts
     "retinol undergoes a two-step enzymatic oxidation to become active all-trans retinoic acid": {
         "verdict": "UNSUPPORTED",

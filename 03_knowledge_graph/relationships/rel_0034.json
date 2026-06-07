@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0034",
+  "from": "salicylic_acid",
+  "type": "is_a",
+  "to": "exfoliants",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A021"
+  ]
+}

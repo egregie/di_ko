@@ -1,0 +1,26 @@
+{
+  "entity_id": "sodium_ascorbyl_phosphate",
+  "entity_type": "Ingredient",
+  "title": "Sodium Ascorbyl Phosphate",
+  "aliases": [
+    "SAP"
+  ],
+  "belongs_to": [
+    "vitamin_c"
+  ],
+  "used_for": [
+    "acne",
+    "photoaging"
+  ],
+  "contraindications": [],
+  "tags": [
+    "stable_vitamin_c_derivative",
+    "anti_acne_antioxidant"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0022",
+    "fact_0023"
+  ],
+  "updated": "2026-06-07"
+}

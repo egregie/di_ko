@@ -1,0 +1,25 @@
+{
+  "entity_id": "mandelic_acid",
+  "entity_type": "Ingredient",
+  "title": "Mandelic Acid",
+  "aliases": [
+    "AHA"
+  ],
+  "belongs_to": [
+    "exfoliants"
+  ],
+  "used_for": [
+    "acne",
+    "hyperpigmentation"
+  ],
+  "contraindications": [],
+  "tags": [
+    "lipophilic_AHA",
+    "sensitive_skin"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0018"
+  ],
+  "updated": "2026-06-07"
+}

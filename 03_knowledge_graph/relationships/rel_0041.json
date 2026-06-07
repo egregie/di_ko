@@ -1,0 +1,11 @@
+{
+  "rel_id": "rel_0041",
+  "from": "niacinamide",
+  "type": "used_for",
+  "to": "acne",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A026",
+    "SRC-A027"
+  ]
+}

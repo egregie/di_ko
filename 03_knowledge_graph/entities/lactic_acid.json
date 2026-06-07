@@ -1,0 +1,23 @@
+{
+  "entity_id": "lactic_acid",
+  "entity_type": "Ingredient",
+  "title": "Lactic Acid",
+  "aliases": [
+    "AHA"
+  ],
+  "belongs_to": [
+    "exfoliants"
+  ],
+  "used_for": [
+    "hydration",
+    "photoaging"
+  ],
+  "contraindications": [],
+  "tags": [
+    "moisturization",
+    "mild_exfoliation"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [],
+  "updated": "2026-06-07"
+}

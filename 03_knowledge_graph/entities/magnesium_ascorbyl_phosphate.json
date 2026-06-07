@@ -1,0 +1,23 @@
+{
+  "entity_id": "magnesium_ascorbyl_phosphate",
+  "entity_type": "Ingredient",
+  "title": "Magnesium Ascorbyl Phosphate",
+  "aliases": [
+    "MAP"
+  ],
+  "belongs_to": [
+    "vitamin_c"
+  ],
+  "used_for": [
+    "photoaging",
+    "hyperpigmentation"
+  ],
+  "contraindications": [],
+  "tags": [
+    "stable_vitamin_c_derivative",
+    "brightening"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [],
+  "updated": "2026-06-07"
+}

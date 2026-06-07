@@ -1,0 +1,28 @@
+{
+  "entity_id": "glycolic_acid",
+  "entity_type": "Ingredient",
+  "title": "Glycolic Acid",
+  "aliases": [
+    "AHA",
+    "alpha-hydroxy acid"
+  ],
+  "belongs_to": [
+    "exfoliants"
+  ],
+  "used_for": [
+    "acne",
+    "photoaging"
+  ],
+  "contraindications": [],
+  "tags": [
+    "peel",
+    "penetration"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0017",
+    "fact_0018",
+    "fact_0020"
+  ],
+  "updated": "2026-06-07"
+}

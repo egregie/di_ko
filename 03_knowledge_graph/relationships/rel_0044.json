@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0044",
+  "from": "niacinamide",
+  "type": "interacts_with",
+  "to": "retinol",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A026"
+  ]
+}

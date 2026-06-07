@@ -1,0 +1,15 @@
+{
+  "fact_id": "fact_0026",
+  "statement": "niacinamide pre-treatment improves skin tolerability and reduces irritation from topical retinoids",
+  "entity_id": "niacinamide",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A026"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

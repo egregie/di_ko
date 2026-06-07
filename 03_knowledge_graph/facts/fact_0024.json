@@ -1,0 +1,15 @@
+{
+  "fact_id": "fact_0024",
+  "statement": "topical niacinamide enhances ceramide synthesis and improves skin barrier function",
+  "entity_id": "niacinamide",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A026"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

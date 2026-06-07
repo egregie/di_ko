@@ -12,6 +12,107 @@
       "evidence_level": "A",
       "path": "entities/adapalene.json"
     },
+    "ascorbyl_glucoside": {
+      "entity_id": "ascorbyl_glucoside",
+      "entity_type": "Ingredient",
+      "title": "Ascorbyl Glucoside",
+      "aliases": [
+        "AA-2G"
+      ],
+      "tags": [
+        "glucose_stabilized_vitamin_c",
+        "slow_release"
+      ],
+      "evidence_level": "A",
+      "path": "entities/ascorbyl_glucoside.json"
+    },
+    "exfoliants": {
+      "entity_id": "exfoliants",
+      "entity_type": "Concept",
+      "title": "Exfoliants",
+      "aliases": [
+        "chemical exfoliants",
+        "exfoliators"
+      ],
+      "tags": [
+        "desquamation",
+        "turnover"
+      ],
+      "evidence_level": "A",
+      "path": "entities/exfoliants.json"
+    },
+    "glycolic_acid": {
+      "entity_id": "glycolic_acid",
+      "entity_type": "Ingredient",
+      "title": "Glycolic Acid",
+      "aliases": [
+        "AHA",
+        "alpha-hydroxy acid"
+      ],
+      "tags": [
+        "peel",
+        "penetration"
+      ],
+      "evidence_level": "A",
+      "path": "entities/glycolic_acid.json"
+    },
+    "lactic_acid": {
+      "entity_id": "lactic_acid",
+      "entity_type": "Ingredient",
+      "title": "Lactic Acid",
+      "aliases": [
+        "AHA"
+      ],
+      "tags": [
+        "moisturization",
+        "mild_exfoliation"
+      ],
+      "evidence_level": "A",
+      "path": "entities/lactic_acid.json"
+    },
+    "magnesium_ascorbyl_phosphate": {
+      "entity_id": "magnesium_ascorbyl_phosphate",
+      "entity_type": "Ingredient",
+      "title": "Magnesium Ascorbyl Phosphate",
+      "aliases": [
+        "MAP"
+      ],
+      "tags": [
+        "stable_vitamin_c_derivative",
+        "brightening"
+      ],
+      "evidence_level": "A",
+      "path": "entities/magnesium_ascorbyl_phosphate.json"
+    },
+    "mandelic_acid": {
+      "entity_id": "mandelic_acid",
+      "entity_type": "Ingredient",
+      "title": "Mandelic Acid",
+      "aliases": [
+        "AHA"
+      ],
+      "tags": [
+        "lipophilic_AHA",
+        "sensitive_skin"
+      ],
+      "evidence_level": "A",
+      "path": "entities/mandelic_acid.json"
+    },
+    "niacinamide": {
+      "entity_id": "niacinamide",
+      "entity_type": "Ingredient",
+      "title": "Niacinamide",
+      "aliases": [
+        "vitamin B3",
+        "nicotinamide"
+      ],
+      "tags": [
+        "barrier_repair",
+        "anti_inflammatory"
+      ],
+      "evidence_level": "A",
+      "path": "entities/niacinamide.json"
+    },
     "retinaldehyde": {
       "entity_id": "retinaldehyde",
       "entity_type": "Ingredient",
@@ -66,6 +167,35 @@
       "evidence_level": "B",
       "path": "entities/retinyl_palmitate.json"
     },
+    "salicylic_acid": {
+      "entity_id": "salicylic_acid",
+      "entity_type": "Ingredient",
+      "title": "Salicylic Acid",
+      "aliases": [
+        "BHA",
+        "beta-hydroxy acid"
+      ],
+      "tags": [
+        "sebum_soluble",
+        "comedolytic"
+      ],
+      "evidence_level": "A",
+      "path": "entities/salicylic_acid.json"
+    },
+    "sodium_ascorbyl_phosphate": {
+      "entity_id": "sodium_ascorbyl_phosphate",
+      "entity_type": "Ingredient",
+      "title": "Sodium Ascorbyl Phosphate",
+      "aliases": [
+        "SAP"
+      ],
+      "tags": [
+        "stable_vitamin_c_derivative",
+        "anti_acne_antioxidant"
+      ],
+      "evidence_level": "A",
+      "path": "entities/sodium_ascorbyl_phosphate.json"
+    },
     "tazarotene": {
       "entity_id": "tazarotene",
       "entity_type": "Ingredient",
@@ -92,6 +222,22 @@
       ],
       "evidence_level": "A",
       "path": "entities/tretinoin.json"
+    },
+    "vitamin_c": {
+      "entity_id": "vitamin_c",
+      "entity_type": "Concept",
+      "title": "Vitamin C",
+      "aliases": [
+        "ascorbic acid",
+        "L-ascorbic acid",
+        "ascorbate"
+      ],
+      "tags": [
+        "antioxidant",
+        "collagen_booster"
+      ],
+      "evidence_level": "A",
+      "path": "entities/vitamin_c.json"
     }
   },
   "facts": {
@@ -178,6 +324,83 @@
       "entity_id": "retinoids",
       "evidence_level": "B",
       "path": "facts/fact_0015.json"
+    },
+    "fact_0017": {
+      "fact_id": "fact_0017",
+      "statement": "glycolic acid and salicylic acid combination improves mild to moderate acne",
+      "entity_id": "glycolic_acid",
+      "evidence_level": "A",
+      "path": "facts/fact_0017.json"
+    },
+    "fact_0018": {
+      "fact_id": "fact_0018",
+      "statement": "salicylic-mandelic acid peels are effective for active acne lesions and post-acne hyperpigmentation",
+      "entity_id": "salicylic_acid",
+      "evidence_level": "A",
+      "path": "facts/fact_0018.json"
+    },
+    "fact_0019": {
+      "fact_id": "fact_0019",
+      "statement": "topical 30% salicylic acid peels reduce fine lines, hyperpigmentation, and skin roughness in photoaged skin",
+      "entity_id": "salicylic_acid",
+      "evidence_level": "A",
+      "path": "facts/fact_0019.json"
+    },
+    "fact_0020": {
+      "fact_id": "fact_0020",
+      "statement": "glycolic acid peels clinical application improves mild facial photoaging",
+      "entity_id": "glycolic_acid",
+      "evidence_level": "A",
+      "path": "facts/fact_0020.json"
+    },
+    "fact_0021": {
+      "fact_id": "fact_0021",
+      "statement": "topical l-ascorbic acid promotes collagen synthesis and protects against ultraviolet-induced photodamage",
+      "entity_id": "vitamin_c",
+      "evidence_level": "A",
+      "path": "facts/fact_0021.json"
+    },
+    "fact_0022": {
+      "fact_id": "fact_0022",
+      "statement": "topical 5% sodium ascorbyl phosphate lotion is effective for acne vulgaris management",
+      "entity_id": "sodium_ascorbyl_phosphate",
+      "evidence_level": "A",
+      "path": "facts/fact_0022.json"
+    },
+    "fact_0023": {
+      "fact_id": "fact_0023",
+      "statement": "topical combination of sodium ascorbyl phosphate and retinol shows synergistic efficacy in acne treatment",
+      "entity_id": "sodium_ascorbyl_phosphate",
+      "evidence_level": "A",
+      "path": "facts/fact_0023.json"
+    },
+    "fact_0024": {
+      "fact_id": "fact_0024",
+      "statement": "topical niacinamide enhances ceramide synthesis and improves skin barrier function",
+      "entity_id": "niacinamide",
+      "evidence_level": "A",
+      "path": "facts/fact_0024.json"
+    },
+    "fact_0025": {
+      "fact_id": "fact_0025",
+      "statement": "topical niacinamide reduces inflammatory lesions and regulates sebum excretion in acne vulgaris",
+      "entity_id": "niacinamide",
+      "evidence_level": "A",
+      "path": "facts/fact_0025.json"
+    },
+    "fact_0026": {
+      "fact_id": "fact_0026",
+      "statement": "niacinamide pre-treatment improves skin tolerability and reduces irritation from topical retinoids",
+      "entity_id": "niacinamide",
+      "evidence_level": "A",
+      "path": "facts/fact_0026.json"
+    },
+    "fact_0027": {
+      "fact_id": "fact_0027",
+      "statement": "concurrent application of retinoids and alpha-hydroxy acids (ahas) increases risk of localized skin irritation",
+      "entity_id": "glycolic_acid",
+      "evidence_level": "A",
+      "path": "facts/fact_0027.json"
     }
   },
   "relationships": {
@@ -420,6 +643,126 @@
       "to": "lactation",
       "evidence_level": "A",
       "path": "relationships/rel_0030.json"
+    },
+    "rel_0031": {
+      "rel_id": "rel_0031",
+      "from": "glycolic_acid",
+      "type": "is_a",
+      "to": "exfoliants",
+      "evidence_level": "A",
+      "path": "relationships/rel_0031.json"
+    },
+    "rel_0032": {
+      "rel_id": "rel_0032",
+      "from": "lactic_acid",
+      "type": "is_a",
+      "to": "exfoliants",
+      "evidence_level": "A",
+      "path": "relationships/rel_0032.json"
+    },
+    "rel_0033": {
+      "rel_id": "rel_0033",
+      "from": "mandelic_acid",
+      "type": "is_a",
+      "to": "exfoliants",
+      "evidence_level": "A",
+      "path": "relationships/rel_0033.json"
+    },
+    "rel_0034": {
+      "rel_id": "rel_0034",
+      "from": "salicylic_acid",
+      "type": "is_a",
+      "to": "exfoliants",
+      "evidence_level": "A",
+      "path": "relationships/rel_0034.json"
+    },
+    "rel_0035": {
+      "rel_id": "rel_0035",
+      "from": "exfoliants",
+      "type": "used_for",
+      "to": "acne",
+      "evidence_level": "A",
+      "path": "relationships/rel_0035.json"
+    },
+    "rel_0036": {
+      "rel_id": "rel_0036",
+      "from": "exfoliants",
+      "type": "used_for",
+      "to": "photoaging",
+      "evidence_level": "A",
+      "path": "relationships/rel_0036.json"
+    },
+    "rel_0037": {
+      "rel_id": "rel_0037",
+      "from": "sodium_ascorbyl_phosphate",
+      "type": "belongs_to",
+      "to": "vitamin_c",
+      "evidence_level": "A",
+      "path": "relationships/rel_0037.json"
+    },
+    "rel_0038": {
+      "rel_id": "rel_0038",
+      "from": "magnesium_ascorbyl_phosphate",
+      "type": "belongs_to",
+      "to": "vitamin_c",
+      "evidence_level": "A",
+      "path": "relationships/rel_0038.json"
+    },
+    "rel_0039": {
+      "rel_id": "rel_0039",
+      "from": "ascorbyl_glucoside",
+      "type": "belongs_to",
+      "to": "vitamin_c",
+      "evidence_level": "A",
+      "path": "relationships/rel_0039.json"
+    },
+    "rel_0040": {
+      "rel_id": "rel_0040",
+      "from": "vitamin_c",
+      "type": "used_for",
+      "to": "photoaging",
+      "evidence_level": "A",
+      "path": "relationships/rel_0040.json"
+    },
+    "rel_0041": {
+      "rel_id": "rel_0041",
+      "from": "niacinamide",
+      "type": "used_for",
+      "to": "acne",
+      "evidence_level": "A",
+      "path": "relationships/rel_0041.json"
+    },
+    "rel_0042": {
+      "rel_id": "rel_0042",
+      "from": "niacinamide",
+      "type": "used_for",
+      "to": "barrier",
+      "evidence_level": "A",
+      "path": "relationships/rel_0042.json"
+    },
+    "rel_0043": {
+      "rel_id": "rel_0043",
+      "from": "glycolic_acid",
+      "type": "interacts_with",
+      "to": "retinol",
+      "evidence_level": "A",
+      "path": "relationships/rel_0043.json"
+    },
+    "rel_0044": {
+      "rel_id": "rel_0044",
+      "from": "niacinamide",
+      "type": "interacts_with",
+      "to": "retinol",
+      "evidence_level": "A",
+      "path": "relationships/rel_0044.json"
+    },
+    "rel_0045": {
+      "rel_id": "rel_0045",
+      "from": "sodium_ascorbyl_phosphate",
+      "type": "interacts_with",
+      "to": "retinol",
+      "evidence_level": "A",
+      "path": "relationships/rel_0045.json"
     }
   }
 }

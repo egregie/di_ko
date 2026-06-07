@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0031",
+  "from": "glycolic_acid",
+  "type": "is_a",
+  "to": "exfoliants",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A019"
+  ]
+}

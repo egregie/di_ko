@@ -19,6 +19,17 @@ All 12 clean facts in the active knowledge graph must pass the gate successfully
 | fact_0012 | Topical retinaldehyde improves skin hydr... | SUPPORTED | True | write | PASS |
 | fact_0014 | Retinyl palmitate nano-formulation reduc... | SUPPORTED | True | write | PASS |
 | fact_0015 | Topical retinoids are contraindicated du... | SUPPORTED | True | write | PASS |
+| fact_0017 | glycolic acid and salicylic acid combina... | SUPPORTED | True | write | PASS |
+| fact_0018 | salicylic-mandelic acid peels are effect... | SUPPORTED | True | write | PASS |
+| fact_0019 | topical 30% salicylic acid peels reduce ... | SUPPORTED | True | write | PASS |
+| fact_0020 | glycolic acid peels clinical application... | SUPPORTED | True | write | PASS |
+| fact_0021 | topical l-ascorbic acid promotes collage... | SUPPORTED | True | write | PASS |
+| fact_0022 | topical 5% sodium ascorbyl phosphate lot... | SUPPORTED | True | write | PASS |
+| fact_0023 | topical combination of sodium ascorbyl p... | SUPPORTED | True | write | PASS |
+| fact_0024 | topical niacinamide enhances ceramide sy... | SUPPORTED | True | write | PASS |
+| fact_0025 | topical niacinamide reduces inflammatory... | SUPPORTED | True | write | PASS |
+| fact_0026 | niacinamide pre-treatment improves skin ... | SUPPORTED | True | write | PASS |
+| fact_0027 | concurrent application of retinoids and ... | SUPPORTED | True | write | PASS |
 
 **Case 1 Result**: SUCCESS
 
