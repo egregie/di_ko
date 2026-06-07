@@ -2,7 +2,7 @@
   "fact_id": "fact_0006",
   "statement": "Tretinoin normalizes keratinocyte differentiation to prevent follicular occlusion in acne vulgaris.",
   "entity_id": "tretinoin",
-  "confidence": 0.98,
+  "confidence": 0.8,
   "evidence_level": "A",
   "sources": [
     "SRC-A010"

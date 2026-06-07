@@ -1,0 +1,146 @@
+[
+  {
+    "fact_id": "fact_0001",
+    "statement": "Retinoids regulate gene transcription by binding to RAR and RXR nuclear receptors.",
+    "source_id": "SRC-A009",
+    "exists": true,
+    "verdict": "SUPPORTED",
+    "evidence_ok": true,
+    "current_level": "A"
+  },
+  {
+    "fact_id": "fact_0002",
+    "statement": "Tretinoin binds directly to nuclear retinoic acid receptors (RARs) without metabolic conversion.",
+    "source_id": "SRC-A010",
+    "exists": true,
+    "verdict": "WEAK",
+    "evidence_ok": true,
+    "current_level": "A"
+  },
+  {
+    "fact_id": "fact_0003",
+    "statement": "Retinol undergoes a two-step enzymatic oxidation to become active all-trans retinoic acid.",
+    "source_id": "SRC-A009",
+    "exists": true,
+    "verdict": "UNSUPPORTED",
+    "evidence_ok": false,
+    "current_level": "A"
+  },
+  {
+    "fact_id": "fact_0004",
+    "statement": "Retinol stimulates collagen synthesis and inhibits matrix metalloproteinases (MMPs) to reduce dermal degradation.",
+    "source_id": "SRC-A009",
+    "exists": true,
+    "verdict": "WEAK",
+    "evidence_ok": true,
+    "current_level": "A"
+  },
+  {
+    "fact_id": "fact_0005",
+    "statement": "Tretinoin is the gold standard for clinical improvement of photoaged skin.",
+    "source_id": "SRC-A010",
+    "exists": true,
+    "verdict": "SUPPORTED",
+    "evidence_ok": true,
+    "current_level": "A"
+  },
+  {
+    "fact_id": "fact_0006",
+    "statement": "Tretinoin normalizes keratinocyte differentiation to prevent follicular occlusion in acne vulgaris.",
+    "source_id": "SRC-A010",
+    "exists": true,
+    "verdict": "WEAK",
+    "evidence_ok": true,
+    "current_level": "A"
+  },
+  {
+    "fact_id": "fact_0007",
+    "statement": "Adapalene selectively binds to retinoic acid receptors RAR-beta and RAR-gamma.",
+    "source_id": "SRC-A011",
+    "exists": true,
+    "verdict": "SUPPORTED",
+    "evidence_ok": true,
+    "current_level": "A"
+  },
+  {
+    "fact_id": "fact_0008",
+    "statement": "Adapalene exhibits lower irritation potential and superior photostability compared to tretinoin.",
+    "source_id": "SRC-A011",
+    "exists": true,
+    "verdict": "UNSUPPORTED",
+    "evidence_ok": false,
+    "current_level": "A"
+  },
+  {
+    "fact_id": "fact_0009",
+    "statement": "Tazarotene selectively binds to nuclear retinoic acid receptors RAR-beta and RAR-gamma.",
+    "source_id": "SRC-A013",
+    "exists": true,
+    "verdict": "SUPPORTED",
+    "evidence_ok": true,
+    "current_level": "A"
+  },
+  {
+    "fact_id": "fact_0010",
+    "statement": "Tazarotene 0.1% cream is effective for treating facial photodamage, including fine wrinkles and hyperpigmentation.",
+    "source_id": "SRC-A012",
+    "exists": true,
+    "verdict": "SUPPORTED",
+    "evidence_ok": true,
+    "current_level": "A"
+  },
+  {
+    "fact_id": "fact_0011",
+    "statement": "Retinaldehyde requires only a single metabolic conversion step to active retinoic acid in keratinocytes.",
+    "source_id": "SRC-A015",
+    "exists": true,
+    "verdict": "SUPPORTED",
+    "evidence_ok": true,
+    "current_level": "A"
+  },
+  {
+    "fact_id": "fact_0012",
+    "statement": "Topical retinaldehyde improves skin hydration, elasticity, and reduces wrinkle depth.",
+    "source_id": "SRC-A014",
+    "exists": true,
+    "verdict": "SUPPORTED",
+    "evidence_ok": true,
+    "current_level": "A"
+  },
+  {
+    "fact_id": "fact_0013",
+    "statement": "Retinyl palmitate is a stable retinoid ester requiring three conversion steps, making it less potent but gentler.",
+    "source_id": "SRC-A016",
+    "exists": true,
+    "verdict": "UNSUPPORTED",
+    "evidence_ok": false,
+    "current_level": "B"
+  },
+  {
+    "fact_id": "fact_0014",
+    "statement": "Retinyl palmitate nano-formulation reduces inflammatory and non-inflammatory lesions in mild acne.",
+    "source_id": "SRC-A017",
+    "exists": true,
+    "verdict": "SUPPORTED",
+    "evidence_ok": true,
+    "current_level": "A"
+  },
+  {
+    "fact_id": "fact_0015",
+    "statement": "Topical retinoids are contraindicated during pregnancy due to potential teratogenic risks.",
+    "source_id": "SRC-A018",
+    "exists": true,
+    "verdict": "SUPPORTED",
+    "evidence_ok": true,
+    "current_level": "B"
+  },
+  {
+    "fact_id": "fact_0016",
+    "statement": "Topical retinol application can induce localized skin irritation, erythema, and dryness during initial retinoid adaptation.",
+    "source_id": "SRC-A009",
+    "exists": true,
+    "verdict": "UNSUPPORTED",
+    "evidence_ok": false,
+    "current_level": "A"
+  }
+]

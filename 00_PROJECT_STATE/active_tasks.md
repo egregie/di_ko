@@ -1,10 +1,9 @@
 # Active Tasks
 
-- [x] Verify RTK CLI and PreToolUse-hook limitation (Carry-forward Block 0)
-- [x] Update `sources.json` with real literature PMIDs/DOIs
-- [x] Create 7 canonical entities in `03_knowledge_graph/entities/`
-- [x] Create 16 verified facts in `03_knowledge_graph/facts/`
-- [x] Create 30 relationships in `03_knowledge_graph/relationships/`
-- [x] Implement `ops/scripts/build_index.py` and generate `graph_index.json`
-- [x] Run `ops/scripts/validate_graph.py` and verify zero errors
-- [x] Run retriever tests and verify valid outputs
+- [x] Write and run `ops/scripts/verify_sources.py` to check all source PMIDs/DOIs
+- [x] Conduct LLM audit on all 16 facts and write to `ops/logs/evidence_audit_phase1.md`
+- [x] Quarantine failed/unsupported facts and relationships to `02_processing/verify/rejected/`
+- [x] Spot-check ontology normalization (tretinoin alias, parent class Retinoids)
+- [x] Recompile index with `build_index.py` and run `validate_graph.py`
+- [x] Update `lessons.md` and `known_problems.md`
+- [x] Update project state files (`current_state.md`, `active_tasks.md`, `next_steps.md`)

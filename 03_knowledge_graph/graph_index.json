@@ -109,13 +109,6 @@
       "evidence_level": "A",
       "path": "facts/fact_0002.json"
     },
-    "fact_0003": {
-      "fact_id": "fact_0003",
-      "statement": "Retinol undergoes a two-step enzymatic oxidation to become active all-trans retinoic acid.",
-      "entity_id": "retinol",
-      "evidence_level": "A",
-      "path": "facts/fact_0003.json"
-    },
     "fact_0004": {
       "fact_id": "fact_0004",
       "statement": "Retinol stimulates collagen synthesis and inhibits matrix metalloproteinases (MMPs) to reduce dermal degradation.",
@@ -143,13 +136,6 @@
       "entity_id": "adapalene",
       "evidence_level": "A",
       "path": "facts/fact_0007.json"
-    },
-    "fact_0008": {
-      "fact_id": "fact_0008",
-      "statement": "Adapalene exhibits lower irritation potential and superior photostability compared to tretinoin.",
-      "entity_id": "adapalene",
-      "evidence_level": "A",
-      "path": "facts/fact_0008.json"
     },
     "fact_0009": {
       "fact_id": "fact_0009",
@@ -179,13 +165,6 @@
       "evidence_level": "A",
       "path": "facts/fact_0012.json"
     },
-    "fact_0013": {
-      "fact_id": "fact_0013",
-      "statement": "Retinyl palmitate is a stable retinoid ester requiring three conversion steps, making it less potent but gentler.",
-      "entity_id": "retinyl_palmitate",
-      "evidence_level": "B",
-      "path": "facts/fact_0013.json"
-    },
     "fact_0014": {
       "fact_id": "fact_0014",
       "statement": "Retinyl palmitate nano-formulation reduces inflammatory and non-inflammatory lesions in mild acne.",
@@ -199,13 +178,6 @@
       "entity_id": "retinoids",
       "evidence_level": "B",
       "path": "facts/fact_0015.json"
-    },
-    "fact_0016": {
-      "fact_id": "fact_0016",
-      "statement": "Topical retinol application can induce localized skin irritation, erythema, and dryness during initial retinoid adaptation.",
-      "entity_id": "retinol",
-      "evidence_level": "A",
-      "path": "facts/fact_0016.json"
     }
   },
   "relationships": {
