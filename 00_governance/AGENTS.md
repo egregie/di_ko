@@ -33,7 +33,10 @@ discover -> collect -> extract -> dedup -> verify -> librarian/ontology -> graph
 - **P006 Every Agent Leaves Logs**: Track processes under `ops/logs/` and update project state log.
 - **P007 No Fact Without Source**: Facts require an evidence_level and at least 2 independent sources or 1 peer-reviewed journal reference.
 - **P008 No Entity Without Ontology**: Canonical definitions and aliases must conform to `ontology_v1.json` via the ontology-guard agent.
+- **P009 Verify-at-Write**: Facts are written to the graph only after automated verification (source existence, abstract support, and evidence level alignment). Fabricated or unreachable sources are automatically rejected.
+- **P010 Script Permanence**: Pipeline scripts reside in `ops/scripts/` and must be registered in their respective SKILL.md. Deleting working scripts is prohibited. One-time migrations go to `ops/scripts/one_time/`.
 
 ## Walkthrough Standards
 По завершении любого ТЗ создавать/обновлять walkthrough.md строго по WALKTHROUGH_TEMPLATE.md. Никакого свободного текста вне секций. Это интерфейс к внешнему ревьюеру.
+
 

@@ -30,7 +30,9 @@ This skill validates clinical facts against EBM validation criteria. It assigns 
 
 ## Execution & Script Reference
 Use the validation rules and contrast criteria logic from:
-- Script: `ops/scripts/verification_agent.py`
+- Script: `ops/scripts/verify_gate.py` (Fact validation write gate)
+- Script: `ops/scripts/verification_agent.py` (Passport verification agent)
+
 
 ## Caveman Mode
 `full`

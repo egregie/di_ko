@@ -1,8 +1,9 @@
 # Active Tasks
 
-- [x] Add DEC-007 and DEC-008 and rename audit counters (Block 0)
-- [x] Create `04_design_system/design-tokens.json` and `layouts.json` (Block A)
-- [x] Compile 7 slide specs in `05_content/specs/deck_retinoids/` (Block B)
-- [x] Implement `render_deck.py` (HTML generation) and `compile_pdf.js` (Playwright print) (Block C)
-- [x] Implement `qa_audit.py` and run QA checks to generate `qa_pilot_deck.md` (Block D)
-- [x] Run validator and retriever tests
+- [x] Integrate EBM validation gate (`verify_gate.py`) into write path [Block B]
+- [x] Create reusable evidence module `ops/scripts/lib/evidence.py` [Block A]
+- [x] Harden raw collection format rules in A02 [Block C]
+- [x] Restore QA checks as permanent `ops/scripts/qa_deck.py` with offline webfont audits [Block F]
+- [x] Execute hardening regression tests (12 clean, fake PMID, irrelevant PMID) [Block D]
+- [x] Recompile graph index and validate graph [Block E]
+

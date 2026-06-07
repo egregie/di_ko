@@ -189,6 +189,12 @@ def main():
     <meta charset="UTF-8">
     <title>YM PROSKIN — Ретиноиды</title>
     <style>
+        @font-face {{
+            font-family: '{font["family"]}';
+            font-style: normal;
+            font-weight: 100 900;
+            src: url('../../04_design_system/fonts/Arimo[wght].ttf') format('truetype');
+        }}
         @import url('https://fonts.googleapis.com/css2?family={font["family"].replace(" ", "+")}:wght@400;500;700&display=swap');
         
         :root {{

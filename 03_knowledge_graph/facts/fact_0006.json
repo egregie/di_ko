@@ -9,5 +9,8 @@
   ],
   "contradictions": [],
   "verified_by": "verifier",
-  "date": "2026-06-07"
+  "date": "2026-06-07",
+  "audit_flag": "weak",
+  "audit_verdict": "WEAK",
+  "evidence_ok": true
 }
