@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0018",
+  "from": "retinyl_palmitate",
+  "type": "used_for",
+  "to": "photoaging",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A016"
+  ]
+}

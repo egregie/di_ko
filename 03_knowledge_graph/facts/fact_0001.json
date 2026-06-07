@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0001",
+  "statement": "Retinoids regulate gene transcription by binding to RAR and RXR nuclear receptors.",
+  "entity_id": "retinoids",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A009"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

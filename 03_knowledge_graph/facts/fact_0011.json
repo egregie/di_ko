@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0011",
+  "statement": "Retinaldehyde requires only a single metabolic conversion step to active retinoic acid in keratinocytes.",
+  "entity_id": "retinaldehyde",
+  "confidence": 0.96,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A015"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

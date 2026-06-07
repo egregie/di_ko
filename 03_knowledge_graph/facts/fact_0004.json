@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0004",
+  "statement": "Retinol stimulates collagen synthesis and inhibits matrix metalloproteinases (MMPs) to reduce dermal degradation.",
+  "entity_id": "retinol",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A009"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

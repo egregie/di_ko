@@ -12,6 +12,16 @@
     {"source_id":"SRC-B002","name":"Encyclopaedia Britannica","type":"encyclopedia","url":"https://www.britannica.com/","tier":"B","pmid":"","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-B003","name":"INCI Decoder","type":"reference","url":"https://incidecoder.com/","tier":"B","pmid":"","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-B004","name":"EU CosIng","type":"database","url":"https://ec.europa.eu/growth/tools-databases/cosing/","tier":"B","pmid":"","doi":"","accessed":"2026-06-07"},
-    {"source_id":"SRC-C001","name":"r/SkincareAddiction","type":"forum","url":"https://www.reddit.com/r/SkincareAddiction/","tier":"C","pmid":"","doi":"","accessed":"2026-06-07"}
+    {"source_id":"SRC-C001","name":"r/SkincareAddiction","type":"forum","url":"https://www.reddit.com/r/SkincareAddiction/","tier":"C","pmid":"","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A009","name":"Kang 2005 (Retinol mechanism)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/15773538/","tier":"A","pmid":"15773538","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A010","name":"Clinical Review (Tretinoin overview 2025)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/41302994/","tier":"A","pmid":"41302994","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A011","name":"Adapalene selective RAR agonist overview","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/29494115/","tier":"A","pmid":"29494115","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A012","name":"Kang 2001 (Tazarotene facial photodamage)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/11735710/","tier":"A","pmid":"11735710","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A013","name":"Guenther 2002 (Topical tazarotene therapy)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/12007011/","tier":"A","pmid":"12007011","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A014","name":"Creidi 2018 (Retinaldehyde efficacy & safety)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/29663701/","tier":"A","pmid":"29663701","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A015","name":"Saurat 1999 (Retinaldehyde clinical evidence)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/10473961/","tier":"A","pmid":"10473961","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A016","name":"UVB photoaging (Retinyl palmitate mechanism)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/37927602/","tier":"A","pmid":"37927602","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A017","name":"Clinical study for acne (Retinyl palmitate split-face)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/34211271/","tier":"A","pmid":"34211271","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A018","name":"Systematic review pregnancy safety (Topical retinoids)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/26215715/","tier":"A","pmid":"26215715","doi":"","accessed":"2026-06-07"}
   ]
 }

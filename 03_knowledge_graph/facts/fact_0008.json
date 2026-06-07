@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0008",
+  "statement": "Adapalene exhibits lower irritation potential and superior photostability compared to tretinoin.",
+  "entity_id": "adapalene",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A011"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0023",
+  "from": "adapalene",
+  "type": "contraindicated_for",
+  "to": "pregnancy",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A018"
+  ]
+}

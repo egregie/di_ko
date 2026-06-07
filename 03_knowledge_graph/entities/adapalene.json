@@ -1,0 +1,27 @@
+{
+  "entity_id": "adapalene",
+  "entity_type": "Ingredient",
+  "title": "Adapalene",
+  "aliases": [],
+  "belongs_to": [
+    "retinoids"
+  ],
+  "used_for": [
+    "acne",
+    "photoaging"
+  ],
+  "contraindications": [
+    "pregnancy",
+    "lactation"
+  ],
+  "tags": [
+    "receptor_selective",
+    "comedolytic"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0007",
+    "fact_0008"
+  ],
+  "updated": "2026-06-07"
+}

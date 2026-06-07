@@ -1,0 +1,27 @@
+{
+  "entity_id": "tazarotene",
+  "entity_type": "Ingredient",
+  "title": "Tazarotene",
+  "aliases": [],
+  "belongs_to": [
+    "retinoids"
+  ],
+  "used_for": [
+    "acne",
+    "photoaging"
+  ],
+  "contraindications": [
+    "pregnancy",
+    "lactation"
+  ],
+  "tags": [
+    "receptor_selective",
+    "photodamage"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0009",
+    "fact_0010"
+  ],
+  "updated": "2026-06-07"
+}

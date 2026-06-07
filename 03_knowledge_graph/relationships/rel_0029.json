@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0029",
+  "from": "retinyl_palmitate",
+  "type": "contraindicated_for",
+  "to": "pregnancy",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A018"
+  ]
+}

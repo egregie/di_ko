@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0013",
+  "from": "tazarotene",
+  "type": "used_for",
+  "to": "acne",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A013"
+  ]
+}

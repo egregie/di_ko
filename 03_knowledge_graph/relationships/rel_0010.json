@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0010",
+  "from": "tretinoin",
+  "type": "used_for",
+  "to": "photoaging",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A010"
+  ]
+}

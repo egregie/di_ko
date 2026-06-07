@@ -1,10 +1,10 @@
 # Active Tasks
 
-- [x] Install RTK (Rust Token Killer) CLI proxy binary globally.
-- [x] Create and configure RTK `config.toml` at `~/.config/rtk/config.toml` with exclusions.
-- [x] Implement selective matching in `ops/scripts/retriever.py`.
-- [x] Implement token-efficient formatting in `ops/scripts/context_builder.py`.
-- [x] Install global `caveman` skill via `skills` CLI.
-- [x] Configure Caveman modes (verbose full vs terse ultra) across project skill manifests.
-- [x] Establish Persistent Memory structure under `00_PROJECT_STATE/`.
-- [x] Document project principles and walkthrough rule constraints in `AGENTS.md`.
+- [x] Verify RTK CLI and PreToolUse-hook limitation (Carry-forward Block 0)
+- [x] Update `sources.json` with real literature PMIDs/DOIs
+- [x] Create 7 canonical entities in `03_knowledge_graph/entities/`
+- [x] Create 16 verified facts in `03_knowledge_graph/facts/`
+- [x] Create 30 relationships in `03_knowledge_graph/relationships/`
+- [x] Implement `ops/scripts/build_index.py` and generate `graph_index.json`
+- [x] Run `ops/scripts/validate_graph.py` and verify zero errors
+- [x] Run retriever tests and verify valid outputs

@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0015",
+  "from": "retinaldehyde",
+  "type": "used_for",
+  "to": "acne",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A014"
+  ]
+}

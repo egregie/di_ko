@@ -1,0 +1,29 @@
+{
+  "entity_id": "retinaldehyde",
+  "entity_type": "Ingredient",
+  "title": "Retinaldehyde",
+  "aliases": [
+    "retinal"
+  ],
+  "belongs_to": [
+    "retinoids"
+  ],
+  "used_for": [
+    "acne",
+    "photoaging"
+  ],
+  "contraindications": [
+    "pregnancy",
+    "lactation"
+  ],
+  "tags": [
+    "retinoic_acid_precursor",
+    "low_irritation"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0011",
+    "fact_0012"
+  ],
+  "updated": "2026-06-07"
+}

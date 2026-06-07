@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0020",
+  "from": "retinol",
+  "type": "contraindicated_for",
+  "to": "lactation",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A018"
+  ]
+}

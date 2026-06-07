@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0014",
+  "statement": "Retinyl palmitate nano-formulation reduces inflammatory and non-inflammatory lesions in mild acne.",
+  "entity_id": "retinyl_palmitate",
+  "confidence": 0.92,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A017"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

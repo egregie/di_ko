@@ -1,0 +1,27 @@
+{
+  "entity_id": "retinoids",
+  "entity_type": "Concept",
+  "title": "Retinoids",
+  "aliases": [
+    "vitamin A derivatives"
+  ],
+  "belongs_to": [],
+  "used_for": [
+    "acne",
+    "photoaging"
+  ],
+  "contraindications": [
+    "pregnancy",
+    "lactation"
+  ],
+  "tags": [
+    "retinoic_acid",
+    "nuclear_receptors"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0001",
+    "fact_0015"
+  ],
+  "updated": "2026-06-07"
+}

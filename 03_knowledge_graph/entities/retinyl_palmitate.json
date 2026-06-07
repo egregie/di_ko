@@ -1,0 +1,27 @@
+{
+  "entity_id": "retinyl_palmitate",
+  "entity_type": "Ingredient",
+  "title": "Retinyl Palmitate",
+  "aliases": [],
+  "belongs_to": [
+    "retinoids"
+  ],
+  "used_for": [
+    "acne",
+    "photoaging"
+  ],
+  "contraindications": [
+    "pregnancy",
+    "lactation"
+  ],
+  "tags": [
+    "retinyl_ester",
+    "stability"
+  ],
+  "evidence_level": "B",
+  "fact_ids": [
+    "fact_0013",
+    "fact_0014"
+  ],
+  "updated": "2026-06-07"
+}

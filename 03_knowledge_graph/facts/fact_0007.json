@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0007",
+  "statement": "Adapalene selectively binds to retinoic acid receptors RAR-beta and RAR-gamma.",
+  "entity_id": "adapalene",
+  "confidence": 0.97,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A011"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

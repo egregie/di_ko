@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0009",
+  "statement": "Tazarotene selectively binds to nuclear retinoic acid receptors RAR-beta and RAR-gamma.",
+  "entity_id": "tazarotene",
+  "confidence": 0.96,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A013"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

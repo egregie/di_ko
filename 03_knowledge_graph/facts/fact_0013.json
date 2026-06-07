@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0013",
+  "statement": "Retinyl palmitate is a stable retinoid ester requiring three conversion steps, making it less potent but gentler.",
+  "entity_id": "retinyl_palmitate",
+  "confidence": 0.90,
+  "evidence_level": "B",
+  "sources": [
+    "SRC-A016"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

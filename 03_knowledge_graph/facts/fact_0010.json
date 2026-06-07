@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0010",
+  "statement": "Tazarotene 0.1% cream is effective for treating facial photodamage, including fine wrinkles and hyperpigmentation.",
+  "entity_id": "tazarotene",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A012"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

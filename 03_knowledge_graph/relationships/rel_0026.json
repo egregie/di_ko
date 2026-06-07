@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0026",
+  "from": "tazarotene",
+  "type": "contraindicated_for",
+  "to": "lactation",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A018"
+  ]
+}

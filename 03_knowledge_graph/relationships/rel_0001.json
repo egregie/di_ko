@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0001",
+  "from": "retinol",
+  "type": "is_a",
+  "to": "retinoids",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A009"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "entity_id": "tretinoin",
+  "entity_type": "Ingredient",
+  "title": "Tretinoin",
+  "aliases": [
+    "all-trans retinoic acid",
+    "ATRA"
+  ],
+  "belongs_to": [
+    "retinoids"
+  ],
+  "used_for": [
+    "acne",
+    "photoaging"
+  ],
+  "contraindications": [
+    "pregnancy",
+    "lactation"
+  ],
+  "tags": [
+    "collagen_synthesis",
+    "differentiation"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0002",
+    "fact_0005",
+    "fact_0006"
+  ],
+  "updated": "2026-06-07"
+}

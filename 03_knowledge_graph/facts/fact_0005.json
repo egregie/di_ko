@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0005",
+  "statement": "Tretinoin is the gold standard for clinical improvement of photoaged skin.",
+  "entity_id": "tretinoin",
+  "confidence": 0.98,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A010"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

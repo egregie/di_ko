@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0024",
+  "from": "adapalene",
+  "type": "contraindicated_for",
+  "to": "lactation",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A018"
+  ]
+}

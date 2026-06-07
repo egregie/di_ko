@@ -1,1 +1,453 @@
-{}
+{
+  "entities": {
+    "adapalene": {
+      "entity_id": "adapalene",
+      "entity_type": "Ingredient",
+      "title": "Adapalene",
+      "aliases": [],
+      "tags": [
+        "receptor_selective",
+        "comedolytic"
+      ],
+      "evidence_level": "A",
+      "path": "entities/adapalene.json"
+    },
+    "retinaldehyde": {
+      "entity_id": "retinaldehyde",
+      "entity_type": "Ingredient",
+      "title": "Retinaldehyde",
+      "aliases": [
+        "retinal"
+      ],
+      "tags": [
+        "retinoic_acid_precursor",
+        "low_irritation"
+      ],
+      "evidence_level": "A",
+      "path": "entities/retinaldehyde.json"
+    },
+    "retinoids": {
+      "entity_id": "retinoids",
+      "entity_type": "Concept",
+      "title": "Retinoids",
+      "aliases": [
+        "vitamin A derivatives"
+      ],
+      "tags": [
+        "retinoic_acid",
+        "nuclear_receptors"
+      ],
+      "evidence_level": "A",
+      "path": "entities/retinoids.json"
+    },
+    "retinol": {
+      "entity_id": "retinol",
+      "entity_type": "Ingredient",
+      "title": "Retinol",
+      "aliases": [
+        "vitamin A alcohol"
+      ],
+      "tags": [
+        "collagen",
+        "cell_turnover"
+      ],
+      "evidence_level": "A",
+      "path": "entities/retinol.json"
+    },
+    "retinyl_palmitate": {
+      "entity_id": "retinyl_palmitate",
+      "entity_type": "Ingredient",
+      "title": "Retinyl Palmitate",
+      "aliases": [],
+      "tags": [
+        "retinyl_ester",
+        "stability"
+      ],
+      "evidence_level": "B",
+      "path": "entities/retinyl_palmitate.json"
+    },
+    "tazarotene": {
+      "entity_id": "tazarotene",
+      "entity_type": "Ingredient",
+      "title": "Tazarotene",
+      "aliases": [],
+      "tags": [
+        "receptor_selective",
+        "photodamage"
+      ],
+      "evidence_level": "A",
+      "path": "entities/tazarotene.json"
+    },
+    "tretinoin": {
+      "entity_id": "tretinoin",
+      "entity_type": "Ingredient",
+      "title": "Tretinoin",
+      "aliases": [
+        "all-trans retinoic acid",
+        "ATRA"
+      ],
+      "tags": [
+        "collagen_synthesis",
+        "differentiation"
+      ],
+      "evidence_level": "A",
+      "path": "entities/tretinoin.json"
+    }
+  },
+  "facts": {
+    "fact_0001": {
+      "fact_id": "fact_0001",
+      "statement": "Retinoids regulate gene transcription by binding to RAR and RXR nuclear receptors.",
+      "entity_id": "retinoids",
+      "evidence_level": "A",
+      "path": "facts/fact_0001.json"
+    },
+    "fact_0002": {
+      "fact_id": "fact_0002",
+      "statement": "Tretinoin binds directly to nuclear retinoic acid receptors (RARs) without metabolic conversion.",
+      "entity_id": "tretinoin",
+      "evidence_level": "A",
+      "path": "facts/fact_0002.json"
+    },
+    "fact_0003": {
+      "fact_id": "fact_0003",
+      "statement": "Retinol undergoes a two-step enzymatic oxidation to become active all-trans retinoic acid.",
+      "entity_id": "retinol",
+      "evidence_level": "A",
+      "path": "facts/fact_0003.json"
+    },
+    "fact_0004": {
+      "fact_id": "fact_0004",
+      "statement": "Retinol stimulates collagen synthesis and inhibits matrix metalloproteinases (MMPs) to reduce dermal degradation.",
+      "entity_id": "retinol",
+      "evidence_level": "A",
+      "path": "facts/fact_0004.json"
+    },
+    "fact_0005": {
+      "fact_id": "fact_0005",
+      "statement": "Tretinoin is the gold standard for clinical improvement of photoaged skin.",
+      "entity_id": "tretinoin",
+      "evidence_level": "A",
+      "path": "facts/fact_0005.json"
+    },
+    "fact_0006": {
+      "fact_id": "fact_0006",
+      "statement": "Tretinoin normalizes keratinocyte differentiation to prevent follicular occlusion in acne vulgaris.",
+      "entity_id": "tretinoin",
+      "evidence_level": "A",
+      "path": "facts/fact_0006.json"
+    },
+    "fact_0007": {
+      "fact_id": "fact_0007",
+      "statement": "Adapalene selectively binds to retinoic acid receptors RAR-beta and RAR-gamma.",
+      "entity_id": "adapalene",
+      "evidence_level": "A",
+      "path": "facts/fact_0007.json"
+    },
+    "fact_0008": {
+      "fact_id": "fact_0008",
+      "statement": "Adapalene exhibits lower irritation potential and superior photostability compared to tretinoin.",
+      "entity_id": "adapalene",
+      "evidence_level": "A",
+      "path": "facts/fact_0008.json"
+    },
+    "fact_0009": {
+      "fact_id": "fact_0009",
+      "statement": "Tazarotene selectively binds to nuclear retinoic acid receptors RAR-beta and RAR-gamma.",
+      "entity_id": "tazarotene",
+      "evidence_level": "A",
+      "path": "facts/fact_0009.json"
+    },
+    "fact_0010": {
+      "fact_id": "fact_0010",
+      "statement": "Tazarotene 0.1% cream is effective for treating facial photodamage, including fine wrinkles and hyperpigmentation.",
+      "entity_id": "tazarotene",
+      "evidence_level": "A",
+      "path": "facts/fact_0010.json"
+    },
+    "fact_0011": {
+      "fact_id": "fact_0011",
+      "statement": "Retinaldehyde requires only a single metabolic conversion step to active retinoic acid in keratinocytes.",
+      "entity_id": "retinaldehyde",
+      "evidence_level": "A",
+      "path": "facts/fact_0011.json"
+    },
+    "fact_0012": {
+      "fact_id": "fact_0012",
+      "statement": "Topical retinaldehyde improves skin hydration, elasticity, and reduces wrinkle depth.",
+      "entity_id": "retinaldehyde",
+      "evidence_level": "A",
+      "path": "facts/fact_0012.json"
+    },
+    "fact_0013": {
+      "fact_id": "fact_0013",
+      "statement": "Retinyl palmitate is a stable retinoid ester requiring three conversion steps, making it less potent but gentler.",
+      "entity_id": "retinyl_palmitate",
+      "evidence_level": "B",
+      "path": "facts/fact_0013.json"
+    },
+    "fact_0014": {
+      "fact_id": "fact_0014",
+      "statement": "Retinyl palmitate nano-formulation reduces inflammatory and non-inflammatory lesions in mild acne.",
+      "entity_id": "retinyl_palmitate",
+      "evidence_level": "A",
+      "path": "facts/fact_0014.json"
+    },
+    "fact_0015": {
+      "fact_id": "fact_0015",
+      "statement": "Topical retinoids are contraindicated during pregnancy due to potential teratogenic risks.",
+      "entity_id": "retinoids",
+      "evidence_level": "B",
+      "path": "facts/fact_0015.json"
+    },
+    "fact_0016": {
+      "fact_id": "fact_0016",
+      "statement": "Topical retinol application can induce localized skin irritation, erythema, and dryness during initial retinoid adaptation.",
+      "entity_id": "retinol",
+      "evidence_level": "A",
+      "path": "facts/fact_0016.json"
+    }
+  },
+  "relationships": {
+    "rel_0001": {
+      "rel_id": "rel_0001",
+      "from": "retinol",
+      "type": "is_a",
+      "to": "retinoids",
+      "evidence_level": "A",
+      "path": "relationships/rel_0001.json"
+    },
+    "rel_0002": {
+      "rel_id": "rel_0002",
+      "from": "tretinoin",
+      "type": "is_a",
+      "to": "retinoids",
+      "evidence_level": "A",
+      "path": "relationships/rel_0002.json"
+    },
+    "rel_0003": {
+      "rel_id": "rel_0003",
+      "from": "adapalene",
+      "type": "is_a",
+      "to": "retinoids",
+      "evidence_level": "A",
+      "path": "relationships/rel_0003.json"
+    },
+    "rel_0004": {
+      "rel_id": "rel_0004",
+      "from": "tazarotene",
+      "type": "is_a",
+      "to": "retinoids",
+      "evidence_level": "A",
+      "path": "relationships/rel_0004.json"
+    },
+    "rel_0005": {
+      "rel_id": "rel_0005",
+      "from": "retinaldehyde",
+      "type": "is_a",
+      "to": "retinoids",
+      "evidence_level": "A",
+      "path": "relationships/rel_0005.json"
+    },
+    "rel_0006": {
+      "rel_id": "rel_0006",
+      "from": "retinyl_palmitate",
+      "type": "is_a",
+      "to": "retinoids",
+      "evidence_level": "A",
+      "path": "relationships/rel_0006.json"
+    },
+    "rel_0007": {
+      "rel_id": "rel_0007",
+      "from": "retinol",
+      "type": "used_for",
+      "to": "acne",
+      "evidence_level": "A",
+      "path": "relationships/rel_0007.json"
+    },
+    "rel_0008": {
+      "rel_id": "rel_0008",
+      "from": "retinol",
+      "type": "used_for",
+      "to": "photoaging",
+      "evidence_level": "A",
+      "path": "relationships/rel_0008.json"
+    },
+    "rel_0009": {
+      "rel_id": "rel_0009",
+      "from": "tretinoin",
+      "type": "used_for",
+      "to": "acne",
+      "evidence_level": "A",
+      "path": "relationships/rel_0009.json"
+    },
+    "rel_0010": {
+      "rel_id": "rel_0010",
+      "from": "tretinoin",
+      "type": "used_for",
+      "to": "photoaging",
+      "evidence_level": "A",
+      "path": "relationships/rel_0010.json"
+    },
+    "rel_0011": {
+      "rel_id": "rel_0011",
+      "from": "adapalene",
+      "type": "used_for",
+      "to": "acne",
+      "evidence_level": "A",
+      "path": "relationships/rel_0011.json"
+    },
+    "rel_0012": {
+      "rel_id": "rel_0012",
+      "from": "adapalene",
+      "type": "used_for",
+      "to": "photoaging",
+      "evidence_level": "A",
+      "path": "relationships/rel_0012.json"
+    },
+    "rel_0013": {
+      "rel_id": "rel_0013",
+      "from": "tazarotene",
+      "type": "used_for",
+      "to": "acne",
+      "evidence_level": "A",
+      "path": "relationships/rel_0013.json"
+    },
+    "rel_0014": {
+      "rel_id": "rel_0014",
+      "from": "tazarotene",
+      "type": "used_for",
+      "to": "photoaging",
+      "evidence_level": "A",
+      "path": "relationships/rel_0014.json"
+    },
+    "rel_0015": {
+      "rel_id": "rel_0015",
+      "from": "retinaldehyde",
+      "type": "used_for",
+      "to": "acne",
+      "evidence_level": "A",
+      "path": "relationships/rel_0015.json"
+    },
+    "rel_0016": {
+      "rel_id": "rel_0016",
+      "from": "retinaldehyde",
+      "type": "used_for",
+      "to": "photoaging",
+      "evidence_level": "A",
+      "path": "relationships/rel_0016.json"
+    },
+    "rel_0017": {
+      "rel_id": "rel_0017",
+      "from": "retinyl_palmitate",
+      "type": "used_for",
+      "to": "acne",
+      "evidence_level": "A",
+      "path": "relationships/rel_0017.json"
+    },
+    "rel_0018": {
+      "rel_id": "rel_0018",
+      "from": "retinyl_palmitate",
+      "type": "used_for",
+      "to": "photoaging",
+      "evidence_level": "A",
+      "path": "relationships/rel_0018.json"
+    },
+    "rel_0019": {
+      "rel_id": "rel_0019",
+      "from": "retinol",
+      "type": "contraindicated_for",
+      "to": "pregnancy",
+      "evidence_level": "A",
+      "path": "relationships/rel_0019.json"
+    },
+    "rel_0020": {
+      "rel_id": "rel_0020",
+      "from": "retinol",
+      "type": "contraindicated_for",
+      "to": "lactation",
+      "evidence_level": "A",
+      "path": "relationships/rel_0020.json"
+    },
+    "rel_0021": {
+      "rel_id": "rel_0021",
+      "from": "tretinoin",
+      "type": "contraindicated_for",
+      "to": "pregnancy",
+      "evidence_level": "A",
+      "path": "relationships/rel_0021.json"
+    },
+    "rel_0022": {
+      "rel_id": "rel_0022",
+      "from": "tretinoin",
+      "type": "contraindicated_for",
+      "to": "lactation",
+      "evidence_level": "A",
+      "path": "relationships/rel_0022.json"
+    },
+    "rel_0023": {
+      "rel_id": "rel_0023",
+      "from": "adapalene",
+      "type": "contraindicated_for",
+      "to": "pregnancy",
+      "evidence_level": "A",
+      "path": "relationships/rel_0023.json"
+    },
+    "rel_0024": {
+      "rel_id": "rel_0024",
+      "from": "adapalene",
+      "type": "contraindicated_for",
+      "to": "lactation",
+      "evidence_level": "A",
+      "path": "relationships/rel_0024.json"
+    },
+    "rel_0025": {
+      "rel_id": "rel_0025",
+      "from": "tazarotene",
+      "type": "contraindicated_for",
+      "to": "pregnancy",
+      "evidence_level": "A",
+      "path": "relationships/rel_0025.json"
+    },
+    "rel_0026": {
+      "rel_id": "rel_0026",
+      "from": "tazarotene",
+      "type": "contraindicated_for",
+      "to": "lactation",
+      "evidence_level": "A",
+      "path": "relationships/rel_0026.json"
+    },
+    "rel_0027": {
+      "rel_id": "rel_0027",
+      "from": "retinaldehyde",
+      "type": "contraindicated_for",
+      "to": "pregnancy",
+      "evidence_level": "A",
+      "path": "relationships/rel_0027.json"
+    },
+    "rel_0028": {
+      "rel_id": "rel_0028",
+      "from": "retinaldehyde",
+      "type": "contraindicated_for",
+      "to": "lactation",
+      "evidence_level": "A",
+      "path": "relationships/rel_0028.json"
+    },
+    "rel_0029": {
+      "rel_id": "rel_0029",
+      "from": "retinyl_palmitate",
+      "type": "contraindicated_for",
+      "to": "pregnancy",
+      "evidence_level": "A",
+      "path": "relationships/rel_0029.json"
+    },
+    "rel_0030": {
+      "rel_id": "rel_0030",
+      "from": "retinyl_palmitate",
+      "type": "contraindicated_for",
+      "to": "lactation",
+      "evidence_level": "A",
+      "path": "relationships/rel_0030.json"
+    }
+  }
+}

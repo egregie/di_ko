@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0016",
+  "statement": "Topical retinol application can induce localized skin irritation, erythema, and dryness during initial retinoid adaptation.",
+  "entity_id": "retinol",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A009"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

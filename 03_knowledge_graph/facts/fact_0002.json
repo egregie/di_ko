@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0002",
+  "statement": "Tretinoin binds directly to nuclear retinoic acid receptors (RARs) without metabolic conversion.",
+  "entity_id": "tretinoin",
+  "confidence": 0.98,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A010"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}

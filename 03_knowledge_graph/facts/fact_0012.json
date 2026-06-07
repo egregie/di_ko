@@ -1,0 +1,13 @@
+{
+  "fact_id": "fact_0012",
+  "statement": "Topical retinaldehyde improves skin hydration, elasticity, and reduces wrinkle depth.",
+  "entity_id": "retinaldehyde",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A014"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07"
+}
