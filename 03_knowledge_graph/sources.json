@@ -43,6 +43,10 @@
     {"source_id":"SRC-A036","name":"Bissett 2002 (Niacinamide epidermal barrier review)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/12498532/","tier":"A","pmid":"12498532","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-A037","name":"Efficacy of topical mandelic acid on skin viscoelasticity","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/30513568/","tier":"A","pmid":"30513568","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-A038","name":"Comparison of 45% mandelic acid vs 30% salicylic acid peels","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/31553119/","tier":"A","pmid":"31553119","doi":"","accessed":"2026-06-07"},
-    {"source_id":"SRC-A039","name":"Smith 1996 (AHA photoaged skin study)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/8854589/","tier":"A","pmid":"8854589","doi":"","accessed":"2026-06-07"}
+    {"source_id":"SRC-A039","name":"Smith 1996 (AHA photoaged skin study)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/8854589/","tier":"A","pmid":"8854589","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A040","name":"Bissett 2004 (Niacinamide wrinkles & sallowness study)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/18492135/","tier":"A","pmid":"18492135","doi":"10.1111/j.1467-2494.2004.00228.x","accessed":"2026-06-08"},
+    {"source_id":"SRC-A041","name":"Ditre 1996 (AHA photoaged skin pilot study)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/8642081/","tier":"A","pmid":"8642081","doi":"10.1016/s0190-9622(96)80110-1","accessed":"2026-06-08"},
+    {"source_id":"SRC-A042","name":"Arif 2015 (Salicylic acid peeling review)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/26347269/","tier":"A","pmid":"26347269","doi":"10.2147/CCID.S84765","accessed":"2026-06-08"},
+    {"source_id":"SRC-A043","name":"Sarkar 2019 (Salicylic-mandelic vs Glycolic peels study)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/31619887/","tier":"A","pmid":"31619887","doi":"10.4103/JCAS.JCAS_135_18","accessed":"2026-06-08"}
   ]
 }

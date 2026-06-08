@@ -18,8 +18,8 @@
   - `fact_0040`: Mandelic Acid viscoelasticity (cites PMID 30513568, which is unrelated/unsupported).
   - `fact_0042`: Lactic Acid epidermal/dermal thickness (cites PMID 8854589, which is unrelated/unsupported).
   - `fact_0043`: Lactic Acid smoothness and fine lines (cites PMID 8854589, which is unrelated/unsupported).
-- **Per-Topic Fact Shortfall (Phase 4.2)**:
-  - Vitamin C (5 verified facts), Niacinamide (7 verified facts), and Exfoliants (5 verified facts) are below the target deck-readiness threshold of ≥8 verified facts per topic. These topics remain non-deck-ready (P011) and their slide decks are deferred until more facts can be ingested under a live verification gate.
+- **Per-Topic Fact Shortfall**: Resolved. All thin topics (Vitamin C, Niacinamide, Exfoliants) have been backfilled to exactly 8 verified, clean facts each.
+
 
 
 

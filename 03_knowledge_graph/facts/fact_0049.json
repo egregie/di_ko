@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0049",
+  "statement": "salicylic acid acts as a desmolytic agent by disrupting cellular junctions to exfoliate the stratum corneum and possesses comedolytic properties useful for acne",
+  "entity_id": "exfoliants",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A042"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-08",
+  "verified_via": "cache",
+  "verified_at": "2026-06-08T00:33:08.186623Z",
+  "source_title": "Salicylic acid as a peeling agent: a comprehensive review.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0050",
+  "statement": "topical 20% salicylic-10% mandelic acid combination peel is effective for the treatment of active acne and postacne hyperpigmentation in Asian skin",
+  "entity_id": "exfoliants",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A043"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-08",
+  "verified_via": "cache",
+  "verified_at": "2026-06-08T00:33:08.309761Z",
+  "source_title": "Comparative Study of 35% Glycolic Acid, 20% Salicylic-10% Mandelic Acid, and Phytic Acid Combination Peels...",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

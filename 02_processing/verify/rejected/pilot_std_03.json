@@ -1,0 +1,18 @@
+{
+  "fact_id": "pilot_std_03",
+  "statement": "topical vitamin c prevents skin cancer in humans",
+  "entity_id": "vitamin_c",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A031"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07",
+  "verified_via": "live",
+  "verified_at": "2026-06-08T00:25:19.347217Z",
+  "source_title": "The body self and the frequency, intensity and acceptance of menopausal symptoms.",
+  "audit_verdict": "UNSUPPORTED",
+  "evidence_ok": true
+}

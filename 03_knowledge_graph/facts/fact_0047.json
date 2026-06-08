@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0047",
+  "statement": "topical 5% niacinamide reduces fine lines, wrinkles, hyperpigmented spots, texture, red blotchiness, and yellowing in aging facial skin",
+  "entity_id": "niacinamide",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A040"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-08",
+  "verified_via": "cache",
+  "verified_at": "2026-06-08T00:33:07.956524Z",
+  "source_title": "Topical niacinamide reduces yellowing, wrinkling, red blotchiness, and hyperpigmented spots in aging facial skin.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

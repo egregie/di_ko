@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0048",
+  "statement": "topical alpha-hydroxy acids application to photoaged skin results in increased skin thickness, improved elastic fibers, and increased collagen density",
+  "entity_id": "exfoliants",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A041"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-08",
+  "verified_via": "cache",
+  "verified_at": "2026-06-08T00:33:08.072724Z",
+  "source_title": "Effects of alpha-hydroxy acids on photoaged skin: a pilot clinical, histologic, and ultrastructural study.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

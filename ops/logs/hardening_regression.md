@@ -36,6 +36,13 @@ All 12 clean facts in the active knowledge graph must pass the gate successfully
 | fact_0038 | topical niacinamide improves stratum cor... | SUPPORTED | True | write | PASS |
 | fact_0039 | topical niacinamide reduces transepiderm... | WEAK | True | write | PASS |
 | fact_0041 | 45% mandelic acid peels are equally effe... | SUPPORTED | True | write | PASS |
+| fact_0044 | topical L-ascorbic acid formulation requ... | SUPPORTED | True | write | PASS |
+| fact_0045 | maximal percutaneous absorption of topic... | SUPPORTED | True | write | PASS |
+| fact_0046 | topical L-ascorbic acid increases mRNA l... | SUPPORTED | True | write | PASS |
+| fact_0047 | topical 5% niacinamide reduces fine line... | SUPPORTED | True | write | PASS |
+| fact_0048 | topical alpha-hydroxy acids application ... | SUPPORTED | True | write | PASS |
+| fact_0049 | salicylic acid acts as a desmolytic agen... | SUPPORTED | True | write | PASS |
+| fact_0050 | topical 20% salicylic-10% mandelic acid ... | SUPPORTED | True | write | PASS |
 
 **Case 1 Result**: SUCCESS
 

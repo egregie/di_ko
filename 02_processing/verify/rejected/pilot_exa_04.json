@@ -1,0 +1,18 @@
+{
+  "fact_id": "pilot_exa_04",
+  "statement": "topical magnesium ascorbyl phosphate stimulates collagen synthesis in dermal fibroblasts",
+  "entity_id": "magnesium_ascorbyl_phosphate",
+  "confidence": 0.95,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A030"
+  ],
+  "contradictions": [],
+  "verified_by": "verifier",
+  "date": "2026-06-07",
+  "verified_via": "live",
+  "verified_at": "2026-06-08T00:25:25.963082Z",
+  "source_title": "Effect of vitamin C and its derivatives on collagen synthesis and cross-linking by normal human...",
+  "audit_verdict": "UNSUPPORTED",
+  "evidence_ok": true
+}
