@@ -8,11 +8,18 @@ from pptx import Presentation
 from pptx.dml.color import RGBColor
 
 def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="QA audit on rendered HTML and PPTX files")
+    parser.add_argument("--deck", type=str, default="deck_retinoids_v2", help="Name of the deck to audit")
+    args = parser.parse_args()
+    
+    deck_name = args.deck
+    
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.abspath(os.path.join(script_dir, "..", ".."))
     
     tokens_path = os.path.join(project_root, "04_design_system", "design-tokens.json")
-    specs_dir = os.path.join(project_root, "05_content", "specs", "deck_retinoids_v2")
+    specs_dir = os.path.join(project_root, "05_content", "specs", deck_name)
     logs_dir = os.path.join(project_root, "ops", "logs")
     os.makedirs(logs_dir, exist_ok=True)
     
@@ -54,10 +61,15 @@ def main():
         pdf_errors.append(f"Font Family check failed: expected 'Arimo', got '{font_family}'")
         
     # 3. Check Slide Specs (Source Refs and Pregnancy warning)
-    spec_files = sorted(glob.glob(os.path.join(specs_dir, "deck_retinoids_v2-s*.json")))
+    spec_files = sorted(glob.glob(os.path.join(specs_dir, f"{deck_name}-s*.json")))
     total_slides = len(spec_files)
     
-    quarantined_facts = {"fact_0023", "fact_0026", "fact_0027", "fact_0003", "fact_0008", "fact_0013", "fact_0016"}
+    quarantined_facts = {
+        "fact_0003", "fact_0008", "fact_0013", "fact_0016",
+        "fact_0023", "fact_0026", "fact_0027",
+        "fact_0031", "fact_0032", "fact_0033", "fact_0037",
+        "fact_0040", "fact_0042", "fact_0043"
+    }
     
     has_pregnancy_slide = False
     for sf in spec_files:
@@ -101,7 +113,7 @@ def main():
     
     try:
         res = subprocess.run(
-            ["node", playwright_script],
+            ["node", playwright_script, f"{deck_name}.html"],
             cwd=project_root,
             capture_output=True,
             text=True,
@@ -127,9 +139,9 @@ def main():
         warnings.append("Offline check: Arimo font could not be loaded in offline mode. Ensure local @font-face is active.")
         
     # 5. PPTX Specific Audits (Zero Black, Arimo, Structure)
-    pptx_path = os.path.join(project_root, "06_render", "out", "deck_retinoids_v2.pptx")
+    pptx_path = os.path.join(project_root, "06_render", "out", f"{deck_name}.pptx")
     if not os.path.exists(pptx_path):
-        pptx_errors.append("PPTX file not found in render output.")
+        pptx_errors.append(f"PPTX file not found in render output: {pptx_path}")
     else:
         try:
             prs = Presentation(pptx_path)
@@ -214,7 +226,8 @@ def main():
     ])
     
     report_content = "\n".join(report_lines) + "\n"
-    report_path = os.path.join(logs_dir, "qa_deck_v2.md")
+    topic_name = deck_name.replace("deck_", "") if deck_name.startswith("deck_") else deck_name
+    report_path = os.path.join(logs_dir, f"qa_deck_{topic_name}.md")
     with open(report_path, "w", encoding="utf-8") as f:
         f.write(report_content)
         

@@ -10,9 +10,10 @@
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-07",
-  "audit_verdict": "SUPPORTED",
+  "audit_verdict": "NEEDS_MANUAL",
   "evidence_ok": true,
   "verified_via": "cache",
-  "verified_at": "2026-06-08T00:33:04.518412Z",
-  "source_title": "Tailoring of Retinyl Palmitate-Based Ethosomal Hydrogel as a Novel Nanoplatform for Acne Vulgaris Management: Fabrication,..."
+  "verified_at": "2026-06-08T01:08:18.362493Z",
+  "source_title": "Tailoring of Retinyl Palmitate-Based Ethosomal Hydrogel as a Novel Nanoplatform for Acne Vulgaris Management: Fabrication,...",
+  "status": "needs_manual"
 }

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>YM PROSKIN — deck_vitamin_c</title>
+    <style>
+        @font-face {
+            font-family: 'Arimo';
+            font-style: normal;
+            font-weight: 100 900;
+            src: url('../../04_design_system/fonts/Arimo[wght].ttf') format('truetype');
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&display=swap');
+        
+        :root {
+            --bg: #F8F6F4;
+            --bg-alt: #E6D2CA;
+            --sage: #D7E0CE;
+            --herbal: #6D8470;
+            --dark: #2C3440;
+            --text: #3D4A40;
+            --border: #D7E0CE;
+            --warn: #9E6A5A;
+            
+            --font-family: 'Arimo', sans-serif;
+            --lh-min: 1.5;
+            
+            --radius-btn: 8px;
+            --radius-card: 16px;
+            --radius-badge: 100px;
+            
+            --fs-display: 52px;
+            --fs-h1: 36px;
+            --fs-h2: 26px;
+            --fs-h3: 20px;
+            --fs-label: 10px;
+            --fs-body: 15px;
+            --fs-body-sm: 13px;
+            --fs-caption: 11px;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark);
+            font-family: var(--font-family);
+            color: var(--text);
+            line-height: var(--lh-min);
+            box-sizing: border-box;
+        }
+        
+        .slide {
+            width: 1024px;
+            height: 576px;
+            background-color: var(--bg);
+            position: relative;
+            box-sizing: border-box;
+            padding: 40px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-bottom: 20px; /* spacing in HTML view */
+        }
+        
+        @media print {
+            body {
+                background-color: transparent;
+            }
+            .slide {
+                margin-bottom: 0;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Typography Elements */
+        .slide-header {
+            margin-bottom: 24px;
+        }
+        
+        .slide-title {
+            font-size: var(--fs-h2);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+            letter-spacing: -0.01em;
+        }
+        
+        .slide-subtitle {
+            font-size: var(--fs-body);
+            color: var(--herbal);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* Bullets */
+        .bullets-list {
+            margin: 0;
+            padding-left: 20px;
+            font-size: var(--fs-body);
+        }
+        
+        .bullets-list li {
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        
+        /* Footer Metadata */
+        .disclaimers {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            font-size: var(--fs-caption);
+            color: var(--herbal);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+        }
+        
+        .sources-ref {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            font-size: var(--fs-caption);
+            color: var(--text);
+            font-weight: 500;
+        }
+        
+        /* Media box */
+        .media-box {
+            background-color: var(--sage);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            color: var(--herbal);
+            font-size: var(--fs-body-sm);
+            font-weight: 500;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Layout specific styles */
+        
+        /* 1. Cover */
+        .cover-layout {
+            background-color: var(--bg-alt);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .cover-layout .header-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .category-tag {
+            font-size: var(--fs-label);
+            font-weight: 700;
+            color: var(--herbal);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 12px;
+        }
+        
+        .display-title {
+            font-size: var(--fs-h1);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 16px 0;
+            line-height: 1.2;
+        }
+        
+        .cover-layout .subtitle-text {
+            font-size: var(--fs-body);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        .cover-media {
+            height: 320px;
+        }
+        
+        /* 2. Section Divider */
+        .section-divider-layout {
+            background-color: var(--bg-alt);
+            padding: 80px 40px;
+            justify-content: center;
+        }
+        
+        .divider-title {
+            font-size: var(--fs-display);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 24px 0 16px 0;
+            line-height: 1.1;
+        }
+        
+        .divider-subtitle {
+            font-size: var(--fs-h3);
+            color: var(--text);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* 3. Quote Callout */
+        .quote-layout .quote-container {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 40px;
+        }
+        
+        .quote-mark {
+            font-size: 80px;
+            color: var(--sage);
+            line-height: 0.1;
+            font-family: serif;
+        }
+        
+        .quote-text {
+            font-size: var(--fs-h3);
+            font-style: italic;
+            color: var(--dark);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* 4. Two columns */
+        .two-columns-layout .columns-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            height: 300px;
+        }
+        
+        /* 5. Three cards */
+        .three-cards-layout .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }
+        
+        .three-cards-layout .card {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border: 1px solid var(--border);
+        }
+        
+        .card-title {
+            font-size: var(--fs-h3);
+            color: var(--dark);
+            margin: 0 0 12px 0;
+            font-weight: 700;
+        }
+        
+        .card-text {
+            font-size: var(--fs-body-sm);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 6. Timeline Protocol */
+        .timeline-layout .timeline-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }
+        
+        .timeline-step {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 20px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }
+        
+        .step-num {
+            font-size: var(--fs-caption);
+            background-color: var(--herbal);
+            color: var(--bg);
+            border-radius: var(--radius-badge);
+            padding: 4px 10px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .step-label {
+            font-size: var(--fs-body);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+        }
+        
+        .step-desc {
+            font-size: var(--fs-caption);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 7. Comparison */
+        .comparison-layout .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            height: 300px;
+        }
+        
+        .compare-card {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            border: 1px solid var(--border);
+            box-sizing: border-box;
+        }
+        
+        .compare-label {
+            font-size: var(--fs-h3);
+            font-weight: 700;
+            color: var(--herbal);
+            display: block;
+            margin-bottom: 16px;
+        }
+        
+        .compare-text {
+            font-size: var(--fs-body);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 8. Statistics */
+        .statistics-layout .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }
+        
+        .stat-card {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+        
+        .stat-number {
+            font-size: var(--fs-display);
+            font-weight: 700;
+            color: var(--herbal);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        
+        .stat-label {
+            font-size: var(--fs-h3);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+        }
+        
+        .stat-desc {
+            font-size: var(--fs-body-sm);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 9. Alert */
+        .alert-layout .alert-box {
+            background-color: var(--bg-alt);
+            border: 2px solid var(--warn);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .alert-icon {
+            font-size: 48px;
+        }
+        
+        .alert-content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .alert-box-title {
+            font-size: var(--fs-h3);
+            color: var(--warn);
+            margin: 0 0 8px 0;
+            font-weight: 700;
+        }
+        
+        .alert-box-text {
+            font-size: var(--fs-body);
+            color: var(--text);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* 10. Summary */
+        .summary-layout .summary-box {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            height: 300px;
+            box-sizing: border-box;
+            border: 1px solid var(--border);
+        }
+        
+        .summary-list li {
+            margin-bottom: 16px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="slide cover-layout">
+                <div class="header-group">
+                    <span class="category-tag">Витамин C</span>
+                    <h1 class="display-title">YM PROSKIN · Витамин C</h1>
+                    <p class="subtitle-text">Клиническая эффективность L-аскорбиновой кислоты и её стабильных дериватов</p>
+                </div>
+                <div class="cover-media">
+                    <div class="media-box placeholder-media">
+                        <span class="media-caption">Применение Витамина C в дерматологии</span>
+                    </div>
+                </div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide section-divider-layout">
+                <span class="category-tag">Витамин C</span>
+                <h1 class="divider-title">Терапевтические механизмы</h1>
+                <p class="divider-subtitle">Стимуляция коллагена и фотозащита на клеточном уровне</p>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide two-columns-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Синтез коллагена и фотозащита</h2>
+                    <p class="slide-subtitle">Влияние топической L-аскорбиновой кислоты на дермальный матрикс</p>
+                </div>
+                <div class="columns-grid">
+                    <div class="column-left">
+                        <ul class="bullets-list">
+                            <li>Активирует синтез коллагена I и III типов путем увеличения уровней мРНК in vivo.</li><li>Защищает клетки кожи от индуцированного ультрафиолетом фотоповреждения.</li><li>Стимулирует неоколлагенез и улучшает структурное состояние дермы.</li>
+                        </ul>
+                    </div>
+                    <div class="column-right">
+                        <div class="media-box placeholder-media">
+                            <span class="media-caption">Схема регуляции синтеза коллагена</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0021, fact_0030, fact_0046, SRC-A023, SRC-A029</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide two-columns-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Параметры абсорбции</h2>
+                    <p class="slide-subtitle">Влияние уровня pH и концентрации на чрескожное проникновение</p>
+                </div>
+                <div class="columns-grid">
+                    <div class="column-left">
+                        <ul class="bullets-list">
+                            <li>Для проникновения через роговой слой уровень pH формулы должен быть строго ниже 3.5.</li><li>Максимальная эффективная концентрация для чрескожного всасывания составляет 20%.</li><li>Дальнейшее увеличение концентрации не повышает абсорбцию, но увеличивает риск раздражения.</li>
+                        </ul>
+                    </div>
+                    <div class="column-right">
+                        <div class="media-box placeholder-media">
+                            <span class="media-caption">Зависимость всасывания от pH и концентрации</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0028, fact_0029, fact_0044, fact_0045, SRC-A028</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide two-columns-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Терапия акне: Аскорбилфосфат Натрия</h2>
+                    <p class="slide-subtitle">Стабильный дериват витамина C (SAP) в лечении акне средней тяжести</p>
+                </div>
+                <div class="columns-grid">
+                    <div class="column-left">
+                        <ul class="bullets-list">
+                            <li>Топический 5% лосьон SAP демонстрирует высокую клиническую эффективность при акне.</li><li>SAP стабилен при нейтральном значении pH и минимизирует раздражение кожи.</li><li>Обладает сильным антиоксидантным и себорегулирующим потенциалом.</li>
+                        </ul>
+                    </div>
+                    <div class="column-right">
+                        <div class="media-box placeholder-media">
+                            <span class="media-caption">Механизм действия SAP при акне</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0022, SRC-A024</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide alert-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Безопасность и Переносимость</h2>
+                    <p class="slide-subtitle">Особенности применения кислых и стабильных форм витамина C</p>
+                </div>
+                <div class="alert-box">
+                    <div class="alert-icon">⚠️</div>
+                    <div class="alert-content">
+                        <h3 class="alert-box-title">Переносимость и безопасность в период беременности и лактации</h3>
+                        <p class="alert-box-text">Топические средства с витамином C и SAP разрешены во время беременности и лактации. Кислые формы L-аскорбиновой кислоты (pH < 3.5) могут провоцировать временное локальное раздражение.</p>
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0022, fact_0028</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide summary-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Терапевтические выводы</h2>
+                    <p class="slide-subtitle">Резюме по клиническому применению витамина C</p>
+                </div>
+                <div class="summary-box">
+                    <ul class="bullets-list summary-list">
+                        <li>L-аскорбиновая кислота — золотой стандарт для фотозащиты и активации синтеза коллагена I и III типов.</li><li>Трансдермальный перенос L-аскорбиновой кислоты требует pH < 3.5 и ограничен концентрацией в 20%.</li><li>Аскорбилфосфат Натрия (5% SAP) является стабильным и безопасным выбором в терапии акне.</li>
+                    </ul>
+                </div>
+                <div class="sources-ref">Источники: fact_0021, fact_0022, fact_0028, fact_0029, fact_0030</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div>
+</body>
+</html>

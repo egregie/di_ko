@@ -1,0 +1,20 @@
+{
+  "id": "deck_vitamin_c-s01",
+  "layout": "cover",
+  "section": "Витамин C",
+  "title": "YM PROSKIN · Витамин C",
+  "subtitle": "Клиническая эффективность L-аскорбиновой кислоты и её стабильных дериватов",
+  "body": [],
+  "media": {
+    "type": "image",
+    "asset": "cover_placeholder.png",
+    "fit": "cover",
+    "caption": "Применение Витамина C в дерматологии"
+  },
+  "components": {},
+  "disclaimers": [
+    "Только для практикующих специалистов"
+  ],
+  "source_refs": [],
+  "notes": "Титульный слайд презентации по Витамину C"
+}

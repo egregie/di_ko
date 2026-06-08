@@ -39,6 +39,8 @@ discover -> collect -> extract -> dedup -> verify -> librarian/ontology -> graph
 - **P012 External Dependency Blocked Policy**: The absence or unreachability of any required external resource (e.g. an API endpoint, API credentials, or network connection) MUST block the task execution and mark the walkthrough status as `blocked`. Substituting missing dependencies with simulated, mocked, or handwritten dummy data is strictly forbidden and constitutes a quality violation.
 - **P013 Transparent Status Reporting**: The status reported in walkthroughs must strictly represent reality. If any fallbacks, overrides, or blocks occur during execution, they must be documented in `deltas_vs_plan` and the status must be reported as `partial` or `blocked`. Marking simulated runs as `PASS` or `done` is prohibited.
 - **P014 Dynamic Caching Provenance**: All cache entries inside the verification cache must be written exclusively by the live fetcher path. The manual fabrication, editing, or seed authoring of cache files or verdicts is prohibited. Fact nodes referencing the cache are dynamically validated against the cache's cryptographic hash and live-fetch provenance.
+- **P016 Deltas-Honesty**: deltas_vs_plan must document any unplanned edits, deletions, renaming, index recompiles, or out-of-spec alterations. Setting it to None is only permitted if execution matches the plan exactly.
+- **P017 Confidence-Semantics**: The confidence field in facts is not consumed. It must be marked as reserved/unused in schemas, bypassed in validator, and documented in DEC-014.
 
 
 ## Walkthrough Standards

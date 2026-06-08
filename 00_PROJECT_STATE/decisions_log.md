@@ -13,6 +13,7 @@
 - **DEC-011**: Verification Gate Hardening. Require that all facts undergo dynamic validation (fetching live PubMed abstracts and running keyword overlap checks) without hardcoded mock lists in production code, recording verification metadata (`verified_via`, `verified_at`, `source_title`) directly on the fact node.
 - **DEC-012**: Exa-Grounded Search Adopted. Live pilot comparison (Vitamin C topic) completed successfully. Standard Keyword search pathway showed a 75.0% rejection rate due to unsupported/mismatched abstracts (3/4 rejected), whereas the Exa-Grounded Search Pathway achieved a 25.0% rejection rate (1/4 rejected) with high-precision neural matching to exact abstract/sentence evidence. Total search cost was $0.02800. Exa is adopted as the primary search and collection pathway.
 - **DEC-013**: Verification DNS Rollback & IPv4 Force. Roll back the Google DNS-over-HTTPS monkeypatch from Phase 4.1. The connection issue was correctly identified as a local DNS router IPv6/AAAA lookup failure combined with unreachable IPv6 routes. The fetcher is hardened by overriding `socket.getaddrinfo` to return IPv4-only (`AF_INET`), adding proper NCBI tool/email query parameters, setting a custom User-Agent, and introducing global process-level rate limiting.
+- **DEC-014**: Confidence Field Unused. The confidence field in facts is not consumed by retriever, render, or QA scripts. Therefore, it is marked as "reserved/unused" in the fact schema, and type validation is bypassed in validate_graph.py.
 
 
 

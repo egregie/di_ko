@@ -6,7 +6,8 @@ async function main() {
     const page = await browser.newPage();
     
     // Resolve absolute path to the local HTML file
-    const htmlPath = path.resolve(__dirname, '..', '..', '06_render', 'out', 'deck_retinoids_v2.html');
+    const filename = process.argv[2] || 'deck_retinoids_v2.html';
+    const htmlPath = path.resolve(__dirname, '..', '..', '06_render', 'out', filename);
     const fileUrl = `file://${htmlPath.replace(/\\/g, '/')}`;
 
     

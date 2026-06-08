@@ -6,7 +6,8 @@ async function main() {
     const page = await browser.newPage();
     
     // Resolve absolute path to the local HTML file
-    const htmlPath = path.resolve(__dirname, '..', '..', '06_render', 'out', 'deck_retinoids_v2.html');
+    const baseName = process.argv[2] || 'deck_retinoids_v2';
+    const htmlPath = path.resolve(__dirname, '..', '..', '06_render', 'out', `${baseName}.html`);
     const fileUrl = `file://${htmlPath.replace(/\\/g, '/')}`;
     
     console.log(`Loading file URL: ${fileUrl}`);
@@ -16,7 +17,7 @@ async function main() {
     await page.setViewportSize({ width: 1024, height: 576 });
     
     // Render PDF with custom width and height, zero margins
-    const pdfPath = path.resolve(__dirname, '..', '..', '06_render', 'out', 'deck_retinoids_v2.pdf');
+    const pdfPath = path.resolve(__dirname, '..', '..', '06_render', 'out', `${baseName}.pdf`);
     console.log(`Saving PDF to: ${pdfPath}`);
     await page.pdf({
         path: pdfPath,

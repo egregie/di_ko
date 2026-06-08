@@ -48,8 +48,11 @@
 - [x] Documented connection misdiagnosis and fixes in lessons.md [Phase 4.2 Block 0]
 - [x] Cleared cache and re-verified 30 facts live, quarantining fact_0033 [Phase 4.2 Block 0]
 - [x] Rebuilt graph index and validated database with 0 errors [Phase 4.2 Block 0]
-
-
-
-
-
+- [x] Modify `AGENTS.md` with operating principles P016/P017 [Phase 5 Block 0]
+- [x] Log DEC-014 in `decisions_log.md` and update `fact.json` schema [Phase 5 Block 0]
+- [x] Bypassed type checking for the confidence key in `validate_graph.py` [Phase 5 Block 0]
+- [x] Create slide specs for Vitamin C, Niacinamide, and Exfoliants [Phase 5 Block A]
+- [x] Parameterize rendering and QA scripts for dynamic deck processing [Phase 5 Block B]
+- [x] Render HTML, PPTX, and PDF presentations for the three new topics [Phase 5 Block B]
+- [x] Run QA validation audit on all three new decks and verify zero regressions [Phase 5 Block C]
+- [x] Write final walkthrough reports [Phase 5 Finalization]

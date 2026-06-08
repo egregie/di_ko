@@ -1,13 +1,20 @@
 import os
 import json
 import glob
+import argparse
 
 def main():
+    parser = argparse.ArgumentParser(description="Render HTML deck from json specs")
+    parser.add_argument("--deck", type=str, default="deck_retinoids_v2", help="Name of the deck directory and files prefix")
+    args = parser.parse_args()
+    
+    deck_name = args.deck
+    
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.abspath(os.path.join(script_dir, "..", ".."))
     
     tokens_path = os.path.join(project_root, "04_design_system", "design-tokens.json")
-    specs_dir = os.path.join(project_root, "05_content", "specs", "deck_retinoids_v2")
+    specs_dir = os.path.join(project_root, "05_content", "specs", deck_name)
     out_dir = os.path.join(project_root, "06_render", "out")
     os.makedirs(out_dir, exist_ok=True)
     
@@ -20,7 +27,7 @@ def main():
     type_scale = tokens["type"]
     
     # Read all slide specs in order
-    spec_files = sorted(glob.glob(os.path.join(specs_dir, "deck_retinoids_v2-s*.json")))
+    spec_files = sorted(glob.glob(os.path.join(specs_dir, f"{deck_name}-s*.json")))
     slides_html = []
     
     for sf in spec_files:
@@ -282,7 +289,7 @@ def main():
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>YM PROSKIN — Ретиноиды v2</title>
+    <title>YM PROSKIN — {deck_name}</title>
     <style>
         @font-face {{
             font-family: '{font["family"]}';
@@ -723,7 +730,7 @@ def main():
 </html>
 """
     
-    out_html_path = os.path.join(out_dir, "deck_retinoids_v2.html")
+    out_html_path = os.path.join(out_dir, f"{deck_name}.html")
     with open(out_html_path, "w", encoding="utf-8") as f:
         f.write(html_template)
     print(f"HTML presentation written successfully to {out_html_path}")

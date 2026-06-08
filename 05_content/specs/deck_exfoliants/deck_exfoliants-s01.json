@@ -1,0 +1,20 @@
+{
+  "id": "deck_exfoliants-s01",
+  "layout": "cover",
+  "section": "Эксфолианты",
+  "title": "YM PROSKIN · Эксфолианты",
+  "subtitle": "Терапевтический профиль гидроксикислот в клинической практике",
+  "body": [],
+  "media": {
+    "type": "image",
+    "asset": "cover_placeholder.png",
+    "fit": "cover",
+    "caption": "Применение кислот в дерматокосметологии"
+  },
+  "components": {},
+  "disclaimers": [
+    "Только для практикующих специалистов"
+  ],
+  "source_refs": [],
+  "notes": "Титульный слайд презентации по Эксфолиантам"
+}

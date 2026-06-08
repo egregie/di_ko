@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>YM PROSKIN — deck_exfoliants</title>
+    <style>
+        @font-face {
+            font-family: 'Arimo';
+            font-style: normal;
+            font-weight: 100 900;
+            src: url('../../04_design_system/fonts/Arimo[wght].ttf') format('truetype');
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&display=swap');
+        
+        :root {
+            --bg: #F8F6F4;
+            --bg-alt: #E6D2CA;
+            --sage: #D7E0CE;
+            --herbal: #6D8470;
+            --dark: #2C3440;
+            --text: #3D4A40;
+            --border: #D7E0CE;
+            --warn: #9E6A5A;
+            
+            --font-family: 'Arimo', sans-serif;
+            --lh-min: 1.5;
+            
+            --radius-btn: 8px;
+            --radius-card: 16px;
+            --radius-badge: 100px;
+            
+            --fs-display: 52px;
+            --fs-h1: 36px;
+            --fs-h2: 26px;
+            --fs-h3: 20px;
+            --fs-label: 10px;
+            --fs-body: 15px;
+            --fs-body-sm: 13px;
+            --fs-caption: 11px;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark);
+            font-family: var(--font-family);
+            color: var(--text);
+            line-height: var(--lh-min);
+            box-sizing: border-box;
+        }
+        
+        .slide {
+            width: 1024px;
+            height: 576px;
+            background-color: var(--bg);
+            position: relative;
+            box-sizing: border-box;
+            padding: 40px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-bottom: 20px; /* spacing in HTML view */
+        }
+        
+        @media print {
+            body {
+                background-color: transparent;
+            }
+            .slide {
+                margin-bottom: 0;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Typography Elements */
+        .slide-header {
+            margin-bottom: 24px;
+        }
+        
+        .slide-title {
+            font-size: var(--fs-h2);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+            letter-spacing: -0.01em;
+        }
+        
+        .slide-subtitle {
+            font-size: var(--fs-body);
+            color: var(--herbal);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* Bullets */
+        .bullets-list {
+            margin: 0;
+            padding-left: 20px;
+            font-size: var(--fs-body);
+        }
+        
+        .bullets-list li {
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        
+        /* Footer Metadata */
+        .disclaimers {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            font-size: var(--fs-caption);
+            color: var(--herbal);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+        }
+        
+        .sources-ref {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            font-size: var(--fs-caption);
+            color: var(--text);
+            font-weight: 500;
+        }
+        
+        /* Media box */
+        .media-box {
+            background-color: var(--sage);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            color: var(--herbal);
+            font-size: var(--fs-body-sm);
+            font-weight: 500;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Layout specific styles */
+        
+        /* 1. Cover */
+        .cover-layout {
+            background-color: var(--bg-alt);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .cover-layout .header-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .category-tag {
+            font-size: var(--fs-label);
+            font-weight: 700;
+            color: var(--herbal);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 12px;
+        }
+        
+        .display-title {
+            font-size: var(--fs-h1);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 16px 0;
+            line-height: 1.2;
+        }
+        
+        .cover-layout .subtitle-text {
+            font-size: var(--fs-body);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        .cover-media {
+            height: 320px;
+        }
+        
+        /* 2. Section Divider */
+        .section-divider-layout {
+            background-color: var(--bg-alt);
+            padding: 80px 40px;
+            justify-content: center;
+        }
+        
+        .divider-title {
+            font-size: var(--fs-display);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 24px 0 16px 0;
+            line-height: 1.1;
+        }
+        
+        .divider-subtitle {
+            font-size: var(--fs-h3);
+            color: var(--text);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* 3. Quote Callout */
+        .quote-layout .quote-container {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 40px;
+        }
+        
+        .quote-mark {
+            font-size: 80px;
+            color: var(--sage);
+            line-height: 0.1;
+            font-family: serif;
+        }
+        
+        .quote-text {
+            font-size: var(--fs-h3);
+            font-style: italic;
+            color: var(--dark);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* 4. Two columns */
+        .two-columns-layout .columns-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            height: 300px;
+        }
+        
+        /* 5. Three cards */
+        .three-cards-layout .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }
+        
+        .three-cards-layout .card {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border: 1px solid var(--border);
+        }
+        
+        .card-title {
+            font-size: var(--fs-h3);
+            color: var(--dark);
+            margin: 0 0 12px 0;
+            font-weight: 700;
+        }
+        
+        .card-text {
+            font-size: var(--fs-body-sm);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 6. Timeline Protocol */
+        .timeline-layout .timeline-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }
+        
+        .timeline-step {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 20px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }
+        
+        .step-num {
+            font-size: var(--fs-caption);
+            background-color: var(--herbal);
+            color: var(--bg);
+            border-radius: var(--radius-badge);
+            padding: 4px 10px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .step-label {
+            font-size: var(--fs-body);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+        }
+        
+        .step-desc {
+            font-size: var(--fs-caption);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 7. Comparison */
+        .comparison-layout .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            height: 300px;
+        }
+        
+        .compare-card {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            border: 1px solid var(--border);
+            box-sizing: border-box;
+        }
+        
+        .compare-label {
+            font-size: var(--fs-h3);
+            font-weight: 700;
+            color: var(--herbal);
+            display: block;
+            margin-bottom: 16px;
+        }
+        
+        .compare-text {
+            font-size: var(--fs-body);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 8. Statistics */
+        .statistics-layout .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }
+        
+        .stat-card {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+        
+        .stat-number {
+            font-size: var(--fs-display);
+            font-weight: 700;
+            color: var(--herbal);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        
+        .stat-label {
+            font-size: var(--fs-h3);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+        }
+        
+        .stat-desc {
+            font-size: var(--fs-body-sm);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 9. Alert */
+        .alert-layout .alert-box {
+            background-color: var(--bg-alt);
+            border: 2px solid var(--warn);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .alert-icon {
+            font-size: 48px;
+        }
+        
+        .alert-content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .alert-box-title {
+            font-size: var(--fs-h3);
+            color: var(--warn);
+            margin: 0 0 8px 0;
+            font-weight: 700;
+        }
+        
+        .alert-box-text {
+            font-size: var(--fs-body);
+            color: var(--text);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* 10. Summary */
+        .summary-layout .summary-box {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            height: 300px;
+            box-sizing: border-box;
+            border: 1px solid var(--border);
+        }
+        
+        .summary-list li {
+            margin-bottom: 16px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="slide cover-layout">
+                <div class="header-group">
+                    <span class="category-tag">Эксфолианты</span>
+                    <h1 class="display-title">YM PROSKIN · Эксфолианты</h1>
+                    <p class="subtitle-text">Терапевтический профиль гидроксикислот в клинической практике</p>
+                </div>
+                <div class="cover-media">
+                    <div class="media-box placeholder-media">
+                        <span class="media-caption">Применение кислот в дерматокосметологии</span>
+                    </div>
+                </div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide section-divider-layout">
+                <span class="category-tag">Эксфолианты</span>
+                <h1 class="divider-title">Клиническое применение кислот</h1>
+                <p class="divider-subtitle">Механизмы эксфолиации, терапия акне и коррекция фотостарения</p>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide two-columns-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Действие Салициловой Кислоты</h2>
+                    <p class="slide-subtitle">Десмолитический и комедолитический эффекты салициловой кислоты</p>
+                </div>
+                <div class="columns-grid">
+                    <div class="column-left">
+                        <ul class="bullets-list">
+                            <li>Действует как десмолитик, ослабляя сцепление корнеоцитов в роговом слое.</li><li>Растворяет себум и очищает устья фолликулов благодаря липофильности.</li><li>Эффективно предупреждает образование закрытых и открытых комедонов.</li>
+                        </ul>
+                    </div>
+                    <div class="column-right">
+                        <div class="media-box placeholder-media">
+                            <span class="media-caption">Липофильная BHA-эксфолиация и комедолиз</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0049, SRC-A042</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide three-cards-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Терапия Акне и Постакне</h2>
+                    <p class="slide-subtitle">Применение моно- и комбинированных пилингов в лечении акне</p>
+                </div>
+                <div class="cards-grid">
+                    
+                    <div class="card">
+                        <h3 class="card-title">Комбинация AHA + BHA</h3>
+                        <p class="card-text">Совместное использование гликолевой и салициловой кислот улучшает состояние кожи при легком и среднем акне.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">Салицилово-миндальный пилинг</h3>
+                        <p class="card-text">Комбинация кислот (включая 20% салициловой и 10% миндальной) эффективна против воспалений и постакне.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">Миндальный пилинг 45%</h3>
+                        <p class="card-text">45% миндальная кислота эквивалентна по результату 30% салициловой, но имеет более высокий профиль безопасности.</p>
+                    </div>
+                    
+                </div>
+                <div class="sources-ref">Источники: fact_0017, fact_0018, fact_0041, fact_0050</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide two-columns-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Коррекция Фотостарения</h2>
+                    <p class="slide-subtitle">Влияние гидроксикислот на структуру и плотность зрелой кожи</p>
+                </div>
+                <div class="columns-grid">
+                    <div class="column-left">
+                        <ul class="bullets-list">
+                            <li>30% салициловая кислота разглаживает мелкие морщины и устраняет шероховатость фотоповрежденной кожи.</li><li>Пилинги с гликолевой кислотой клинически эффективны при легком фотостарении лица.</li><li>Топические AHA увеличивают толщину кожи, восстанавливая эластические волокна и плотность коллагена.</li>
+                        </ul>
+                    </div>
+                    <div class="column-right">
+                        <div class="media-box placeholder-media">
+                            <span class="media-caption">Динамика изменения толщины дермы после AHA-терапии</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0019, fact_0020, fact_0048, SRC-A021, SRC-A022, SRC-A041</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide alert-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Меры Предосторожности</h2>
+                    <p class="slide-subtitle">Правила безопасности при проведении химических пилингов</p>
+                </div>
+                <div class="alert-box">
+                    <div class="alert-icon">⚠️</div>
+                    <div class="alert-content">
+                        <h3 class="alert-box-title">Меры предосторожности: Беременность, Лактация и Фотозащита</h3>
+                        <p class="alert-box-text">Клинические пилинги (салициловый 30%, гликолевый) требуют строгого SPF-сопровождения из-за риска фотосенсибилизации. Проведение высококонцентрированных процедур противопоказано при беременности и лактации.</p>
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0019, fact_0020</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide summary-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Терапевтические выводы</h2>
+                    <p class="slide-subtitle">Резюме по клиническому применению гидроксикислот</p>
+                </div>
+                <div class="summary-box">
+                    <ul class="bullets-list summary-list">
+                        <li>Салициловая кислота — золотой стандарт комедолиза и эксфолиации за счет десмолитического действия.</li><li>AHA и BHA пилинги высокой концентрации эффективно корректируют фотостарение и акне легкой/средней степени.</li><li>Применение 45% миндальной кислоты дает терапевтический эффект, равный 30% салициловой кислоте, но с меньшим раздражением.</li>
+                    </ul>
+                </div>
+                <div class="sources-ref">Источники: fact_0017, fact_0019, fact_0041, fact_0048, fact_0049</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div>
+</body>
+</html>

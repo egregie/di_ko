@@ -3,6 +3,10 @@ import sys
 import json
 
 def validate_types(data, template, path=""):
+    # Skip type validation for the confidence key to allow string/reserved value
+    if path == "confidence" or path.endswith(".confidence"):
+        return
+        
     # Allow float where int is expected and vice-versa
     if isinstance(data, (int, float)) and isinstance(template, (int, float)):
         return

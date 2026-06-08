@@ -1,8 +1,8 @@
 # Current State - YM PROSKIN
 
 ## Metadata
-- **Current Phase**: Phase 4.2 (Blocks A+B): Real Exa Pilot + Honest Backfill
-- **Status**: Completed / tag `phase-4.2-exa-backfill`
+- **Current Phase**: Phase 5: Content Production (Topic Decks)
+- **Status**: Completed / tag `phase-5-topic-decks`
 
 ## Project Status Snapshot
 - **Phase 0 (Foundation)**: Completed. Core files, ontology, naming conventions, and data schemas initialized.
@@ -19,3 +19,5 @@
 - **Phase 4.1 (Verification Integrity Recovery)**: Completed (with misdiagnosis). Workaround using DoH proxy monkeypatch implemented, cache purged, and 36 facts audited live (6 facts quarantined).
 - **Phase 4.2 (Verification Engine Refinement)**: Completed. DNS-over-HTTPS monkeypatch rolled back. Connection issue correctly identified as local DNS router failing dual-stack IPv6/AAAA requests. Implemented clean AF_INET IPv4-only socket getaddrinfo override, custom NCBI parameters (tool, email), custom User-Agent, and process-level throttling. Re-verified 30 facts live, quarantining fact_0033. Rebuilt index (29 active facts) and validated graph with 0 errors.
 - **Phase 4.2 (Blocks A+B)**: Completed. Executed the real, live Exa pilot (Exa rejection rate 25.0% vs Standard Keyword search 75.0%). Adopted Exa search (DEC-012). Completed the honest backfill of the three thin topics (Vitamin C, Niacinamide, Exfoliants) to exactly 8 verified, clean facts each under force-live verification gate. Graph expanded to 36 active facts. All three topics are now deck-ready.
+- **Phase 5 (Content Production - Topic Decks)**: Completed. Implemented operating principles P016/P017, logged DEC-014, and updated fact schema. Parameterized all rendering (HTML/PDF/PPTX) and QA scripts to dynamically process selected decks. Generated 7-8 slide specifications for Vitamin C, Niacinamide, and Exfoliants, citing active graph facts and featuring safety slides. Rendered all decks in HTML, PDF, and PPTX formats, clearing 100% of the QA gates with zero regressions on Retinoids.
+
