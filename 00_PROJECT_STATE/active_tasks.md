@@ -56,3 +56,8 @@
 - [x] Render HTML, PPTX, and PDF presentations for the three new topics [Phase 5 Block B]
 - [x] Run QA validation audit on all three new decks and verify zero regressions [Phase 5 Block C]
 - [x] Write final walkthrough reports [Phase 5 Finalization]
+- [x] Create `05_content/safety_config.json` defining pregnancy safety-critical decks [Phase 5.1 Block A]
+- [x] Refactor `qa_deck.py` to support dynamic, topic-aware pregnancy slide validation [Phase 5.1 Block A]
+- [x] Implement category-based slide-to-fact claim validation gate in `qa_deck.py` [Phase 5.1 Block B]
+- [x] Clean slide specifications for Vitamin C, Niacinamide, and Exfoliants to remove unsupported claims [Phase 5.1 Block C]
+- [x] Re-render all presentations and verify 100% QA pass on HTML, PDF, and PPTX formats [Phase 5.1 Block C]

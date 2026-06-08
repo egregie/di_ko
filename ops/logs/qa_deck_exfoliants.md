@@ -20,7 +20,8 @@
 ## Checked Invariants
 - Zero Black Policy: PASS
 - Arimo font defined in tokens: PASS
-- Pregnancy slide present: PASS
+- Safety slide present: PASS
+- Pregnancy slide present (when required): PASS
 - Playwright Font Load (Online): PASS
 - Playwright Font Load (Offline): PASS
 - PPTX Element Font Check (Arimo): PASS

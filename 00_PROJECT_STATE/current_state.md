@@ -1,8 +1,8 @@
 # Current State - YM PROSKIN
 
 ## Metadata
-- **Current Phase**: Phase 5: Content Production (Topic Decks)
-- **Status**: Completed / tag `phase-5-topic-decks`
+- **Current Phase**: Phase 5.1: Deck Integrity Hardening
+- **Status**: Completed / tag `phase-5.1-deck-integrity`
 
 ## Project Status Snapshot
 - **Phase 0 (Foundation)**: Completed. Core files, ontology, naming conventions, and data schemas initialized.
@@ -20,4 +20,4 @@
 - **Phase 4.2 (Verification Engine Refinement)**: Completed. DNS-over-HTTPS monkeypatch rolled back. Connection issue correctly identified as local DNS router failing dual-stack IPv6/AAAA requests. Implemented clean AF_INET IPv4-only socket getaddrinfo override, custom NCBI parameters (tool, email), custom User-Agent, and process-level throttling. Re-verified 30 facts live, quarantining fact_0033. Rebuilt index (29 active facts) and validated graph with 0 errors.
 - **Phase 4.2 (Blocks A+B)**: Completed. Executed the real, live Exa pilot (Exa rejection rate 25.0% vs Standard Keyword search 75.0%). Adopted Exa search (DEC-012). Completed the honest backfill of the three thin topics (Vitamin C, Niacinamide, Exfoliants) to exactly 8 verified, clean facts each under force-live verification gate. Graph expanded to 36 active facts. All three topics are now deck-ready.
 - **Phase 5 (Content Production - Topic Decks)**: Completed. Implemented operating principles P016/P017, logged DEC-014, and updated fact schema. Parameterized all rendering (HTML/PDF/PPTX) and QA scripts to dynamically process selected decks. Generated 7-8 slide specifications for Vitamin C, Niacinamide, and Exfoliants, citing active graph facts and featuring safety slides. Rendered all decks in HTML, PDF, and PPTX formats, clearing 100% of the QA gates with zero regressions on Retinoids.
-
+- **Phase 5.1 (Deck Integrity Hardening)**: Completed. Added a topic-aware pregnancy safety check rule via `05_content/safety_config.json`, requiring pregnancy safety slides only for pregnancy-critical topics or those with pregnancy-related facts in the graph. Implemented a strict slide-to-fact claim validation gate in `qa_deck.py` checking for Pregnancy, Contraindication, and Safety/Tolerability category keyword alignments between slide text and cited facts. Rewrote the safety and summary slides for Vitamin C, Niacinamide, and Exfoliants to remove unsupported pregnancy assertions and focus on fact-grounded claims, ensuring all 3 decks and Retinoids pass QA with 0 errors.

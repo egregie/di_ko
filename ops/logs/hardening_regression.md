@@ -17,7 +17,7 @@ All 12 clean facts in the active knowledge graph must pass the gate successfully
 | fact_0010 | Tazarotene 0.1% cream is effective for t... | SUPPORTED | True | write | PASS |
 | fact_0011 | Retinaldehyde requires only a single met... | WEAK | True | write | PASS |
 | fact_0012 | Topical retinaldehyde improves skin hydr... | SUPPORTED | True | write | PASS |
-| fact_0014 | Retinyl palmitate nano-formulation reduc... | NEEDS_MANUAL | True | write | PASS |
+| fact_0014 | Retinyl palmitate nano-formulation reduc... | SUPPORTED | True | write | PASS |
 | fact_0015 | Topical retinoids are contraindicated du... | SUPPORTED | True | write | PASS |
 | fact_0017 | glycolic acid and salicylic acid combina... | SUPPORTED | True | write | PASS |
 | fact_0018 | salicylic-mandelic acid peels are effect... | SUPPORTED | True | write | PASS |

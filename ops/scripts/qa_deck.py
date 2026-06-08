@@ -60,7 +60,40 @@ def main():
     if font_family != "Arimo":
         pdf_errors.append(f"Font Family check failed: expected 'Arimo', got '{font_family}'")
         
-    # 3. Check Slide Specs (Source Refs and Pregnancy warning)
+    # Load safety config
+    safety_config_path = os.path.join(project_root, "05_content", "safety_config.json")
+    pregnancy_required_decks = []
+    if os.path.exists(safety_config_path):
+        try:
+            with open(safety_config_path, "r", encoding="utf-8") as scf:
+                safety_config = json.load(scf)
+                pregnancy_required_decks = safety_config.get("pregnancy_required_decks", [])
+        except Exception as e:
+            print(f"Warning: Failed to load safety config: {e}")
+
+    topic_name = deck_name.replace("deck_", "") if deck_name.startswith("deck_") else deck_name
+    
+    # Load all active facts for this topic to check for pregnancy keywords
+    has_pregnancy_fact_in_graph = False
+    facts_dir = os.path.join(project_root, "03_knowledge_graph", "facts")
+    if os.path.exists(facts_dir):
+        for f_file in os.listdir(facts_dir):
+            if f_file.endswith(".json"):
+                try:
+                    with open(os.path.join(facts_dir, f_file), "r", encoding="utf-8") as ff:
+                        f_data = json.load(ff)
+                    f_entity = str(f_data.get("entity_id", "")).lower()
+                    if f_entity == topic_name or f_entity in topic_name or topic_name in f_entity:
+                        statement = str(f_data.get("statement", "")).lower()
+                        if any(kw in statement for kw in ["беременнос", "pregnancy", "лактаци", "lactation"]):
+                            has_pregnancy_fact_in_graph = True
+                            break
+                except Exception:
+                    pass
+
+    require_pregnancy_slide = (deck_name in pregnancy_required_decks) or has_pregnancy_fact_in_graph
+
+    # 3. Check Slide Specs (Source Refs and Pregnancy/Safety checks)
     spec_files = sorted(glob.glob(os.path.join(specs_dir, f"{deck_name}-s*.json")))
     total_slides = len(spec_files)
     
@@ -72,6 +105,8 @@ def main():
     }
     
     has_pregnancy_slide = False
+    has_safety_slide = False
+    
     for sf in spec_files:
         with open(sf, "r", encoding="utf-8") as f:
             slide = json.load(f)
@@ -79,6 +114,9 @@ def main():
         layout = slide.get("layout", "")
         refs = slide.get("source_refs", [])
         
+        if layout == "contraindication_alert":
+            has_safety_slide = True
+            
         # Check source refs on clinical slides (non-cover and non-section_divider)
         if layout not in ("cover", "section_divider"):
             if not refs:
@@ -90,6 +128,84 @@ def main():
                         pdf_errors.append(f"GATE BLOCK: Slide '{os.path.basename(sf)}' cites quarantined fact '{r}'.")
                         pptx_errors.append(f"GATE BLOCK: Slide '{os.path.basename(sf)}' cites quarantined fact '{r}'.")
                         
+            # Claim validation check for clinical slides
+            slide_text_parts = []
+            title = str(slide.get("title", ""))
+            subtitle = str(slide.get("subtitle", ""))
+            if title: slide_text_parts.append(title)
+            if subtitle: slide_text_parts.append(subtitle)
+            for item in slide.get("body", []):
+                if "text" in item:
+                    slide_text_parts.append(item["text"])
+                if "title" in item:
+                    slide_text_parts.append(item["title"])
+                if "desc" in item:
+                    slide_text_parts.append(item["desc"])
+                if "label" in item:
+                    slide_text_parts.append(item["label"])
+            alert = slide.get("components", {}).get("alert", {})
+            if alert:
+                if "title" in alert:
+                    slide_text_parts.append(alert["title"])
+                if "text" in alert:
+                    slide_text_parts.append(alert["text"])
+            
+            slide_combined_text = " ".join(slide_text_parts).lower()
+            
+            # Load cited facts
+            cited_facts = []
+            for r in refs:
+                if r.startswith("fact_"):
+                    fact_path = os.path.join(project_root, "03_knowledge_graph", "facts", f"{r}.json")
+                    if os.path.exists(fact_path):
+                        try:
+                            with open(fact_path, "r", encoding="utf-8") as ff:
+                                f_data = json.load(ff)
+                            cited_facts.append(f_data)
+                        except Exception:
+                            pass
+                            
+            # Validate claims matching categories
+            categories = [
+                {
+                    "name": "Pregnancy/Lactation",
+                    "keywords": ["беременнос", "pregnancy", "лактаци", "lactation"]
+                },
+                {
+                    "name": "Contraindication",
+                    "keywords": ["противопоказа", "contraindicat"]
+                },
+                {
+                    "name": "Safety/Tolerability",
+                    "keywords": ["безопас", "safe"]
+                }
+            ]
+            
+            for cat in categories:
+                cat_name = cat["name"]
+                cat_kws = cat["keywords"]
+                
+                if any(kw in slide_combined_text for kw in cat_kws):
+                    fact_has_support = False
+                    for fact in cited_facts:
+                        statement = str(fact.get("statement", "")).lower()
+                        if any(kw in statement for kw in cat_kws):
+                            fact_has_support = True
+                            break
+                            
+                    # For safety, allow matches on "tolerab" / "well-tolerated" / "benefit" in English
+                    if cat_name == "Safety/Tolerability" and not fact_has_support:
+                        for fact in cited_facts:
+                            statement = str(fact.get("statement", "")).lower()
+                            if any(kw in statement for kw in ["tolerab", "well-tolerated", "benefit"]):
+                                fact_has_support = True
+                                break
+                                
+                    if not fact_has_support:
+                        err_msg = f"Claim Validation failed in slide '{os.path.basename(sf)}': Slide contains '{cat_name}' clinical claim, but none of the cited facts {refs} contain supporting keywords {cat_kws}."
+                        pdf_errors.append(err_msg)
+                        pptx_errors.append(err_msg)
+
         # Check for pregnancy reference (pregnancy contraindication check)
         title = str(slide.get("title", "")).lower()
         subtitle = str(slide.get("subtitle", "")).lower()
@@ -97,14 +213,20 @@ def main():
         for item in slide.get("body", []):
             body_text += str(item.get("text", "")).lower()
         notes = str(slide.get("notes", "")).lower()
+        alert = slide.get("components", {}).get("alert", {})
+        alert_text = (str(alert.get("title", "")) + " " + str(alert.get("text", ""))).lower() if alert else ""
         
-        combined_text = title + " " + subtitle + " " + body_text + " " + notes
+        combined_text = title + " " + subtitle + " " + body_text + " " + notes + " " + alert_text
         if "беременнос" in combined_text or "pregnancy" in combined_text or "лактаци" in combined_text:
             has_pregnancy_slide = True
             
-    if not has_pregnancy_slide:
-        pdf_errors.append("Pregnancy precaution check failed: No pregnancy/lactation contraindication slide found.")
-        pptx_errors.append("Pregnancy precaution check failed: No pregnancy/lactation contraindication slide found.")
+    if not has_safety_slide:
+        pdf_errors.append("Safety slide check failed: No safety slide (layout 'contraindication_alert') found.")
+        pptx_errors.append("Safety slide check failed: No safety slide (layout 'contraindication_alert') found.")
+        
+    if require_pregnancy_slide and not has_pregnancy_slide:
+        pdf_errors.append("Pregnancy precaution check failed: Pregnancy slide required for this topic, but none found.")
+        pptx_errors.append("Pregnancy precaution check failed: Pregnancy slide required for this topic, but none found.")
         
     # 4. Run Playwright Font Load Check for PDF/HTML output
     playwright_script = os.path.join(script_dir, "qa_font_check.js")
@@ -218,7 +340,8 @@ def main():
         "## Checked Invariants",
         f"- Zero Black Policy: {'PASS' if not any('Zero Black' in e for e in pdf_errors + pptx_errors) else 'FAIL'}",
         f"- Arimo font defined in tokens: {'PASS' if font_family == 'Arimo' else 'FAIL'}",
-        f"- Pregnancy slide present: {'PASS' if has_pregnancy_slide else 'FAIL'}",
+        f"- Safety slide present: {'PASS' if has_safety_slide else 'FAIL'}",
+        f"- Pregnancy slide present (when required): {'PASS' if (not require_pregnancy_slide or has_pregnancy_slide) else 'FAIL'}",
         f"- Playwright Font Load (Online): {'PASS' if font_check_passed else 'FAIL'}",
         f"- Playwright Font Load (Offline): {'PASS' if font_check_offline_passed else 'FAIL'}",
         f"- PPTX Element Font Check (Arimo): {'PASS' if not any('font' in e for e in pptx_errors) else 'FAIL'}",
