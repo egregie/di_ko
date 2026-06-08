@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2C3440" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="200" y="25" font-family="Arimo, sans-serif" font-size="14" font-weight="bold" fill="#2C3440" text-anchor="middle">
+    Салициловая кислота: Механизм десмолиза
+  </text>
+
+  <!-- Left: Intact Desmosomes -->
+  <g transform="translate(30, 60)">
+    <!-- Label -->
+    <text x="65" y="15" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Плотный роговой слой</text>
+
+    <!-- Corneocyte 1 -->
+    <rect x="0" y="30" width="50" height="150" rx="4" fill="#D7E0CE" stroke="#6D8470" stroke-width="1.5" />
+    <text x="-105" y="30" font-family="Arimo, sans-serif" font-size="10" fill="#3D4A40" transform="rotate(-90)" text-anchor="middle">Corneocyte</text>
+    
+    <!-- Corneocyte 2 -->
+    <rect x="80" y="30" width="50" height="150" rx="4" fill="#D7E0CE" stroke="#6D8470" stroke-width="1.5" />
+    <text x="-105" y="110" font-family="Arimo, sans-serif" font-size="10" fill="#3D4A40" transform="rotate(-90)" text-anchor="middle">Corneocyte</text>
+
+    <!-- Intact Desmosome Bridges -->
+    <rect x="50" y="55" width="30" height="6" fill="#E6D2CA" stroke="#2C3440" stroke-width="0.75" />
+    <rect x="50" y="95" width="30" height="6" fill="#E6D2CA" stroke="#2C3440" stroke-width="0.75" />
+    <rect x="50" y="135" width="30" height="6" fill="#E6D2CA" stroke="#2C3440" stroke-width="0.75" />
+    
+    <text x="65" y="202" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">Десмосомы интактны</text>
+  </g>
+
+  <!-- Middle Arrow: BHA Action -->
+  <path d="M 175 140 L 210 140" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="192" y="125" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#6D8470" text-anchor="middle">BHA</text>
+  <text x="192" y="162" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">Эксфолиация</text>
+
+  <!-- Right: Desmolysis (Separated Corneocytes) -->
+  <g transform="translate(230, 60)">
+    <!-- Label -->
+    <text x="70" y="15" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#9E6A5A" text-anchor="middle">Десмолиз и десквамация</text>
+
+    <!-- Corneocyte 1 (Shifted Left/Tilted) -->
+    <g transform="translate(-10, 30) rotate(-2)">
+      <rect x="0" y="0" width="50" height="150" rx="4" fill="#D7E0CE" stroke="#6D8470" stroke-width="1.5" />
+      <text x="-75" y="30" font-family="Arimo, sans-serif" font-size="10" fill="#3D4A40" transform="rotate(-90)" text-anchor="middle">Corneocyte</text>
+    </g>
+    
+    <!-- Corneocyte 2 (Shifted Right/Tilted) -->
+    <g transform="translate(90, 30) rotate(2)">
+      <rect x="0" y="0" width="50" height="150" rx="4" fill="#D7E0CE" stroke="#6D8470" stroke-width="1.5" />
+      <text x="-75" y="30" font-family="Arimo, sans-serif" font-size="10" fill="#3D4A40" transform="rotate(-90)" text-anchor="middle">Corneocyte</text>
+    </g>
+
+    <!-- Broken Desmosomes & Salicylic Acid Attack -->
+    <!-- Broken bridge 1 -->
+    <line x1="40" y1="60" x2="55" y2="60" stroke="#9E6A5A" stroke-width="1.5" stroke-dasharray="2,2" />
+    <line x1="75" y1="60" x2="90" y2="60" stroke="#9E6A5A" stroke-width="1.5" stroke-dasharray="2,2" />
+    
+    <!-- Broken bridge 2 -->
+    <line x1="40" y1="100" x2="55" y2="100" stroke="#9E6A5A" stroke-width="1.5" stroke-dasharray="2,2" />
+    <line x1="75" y1="100" x2="90" y2="100" stroke="#9E6A5A" stroke-width="1.5" stroke-dasharray="2,2" />
+
+    <!-- Broken bridge 3 -->
+    <line x1="40" y1="140" x2="55" y2="140" stroke="#9E6A5A" stroke-width="1.5" stroke-dasharray="2,2" />
+    <line x1="75" y1="140" x2="90" y2="140" stroke="#9E6A5A" stroke-width="1.5" stroke-dasharray="2,2" />
+
+    <!-- Salicylic Acid (BHA) molecules shown as stars attacking junctions -->
+    <g fill="#9E6A5A" stroke="#2C3440" stroke-width="0.5">
+      <!-- Star 1 -->
+      <polygon points="65,55 68,58 72,58 69,61 70,65 65,63 60,65 61,61 58,58 62,58" />
+      <!-- Star 2 -->
+      <polygon points="65,95 68,98 72,98 69,101 70,105 65,103 60,105 61,101 58,98 62,98" />
+      <!-- Star 3 -->
+      <polygon points="65,135 68,138 72,138 69,141 70,145 65,143 60,145 61,141 58,138 62,138" />
+    </g>
+
+    <text x="65" y="202" font-family="Arimo, sans-serif" font-size="9" fill="#9E6A5A" font-weight="bold" text-anchor="middle">Связи разрушены BHA</text>
+  </g>
+</svg>

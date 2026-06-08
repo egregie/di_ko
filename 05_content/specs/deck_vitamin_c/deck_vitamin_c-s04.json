@@ -20,9 +20,9 @@
   ],
   "media": {
     "type": "image",
-    "asset": "ascorbic_acid.svg",
+    "asset": "ascorbic_acid_absorption.svg",
     "fit": "contain",
-    "caption": "Химическая структура L-аскорбиновой кислоты"
+    "caption": "Кривая чрескожной абсорбции L-аскорбиновой кислоты в зависимости от pH и концентрации"
   },
   "components": {},
   "disclaimers": [

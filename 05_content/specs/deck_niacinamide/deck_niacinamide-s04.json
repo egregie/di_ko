@@ -20,9 +20,9 @@
   ],
   "media": {
     "type": "image",
-    "asset": "sebum_control_placeholder.png",
-    "fit": "cover",
-    "caption": "[Placeholder] Динамика снижения воспалительных элементов"
+    "asset": "niacinamide.svg",
+    "fit": "contain",
+    "caption": "Химическая структура Ниацинамида (активное вещество для себокоррекции)"
   },
   "components": {},
   "disclaimers": [

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <!-- Definitions for arrows and markers -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2C3440" />
+    </marker>
+    <linearGradient id="helixGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E6D2CA" />
+      <stop offset="50%" stop-color="#6D8470" />
+      <stop offset="100%" stop-color="#2C3440" />
+    </linearGradient>
+  </defs>
+
+  <!-- Title/Label -->
+  <text x="200" y="25" font-family="Arimo, sans-serif" font-size="14" font-weight="bold" fill="#2C3440" text-anchor="middle">
+    Стимуляция синтеза коллагена I/III (Кофактор гидроксилаз)
+  </text>
+
+  <!-- Left: Ascorbate Cofactor Block -->
+  <g transform="translate(20, 60)">
+    <rect x="0" y="0" width="100" height="60" rx="8" fill="#E6D2CA" stroke="#6D8470" stroke-width="2" />
+    <text x="50" y="26" font-family="Arimo, sans-serif" font-size="12" font-weight="bold" fill="#2C3440" text-anchor="middle">L-Ascorbate</text>
+    <text x="50" y="44" font-family="Arimo, sans-serif" font-size="10" fill="#3D4A40" text-anchor="middle">Активный кофактор</text>
+  </g>
+
+  <!-- Arrow from Ascorbate to Hydroxylase -->
+  <path d="M 130 90 L 164 90" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)" />
+
+  <!-- Middle: Hydroxylase Enzyme Block -->
+  <g transform="translate(180, 50)">
+    <circle cx="40" cy="40" r="35" fill="#D7E0CE" stroke="#6D8470" stroke-width="2" />
+    <text x="40" y="38" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#2C3440" text-anchor="middle">Fe²⁺ / Prolyl</text>
+    <text x="40" y="52" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#2C3440" text-anchor="middle">Hydroxylase</text>
+  </g>
+
+  <!-- Arrow from Enzyme to Reaction -->
+  <path d="M 220 130 L 220 170" fill="none" stroke="#2C3440" stroke-width="2" stroke-dasharray="4,4" marker-end="url(#arrow)" />
+  <text x="230" y="152" font-family="Arimo, sans-serif" font-size="10" fill="#3D4A40">Гидроксилирование</text>
+
+  <!-- Bottom: Procollagen -> Collagen Fiber reaction -->
+  <!-- Reactant: Procollagen chain -->
+  <g transform="translate(20, 200)">
+    <rect x="0" y="0" width="110" height="50" rx="6" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5" />
+    <text x="55" y="22" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Нестабильный</text>
+    <text x="55" y="38" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Проколлаген</text>
+    
+    <!-- Single Helix representation -->
+    <path d="M 10 42 Q 25 35 40 42 T 70 42 T 100 42" fill="none" stroke="#9E6A5A" stroke-width="2" />
+  </g>
+
+  <!-- Arrow: Conversion -->
+  <path d="M 140 225 L 230 225" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="185" y="215" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">Hydroxylation</text>
+
+  <!-- Product: Stable Collagen Triple Helix -->
+  <g transform="translate(250, 200)">
+    <rect x="0" y="0" width="130" height="50" rx="6" fill="#F8F6F4" stroke="#6D8470" stroke-width="1.5" />
+    <text x="65" y="20" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Стабильный</text>
+    <text x="65" y="35" font-family="Arimo, sans-serif" font-size="10" fill="#6D8470" text-anchor="middle">Тройной суперспиральный</text>
+    <text x="65" y="46" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">Коллаген I/III типов</text>
+
+    <!-- Triple Helix representation -->
+    <path d="M 10 42 Q 25 36 40 42 T 70 42 T 100 42" fill="none" stroke="#6D8470" stroke-width="1.5" />
+    <path d="M 12 44 Q 27 38 42 44 T 72 44 T 102 44" fill="none" stroke="#E6D2CA" stroke-width="1.5" />
+    <path d="M 14 40 Q 29 34 44 40 T 74 40 T 104 40" fill="none" stroke="#2C3440" stroke-width="1.5" />
+  </g>
+</svg>

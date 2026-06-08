@@ -178,16 +178,41 @@ def main():
                         pdf_errors.append(err)
                         pptx_errors.append(err)
                         
-                # Diagram-fact check for Retinoids pilot
-                if asset_name in ["rar_rxr_mechanism.svg", "skin_layers_turnover.svg"]:
+                # Diagram-fact check for pilot mechanisms
+                if asset_name in ["rar_rxr_mechanism.svg", "skin_layers_turnover.svg", "collagen_synthesis.svg", "ascorbic_acid_absorption.svg", "ceramide_synthesis.svg", "melanosome_transfer.svg", "desmosome_desmolysis.svg"]:
                     if asset_name == "rar_rxr_mechanism.svg":
                         if not any(f in refs for f in ["fact_0001", "fact_0002"]):
                             err = f"GATE BLOCK: Slide '{os.path.basename(sf)}' uses rar_rxr_mechanism.svg but does not cite fact_0001 or fact_0002 in source_refs."
                             pdf_errors.append(err)
                             pptx_errors.append(err)
                     elif asset_name == "skin_layers_turnover.svg":
-                        if "fact_0006" not in refs:
-                            err = f"GATE BLOCK: Slide '{os.path.basename(sf)}' uses skin_layers_turnover.svg but does not cite fact_0006 in source_refs."
+                        if not any(f in refs for f in ["fact_0006", "fact_0047", "fact_0048"]):
+                            err = f"GATE BLOCK: Slide '{os.path.basename(sf)}' uses skin_layers_turnover.svg but does not cite fact_0006, fact_0047, or fact_0048 in source_refs."
+                            pdf_errors.append(err)
+                            pptx_errors.append(err)
+                    elif asset_name == "collagen_synthesis.svg":
+                        if not any(f in refs for f in ["fact_0021", "fact_0030", "fact_0046"]):
+                            err = f"GATE BLOCK: Slide '{os.path.basename(sf)}' uses collagen_synthesis.svg but does not cite fact_0021, fact_0030, or fact_0046 in source_refs."
+                            pdf_errors.append(err)
+                            pptx_errors.append(err)
+                    elif asset_name == "ascorbic_acid_absorption.svg":
+                        if not any(f in refs for f in ["fact_0028", "fact_0029", "fact_0044", "fact_0045"]):
+                            err = f"GATE BLOCK: Slide '{os.path.basename(sf)}' uses ascorbic_acid_absorption.svg but does not cite fact_0028, fact_0029, fact_0044, or fact_0045 in source_refs."
+                            pdf_errors.append(err)
+                            pptx_errors.append(err)
+                    elif asset_name == "ceramide_synthesis.svg":
+                        if "fact_0024" not in refs:
+                            err = f"GATE BLOCK: Slide '{os.path.basename(sf)}' uses ceramide_synthesis.svg but does not cite fact_0024 in source_refs."
+                            pdf_errors.append(err)
+                            pptx_errors.append(err)
+                    elif asset_name == "melanosome_transfer.svg":
+                        if "fact_0034" not in refs:
+                            err = f"GATE BLOCK: Slide '{os.path.basename(sf)}' uses melanosome_transfer.svg but does not cite fact_0034 in source_refs."
+                            pdf_errors.append(err)
+                            pptx_errors.append(err)
+                    elif asset_name == "desmosome_desmolysis.svg":
+                        if "fact_0049" not in refs:
+                            err = f"GATE BLOCK: Slide '{os.path.basename(sf)}' uses desmosome_desmolysis.svg but does not cite fact_0049 in source_refs."
                             pdf_errors.append(err)
                             pptx_errors.append(err)
                             

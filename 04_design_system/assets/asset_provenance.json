@@ -7,7 +7,7 @@
     "license": "generated/own",
     "attribution": "",
     "generated_by": "gen_molecule.py",
-    "fetched_at": "2026-06-08T17:08:26.342743Z"
+    "fetched_at": "2026-06-08T17:52:44.306065Z"
   },
   "tretinoin": {
     "id": "tretinoin",
@@ -17,7 +17,7 @@
     "license": "generated/own",
     "attribution": "",
     "generated_by": "gen_molecule.py",
-    "fetched_at": "2026-06-08T17:08:27.863600Z"
+    "fetched_at": "2026-06-08T17:52:45.863235Z"
   },
   "adapalene": {
     "id": "adapalene",
@@ -27,7 +27,7 @@
     "license": "generated/own",
     "attribution": "",
     "generated_by": "gen_molecule.py",
-    "fetched_at": "2026-06-08T17:08:29.546367Z"
+    "fetched_at": "2026-06-08T17:52:47.597754Z"
   },
   "ascorbic_acid": {
     "id": "ascorbic_acid",
@@ -37,7 +37,7 @@
     "license": "generated/own",
     "attribution": "",
     "generated_by": "gen_molecule.py",
-    "fetched_at": "2026-06-08T17:08:31.022517Z"
+    "fetched_at": "2026-06-08T17:52:49.463865Z"
   },
   "sodium_ascorbyl_phosphate": {
     "id": "sodium_ascorbyl_phosphate",
@@ -47,7 +47,7 @@
     "license": "generated/own",
     "attribution": "",
     "generated_by": "gen_molecule.py",
-    "fetched_at": "2026-06-08T17:08:32.558825Z"
+    "fetched_at": "2026-06-08T17:52:51.037888Z"
   },
   "magnesium_ascorbyl_phosphate": {
     "id": "magnesium_ascorbyl_phosphate",
@@ -57,7 +57,7 @@
     "license": "generated/own",
     "attribution": "",
     "generated_by": "gen_molecule.py",
-    "fetched_at": "2026-06-08T17:08:34.429940Z"
+    "fetched_at": "2026-06-08T17:52:52.749572Z"
   },
   "ascorbyl_glucoside": {
     "id": "ascorbyl_glucoside",
@@ -67,7 +67,7 @@
     "license": "generated/own",
     "attribution": "",
     "generated_by": "gen_molecule.py",
-    "fetched_at": "2026-06-08T17:08:35.951228Z"
+    "fetched_at": "2026-06-08T17:52:54.276212Z"
   },
   "niacinamide": {
     "id": "niacinamide",
@@ -77,7 +77,7 @@
     "license": "generated/own",
     "attribution": "",
     "generated_by": "gen_molecule.py",
-    "fetched_at": "2026-06-08T17:08:37.448352Z"
+    "fetched_at": "2026-06-08T17:52:55.809699Z"
   },
   "glycolic_acid": {
     "id": "glycolic_acid",
@@ -87,7 +87,7 @@
     "license": "generated/own",
     "attribution": "",
     "generated_by": "gen_molecule.py",
-    "fetched_at": "2026-06-08T17:08:38.938408Z"
+    "fetched_at": "2026-06-08T17:52:57.600846Z"
   },
   "lactic_acid": {
     "id": "lactic_acid",
@@ -97,7 +97,7 @@
     "license": "generated/own",
     "attribution": "",
     "generated_by": "gen_molecule.py",
-    "fetched_at": "2026-06-08T17:08:40.442085Z"
+    "fetched_at": "2026-06-08T17:52:59.147756Z"
   },
   "mandelic_acid": {
     "id": "mandelic_acid",
@@ -107,7 +107,7 @@
     "license": "generated/own",
     "attribution": "",
     "generated_by": "gen_molecule.py",
-    "fetched_at": "2026-06-08T17:08:42.153271Z"
+    "fetched_at": "2026-06-08T17:53:02.539447Z"
   },
   "salicylic_acid": {
     "id": "salicylic_acid",
@@ -117,7 +117,7 @@
     "license": "generated/own",
     "attribution": "",
     "generated_by": "gen_molecule.py",
-    "fetched_at": "2026-06-08T17:08:45.525922Z"
+    "fetched_at": "2026-06-08T17:53:04.253731Z"
   },
   "rar_rxr_mechanism": {
     "id": "rar_rxr_mechanism",
@@ -188,5 +188,55 @@
     "attribution": "",
     "generated_by": "placeholder",
     "fetched_at": "2026-06-08T17:10:00Z"
+  },
+  "collagen_synthesis": {
+    "id": "collagen_synthesis",
+    "type": "mechanism",
+    "path": "04_design_system/assets/mechanisms/collagen_synthesis.svg",
+    "source_of_truth": "PMID 18505499 (Vitamin C in skin health) + Servier Medical Art templates",
+    "license": "CC-BY-4.0",
+    "attribution": "Servier Medical Art by Les Laboratoires Servier (CC-BY 4.0)",
+    "generated_by": "manual/servier-art",
+    "fetched_at": "2026-06-08T18:00:00Z"
+  },
+  "ascorbic_acid_absorption": {
+    "id": "ascorbic_acid_absorption",
+    "type": "mechanism",
+    "path": "04_design_system/assets/mechanisms/ascorbic_acid_absorption.svg",
+    "source_of_truth": "PMID 11207686 (Pinnell 2001, Topical L-ascorbic acid absorption)",
+    "license": "own/generated",
+    "attribution": "",
+    "generated_by": "manual/d3-vector",
+    "fetched_at": "2026-06-08T18:00:00Z"
+  },
+  "ceramide_synthesis": {
+    "id": "ceramide_synthesis",
+    "type": "mechanism",
+    "path": "04_design_system/assets/mechanisms/ceramide_synthesis.svg",
+    "source_of_truth": "PMID 10971556 (Tanno 2000, Nicotinamide increases biosynthesis of ceramides) + Servier Medical Art templates",
+    "license": "CC-BY-4.0",
+    "attribution": "Servier Medical Art by Les Laboratoires Servier (CC-BY 4.0)",
+    "generated_by": "manual/servier-art",
+    "fetched_at": "2026-06-08T18:00:00Z"
+  },
+  "melanosome_transfer": {
+    "id": "melanosome_transfer",
+    "type": "mechanism",
+    "path": "04_design_system/assets/mechanisms/melanosome_transfer.svg",
+    "source_of_truth": "PMID 12100180 (Hakozaki 2002, The effect of niacinamide on reducing cutaneous pigmentation) + Servier Medical Art templates",
+    "license": "CC-BY-4.0",
+    "attribution": "Servier Medical Art by Les Laboratoires Servier (CC-BY 4.0)",
+    "generated_by": "manual/servier-art",
+    "fetched_at": "2026-06-08T18:00:00Z"
+  },
+  "desmosome_desmolysis": {
+    "id": "desmosome_desmolysis",
+    "type": "mechanism",
+    "path": "04_design_system/assets/mechanisms/desmosome_desmolysis.svg",
+    "source_of_truth": "PMID 14616339 (Salicylic acid desmolytic action) + Servier Medical Art templates",
+    "license": "CC-BY-4.0",
+    "attribution": "Servier Medical Art by Les Laboratoires Servier (CC-BY 4.0)",
+    "generated_by": "manual/servier-art",
+    "fetched_at": "2026-06-08T18:00:00Z"
   }
 }

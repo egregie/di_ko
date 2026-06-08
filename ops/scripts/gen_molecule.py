@@ -41,14 +41,14 @@ def load_brand_color(tokens_path):
     try:
         with open(tokens_path, "r", encoding="utf-8") as f:
             tokens = json.load(f)
-        hex_color = tokens.get("color", {}).get("dark", "#1D291C")
+        hex_color = tokens.get("color", {}).get("moleculeStroke", "#1D291C")
         # Convert hex to RGB float tuple normalized to [0, 1]
         hex_color = hex_color.lstrip("#")
         return (
             int(hex_color[0:2], 16) / 255.0,
             int(hex_color[2:4], 16) / 255.0,
             int(hex_color[4:6], 16) / 255.0
-        ), tokens.get("color", {}).get("dark", "#1D291C")
+        ), tokens.get("color", {}).get("moleculeStroke", "#1D291C")
     except Exception:
         return (29/255.0, 41/255.0, 28/255.0), "#1D291C"
 

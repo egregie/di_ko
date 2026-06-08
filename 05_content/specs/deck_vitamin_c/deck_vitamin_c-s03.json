@@ -20,9 +20,9 @@
   ],
   "media": {
     "type": "image",
-    "asset": "collagen_synthesis_placeholder.png",
+    "asset": "collagen_synthesis.svg",
     "fit": "cover",
-    "caption": "[Placeholder] Схема регуляции синтеза коллагена"
+    "caption": "Схема регуляции синтеза коллагена I и III типов под действием L-аскорбиновой кислоты"
   },
   "components": {},
   "disclaimers": [
