@@ -27,6 +27,16 @@ def main():
     type_scale = tokens["type"]
     
     # Read all slide specs in order
+    # Load asset provenance registry
+    registry_path = os.path.join(project_root, "04_design_system", "assets", "asset_provenance.json")
+    registry = {}
+    if os.path.exists(registry_path):
+        try:
+            with open(registry_path, "r", encoding="utf-8") as rf:
+                registry = json.load(rf)
+        except Exception as e:
+            print(f"Warning: Failed to load asset registry: {e}")
+
     spec_files = sorted(glob.glob(os.path.join(specs_dir, f"{deck_name}-s*.json")))
     slides_html = []
     
@@ -40,9 +50,38 @@ def main():
         body = slide.get("body", [])
         media = slide.get("media", {})
         components = slide.get("components", {})
-        disclaimers = slide.get("disclaimers", [])
+        disclaimers = list(slide.get("disclaimers", []))
         source_refs = slide.get("source_refs", [])
         
+        # Resolve media asset and attribution
+        asset_name = media.get("asset", "")
+        attribution = ""
+        is_real_image = False
+        img_src = ""
+        media_fit = media.get("fit", "contain")
+        media_caption = media.get("caption", "")
+        
+        if asset_name:
+            asset_data = registry.get(asset_name) or {}
+            # Fallback check stripping extension
+            if not asset_data:
+                base_name = os.path.splitext(asset_name)[0]
+                asset_data = registry.get(base_name) or {}
+                
+            attribution = asset_data.get("attribution", "")
+            rel_path = asset_data.get("path", "")
+            
+            if rel_path:
+                abs_path = os.path.join(project_root, rel_path)
+                if os.path.exists(abs_path):
+                    is_real_image = True
+                    # Path relative to output folder 06_render/out/
+                    img_src = "../../" + rel_path
+                    
+        # Append CC-BY attribution to disclaimers if present
+        if attribution:
+            disclaimers.append(attribution)
+            
         # Build disclaimers section
         disc_html = ""
         if disclaimers:
@@ -53,10 +92,28 @@ def main():
         if source_refs:
             sources_html = f'<div class="sources-ref">Источники: {", ".join(source_refs)}</div>'
             
+        # Build media block HTML
+        media_html = ""
+        if asset_name:
+            if is_real_image:
+                media_html = f"""
+                <div class="media-box image-media" style="background: transparent; border: none; padding: 0; display: flex; align-items: center; justify-content: center; height: 100%; width: 100%;">
+                    <img src="{img_src}" alt="{media_caption}" style="max-width: 100%; max-height: 100%; object-fit: {media_fit};" />
+                </div>
+                """
+            else:
+                display_caption = media_caption
+                if "placeholder" in asset_name.lower() and not display_caption.startswith("[Placeholder]"):
+                    display_caption = f"[Placeholder] {display_caption}"
+                media_html = f"""
+                <div class="media-box placeholder-media">
+                    <span class="media-caption">{display_caption}</span>
+                </div>
+                """
+                
         slide_content = ""
         
         if layout == "cover":
-            media_caption = media.get('caption', 'YM PROSKIN')
             slide_content = f"""
             <div class="slide cover-layout">
                 <div class="header-group">
@@ -65,9 +122,7 @@ def main():
                     <p class="subtitle-text">{subtitle}</p>
                 </div>
                 <div class="cover-media">
-                    <div class="media-box placeholder-media">
-                        <span class="media-caption">{media_caption}</span>
-                    </div>
+                    {media_html}
                 </div>
                 {disc_html}
             </div>
@@ -108,7 +163,6 @@ def main():
             for item in body:
                 if item.get("type") == "bullet":
                     bullets += f'<li>{item.get("text", "")}</li>'
-            media_caption = media.get('caption', '')
             slide_content = f"""
             <div class="slide two-columns-layout">
                 <div class="slide-header">
@@ -122,9 +176,7 @@ def main():
                         </ul>
                     </div>
                     <div class="column-right">
-                        <div class="media-box placeholder-media">
-                            <span class="media-caption">{media_caption}</span>
-                        </div>
+                        {media_html}
                     </div>
                 </div>
                 {sources_html}

@@ -1,0 +1,192 @@
+{
+  "retinol": {
+    "id": "retinol",
+    "type": "molecule",
+    "path": "04_design_system/assets/molecules/retinol.svg",
+    "source_of_truth": "PubChem CID 445354 (SMILES: CC1=C(C(CCC1)(C)C)C=CC(=CC=CC(=CCO)C)C)",
+    "license": "generated/own",
+    "attribution": "",
+    "generated_by": "gen_molecule.py",
+    "fetched_at": "2026-06-08T17:08:26.342743Z"
+  },
+  "tretinoin": {
+    "id": "tretinoin",
+    "type": "molecule",
+    "path": "04_design_system/assets/molecules/tretinoin.svg",
+    "source_of_truth": "PubChem CID 444795 (SMILES: CC1=C(C(CCC1)(C)C)C=CC(=CC=CC(=CC(=O)O)C)C)",
+    "license": "generated/own",
+    "attribution": "",
+    "generated_by": "gen_molecule.py",
+    "fetched_at": "2026-06-08T17:08:27.863600Z"
+  },
+  "adapalene": {
+    "id": "adapalene",
+    "type": "molecule",
+    "path": "04_design_system/assets/molecules/adapalene.svg",
+    "source_of_truth": "PubChem CID 60164 (SMILES: COC1=C(C=C(C=C1)C2=CC3=C(C=C2)C=C(C=C3)C(=O)O)C45CC6CC(C4)CC(C6)C5)",
+    "license": "generated/own",
+    "attribution": "",
+    "generated_by": "gen_molecule.py",
+    "fetched_at": "2026-06-08T17:08:29.546367Z"
+  },
+  "ascorbic_acid": {
+    "id": "ascorbic_acid",
+    "type": "molecule",
+    "path": "04_design_system/assets/molecules/ascorbic_acid.svg",
+    "source_of_truth": "PubChem CID 54670067 (SMILES: C(C(C1C(=C(C(=O)O1)O)O)O)O)",
+    "license": "generated/own",
+    "attribution": "",
+    "generated_by": "gen_molecule.py",
+    "fetched_at": "2026-06-08T17:08:31.022517Z"
+  },
+  "sodium_ascorbyl_phosphate": {
+    "id": "sodium_ascorbyl_phosphate",
+    "type": "molecule",
+    "path": "04_design_system/assets/molecules/sodium_ascorbyl_phosphate.svg",
+    "source_of_truth": "PubChem CID 10990876 (SMILES: C(C(C1C(=C(C(=O)O1)OP(=O)([O-])[O-])[O-])O)O.[Na+].[Na+].[Na+])",
+    "license": "generated/own",
+    "attribution": "",
+    "generated_by": "gen_molecule.py",
+    "fetched_at": "2026-06-08T17:08:32.558825Z"
+  },
+  "magnesium_ascorbyl_phosphate": {
+    "id": "magnesium_ascorbyl_phosphate",
+    "type": "molecule",
+    "path": "04_design_system/assets/molecules/magnesium_ascorbyl_phosphate.svg",
+    "source_of_truth": "PubChem CID 71587428 (SMILES: C(C(C1C(=C(C(=O)O1)OP(=O)([O-])[O-])[O-])O)O.C(C(C1C(=C(C(=O)O1)OP(=O)([O-])[O-])[O-])O)O.[Mg+2].[Mg+2].[Mg+2])",
+    "license": "generated/own",
+    "attribution": "",
+    "generated_by": "gen_molecule.py",
+    "fetched_at": "2026-06-08T17:08:34.429940Z"
+  },
+  "ascorbyl_glucoside": {
+    "id": "ascorbyl_glucoside",
+    "type": "molecule",
+    "path": "04_design_system/assets/molecules/ascorbyl_glucoside.svg",
+    "source_of_truth": "PubChem CID 54693473 (SMILES: C(C1C(C(C(C(O1)OC2=C(C(OC2=O)C(CO)O)O)O)O)O)O)",
+    "license": "generated/own",
+    "attribution": "",
+    "generated_by": "gen_molecule.py",
+    "fetched_at": "2026-06-08T17:08:35.951228Z"
+  },
+  "niacinamide": {
+    "id": "niacinamide",
+    "type": "molecule",
+    "path": "04_design_system/assets/molecules/niacinamide.svg",
+    "source_of_truth": "PubChem CID 936 (SMILES: C1=CC(=CN=C1)C(=O)N)",
+    "license": "generated/own",
+    "attribution": "",
+    "generated_by": "gen_molecule.py",
+    "fetched_at": "2026-06-08T17:08:37.448352Z"
+  },
+  "glycolic_acid": {
+    "id": "glycolic_acid",
+    "type": "molecule",
+    "path": "04_design_system/assets/molecules/glycolic_acid.svg",
+    "source_of_truth": "PubChem CID 757 (SMILES: C(C(=O)O)O)",
+    "license": "generated/own",
+    "attribution": "",
+    "generated_by": "gen_molecule.py",
+    "fetched_at": "2026-06-08T17:08:38.938408Z"
+  },
+  "lactic_acid": {
+    "id": "lactic_acid",
+    "type": "molecule",
+    "path": "04_design_system/assets/molecules/lactic_acid.svg",
+    "source_of_truth": "PubChem CID 612 (SMILES: CC(C(=O)O)O)",
+    "license": "generated/own",
+    "attribution": "",
+    "generated_by": "gen_molecule.py",
+    "fetched_at": "2026-06-08T17:08:40.442085Z"
+  },
+  "mandelic_acid": {
+    "id": "mandelic_acid",
+    "type": "molecule",
+    "path": "04_design_system/assets/molecules/mandelic_acid.svg",
+    "source_of_truth": "PubChem CID 1292 (SMILES: C1=CC=C(C=C1)C(C(=O)O)O)",
+    "license": "generated/own",
+    "attribution": "",
+    "generated_by": "gen_molecule.py",
+    "fetched_at": "2026-06-08T17:08:42.153271Z"
+  },
+  "salicylic_acid": {
+    "id": "salicylic_acid",
+    "type": "molecule",
+    "path": "04_design_system/assets/molecules/salicylic_acid.svg",
+    "source_of_truth": "PubChem CID 338 (SMILES: C1=CC=C(C(=C1)C(=O)O)O)",
+    "license": "generated/own",
+    "attribution": "",
+    "generated_by": "gen_molecule.py",
+    "fetched_at": "2026-06-08T17:08:45.525922Z"
+  },
+  "rar_rxr_mechanism": {
+    "id": "rar_rxr_mechanism",
+    "type": "mechanism",
+    "path": "04_design_system/assets/mechanisms/rar_rxr_mechanism.svg",
+    "source_of_truth": "PMID 15773538 (Kang 2005, Mechanism of action of topical retinoids) + Servier Medical Art templates",
+    "license": "CC-BY-4.0",
+    "attribution": "Servier Medical Art by Les Laboratoires Servier (CC-BY 4.0)",
+    "generated_by": "manual/servier-art",
+    "fetched_at": "2026-06-08T17:09:00Z"
+  },
+  "skin_layers_turnover": {
+    "id": "skin_layers_turnover",
+    "type": "mechanism",
+    "path": "04_design_system/assets/mechanisms/skin_layers_turnover.svg",
+    "source_of_truth": "PMID 15773538 (Kang 2005) + Servier Medical Art templates",
+    "license": "CC-BY-4.0",
+    "attribution": "Servier Medical Art by Les Laboratoires Servier (CC-BY 4.0)",
+    "generated_by": "manual/servier-art",
+    "fetched_at": "2026-06-08T17:09:00Z"
+  },
+  "cover_placeholder.png": {
+    "id": "cover_placeholder.png",
+    "type": "cover",
+    "path": "",
+    "source_of_truth": "Placeholder",
+    "license": "public-domain",
+    "attribution": "",
+    "generated_by": "placeholder",
+    "fetched_at": "2026-06-08T17:10:00Z"
+  },
+  "collagen_synthesis_placeholder.png": {
+    "id": "collagen_synthesis_placeholder.png",
+    "type": "mechanism",
+    "path": "",
+    "source_of_truth": "Placeholder",
+    "license": "public-domain",
+    "attribution": "",
+    "generated_by": "placeholder",
+    "fetched_at": "2026-06-08T17:10:00Z"
+  },
+  "sebum_control_placeholder.png": {
+    "id": "sebum_control_placeholder.png",
+    "type": "mechanism",
+    "path": "",
+    "source_of_truth": "Placeholder",
+    "license": "public-domain",
+    "attribution": "",
+    "generated_by": "placeholder",
+    "fetched_at": "2026-06-08T17:10:00Z"
+  },
+  "anti_aging_placeholder.png": {
+    "id": "anti_aging_placeholder.png",
+    "type": "mechanism",
+    "path": "",
+    "source_of_truth": "Placeholder",
+    "license": "public-domain",
+    "attribution": "",
+    "generated_by": "placeholder",
+    "fetched_at": "2026-06-08T17:10:00Z"
+  },
+  "photoaging_placeholder.png": {
+    "id": "photoaging_placeholder.png",
+    "type": "mechanism",
+    "path": "",
+    "source_of_truth": "Placeholder",
+    "license": "public-domain",
+    "attribution": "",
+    "generated_by": "placeholder",
+    "fetched_at": "2026-06-08T17:10:00Z"
+  }
+}

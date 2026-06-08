@@ -20,9 +20,9 @@
   ],
   "media": {
     "type": "image",
-    "asset": "lipid_barrier_placeholder.png",
-    "fit": "cover",
-    "caption": "Церамиды и трансэпидермальный перенос воды"
+    "asset": "niacinamide.svg",
+    "fit": "contain",
+    "caption": "Химическая структура Ниацинамида"
   },
   "components": {},
   "disclaimers": [

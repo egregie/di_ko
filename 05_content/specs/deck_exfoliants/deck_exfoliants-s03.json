@@ -20,9 +20,9 @@
   ],
   "media": {
     "type": "image",
-    "asset": "salicylic_mechanism_placeholder.png",
-    "fit": "cover",
-    "caption": "Липофильная BHA-эксфолиация и комедолиз"
+    "asset": "salicylic_acid.svg",
+    "fit": "contain",
+    "caption": "Химическая структура Салициловой Кислоты (BHA)"
   },
   "components": {},
   "disclaimers": [

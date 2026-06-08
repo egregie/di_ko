@@ -20,9 +20,9 @@
   ],
   "media": {
     "type": "image",
-    "asset": "absorption_graph_placeholder.png",
-    "fit": "cover",
-    "caption": "Зависимость всасывания от pH и концентрации"
+    "asset": "ascorbic_acid.svg",
+    "fit": "contain",
+    "caption": "Химическая структура L-аскорбиновой кислоты"
   },
   "components": {},
   "disclaimers": [

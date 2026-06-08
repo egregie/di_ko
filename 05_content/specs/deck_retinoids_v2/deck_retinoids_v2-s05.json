@@ -20,9 +20,9 @@
   ],
   "media": {
     "type": "image",
-    "asset": "tretinoin_media.png",
-    "fit": "cover",
-    "caption": "Эффект третиноина на эпидермис"
+    "asset": "skin_layers_turnover.svg",
+    "fit": "contain",
+    "caption": "Эффект третиноина на дифференцировку и клеточный турновер эпидермиса"
   },
   "components": {},
   "disclaimers": [

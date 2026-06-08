@@ -1,16 +1,21 @@
 {
   "id": "deck_retinoids_v2-s03",
-  "layout": "quote_callout",
+  "layout": "two_columns_image",
   "section": "Ретиноиды",
   "title": "Ядерные Рецепторы",
   "subtitle": "Основной путь транскрипции генов",
   "body": [
     {
-      "type": "quote",
+      "type": "bullet",
       "text": "Ретиноиды регулируют генную транскрипцию путем связывания с ядерными рецепторами RAR и RXR."
     }
   ],
-  "media": {},
+  "media": {
+    "type": "image",
+    "asset": "rar_rxr_mechanism.svg",
+    "fit": "contain",
+    "caption": "Схема взаимодействия ретиноидов с RAR/RXR рецепторами"
+  },
   "components": {},
   "disclaimers": [
     "Только для практикующих специалистов"

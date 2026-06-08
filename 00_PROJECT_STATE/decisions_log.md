@@ -14,6 +14,8 @@
 - **DEC-012**: Exa-Grounded Search Adopted. Live pilot comparison (Vitamin C topic) completed successfully. Standard Keyword search pathway showed a 75.0% rejection rate due to unsupported/mismatched abstracts (3/4 rejected), whereas the Exa-Grounded Search Pathway achieved a 25.0% rejection rate (1/4 rejected) with high-precision neural matching to exact abstract/sentence evidence. Total search cost was $0.02800. Exa is adopted as the primary search and collection pathway.
 - **DEC-013**: Verification DNS Rollback & IPv4 Force. Roll back the Google DNS-over-HTTPS monkeypatch from Phase 4.1. The connection issue was correctly identified as a local DNS router IPv6/AAAA lookup failure combined with unreachable IPv6 routes. The fetcher is hardened by overriding `socket.getaddrinfo` to return IPv4-only (`AF_INET`), adding proper NCBI tool/email query parameters, setting a custom User-Agent, and introducing global process-level rate limiting.
 - **DEC-014**: Confidence Field Unused. The confidence field in facts is not consumed by retriever, render, or QA scripts. Therefore, it is marked as "reserved/unused" in the fact schema, and type validation is bypassed in validate_graph.py.
+- **DEC-015**: Hybrid Visual Asset Strategy. Adopted hybrid assets: dynamic RDKit generation for 12 molecule structures via live PubChem PUG REST API queries, and Servier Medical Art CC-BY-4.0 vector diagrams for biological mechanisms (pilot in Retinoids). Maintained central `asset_provenance.json` registry and added QA gates for licenses, attribution strings, and fact-to-diagram alignment.
+
 
 
 

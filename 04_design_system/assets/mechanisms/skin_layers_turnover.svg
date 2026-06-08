@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5"/>
+  
+  <!-- Title / Header -->
+  <text x="20" y="30" font-family="Arimo, sans-serif" font-size="14" font-weight="bold" fill="#1D291C">СТРОЕНИЕ ЭПИДЕРМИСА &amp; ТУРНОВЕР</text>
+  <text x="20" y="45" font-family="Arimo, sans-serif" font-size="10" fill="#6D8470">Дифференцировка кератиноцитов и обновление слоев кожи</text>
+
+  <!-- Left: Skin Layer Schematics -->
+  <!-- 1. Stratum Corneum (SC) -->
+  <g transform="translate(40, 70)">
+    <rect width="180" height="15" rx="2" fill="#E6D2CA" stroke="#9E6A5A" stroke-width="1" opacity="0.9"/>
+    <!-- Corneum flakes -->
+    <path d="M 10 3 L 30 3 M 50 4 L 70 4 M 90 2 L 120 2 M 140 4 L 170 4" stroke="#9E6A5A" stroke-width="1.5"/>
+    <text x="10" y="25" font-family="Arimo, sans-serif" font-size="8" font-weight="bold" fill="#9E6A5A">Роговой слой / Stratum Corneum</text>
+  </g>
+
+  <!-- 2. Stratum Granulosum -->
+  <g transform="translate(40, 105)">
+    <rect width="180" height="30" rx="4" fill="#D7E0CE" stroke="#6D8470" stroke-width="1"/>
+    <!-- Granular cells -->
+    <circle cx="20" cy="15" r="7" fill="none" stroke="#6D8470" stroke-width="1"/>
+    <circle cx="20" cy="15" r="2" fill="#6D8470"/>
+    <circle cx="50" cy="15" r="7" fill="none" stroke="#6D8470" stroke-width="1"/>
+    <circle cx="50" cy="15" r="2" fill="#6D8470"/>
+    <circle cx="80" cy="15" r="7" fill="none" stroke="#6D8470" stroke-width="1"/>
+    <circle cx="80" cy="15" r="2" fill="#6D8470"/>
+    <circle cx="110" cy="15" r="7" fill="none" stroke="#6D8470" stroke-width="1"/>
+    <circle cx="110" cy="15" r="2" fill="#6D8470"/>
+    <circle cx="140" cy="15" r="7" fill="none" stroke="#6D8470" stroke-width="1"/>
+    <circle cx="140" cy="15" r="2" fill="#6D8470"/>
+    <circle cx="160" cy="15" r="7" fill="none" stroke="#6D8470" stroke-width="1"/>
+    <circle cx="160" cy="15" r="2" fill="#6D8470"/>
+    <text x="10" y="40" font-family="Arimo, sans-serif" font-size="8" font-weight="bold" fill="#6D8470">Зернистый слой</text>
+  </g>
+
+  <!-- 3. Stratum Spinosum -->
+  <g transform="translate(40, 155)">
+    <rect width="180" height="45" rx="4" fill="#F8F6F4" stroke="#6D8470" stroke-width="1"/>
+    <!-- Spiny cells -->
+    <path d="M 15 15 L 25 15 M 20 10 L 20 20" stroke="#6D8470" stroke-width="1"/>
+    <circle cx="20" cy="15" r="6" fill="#D7E0CE"/>
+    <path d="M 55 15 L 65 15 M 60 10 L 60 20" stroke="#6D8470" stroke-width="1"/>
+    <circle cx="60" cy="15" r="6" fill="#D7E0CE"/>
+    <path d="M 95 15 L 105 15 M 100 10 L 100 20" stroke="#6D8470" stroke-width="1"/>
+    <circle cx="100" cy="15" r="6" fill="#D7E0CE"/>
+    <path d="M 135 15 L 145 15 M 140 10 L 140 20" stroke="#6D8470" stroke-width="1"/>
+    <circle cx="140" cy="15" r="6" fill="#D7E0CE"/>
+    
+    <!-- Row 2 -->
+    <circle cx="40" cy="32" r="6" fill="#D7E0CE" stroke="#6D8470" stroke-width="1"/>
+    <circle cx="80" cy="32" r="6" fill="#D7E0CE" stroke="#6D8470" stroke-width="1"/>
+    <circle cx="120" cy="32" r="6" fill="#D7E0CE" stroke="#6D8470" stroke-width="1"/>
+    <text x="10" y="55" font-family="Arimo, sans-serif" font-size="8" font-weight="bold" fill="#6D8470">Шиповатый слой / Spinosum</text>
+  </g>
+
+  <!-- 4. Stratum Basale -->
+  <g transform="translate(40, 220)">
+    <rect width="180" height="25" rx="4" fill="#6D8470" stroke="#1D291C" stroke-width="1"/>
+    <!-- Basal dividing cells -->
+    <ellipse cx="25" cy="12" rx="10" ry="8" fill="#D7E0CE" stroke="#1D291C" stroke-width="1"/>
+    <ellipse cx="65" cy="12" rx="10" ry="8" fill="#D7E0CE" stroke="#1D291C" stroke-width="1"/>
+    <ellipse cx="105" cy="12" rx="10" ry="8" fill="#D7E0CE" stroke="#1D291C" stroke-width="1"/>
+    <ellipse cx="145" cy="12" rx="10" ry="8" fill="#D7E0CE" stroke="#1D291C" stroke-width="1"/>
+    <text x="10" y="35" font-family="Arimo, sans-serif" font-size="8" font-weight="bold" fill="#1D291C">Базальный слой / Basale</text>
+  </g>
+
+  <!-- Right: Differentiation & Turnover flow -->
+  <g transform="translate(250, 70)">
+    <!-- Upward arrow -->
+    <path d="M 40 170 L 40 20" fill="none" stroke="#1D291C" stroke-width="2.5" stroke-dasharray="2,2" marker-end="url(#arrow-dark)"/>
+    
+    <!-- Labels along the arrow -->
+    <text x="50" y="150" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#1D291C">Деление базальных клеток</text>
+    <text x="50" y="162" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40">Постоянный митоз</text>
+
+    <text x="50" y="90" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#1D291C">Миграция &amp; Кератинизация</text>
+    <text x="50" y="102" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40">Накопление кератина</text>
+
+    <text x="50" y="30" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#9E6A5A">Слущивание / Desquamation</text>
+    <text x="50" y="42" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40">Обновление эпидермиса</text>
+    
+    <!-- Turnover Duration highlight -->
+    <rect x="50" y="55" width="85" height="22" rx="4" fill="#E6D2CA" stroke="#9E6A5A" stroke-width="1"/>
+    <text x="92" y="69" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#9E6A5A" text-anchor="middle">Цикл ~26-28 дней</text>
+  </g>
+
+  <!-- Markers -->
+  <defs>
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 2 L 8 5 L 0 8 z" fill="#1D291C"/>
+    </marker>
+  </defs>
+</svg>

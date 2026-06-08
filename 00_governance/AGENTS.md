@@ -41,6 +41,10 @@ discover -> collect -> extract -> dedup -> verify -> librarian/ontology -> graph
 - **P014 Dynamic Caching Provenance**: All cache entries inside the verification cache must be written exclusively by the live fetcher path. The manual fabrication, editing, or seed authoring of cache files or verdicts is prohibited. Fact nodes referencing the cache are dynamically validated against the cache's cryptographic hash and live-fetch provenance.
 - **P016 Deltas-Honesty**: deltas_vs_plan must document any unplanned edits, deletions, renaming, index recompiles, or out-of-spec alterations. Setting it to None is only permitted if execution matches the plan exactly.
 - **P017 Confidence-Semantics**: The confidence field in facts is not consumed. It must be marked as reserved/unused in schemas, bypassed in validator, and documented in DEC-014.
+- **P018 Slide-Fact Alignment**: A clinical claim/thesis on a slide must be supported by the `statement` of at least one cited fact in the active graph; simply having a source_ref reference is insufficient.
+- **P019 Diagram Provenance**: No visual asset can be used in a deck without a logged record in `asset_provenance.json` detailing its source of truth, license type, and attribution credit (if CC-BY). Permitted licenses: own/generated, CC0, CC-BY, public-domain. Forbidden licenses: CC-BY-SA, NC, BioRender without industry license, and unknown/undeclared licenses.
+
+
 
 
 ## Walkthrough Standards

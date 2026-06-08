@@ -20,9 +20,9 @@
   ],
   "media": {
     "type": "image",
-    "asset": "sap_acne_placeholder.png",
-    "fit": "cover",
-    "caption": "Механизм действия SAP при акне"
+    "asset": "sodium_ascorbyl_phosphate.svg",
+    "fit": "contain",
+    "caption": "Химическая структура Аскорбилфосфата Натрия (SAP)"
   },
   "components": {},
   "disclaimers": [

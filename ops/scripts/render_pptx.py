@@ -77,6 +77,48 @@ def add_header(slide, title, subtitle, font_family, color_dark, color_herbal):
         bold=False
     )
 
+def resolve_and_convert_media(media, registry, project_root):
+    asset_name = media.get("asset", "")
+    if not asset_name:
+        return None, ""
+        
+    asset_data = registry.get(asset_name) or {}
+    if not asset_data:
+        base_name = os.path.splitext(asset_name)[0]
+        asset_data = registry.get(base_name) or {}
+        
+    rel_path = asset_data.get("path", "")
+    attribution = asset_data.get("attribution", "")
+    
+    if not rel_path:
+        return None, attribution
+        
+    svg_path = os.path.join(project_root, rel_path)
+    if not os.path.exists(svg_path):
+        return None, attribution
+        
+    # Convert SVG to PNG
+    png_path = os.path.splitext(svg_path)[0] + ".png"
+    if not os.path.exists(png_path):
+        import subprocess
+        script_path = os.path.join(project_root, "ops", "scripts", "convert_svg_to_png.js")
+        try:
+            print(f"Converting {svg_path} to {png_path}...")
+            res = subprocess.run(
+                ["node", script_path, svg_path, png_path, "400", "400"],
+                check=True,
+                capture_output=True,
+                text=True
+            )
+            print(res.stdout)
+        except Exception as e:
+            print(f"Error converting SVG to PNG: {e}")
+            return None, attribution
+            
+    if os.path.exists(png_path):
+        return png_path, attribution
+    return None, attribution
+
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="Render PPTX deck from json specs")
@@ -110,6 +152,16 @@ def main():
     # slide layout (use a blank layout, usually index 6 in standard templates)
     blank_layout = prs.slide_layouts[6]
     
+    # Load asset provenance registry
+    registry_path = os.path.join(project_root, "04_design_system", "assets", "asset_provenance.json")
+    registry = {}
+    if os.path.exists(registry_path):
+        try:
+            with open(registry_path, "r", encoding="utf-8") as rf:
+                registry = json.load(rf)
+        except Exception as e:
+            print(f"Warning: Failed to load registry: {e}")
+
     # Read specs
     spec_files = sorted(glob.glob(os.path.join(specs_dir, f"{deck_name}-s*.json")))
     
@@ -123,11 +175,19 @@ def main():
         body = slide_spec.get("body", [])
         media = slide_spec.get("media", {})
         components = slide_spec.get("components", {})
-        disclaimers = slide_spec.get("disclaimers", [])
+        disclaimers = list(slide_spec.get("disclaimers", []))
         source_refs = slide_spec.get("source_refs", [])
         
         slide = prs.slides.add_slide(blank_layout)
         
+        # Resolve media and attribution
+        asset_name = media.get("asset", "")
+        png_path, attribution = resolve_and_convert_media(media, registry, project_root)
+        
+        slide_disclaimers = list(disclaimers)
+        if attribution:
+            slide_disclaimers.append(attribution)
+            
         # Set background color
         background = slide.background
         fill = background.fill
@@ -136,8 +196,8 @@ def main():
         fill.fore_color.rgb = hex_to_rgb(bg_color)
         
         # Bottom disclaimers
-        if disclaimers:
-            disc_text = " | ".join(disclaimers)
+        if slide_disclaimers:
+            disc_text = " | ".join(slide_disclaimers)
             add_text_box(
                 slide=slide,
                 left=Inches(40 / 102.4),
@@ -210,27 +270,34 @@ def main():
                 bold=False
             )
             # Media box
-            media_shape = slide.shapes.add_shape(
-                MSO_SHAPE.ROUNDED_RECTANGLE,
-                Inches(540 / 102.4), Inches(120 / 102.4),
-                Inches(444 / 102.4), Inches(320 / 102.4)
-            )
-            set_shape_color(media_shape, color["sage"], color["border"], 1)
-            # Text inside media shape
-            tf = media_shape.text_frame
-            tf.word_wrap = True
-            p = tf.paragraphs[0]
-            p.text = media.get('caption', 'YM PROSKIN')
-            p.font.name = font_family
-            p.font.size = Pt(13)
-            p.font.color.rgb = hex_to_rgb(color["herbal"])
-            p.font.bold = True
-            p.alignment = PP_ALIGN.CENTER
-            for run in p.runs:
-                run.font.name = font_family
-                run.font.size = Pt(13)
-                run.font.color.rgb = hex_to_rgb(color["herbal"])
-                run.font.bold = True
+            if png_path:
+                slide.shapes.add_picture(
+                    png_path,
+                    Inches(540 / 102.4), Inches(120 / 102.4),
+                    Inches(444 / 102.4), Inches(320 / 102.4)
+                )
+            else:
+                media_shape = slide.shapes.add_shape(
+                    MSO_SHAPE.ROUNDED_RECTANGLE,
+                    Inches(540 / 102.4), Inches(120 / 102.4),
+                    Inches(444 / 102.4), Inches(320 / 102.4)
+                )
+                set_shape_color(media_shape, color["sage"], color["border"], 1)
+                # Text inside media shape
+                tf = media_shape.text_frame
+                tf.word_wrap = True
+                p = tf.paragraphs[0]
+                p.text = media.get('caption', 'YM PROSKIN')
+                p.font.name = font_family
+                p.font.size = Pt(13)
+                p.font.color.rgb = hex_to_rgb(color["herbal"])
+                p.font.bold = True
+                p.alignment = PP_ALIGN.CENTER
+                for run in p.runs:
+                    run.font.name = font_family
+                    run.font.size = Pt(13)
+                    run.font.color.rgb = hex_to_rgb(color["herbal"])
+                    run.font.bold = True
             
         elif layout == "section_divider":
             # Tag
@@ -331,26 +398,36 @@ def main():
                 bold=False
             )
             # Image Media Box
-            media_shape = slide.shapes.add_shape(
-                MSO_SHAPE.ROUNDED_RECTANGLE,
-                Inches(580 / 102.4), Inches(150 / 102.4),
-                Inches(404 / 102.4), Inches(320 / 102.4)
-            )
-            set_shape_color(media_shape, color["sage"], color["border"], 1)
-            tf = media_shape.text_frame
-            tf.word_wrap = True
-            p = tf.paragraphs[0]
-            p.text = media.get('caption', '')
-            p.font.name = font_family
-            p.font.size = Pt(13)
-            p.font.color.rgb = hex_to_rgb(color["herbal"])
-            p.font.bold = True
-            p.alignment = PP_ALIGN.CENTER
-            for run in p.runs:
-                run.font.name = font_family
-                run.font.size = Pt(13)
-                run.font.color.rgb = hex_to_rgb(color["herbal"])
-                run.font.bold = True
+            if png_path:
+                slide.shapes.add_picture(
+                    png_path,
+                    Inches(580 / 102.4), Inches(150 / 102.4),
+                    Inches(404 / 102.4), Inches(320 / 102.4)
+                )
+            else:
+                media_shape = slide.shapes.add_shape(
+                    MSO_SHAPE.ROUNDED_RECTANGLE,
+                    Inches(580 / 102.4), Inches(150 / 102.4),
+                    Inches(404 / 102.4), Inches(320 / 102.4)
+                )
+                set_shape_color(media_shape, color["sage"], color["border"], 1)
+                tf = media_shape.text_frame
+                tf.word_wrap = True
+                p = tf.paragraphs[0]
+                display_caption = media.get('caption', '')
+                if "placeholder" in asset_name.lower() and not display_caption.startswith("[Placeholder]"):
+                    display_caption = f"[Placeholder] {display_caption}"
+                p.text = display_caption
+                p.font.name = font_family
+                p.font.size = Pt(13)
+                p.font.color.rgb = hex_to_rgb(color["herbal"])
+                p.font.bold = True
+                p.alignment = PP_ALIGN.CENTER
+                for run in p.runs:
+                    run.font.name = font_family
+                    run.font.size = Pt(13)
+                    run.font.color.rgb = hex_to_rgb(color["herbal"])
+                    run.font.bold = True
             
         elif layout == "three_cards":
             add_header(slide, title, subtitle, font_family, color["dark"], color["herbal"])

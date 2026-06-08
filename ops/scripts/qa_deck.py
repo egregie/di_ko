@@ -48,6 +48,29 @@ def main():
     pptx_errors = []
     warnings = []
     
+    # Load asset provenance registry
+    registry_path = os.path.join(project_root, "04_design_system", "assets", "asset_provenance.json")
+    registry = {}
+    if os.path.exists(registry_path):
+        try:
+            with open(registry_path, "r", encoding="utf-8") as rf:
+                registry = json.load(rf)
+        except Exception as e:
+            pdf_errors.append(f"Provenance registry load error: {e}")
+            pptx_errors.append(f"Provenance registry load error: {e}")
+
+    # Load HTML output content for attribution checking
+    html_path = os.path.join(project_root, "06_render", "out", f"{deck_name}.html")
+    html_content = ""
+    if os.path.exists(html_path):
+        try:
+            with open(html_path, "r", encoding="utf-8") as hf:
+                html_content = hf.read()
+        except Exception as e:
+            pdf_errors.append(f"Error reading HTML file: {e}")
+    else:
+        pdf_errors.append(f"HTML presentation file not found: {html_path}")
+    
     # Check Zero Black Policy
     color_tokens = tokens.get("color", {})
     for col_name, col_val in color_tokens.items():
@@ -113,6 +136,68 @@ def main():
         
         layout = slide.get("layout", "")
         refs = slide.get("source_refs", [])
+        
+        # [GATE] Asset Provenance and License Verification
+        media = slide.get("media", {})
+        asset_name = media.get("asset", "")
+        if asset_name:
+            asset_data = registry.get(asset_name)
+            if not asset_data:
+                base_name = os.path.splitext(asset_name)[0]
+                asset_data = registry.get(base_name)
+                
+            if not asset_data:
+                err = f"GATE BLOCK: Asset '{asset_name}' used in slide '{os.path.basename(sf)}' is NOT registered in asset_provenance.json."
+                pdf_errors.append(err)
+                pptx_errors.append(err)
+            else:
+                license_type = str(asset_data.get("license", "")).lower()
+                allowed_licenses = ["own/generated", "generated/own", "cc0", "cc-by", "cc-by-4.0", "public-domain"]
+                
+                # Check for forbidden strings (like -sa, -nc, or biorender)
+                is_forbidden = any(bad in license_type for bad in ["-sa", "-nc", "biorender"]) or license_type not in allowed_licenses
+                if is_forbidden:
+                    err = f"GATE BLOCK: Asset '{asset_name}' has forbidden or invalid license type '{license_type}'."
+                    pdf_errors.append(err)
+                    pptx_errors.append(err)
+                    
+                # CC-BY check
+                attribution = asset_data.get("attribution", "")
+                if "cc-by" in license_type and attribution:
+                    if html_content and attribution not in html_content:
+                        err = f"GATE BLOCK: CC-BY asset '{asset_name}' attribution '{attribution}' is missing from the output HTML/PDF."
+                        pdf_errors.append(err)
+                        
+                # Molecule check
+                asset_type = asset_data.get("type", "")
+                source_truth = str(asset_data.get("source_of_truth", "")).lower()
+                if asset_type == "molecule":
+                    import re
+                    if not re.search(r"pubchem cid \d+", source_truth):
+                        err = f"GATE BLOCK: Molecular asset '{asset_name}' must reference a valid PubChem CID in source_of_truth (got '{source_truth}')."
+                        pdf_errors.append(err)
+                        pptx_errors.append(err)
+                        
+                # Diagram-fact check for Retinoids pilot
+                if asset_name in ["rar_rxr_mechanism.svg", "skin_layers_turnover.svg"]:
+                    if asset_name == "rar_rxr_mechanism.svg":
+                        if not any(f in refs for f in ["fact_0001", "fact_0002"]):
+                            err = f"GATE BLOCK: Slide '{os.path.basename(sf)}' uses rar_rxr_mechanism.svg but does not cite fact_0001 or fact_0002 in source_refs."
+                            pdf_errors.append(err)
+                            pptx_errors.append(err)
+                    elif asset_name == "skin_layers_turnover.svg":
+                        if "fact_0006" not in refs:
+                            err = f"GATE BLOCK: Slide '{os.path.basename(sf)}' uses skin_layers_turnover.svg but does not cite fact_0006 in source_refs."
+                            pdf_errors.append(err)
+                            pptx_errors.append(err)
+                            
+                # Placeholder caption check
+                if "placeholder" in asset_name.lower():
+                    caption = media.get("caption", "")
+                    if not caption.startswith("[Placeholder]"):
+                        err = f"GATE BLOCK: Placeholder asset '{asset_name}' caption '{caption}' in slide '{os.path.basename(sf)}' must start with '[Placeholder]'."
+                        pdf_errors.append(err)
+                        pptx_errors.append(err)
         
         if layout == "contraindication_alert":
             has_safety_slide = True
@@ -271,9 +356,23 @@ def main():
                 pptx_errors.append(f"PPTX slide count mismatch: specs={total_slides}, pptx={len(prs.slides)}")
                 
             for idx, slide in enumerate(prs.slides):
+                # Load corresponding spec to resolve CC-BY attribution requirements
+                with open(spec_files[idx], "r", encoding="utf-8") as sf_f:
+                    spec_data = json.load(sf_f)
+                
+                media = spec_data.get("media", {})
+                asset_name = media.get("asset", "")
+                attribution = ""
+                if asset_name:
+                    asset_data = registry.get(asset_name) or registry.get(os.path.splitext(asset_name)[0]) or {}
+                    license_type = str(asset_data.get("license", "")).lower()
+                    if "cc-by" in license_type:
+                        attribution = asset_data.get("attribution", "")
+
+                slide_text = ""
                 for shape in slide.shapes:
                     # Check shapes solid fills
-                    if shape.fill.type == 1:  # solid fill
+                    if hasattr(shape, 'fill') and shape.fill.type == 1:  # solid fill
                         rgb = shape.fill.fore_color.rgb
                         if rgb == RGBColor(0, 0, 0) or rgb == RGBColor(255, 255, 255):
                             pptx_errors.append(f"Slide {idx + 1}: PPTX Zero Black violation (shape solid color is {rgb})")
@@ -281,6 +380,7 @@ def main():
                     # Check text box properties
                     if shape.has_text_frame:
                         for paragraph in shape.text_frame.paragraphs:
+                            slide_text += paragraph.text + " "
                             for run in paragraph.runs:
                                 if run.font.name != "Arimo":
                                     pptx_errors.append(f"Slide {idx + 1}: PPTX font fallback detected. Font family is '{run.font.name}', expected 'Arimo'.")
@@ -288,6 +388,9 @@ def main():
                                     rgb = run.font.color.rgb
                                     if rgb == RGBColor(0, 0, 0) or rgb == RGBColor(255, 255, 255):
                                         pptx_errors.append(f"Slide {idx + 1}: PPTX Zero Black violation (text run color is {rgb})")
+                                        
+                if attribution and attribution.strip().lower() not in slide_text.strip().lower():
+                    pptx_errors.append(f"Slide {idx + 1}: GATE BLOCK: CC-BY attribution '{attribution}' is missing from PPTX slide.")
         except Exception as e:
             pptx_errors.append(f"Failed to audit PPTX: {e}")
             
