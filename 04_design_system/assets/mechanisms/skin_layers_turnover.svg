@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 300" width="100%" height="100%">
   <!-- Background -->
-  <rect width="400" height="300" rx="16" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5"/>
+  <rect width="440" height="300" rx="16" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5"/>
   
   <!-- Title / Header -->
   <text x="20" y="30" font-family="Arimo, sans-serif" font-size="14" font-weight="bold" fill="#1D291C">СТРОЕНИЕ ЭПИДЕРМИСА &amp; ТУРНОВЕР</text>
@@ -11,7 +11,7 @@
   <g transform="translate(40, 70)">
     <rect width="180" height="15" rx="2" fill="#E6D2CA" stroke="#9E6A5A" stroke-width="1" opacity="0.9"/>
     <!-- Corneum flakes -->
-    <path d="M 10 3 L 30 3 M 50 4 L 70 4 M 90 2 L 120 2 M 140 4 L 170 4" stroke="#9E6A5A" stroke-width="1.5"/>
+    <path d="M 18 3 L 43 3 M 58 4 L 83 4 M 98 2 L 123 2 M 138 4 L 163 4" stroke="#9E6A5A" stroke-width="1.5"/>
     <text x="10" y="25" font-family="Arimo, sans-serif" font-size="8" font-weight="bold" fill="#9E6A5A">Роговой слой / Stratum Corneum</text>
   </g>
 
@@ -31,7 +31,7 @@
     <circle cx="140" cy="15" r="2" fill="#6D8470"/>
     <circle cx="160" cy="15" r="7" fill="none" stroke="#6D8470" stroke-width="1"/>
     <circle cx="160" cy="15" r="2" fill="#6D8470"/>
-    <text x="10" y="40" font-family="Arimo, sans-serif" font-size="8" font-weight="bold" fill="#6D8470">Зернистый слой</text>
+    <text x="10" y="40" font-family="Arimo, sans-serif" font-size="8" font-weight="bold" fill="#6D8470">Зернистый слой / Stratum Granulosum</text>
   </g>
 
   <!-- 3. Stratum Spinosum -->
@@ -51,7 +51,7 @@
     <circle cx="40" cy="32" r="6" fill="#D7E0CE" stroke="#6D8470" stroke-width="1"/>
     <circle cx="80" cy="32" r="6" fill="#D7E0CE" stroke="#6D8470" stroke-width="1"/>
     <circle cx="120" cy="32" r="6" fill="#D7E0CE" stroke="#6D8470" stroke-width="1"/>
-    <text x="10" y="55" font-family="Arimo, sans-serif" font-size="8" font-weight="bold" fill="#6D8470">Шиповатый слой / Spinosum</text>
+    <text x="10" y="55" font-family="Arimo, sans-serif" font-size="8" font-weight="bold" fill="#6D8470">Шиповатый слой / Stratum Spinosum</text>
   </g>
 
   <!-- 4. Stratum Basale -->
@@ -62,11 +62,11 @@
     <ellipse cx="65" cy="12" rx="10" ry="8" fill="#D7E0CE" stroke="#1D291C" stroke-width="1"/>
     <ellipse cx="105" cy="12" rx="10" ry="8" fill="#D7E0CE" stroke="#1D291C" stroke-width="1"/>
     <ellipse cx="145" cy="12" rx="10" ry="8" fill="#D7E0CE" stroke="#1D291C" stroke-width="1"/>
-    <text x="10" y="35" font-family="Arimo, sans-serif" font-size="8" font-weight="bold" fill="#1D291C">Базальный слой / Basale</text>
+    <text x="10" y="35" font-family="Arimo, sans-serif" font-size="8" font-weight="bold" fill="#1D291C">Базальный слой / Stratum Basale</text>
   </g>
 
   <!-- Right: Differentiation & Turnover flow -->
-  <g transform="translate(250, 70)">
+  <g transform="translate(230, 70)">
     <!-- Upward arrow -->
     <path d="M 40 170 L 40 20" fill="none" stroke="#1D291C" stroke-width="2.5" stroke-dasharray="2,2" marker-end="url(#arrow-dark)"/>
     

@@ -151,6 +151,28 @@ def main():
                 pdf_errors.append(err)
                 pptx_errors.append(err)
             else:
+                # [GATE] SVG Bounds and Layout Check
+                asset_path_rel = asset_data.get("path", "")
+                if asset_path_rel and asset_path_rel.endswith(".svg"):
+                    asset_path_abs = os.path.join(project_root, asset_path_rel)
+                    if os.path.exists(asset_path_abs):
+                        try:
+                            svg_check_script = os.path.join(project_root, "ops", "scripts", "qa_svg_bounds.js")
+                            res_svg = subprocess.run(
+                                ["node", svg_check_script, asset_path_abs, "5"],
+                                capture_output=True,
+                                text=True,
+                                timeout=20
+                            )
+                            if res_svg.returncode != 0:
+                                err = f"GATE BLOCK: SVG bounds check failed for '{asset_name}' ({asset_path_rel}): {res_svg.stderr or res_svg.stdout}"
+                                pdf_errors.append(err)
+                                pptx_errors.append(err)
+                        except Exception as e:
+                            err = f"GATE BLOCK: SVG bounds check exception for '{asset_name}': {e}"
+                            pdf_errors.append(err)
+                            pptx_errors.append(err)
+
                 license_type = str(asset_data.get("license", "")).lower()
                 allowed_licenses = ["own/generated", "generated/own", "cc0", "cc-by", "cc-by-4.0", "public-domain"]
                 
