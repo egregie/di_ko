@@ -1,11 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
-  <!-- Background -->
   <rect width="400" height="300" rx="16" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5"/>
-
-  <!-- Title -->
-  <text x="200" y="22" font-family="Arimo, sans-serif" font-size="13" font-weight="bold" fill="#1D291C" text-anchor="middle">МЕХАНИЗМ RAR / RXR RECEPTORS</text>
-  <text x="200" y="37" font-family="Arimo, sans-serif" font-size="10" fill="#6D8470" text-anchor="middle">Связывание ретиноевой кислоты с рецепторами ядра</text>
-
   <defs>
     <marker id="arrow-g" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
       <path d="M 0 2 L 8 5 L 0 8 z" fill="#6D8470"/>
@@ -14,26 +8,16 @@
       <path d="M 0 2 L 8 5 L 0 8 z" fill="#1D291C"/>
     </marker>
   </defs>
-
-  <!-- Nucleus dashed arch (stroke only, fill=none → no opaque graphic) -->
+  <text x="200.0" y="22" font-family="Arimo, sans-serif" font-size="13" font-weight="bold" fill="#1D291C" text-anchor="middle">МЕХАНИЗМ RAR / RXR...</text>
+  <text x="200.0" y="37" font-family="Arimo, sans-serif" font-size="10" fill="#6D8470" text-anchor="middle">Связывание ретиноевой кислоты с...</text>
   <path d="M 90 290 C 90 118, 390 118, 390 290" fill="none" stroke="#6D8470" stroke-width="1.5" stroke-dasharray="4,4"/>
-
-  <!-- NUCLEUS label — positioned above arch and all boxes -->
   <text x="335" y="82" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#6D8470" letter-spacing="0.1em" text-anchor="middle">ЯДРО / NUCLEUS</text>
-
-  <!-- Cytoplasm label -->
   <text x="48" y="80" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#6D8470" letter-spacing="0.1em">ЦИТОПЛАЗМА</text>
-
-  <!-- RA Molecule in cytoplasm (free icons, not in a container group) -->
   <circle cx="55" cy="110" r="14" fill="#6D8470" opacity="0.12"/>
   <polygon points="49,109 55,103 61,109 57,117 53,117" fill="none" stroke="#1D291C" stroke-width="2"/>
   <circle cx="55" cy="110" r="3" fill="#9E6A5A"/>
   <text x="75" y="115" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#1D291C">RA (Tretinoin)</text>
-
-  <!-- Entry Arrow into nucleus -->
   <path d="M 125 130 L 168 158" fill="none" stroke="#6D8470" stroke-width="2" marker-end="url(#arrow-g)"/>
-
-  <!-- DNA Strand — left half (before RARE gap) -->
   <g transform="translate(130, 240)">
     <line x1="0" y1="0" x2="62" y2="0" stroke="#3D4A40" stroke-width="3"/>
     <path d="M 6 -14 Q 22 12 38 -14 T 58 -14" fill="none" stroke="#6D8470" stroke-width="1.5"/>
@@ -42,12 +26,8 @@
     <line x1="42" y1="-7" x2="42" y2="7" stroke="#3D4A40" stroke-width="1"/>
     <line x1="58" y1="-7" x2="58" y2="7" stroke="#3D4A40" stroke-width="1"/>
   </g>
-
-  <!-- RARE Element box (gap zone — helix pauses here) -->
   <rect x="196" y="232" width="78" height="16" rx="3" fill="#E6D2CA" stroke="#9E6A5A" stroke-width="1.2"/>
   <text x="235" y="243" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#9E6A5A" text-anchor="middle">RARE Element</text>
-
-  <!-- DNA Strand — right half (resumes after RARE) -->
   <g transform="translate(278, 240)">
     <line x1="0" y1="0" x2="90" y2="0" stroke="#3D4A40" stroke-width="3"/>
     <path d="M 6 -14 Q 22 12 38 -14 T 68 -14 T 88 -14" fill="none" stroke="#6D8470" stroke-width="1.5"/>
@@ -56,33 +36,23 @@
     <line x1="50" y1="-7" x2="50" y2="7" stroke="#3D4A40" stroke-width="1"/>
     <line x1="76" y1="-7" x2="76" y2="7" stroke="#3D4A40" stroke-width="1"/>
   </g>
-
-  <!-- ═══ Receptor Dimer (RXR | RAR) — each box as separate group ═══ -->
-  <!-- RXR box (separate group, own rect, own text → no text_outside_container) -->
   <g transform="translate(192, 178)">
     <rect x="0" y="0" width="38" height="28" rx="7" fill="#D7E0CE" stroke="#6D8470" stroke-width="1.5"/>
     <text x="19" y="18" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#1D291C" text-anchor="middle">RXR</text>
   </g>
-
-  <!-- RAR box (separate group, own rect, own text) -->
   <g transform="translate(234, 178)">
     <rect x="0" y="0" width="38" height="28" rx="7" fill="#6D8470" stroke="#1D291C" stroke-width="1.5"/>
     <text x="19" y="18" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#F8F6F4" text-anchor="middle">RAR</text>
   </g>
-
-  <!-- Ligand L circle (separate group, own circle, own text → same group = no overlap check) -->
   <g transform="translate(277, 169)">
     <circle cx="0" cy="0" r="10" fill="#9E6A5A" stroke="#1D291C" stroke-width="1"/>
     <text x="0" y="4" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#F8F6F4" text-anchor="middle">L</text>
   </g>
-
-  <!-- Transcription activation arrow -->
   <path d="M 248 176 Q 280 142 312 130" fill="none" stroke="#1D291C" stroke-width="2" stroke-dasharray="3,2" marker-end="url(#arrow-d)"/>
-
-  <!-- Transcription result box -->
   <g transform="translate(298, 95)">
     <rect x="0" y="0" width="82" height="32" rx="6" fill="#D7E0CE" stroke="#6D8470" stroke-width="1"/>
     <text x="41" y="14" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#1D291C" text-anchor="middle">ТРАНСКРИПЦИЯ</text>
     <text x="41" y="26" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="middle">активация генов</text>
   </g>
+  <text x="200.0" y="288" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0001/02 - PMID...</text>
 </svg>

@@ -124,20 +124,20 @@
     "type": "mechanism",
     "path": "04_design_system/assets/mechanisms/rar_rxr_mechanism.svg",
     "source_of_truth": "PMID 15773538 (Kang 2005, Mechanism of action of topical retinoids) + Servier Medical Art templates",
-    "license": "CC-BY-4.0",
+    "license": "own/generated",
     "attribution": "Servier Medical Art by Les Laboratoires Servier (CC-BY 4.0)",
-    "generated_by": "manual/servier-art",
-    "fetched_at": "2026-06-08T17:09:00Z"
+    "generated_by": "gen_diagrams.py",
+    "fetched_at": "2026-06-09T23:41:09.230638Z"
   },
   "skin_layers_turnover": {
     "id": "skin_layers_turnover",
     "type": "mechanism",
     "path": "04_design_system/assets/mechanisms/skin_layers_turnover.svg",
     "source_of_truth": "PMID 15773538 (Kang 2005) + Servier Medical Art templates",
-    "license": "CC-BY-4.0",
+    "license": "own/generated",
     "attribution": "Servier Medical Art by Les Laboratoires Servier (CC-BY 4.0)",
-    "generated_by": "manual/servier-art",
-    "fetched_at": "2026-06-08T17:09:00Z"
+    "generated_by": "gen_diagrams.py",
+    "fetched_at": "2026-06-09T23:41:09.230638Z"
   },
   "cover_placeholder.png": {
     "id": "cover_placeholder.png",
@@ -194,10 +194,10 @@
     "type": "mechanism",
     "path": "04_design_system/assets/mechanisms/collagen_synthesis.svg",
     "source_of_truth": "PMID 18505499 (Vitamin C in skin health) + Servier Medical Art templates",
-    "license": "CC-BY-4.0",
+    "license": "own/generated",
     "attribution": "Servier Medical Art by Les Laboratoires Servier (CC-BY 4.0)",
-    "generated_by": "manual/servier-art",
-    "fetched_at": "2026-06-08T18:00:00Z"
+    "generated_by": "gen_diagrams.py",
+    "fetched_at": "2026-06-09T23:41:09.230638Z"
   },
   "ascorbic_acid_absorption": {
     "id": "ascorbic_acid_absorption",
@@ -206,37 +206,37 @@
     "source_of_truth": "PMID 11207686 (Pinnell 2001, Topical L-ascorbic acid absorption)",
     "license": "own/generated",
     "attribution": "",
-    "generated_by": "manual/d3-vector",
-    "fetched_at": "2026-06-08T18:00:00Z"
+    "generated_by": "gen_diagrams.py",
+    "fetched_at": "2026-06-09T23:41:09.230638Z"
   },
   "ceramide_synthesis": {
     "id": "ceramide_synthesis",
     "type": "mechanism",
     "path": "04_design_system/assets/mechanisms/ceramide_synthesis.svg",
     "source_of_truth": "PMID 10971556 (Tanno 2000, Nicotinamide increases biosynthesis of ceramides) + Servier Medical Art templates",
-    "license": "CC-BY-4.0",
+    "license": "own/generated",
     "attribution": "Servier Medical Art by Les Laboratoires Servier (CC-BY 4.0)",
-    "generated_by": "manual/servier-art",
-    "fetched_at": "2026-06-08T18:00:00Z"
+    "generated_by": "gen_diagrams.py",
+    "fetched_at": "2026-06-09T23:41:09.230638Z"
   },
   "melanosome_transfer": {
     "id": "melanosome_transfer",
     "type": "mechanism",
     "path": "04_design_system/assets/mechanisms/melanosome_transfer.svg",
     "source_of_truth": "PMID 12100180 (Hakozaki 2002, The effect of niacinamide on reducing cutaneous pigmentation) + Servier Medical Art templates",
-    "license": "CC-BY-4.0",
+    "license": "own/generated",
     "attribution": "Servier Medical Art by Les Laboratoires Servier (CC-BY 4.0)",
-    "generated_by": "manual/servier-art",
-    "fetched_at": "2026-06-08T18:00:00Z"
+    "generated_by": "gen_diagrams.py",
+    "fetched_at": "2026-06-09T23:41:09.230638Z"
   },
   "desmosome_desmolysis": {
     "id": "desmosome_desmolysis",
     "type": "mechanism",
     "path": "04_design_system/assets/mechanisms/desmosome_desmolysis.svg",
     "source_of_truth": "PMID 14616339 (Salicylic acid desmolytic action) + Servier Medical Art templates",
-    "license": "CC-BY-4.0",
-    "attribution": "Servier Medical Art by Les Laboratoires Servier (CC-BY 4.0)",
-    "generated_by": "manual/servier-art",
-    "fetched_at": "2026-06-08T18:00:00Z"
+    "license": "own/generated",
+    "attribution": "",
+    "generated_by": "gen_diagrams.py",
+    "fetched_at": "2026-06-09T23:41:09.230638Z"
   }
 }

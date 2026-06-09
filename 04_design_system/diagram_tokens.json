@@ -1,0 +1,27 @@
+{
+  "padding": 24,
+  "minGap": 10,
+  "lineSpacing": 1.5,
+  "fontFamily": "Arimo, sans-serif",
+  "density": {
+    "maxLabels": 6,
+    "maxLabelWords": 4,
+    "excessTextPolicy": "push_to_slide_body"
+  },
+  "fontSize": {
+    "title": 13,
+    "label": 10,
+    "sublabel": 8
+  },
+  "color": {
+    "bg": "#F8F6F4",
+    "border": "#D7E0CE",
+    "text": "#3D4A40",
+    "dark": "#2C3440",
+    "moleculeStroke": "#1D291C",
+    "warn": "#9E6A5A",
+    "herbal": "#6D8470",
+    "bgAlt": "#E6D2CA",
+    "sage": "#D7E0CE"
+  }
+}

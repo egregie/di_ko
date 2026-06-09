@@ -15,6 +15,8 @@
 - **DEC-013**: Verification DNS Rollback & IPv4 Force. Roll back the Google DNS-over-HTTPS monkeypatch from Phase 4.1. The connection issue was correctly identified as a local DNS router IPv6/AAAA lookup failure combined with unreachable IPv6 routes. The fetcher is hardened by overriding `socket.getaddrinfo` to return IPv4-only (`AF_INET`), adding proper NCBI tool/email query parameters, setting a custom User-Agent, and introducing global process-level rate limiting.
 - **DEC-014**: Confidence Field Unused. The confidence field in facts is not consumed by retriever, render, or QA scripts. Therefore, it is marked as "reserved/unused" in the fact schema, and type validation is bypassed in validate_graph.py.
 - **DEC-015**: Hybrid Visual Asset Strategy. Adopted hybrid assets: dynamic RDKit generation for 12 molecule structures via live PubChem PUG REST API queries, and Servier Medical Art CC-BY-4.0 vector diagrams for biological mechanisms (pilot in Retinoids). Maintained central `asset_provenance.json` registry and added QA gates for licenses, attribution strings, and fact-to-diagram alignment.
+- **DEC-016**: Parametric Diagrams. Transitioned from free-form SVG drawings (susceptible to clipping and text overlaps) to programmatic parametric templates (`process_flow`, `layered_anatomy`, `xy_curve`) that calculate visual layout directly from design tokens, ensuring robust geometry by construction.
+
 
 
 

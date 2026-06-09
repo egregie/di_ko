@@ -1,8 +1,8 @@
 # Current State - YM PROSKIN
 
 ## Metadata
-- **Current Phase**: Phase 6: Topic Scale — Peptides
-- **Status**: Completed / tag `phase-6-peptides`
+- **Current Phase**: Phase 7: Diagram Engine v2
+- **Status**: Completed / tag `phase-7-diagram-engine`
 
 ## Project Status Snapshot
 - **Phase 0 (Foundation)**: Completed. Core files, ontology, naming conventions, and data schemas initialized.
@@ -24,5 +24,7 @@
 - **Phase 4.5b (Mechanism Assets Rollout)**: Completed. Reset the brand "dark" color to "#2C3440" and added the "moleculeStroke" token. Generated 5 new brand-aligned mechanism vector diagrams (collagen synthesis, absorption curves, ceramide synthesis, melanosome transfer, desmosome desmolysis) under asset provenance. Integrated diagrams across slide specifications for Vitamin C, Niacinamide, and Exfoliants. Verified all decks in HTML, PDF, and PPTX formats, clearing 100% of the QA gates with zero regressions.
 - **Phase 4.5c (Diagram Defect Fixes & Overlap-Aware QA)**: Completed. Extended `qa_svg_bounds.js` with internal Playwright overlap checks, integrated bounds checks in `qa_deck.py`, resolved scientific and fact alignments across 4 SVGs, fixed layout issues for all 7 SVGs, re-rendered presentations, and cleared all QA gates.
 - **Phase 6 (Topic Scale — Peptides)**: Completed. Ingested Peptides topic, added 8 entities, 8 verified facts, 7 relationships, ran live PubMed verification (reporting 33.3% rejection rate), wrote 8 slide specs with diagram placeholders, dual-rendered HTML/PDF/PPTX presentations, and passed all QA gates and regression tests.
+- **Phase 7 (Diagram Engine v2)**: Completed. Created diagram_tokens.json, registered P020 and DEC-016 in AGENTS.md and decisions_log.md, wrote gen_diagrams.py containing parametric layout templates (process_flow, layered_anatomy, xy_curve), programmatically regenerated all 7 mechanism diagram SVGs, verified that all pass the deterministic qa_svg_bounds.js check, and successfully rendered and audited all 5 presentations in HTML, PDF, and PPTX formats.
+
 
 

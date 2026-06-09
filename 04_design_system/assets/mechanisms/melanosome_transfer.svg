@@ -1,65 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
-  <!-- Background -->
   <rect width="400" height="300" rx="16" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5"/>
-
-  <defs>
-    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2C3440"/>
-    </marker>
-  </defs>
-
-  <!-- Title -->
-  <text x="200" y="25" font-family="Arimo, sans-serif" font-size="13" font-weight="bold" fill="#2C3440" text-anchor="middle">Подавление переноса меланосом</text>
-  <text x="200" y="40" font-family="Arimo, sans-serif" font-size="10" fill="#6D8470" text-anchor="middle">Ниацинамид блокирует перенос в кератиноциты</text>
-
-  <!-- Keratinocyte 1 (separate group, single rect = no text_outside_container false positive) -->
+  <text x="200.0" y="25" font-family="Arimo, sans-serif" font-size="13" font-weight="bold" fill="#2C3440" text-anchor="middle">Подавление переноса меланосом</text>
+  <text x="200.0" y="40" font-family="Arimo, sans-serif" font-size="10" fill="#6D8470" text-anchor="middle">Ниацинамид блокирует перенос в...</text>
   <g transform="translate(30, 55)">
     <rect x="0" y="0" width="140" height="50" rx="4" fill="#D7E0CE" stroke="#6D8470" stroke-width="1.5"/>
     <text x="70" y="22" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Keratinocyte</text>
     <text x="70" y="38" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">Кератиноцит</text>
   </g>
-
-  <!-- Keratinocyte 2 (separate group) -->
   <g transform="translate(228, 55)">
     <rect x="0" y="0" width="142" height="50" rx="4" fill="#D7E0CE" stroke="#6D8470" stroke-width="1.5"/>
     <text x="71" y="22" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Keratinocyte</text>
     <text x="71" y="38" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">Кератиноцит</text>
   </g>
-
-  <!-- Niacinamide Blocking Bar (no percentage — not in fact_0034) -->
   <rect x="20" y="128" width="360" height="18" rx="4" fill="#E6D2CA" stroke="#9E6A5A" stroke-width="1.5"/>
-  <text x="200" y="141" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#9E6A5A" text-anchor="middle">БЛОКАДА ПЕРЕНОСА МЕЛАНОСОМ НИАЦИНАМИДОМ</text>
-
-  <!-- Blocked arrows (X symbols as free text, above blocking bar) -->
+  <text x="200" y="141" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#9E6A5A" text-anchor="middle">БЛОКАДА ПЕРЕНОСА МЕЛАНОСОМ</text>
   <text x="100" y="124" font-family="Arimo, sans-serif" font-size="12" font-weight="bold" fill="#9E6A5A" text-anchor="middle">✕</text>
   <text x="300" y="124" font-family="Arimo, sans-serif" font-size="12" font-weight="bold" fill="#9E6A5A" text-anchor="middle">✕</text>
-
-  <!-- Dendrites (drawn BEFORE cell body) -->
-  <!-- Left Dendrite -->
   <path d="M 155 228 C 138 211, 105 192, 100 172" fill="none" stroke="#2C3440" stroke-width="3.5" stroke-linecap="round"/>
-  <!-- Right Dendrite -->
   <path d="M 225 228 C 242 211, 275 192, 280 172" fill="none" stroke="#2C3440" stroke-width="3.5" stroke-linecap="round"/>
-
-  <!-- Melanosomes along dendrites (positioned away from label area in cell body) -->
   <circle cx="138" cy="209" r="3.5" fill="#1D291C"/>
   <circle cx="113" cy="189" r="3.5" fill="#1D291C"/>
-  <circle cx="100" cy="174" r="3"   fill="#1D291C"/>
-
   <circle cx="242" cy="209" r="3.5" fill="#1D291C"/>
   <circle cx="267" cy="189" r="3.5" fill="#1D291C"/>
-  <circle cx="280" cy="174" r="3"   fill="#1D291C"/>
-
-  <!-- Melanosomes in cell body margins (not near label) -->
+  <circle cx="100" cy="174" r="3" fill="#1D291C"/>
+  <circle cx="280" cy="174" r="3" fill="#1D291C"/>
   <circle cx="162" cy="250" r="4" fill="#1D291C"/>
   <circle cx="218" cy="250" r="4" fill="#1D291C"/>
-
-  <!-- Melanocyte Cell Body — larger ellipse so label area clear -->
   <ellipse cx="190" cy="245" rx="88" ry="36" fill="#F8F6F4" stroke="#2C3440" stroke-width="2"/>
-
-  <!-- Labels inside ellipse — centered (ellipse has no fill rect, so no container check) -->
   <text x="190" y="241" font-family="Arimo, sans-serif" font-size="12" font-weight="bold" fill="#2C3440" text-anchor="middle">Melanocyte</text>
   <text x="190" y="256" font-family="Arimo, sans-serif" font-size="9" fill="#6D8470" text-anchor="middle">Меланоцит</text>
-
-  <!-- Source note -->
-  <text x="200" y="292" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0034 — Hakozaki 2002, PMID 12100180</text>
+  <text x="200.0" y="288" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0034 - Hakozaki...</text>
 </svg>

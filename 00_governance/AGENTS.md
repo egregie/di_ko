@@ -43,6 +43,8 @@ discover -> collect -> extract -> dedup -> verify -> librarian/ontology -> graph
 - **P017 Confidence-Semantics**: The confidence field in facts is not consumed. It must be marked as reserved/unused in schemas, bypassed in validator, and documented in DEC-014.
 - **P018 Slide-Fact Alignment**: A clinical claim/thesis on a slide must be supported by the `statement` of at least one cited fact in the active graph; simply having a source_ref reference is insufficient.
 - **P019 Diagram Provenance**: No visual asset can be used in a deck without a logged record in `asset_provenance.json` detailing its source of truth, license type, and attribution credit (if CC-BY). Permitted licenses: own/generated, CC0, CC-BY, public-domain. Forbidden licenses: CC-BY-SA, NC, BioRender without industry license, and unknown/undeclared licenses.
+- **P020 Diagram-engine**: (a) diagram carries only short labels (≤4 words, ≤6 labels total / ≤3 key bullets); all prose resides in the slide body, not in the illustration; (b) diagram geometry is calculated dynamically via template/tokens and not positioned manually; (c) no diagram is saved or integrated without passing the deterministic bounds check.
+
 
 
 
