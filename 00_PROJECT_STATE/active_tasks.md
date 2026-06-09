@@ -61,3 +61,8 @@
 - [x] Implement category-based slide-to-fact claim validation gate in `qa_deck.py` [Phase 5.1 Block B]
 - [x] Clean slide specifications for Vitamin C, Niacinamide, and Exfoliants to remove unsupported claims [Phase 5.1 Block C]
 - [x] Re-render all presentations and verify 100% QA pass on HTML, PDF, and PPTX formats [Phase 5.1 Block C]
+- [x] Extend qa_svg_bounds.js with internal Playwright overlap detection [Phase 4.5c Block 0]
+- [x] Integrate SVG bounds check into presentation QA gate (qa_deck.py) [Phase 4.5c Block 0]
+- [x] Re-render all SVGs, decks, and verify 100% PASS on the upgraded QA gate [Phase 4.5c Block C]
+- [x] Document updates in walkthrough.md and active_tasks.md [Phase 4.5c Finalize]
+

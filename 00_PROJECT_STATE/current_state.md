@@ -1,8 +1,8 @@
 # Current State - YM PROSKIN
 
 ## Metadata
-- **Current Phase**: Phase 4.5b: Mechanism Assets Rollout
-- **Status**: Completed / tag `phase-4.5b-mechanisms`
+- **Current Phase**: Phase 4.5c: Diagram Defect Fixes & Overlap-Aware QA
+- **Status**: Completed / tag `phase-4.5c-diagram-fixes`
 
 ## Project Status Snapshot
 - **Phase 0 (Foundation)**: Completed. Core files, ontology, naming conventions, and data schemas initialized.
@@ -22,3 +22,5 @@
 - **Phase 5 (Content Production - Topic Decks)**: Completed. Implemented operating principles P016/P017, logged DEC-014, and updated fact schema. Parameterized all rendering (HTML/PDF/PPTX) and QA scripts to dynamically process selected decks. Generated 7-8 slide specifications for Vitamin C, Niacinamide, and Exfoliants, citing active graph facts and featuring safety slides. Rendered all decks in HTML, PDF, and PPTX formats, clearing 100% of the QA gates with zero regressions on Retinoids.
 - **Phase 5.1 (Deck Integrity Hardening)**: Completed. Added a topic-aware pregnancy safety check rule via `05_content/safety_config.json`, requiring pregnancy safety slides only for pregnancy-critical topics or those with pregnancy-related facts in the graph. Implemented a strict slide-to-fact claim validation gate in `qa_deck.py` checking for Pregnancy, Contraindication, and Safety/Tolerability category keyword alignments between slide text and cited facts. Rewrote the safety and summary slides for Vitamin C, Niacinamide, and Exfoliants to remove unsupported pregnancy assertions and focus on fact-grounded claims, ensuring all 3 decks and Retinoids pass QA with 0 errors.
 - **Phase 4.5b (Mechanism Assets Rollout)**: Completed. Reset the brand "dark" color to "#2C3440" and added the "moleculeStroke" token. Generated 5 new brand-aligned mechanism vector diagrams (collagen synthesis, absorption curves, ceramide synthesis, melanosome transfer, desmosome desmolysis) under asset provenance. Integrated diagrams across slide specifications for Vitamin C, Niacinamide, and Exfoliants. Verified all decks in HTML, PDF, and PPTX formats, clearing 100% of the QA gates with zero regressions.
+- **Phase 4.5c (Diagram Defect Fixes & Overlap-Aware QA)**: Completed. Extended `qa_svg_bounds.js` with internal Playwright overlap checks, integrated bounds checks in `qa_deck.py`, resolved scientific and fact alignments across 4 SVGs, fixed layout issues for all 7 SVGs, re-rendered presentations, and cleared all QA gates.
+

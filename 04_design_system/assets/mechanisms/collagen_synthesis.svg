@@ -1,67 +1,82 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
-  <!-- Definitions for arrows and markers -->
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5"/>
+
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2C3440" />
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2C3440"/>
     </marker>
-    <linearGradient id="helixGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#E6D2CA" />
-      <stop offset="50%" stop-color="#6D8470" />
-      <stop offset="100%" stop-color="#2C3440" />
-    </linearGradient>
+    <marker id="arrow-r" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#9E6A5A"/>
+    </marker>
   </defs>
 
-  <!-- Title/Label -->
-  <text x="200" y="25" font-family="Arimo, sans-serif" font-size="14" font-weight="bold" fill="#2C3440" text-anchor="middle">
-    Стимуляция синтеза коллагена I/III (Кофактор гидроксилаз)
-  </text>
+  <!-- Title (within viewBox) -->
+  <text x="200" y="24" font-family="Arimo, sans-serif" font-size="12" font-weight="bold" fill="#2C3440" text-anchor="middle">Стимуляция экспрессии коллагена I/III</text>
+  <text x="200" y="39" font-family="Arimo, sans-serif" font-size="10" fill="#6D8470" text-anchor="middle">L-аскорбиновая кислота усиливает мРНК коллагена</text>
 
-  <!-- Left: Ascorbate Cofactor Block -->
-  <g transform="translate(20, 60)">
-    <rect x="0" y="0" width="100" height="60" rx="8" fill="#E6D2CA" stroke="#6D8470" stroke-width="2" />
-    <text x="50" y="26" font-family="Arimo, sans-serif" font-size="12" font-weight="bold" fill="#2C3440" text-anchor="middle">L-Ascorbate</text>
-    <text x="50" y="44" font-family="Arimo, sans-serif" font-size="10" fill="#3D4A40" text-anchor="middle">Активный кофактор</text>
+  <!-- ══ TOP FLOW (3 boxes) ══ -->
+
+  <!-- Step 1: L-Ascorbate -->
+  <g transform="translate(18, 58)">
+    <rect x="0" y="0" width="90" height="50" rx="8" fill="#E6D2CA" stroke="#6D8470" stroke-width="2"/>
+    <text x="45" y="24" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">L-Ascorbate</text>
+    <text x="45" y="39" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">Витамин C</text>
   </g>
 
-  <!-- Arrow from Ascorbate to Hydroxylase -->
-  <path d="M 130 90 L 164 90" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M 110 83 L 138 83" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="124" y="77" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">↑ мРНК</text>
 
-  <!-- Middle: Hydroxylase Enzyme Block -->
-  <g transform="translate(180, 50)">
-    <circle cx="40" cy="40" r="35" fill="#D7E0CE" stroke="#6D8470" stroke-width="2" />
-    <text x="40" y="38" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#2C3440" text-anchor="middle">Fe²⁺ / Prolyl</text>
-    <text x="40" y="52" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#2C3440" text-anchor="middle">Hydroxylase</text>
+  <!-- Step 2: Gene Expression -->
+  <g transform="translate(142, 52)">
+    <rect x="0" y="0" width="112" height="62" rx="6" fill="#D7E0CE" stroke="#6D8470" stroke-width="1.5"/>
+    <text x="56" y="22" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#2C3440" text-anchor="middle">Экспрессия генов</text>
+    <text x="56" y="36" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#2C3440" text-anchor="middle">коллагена</text>
+    <text x="56" y="50" font-family="Arimo, sans-serif" font-size="9" fill="#6D8470" text-anchor="middle">mRNA COL1A1</text>
   </g>
 
-  <!-- Arrow from Enzyme to Reaction -->
-  <path d="M 220 130 L 220 170" fill="none" stroke="#2C3440" stroke-width="2" stroke-dasharray="4,4" marker-end="url(#arrow)" />
-  <text x="230" y="152" font-family="Arimo, sans-serif" font-size="10" fill="#3D4A40">Гидроксилирование</text>
+  <path d="M 256 83 L 282 83" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="269" y="77" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">синтез</text>
 
-  <!-- Bottom: Procollagen -> Collagen Fiber reaction -->
-  <!-- Reactant: Procollagen chain -->
-  <g transform="translate(20, 200)">
-    <rect x="0" y="0" width="110" height="50" rx="6" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5" />
-    <text x="55" y="22" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Нестабильный</text>
-    <text x="55" y="38" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Проколлаген</text>
-    
-    <!-- Single Helix representation -->
-    <path d="M 10 42 Q 25 35 40 42 T 70 42 T 100 42" fill="none" stroke="#9E6A5A" stroke-width="2" />
+  <!-- Step 3: Collagen product -->
+  <g transform="translate(286, 56)">
+    <rect x="0" y="0" width="96" height="54" rx="6" fill="#F8F6F4" stroke="#6D8470" stroke-width="1.5"/>
+    <text x="48" y="22" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Коллаген</text>
+    <text x="48" y="36" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#6D8470" text-anchor="middle">I / III</text>
+    <text x="48" y="49" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="middle">Тройная спираль</text>
   </g>
 
-  <!-- Arrow: Conversion -->
-  <path d="M 140 225 L 230 225" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)" />
-  <text x="185" y="215" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">Hydroxylation</text>
+  <!-- ══ BOTTOM: Nucleus schematic (dashed border, NO filled ellipse to avoid text_graphic_overlap) ══ -->
 
-  <!-- Product: Stable Collagen Triple Helix -->
-  <g transform="translate(250, 200)">
-    <rect x="0" y="0" width="130" height="50" rx="6" fill="#F8F6F4" stroke="#6D8470" stroke-width="1.5" />
-    <text x="65" y="20" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Стабильный</text>
-    <text x="65" y="35" font-family="Arimo, sans-serif" font-size="10" fill="#6D8470" text-anchor="middle">Тройной суперспиральный</text>
-    <text x="65" y="46" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">Коллаген I/III типов</text>
+  <!-- Nucleus section label (free text, not inside any group with rect/ellipse) -->
+  <text x="22" y="138" font-family="Arimo, sans-serif" font-size="9" fill="#6D8470" font-weight="bold">Механизм (транскрипция в ядре):</text>
 
-    <!-- Triple Helix representation -->
-    <path d="M 10 42 Q 25 36 40 42 T 70 42 T 100 42" fill="none" stroke="#6D8470" stroke-width="1.5" />
-    <path d="M 12 44 Q 27 38 42 44 T 72 44 T 102 44" fill="none" stroke="#E6D2CA" stroke-width="1.5" />
-    <path d="M 14 40 Q 29 34 44 40 T 74 40 T 104 40" fill="none" stroke="#2C3440" stroke-width="1.5" />
-  </g>
+  <!-- Nucleus dashed outline (stroke only, no fill = not detected as opaque graphic) -->
+  <ellipse cx="200" cy="220" rx="168" ry="62" fill="none" stroke="#6D8470" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+  <!-- NUCLEUS label above the ellipse outline -->
+  <text x="200" y="152" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#6D8470" letter-spacing="0.08em" text-anchor="middle">ЯДРО / NUCLEUS</text>
+
+  <!-- DNA double strand (two paths below labels) -->
+  <path d="M 38 213 Q 58 198 78 213 T 118 213 T 158 213" fill="none" stroke="#3D4A40" stroke-width="2.5"/>
+  <path d="M 38 233 Q 58 248 78 233 T 118 233 T 158 233" fill="none" stroke="#6D8470" stroke-width="2.5"/>
+  <!-- Base pairs -->
+  <line x1="58" y1="214" x2="58" y2="232" stroke="#3D4A40" stroke-width="1" opacity="0.5"/>
+  <line x1="98" y1="214" x2="98" y2="232" stroke="#3D4A40" stroke-width="1" opacity="0.5"/>
+  <line x1="138" y1="214" x2="138" y2="232" stroke="#3D4A40" stroke-width="1" opacity="0.5"/>
+
+  <!-- DNA label (free text) -->
+  <text x="98" y="252" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="middle">ДНК — ген COL1A1/COL3A1</text>
+
+  <!-- mRNA arrow emerging up -->
+  <path d="M 200 208 L 200 165" fill="none" stroke="#9E6A5A" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrow-r)"/>
+  <text x="213" y="190" font-family="Arimo, sans-serif" font-size="8" fill="#9E6A5A">мРНК</text>
+
+  <!-- Right side of nucleus: chromatin schematic -->
+  <path d="M 250 213 Q 270 198 290 213 T 330 213 T 360 213" fill="none" stroke="#3D4A40" stroke-width="2.5" opacity="0.5"/>
+  <path d="M 250 233 Q 270 248 290 233 T 330 233 T 360 233" fill="none" stroke="#6D8470" stroke-width="2.5" opacity="0.5"/>
+  <text x="305" y="252" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="middle">Хроматин</text>
+
+  <!-- Source note (y=289 → bottom edge ≈ 297 — within 300−5=295 → use y=286) -->
+  <text x="200" y="287" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0030/fact_0046 — Pinnell 2001, PMID 11207686 (↑ мРНК коллагена I/III)</text>
 </svg>

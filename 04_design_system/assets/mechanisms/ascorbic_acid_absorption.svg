@@ -1,75 +1,88 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 300" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="450" height="300" rx="16" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5"/>
+
   <!-- Title -->
-  <text x="225" y="22" font-family="Arimo, sans-serif" font-size="14" font-weight="bold" fill="#2C3440" text-anchor="middle">
-    Чрескожное всасывание L-аскорбиновой кислоты
-  </text>
+  <text x="225" y="24" font-family="Arimo, sans-serif" font-size="13" font-weight="bold" fill="#2C3440" text-anchor="middle">Чрескожное всасывание L-аскорбиновой кислоты</text>
 
-  <!-- Left Panel: pH Dependency -->
-  <g transform="translate(40, 50)">
-    <!-- Title Left -->
-    <text x="75" y="15" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Зависимость от pH</text>
-    
-    <!-- Grid & Axes -->
-    <line x1="20" y1="180" x2="150" y2="180" stroke="#2C3440" stroke-width="1.5" /> <!-- X axis -->
-    <line x1="20" y1="30" x2="20" y2="180" stroke="#2C3440" stroke-width="1.5" />  <!-- Y axis -->
-    
-    <!-- Ideal pH Zone Highlight (pH < 3.5) -->
-    <rect x="21" y="30" width="67" height="149" fill="#D7E0CE" opacity="0.5" />
-    <text x="54" y="60" font-family="Arimo, sans-serif" font-size="9" fill="#6D8470" font-weight="bold" text-anchor="middle">Оптимум (pH &lt; 3.5)</text>
+  <!-- ═══ LEFT Panel: pH Dependency ═══ -->
+  <!-- Highlight rect as standalone (not in a transform group with text) -->
+  <rect x="71" y="80" width="67" height="149" fill="#D7E0CE" opacity="0.4"/>
 
-    <!-- Curve (pH 2.0 to 5.0) -->
-    <!-- pH 2.0 (x=20, y=50) -> pH 3.0 (x=65, y=70) -> pH 3.5 (x=88, y=100) -> pH 4.0 (x=110, y=170) -> pH 5.0 (x=150, y=178) -->
-    <path d="M 20 50 Q 75 60 88 100 T 150 178" fill="none" stroke="#9E6A5A" stroke-width="2.5" />
+  <!-- Grid & Axes (standalone lines) -->
+  <line x1="70" y1="229" x2="200" y2="229" stroke="#2C3440" stroke-width="1.5"/>
+  <line x1="70" y1="79"  x2="70"  y2="229" stroke="#2C3440" stroke-width="1.5"/>
 
-    <!-- Ticks & Labels -->
-    <!-- Y Ticks -->
-    <line x1="16" y1="50" x2="20" y2="50" stroke="#2C3440" />
-    <text x="12" y="53" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="end">Max</text>
-    <line x1="16" y1="180" x2="20" y2="180" stroke="#2C3440" />
-    <text x="12" y="183" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="end">Min</text>
+  <!-- Panel title (free text) -->
+  <text x="135" y="62" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Зависимость от pH</text>
 
-    <!-- X Ticks -->
-    <line x1="20" y1="180" x2="20" y2="184" stroke="#2C3440" />
-    <text x="20" y="194" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">2.0</text>
-    
-    <line x1="88" y1="180" x2="88" y2="184" stroke="#2C3440" />
-    <text x="88" y="194" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">3.5</text>
-    
-    <line x1="150" y1="180" x2="150" y2="184" stroke="#2C3440" />
-    <text x="150" y="194" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">5.0</text>
+  <!-- Zone label (free text — no rect container in parent) -->
+  <text x="104" y="108" font-family="Arimo, sans-serif" font-size="9" fill="#6D8470" font-weight="bold" text-anchor="middle">Оптимум</text>
+  <text x="104" y="120" font-family="Arimo, sans-serif" font-size="9" fill="#6D8470" font-weight="bold" text-anchor="middle">(pH &lt; 3.5)</text>
 
-    <text x="85" y="212" font-family="Arimo, sans-serif" font-size="10" fill="#2C3440" text-anchor="middle">Уровень pH формулы</text>
-  </g>
+  <!-- Curve: absorption falls as pH rises -->
+  <path d="M 70 94 Q 100 105 138 145 T 200 227" fill="none" stroke="#9E6A5A" stroke-width="2.5"/>
 
-  <!-- Right Panel: Concentration Dependency -->
-  <g transform="translate(250, 50)">
-    <!-- Title Right -->
-    <text x="75" y="15" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Зависимость от конц.</text>
-    
-    <!-- Grid & Axes -->
-    <line x1="20" y1="180" x2="150" y2="180" stroke="#2C3440" stroke-width="1.5" /> <!-- X axis -->
-    <line x1="20" y1="30" x2="20" y2="180" stroke="#2C3440" stroke-width="1.5" />  <!-- Y axis -->
+  <!-- Y Axis Labels (standalone free text) -->
+  <line x1="66" y1="94"  x2="70" y2="94"  stroke="#2C3440"/>
+  <text x="63" y="98"  font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="end">Max</text>
+  <line x1="66" y1="229" x2="70" y2="229" stroke="#2C3440"/>
+  <text x="63" y="233" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="end">Min</text>
 
-    <!-- Peak Line at 20% -->
-    <line x1="85" y1="30" x2="85" y2="180" stroke="#6D8470" stroke-width="1.5" stroke-dasharray="3,3" />
-    <rect x="80" y="35" width="65" height="25" fill="#E6D2CA" rx="4" />
-    <text x="112" y="47" font-family="Arimo, sans-serif" font-size="8" font-weight="bold" fill="#2C3440" text-anchor="middle">Плато (20%-40%)</text>
+  <!-- X Axis Ticks & Labels -->
+  <line x1="70"  y1="229" x2="70"  y2="233" stroke="#2C3440"/>
+  <text x="70"  y="243" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">2.0</text>
+  <line x1="138" y1="229" x2="138" y2="233" stroke="#2C3440"/>
+  <text x="138" y="243" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">3.5</text>
+  <line x1="200" y1="229" x2="200" y2="233" stroke="#2C3440"/>
+  <text x="200" y="243" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">5.0</text>
 
-    <!-- Curve (0% to 40%) -->
-    <!-- 0% (x=20, y=180) -> 10% (x=52, y=95) -> 20% (x=85, y=50) -> 30% (x=117, y=50) -> 40% (x=150, y=50) -->
-    <path d="M 20 180 Q 60 70 85 50 L 150 50" fill="none" stroke="#6D8470" stroke-width="2.5" />
+  <text x="135" y="258" font-family="Arimo, sans-serif" font-size="10" fill="#2C3440" text-anchor="middle">Уровень pH формулы</text>
 
-    <!-- Ticks & Labels -->
-    <!-- X Ticks -->
-    <line x1="20" y1="180" x2="20" y2="184" stroke="#2C3440" />
-    <text x="20" y="194" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">0%</text>
-    
-    <line x1="85" y1="180" x2="85" y2="184" stroke="#2C3440" />
-    <text x="85" y="194" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">20%</text>
-    
-    <line x1="150" y1="180" x2="150" y2="184" stroke="#2C3440" />
-    <text x="150" y="194" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">40%</text>
+  <!-- Divider -->
+  <line x1="225" y1="55" x2="225" y2="270" stroke="#D7E0CE" stroke-width="1" stroke-dasharray="4,4"/>
 
-    <text x="85" y="212" font-family="Arimo, sans-serif" font-size="10" fill="#2C3440" text-anchor="middle">Концентрация L-AA</text>
-  </g>
+  <!-- ═══ RIGHT Panel: Concentration Dependency ═══ -->
+  <!-- Grid & Axes (standalone lines) -->
+  <line x1="258" y1="229" x2="413" y2="229" stroke="#2C3440" stroke-width="1.5"/>
+  <line x1="258" y1="79"  x2="258" y2="229" stroke="#2C3440" stroke-width="1.5"/>
+
+  <!-- Panel title (free text) -->
+  <text x="335" y="62" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Зависимость от конц.</text>
+
+  <!-- Peak dashed marker at 20% -->
+  <line x1="335" y1="79" x2="335" y2="229" stroke="#6D8470" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+  <!-- Curve: rises to peak at 20%, then FALLS (Pinnell 2001) -->
+  <path d="M 258 227 Q 300 120 335 92 Q 370 122 413 170" fill="none" stroke="#6D8470" stroke-width="2.5"/>
+
+  <!-- Peak callout box (standalone rect + text, not in a group) -->
+  <rect x="338" y="82" width="62" height="28" fill="#E6D2CA" rx="4" stroke="#9E6A5A" stroke-width="1"/>
+  <text x="369" y="94" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#9E6A5A" text-anchor="middle">Пик @20%</text>
+  <text x="369" y="106" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="middle">макс. абсорбция</text>
+  <!-- Pointer line to peak -->
+  <line x1="338" y1="92" x2="335" y2="92" stroke="#9E6A5A" stroke-width="1"/>
+
+  <!-- Decline annotation (free text) -->
+  <text x="387" y="155" font-family="Arimo, sans-serif" font-size="8" fill="#9E6A5A" text-anchor="middle">спад</text>
+  <text x="387" y="166" font-family="Arimo, sans-serif" font-size="8" fill="#9E6A5A" text-anchor="middle">выше 20%</text>
+
+  <!-- Y Axis Labels -->
+  <line x1="254" y1="92"  x2="258" y2="92"  stroke="#2C3440"/>
+  <text x="252" y="96"  font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="end">Max</text>
+  <line x1="254" y1="229" x2="258" y2="229" stroke="#2C3440"/>
+  <text x="252" y="233" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="end">Min</text>
+
+  <!-- X Axis Ticks & Labels -->
+  <line x1="258" y1="229" x2="258" y2="233" stroke="#2C3440"/>
+  <text x="258" y="243" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">0%</text>
+  <line x1="335" y1="229" x2="335" y2="233" stroke="#2C3440"/>
+  <text x="335" y="243" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">20%</text>
+  <line x1="413" y1="229" x2="413" y2="233" stroke="#2C3440"/>
+  <text x="413" y="243" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">40%</text>
+
+  <text x="335" y="258" font-family="Arimo, sans-serif" font-size="10" fill="#2C3440" text-anchor="middle">Концентрация L-AA</text>
+
+  <!-- Source note (bottom margin safe) -->
+  <text x="225" y="283" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: Pinnell et al., 2001 (PMID 11207686) — макс. абсорбция при 20%, снижается выше</text>
 </svg>

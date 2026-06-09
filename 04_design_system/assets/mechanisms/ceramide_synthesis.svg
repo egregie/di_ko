@@ -1,91 +1,85 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
-  <!-- Definitions -->
+  <!-- Background -->
+  <rect width="400" height="300" rx="16" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5"/>
+
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2C3440" />
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#2C3440"/>
     </marker>
   </defs>
 
   <!-- Title -->
-  <text x="200" y="25" font-family="Arimo, sans-serif" font-size="14" font-weight="bold" fill="#2C3440" text-anchor="middle">
-    Ниацинамид: Синтез церамидов и барьер кожи
-  </text>
+  <text x="200" y="26" font-family="Arimo, sans-serif" font-size="13" font-weight="bold" fill="#2C3440" text-anchor="middle">Ниацинамид: Синтез церамидов и барьер кожи</text>
 
-  <!-- Flow Block: Niacinamide -->
-  <g transform="translate(20, 60)">
-    <rect x="0" y="0" width="100" height="50" rx="8" fill="#E6D2CA" stroke="#6D8470" stroke-width="2" />
-    <text x="50" y="29" font-family="Arimo, sans-serif" font-size="12" font-weight="bold" fill="#2C3440" text-anchor="middle">Niacinamide</text>
+  <!-- Flow: Niacinamide -->
+  <g transform="translate(20, 55)">
+    <rect x="0" y="0" width="90" height="44" rx="8" fill="#E6D2CA" stroke="#6D8470" stroke-width="2"/>
+    <text x="45" y="27" font-family="Arimo, sans-serif" font-size="12" font-weight="bold" fill="#2C3440" text-anchor="middle">Niacinamide</text>
   </g>
 
-  <!-- Arrow to SPT -->
-  <path d="M 120 85 L 154 85" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- Arrow -->
+  <path d="M 112 77 L 142 77" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- Flow Block: SPT Activation -->
-  <g transform="translate(160, 55)">
-    <rect x="0" y="0" width="110" height="60" rx="6" fill="#D7E0CE" stroke="#6D8470" stroke-width="1.5" />
-    <text x="55" y="24" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#2C3440" text-anchor="middle">Активация фермента</text>
-    <text x="55" y="38" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#6D8470" text-anchor="middle">SPT</text>
-    <text x="55" y="50" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">(Serine Palmitoyltransferase)</text>
+  <!-- Flow: Ceramide Synthesis block (no SPT enzyme — not in fact_0024) -->
+  <g transform="translate(148, 50)">
+    <rect x="0" y="0" width="110" height="54" rx="6" fill="#D7E0CE" stroke="#6D8470" stroke-width="1.5"/>
+    <text x="55" y="22" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#2C3440" text-anchor="middle">Стимуляция</text>
+    <text x="55" y="36" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#2C3440" text-anchor="middle">синтеза церамидов</text>
+    <text x="55" y="49" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">(кожный барьер)</text>
   </g>
 
-  <!-- Arrow to Ceramides -->
-  <path d="M 270 85 L 304 85" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- Arrow -->
+  <path d="M 260 77 L 290 77" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- Flow Block: Sphingolipids & Ceramides -->
-  <g transform="translate(310, 60)">
-    <rect x="0" y="0" width="70" height="50" rx="6" fill="#F8F6F4" stroke="#2C3440" stroke-width="1.5" />
-    <text x="35" y="24" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#2C3440" text-anchor="middle">Sphingolipids</text>
-    <text x="35" y="38" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#6D8470" text-anchor="middle">Ceramides</text>
+  <!-- Flow: Sphingolipids & Ceramides -->
+  <g transform="translate(296, 52)">
+    <rect x="0" y="0" width="84" height="50" rx="6" fill="#F8F6F4" stroke="#2C3440" stroke-width="1.5"/>
+    <text x="42" y="22" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#2C3440" text-anchor="middle">Сфинголипиды</text>
+    <text x="42" y="36" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#6D8470" text-anchor="middle">&amp; Церамиды</text>
   </g>
 
-  <!-- Arrow: Synthesis to Barrier Representation -->
-  <path d="M 345 110 L 345 170" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)" />
-  <text x="335" y="145" font-family="Arimo, sans-serif" font-size="10" fill="#3D4A40" text-anchor="end">Липидный барьер</text>
+  <!-- Arrow down to lipid bilayer -->
+  <path d="M 338 102 L 338 148" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- Lipid Bilayer Representation -->
-  <g transform="translate(40, 180)">
-    <!-- Boundary Box -->
-    <rect x="0" y="0" width="320" height="85" rx="6" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5" />
-    
-    <!-- Corneocytes -->
-    <rect x="15" y="10" width="80" height="20" rx="3" fill="#D7E0CE" stroke="#6D8470" stroke-width="1" />
-    <text x="55" y="23" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">Corneocyte</text>
+  <!-- Lipid Bilayer outer box -->
+  <rect x="30" y="155" width="340" height="110" rx="6" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5"/>
 
-    <rect x="15" y="55" width="80" height="20" rx="3" fill="#D7E0CE" stroke="#6D8470" stroke-width="1" />
-    <text x="55" y="68" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">Corneocyte</text>
+  <!-- Corneocyte zone labels (as lines, not rects — avoids box_box_overlap with outer box) -->
+  <line x1="40" y1="168" x2="120" y2="168" stroke="#6D8470" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="80" y="181" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">Corneocyte</text>
+  <line x1="40" y1="190" x2="120" y2="190" stroke="#6D8470" stroke-width="1" stroke-dasharray="3,2"/>
 
-    <!-- Lipid Bilayers (Intercellular Space) -->
-    <!-- Bilayer 1: Heads & Tails -->
-    <g transform="translate(110, 20)">
-      <!-- Top heads -->
-      <circle cx="10" cy="5" r="4" fill="#6D8470" />
-      <circle cx="25" cy="5" r="4" fill="#6D8470" />
-      <circle cx="40" cy="5" r="4" fill="#6D8470" />
-      <circle cx="55" cy="5" r="4" fill="#6D8470" />
-      <circle cx="70" cy="5" r="4" fill="#6D8470" />
-      <!-- Tails -->
-      <line x1="10" y1="9" x2="10" y2="18" stroke="#2C3440" stroke-width="1" />
-      <line x1="25" y1="9" x2="25" y2="18" stroke="#2C3440" stroke-width="1" />
-      <line x1="40" y1="9" x2="40" y2="18" stroke="#2C3440" stroke-width="1" />
-      <line x1="55" y1="9" x2="55" y2="18" stroke="#2C3440" stroke-width="1" />
-      <line x1="70" y1="9" x2="70" y2="18" stroke="#2C3440" stroke-width="1" />
+  <line x1="40" y1="218" x2="120" y2="218" stroke="#6D8470" stroke-width="2" stroke-dasharray="3,2"/>
+  <text x="80" y="231" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40" text-anchor="middle">Corneocyte</text>
+  <line x1="40" y1="244" x2="120" y2="244" stroke="#6D8470" stroke-width="1" stroke-dasharray="3,2"/>
 
-      <!-- Bottom heads -->
-      <circle cx="10" cy="35" r="4" fill="#6D8470" />
-      <circle cx="25" cy="35" r="4" fill="#6D8470" />
-      <circle cx="40" cy="35" r="4" fill="#6D8470" />
-      <circle cx="55" cy="35" r="4" fill="#6D8470" />
-      <circle cx="70" cy="35" r="4" fill="#6D8470" />
-      <!-- Tails -->
-      <line x1="10" y1="22" x2="10" y2="31" stroke="#2C3440" stroke-width="1" />
-      <line x1="25" y1="22" x2="25" y2="31" stroke="#2C3440" stroke-width="1" />
-      <line x1="40" y1="22" x2="40" y2="31" stroke="#2C3440" stroke-width="1" />
-      <line x1="55" y1="22" x2="55" y2="31" stroke="#2C3440" stroke-width="1" />
-      <line x1="70" y1="22" x2="70" y2="31" stroke="#2C3440" stroke-width="1" />
-    </g>
-
-    <text x="260" y="32" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#6D8470">Липидные пласты</text>
-    <text x="260" y="46" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40">Церамиды &amp; Сфинголипиды</text>
-    <text x="260" y="58" font-family="Arimo, sans-serif" font-size="9" fill="#9E6A5A" font-weight="bold">Блокада TEWL</text>
+  <!-- Lipid Bilayer head/tail diagram (between corneocytes, x=130 area) -->
+  <g transform="translate(128, 193)">
+    <circle cx="8"  cy="4" r="4" fill="#6D8470"/>
+    <circle cx="22" cy="4" r="4" fill="#6D8470"/>
+    <circle cx="36" cy="4" r="4" fill="#6D8470"/>
+    <circle cx="50" cy="4" r="4" fill="#6D8470"/>
+    <line x1="8"  y1="8" x2="8"  y2="16" stroke="#2C3440" stroke-width="1"/>
+    <line x1="22" y1="8" x2="22" y2="16" stroke="#2C3440" stroke-width="1"/>
+    <line x1="36" y1="8" x2="36" y2="16" stroke="#2C3440" stroke-width="1"/>
+    <line x1="50" y1="8" x2="50" y2="16" stroke="#2C3440" stroke-width="1"/>
+    <circle cx="8"  cy="24" r="4" fill="#6D8470"/>
+    <circle cx="22" cy="24" r="4" fill="#6D8470"/>
+    <circle cx="36" cy="24" r="4" fill="#6D8470"/>
+    <circle cx="50" cy="24" r="4" fill="#6D8470"/>
+    <line x1="8"  y1="20" x2="8"  y2="20" stroke="#2C3440" stroke-width="1"/>
+    <line x1="22" y1="20" x2="22" y2="20" stroke="#2C3440" stroke-width="1"/>
+    <line x1="36" y1="20" x2="36" y2="20" stroke="#2C3440" stroke-width="1"/>
+    <line x1="50" y1="20" x2="50" y2="20" stroke="#2C3440" stroke-width="1"/>
   </g>
+
+  <!-- Right side annotation text (free, outside any group-with-rect) -->
+  <text x="200" y="175" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#6D8470">Липидные пласты</text>
+  <text x="200" y="191" font-family="Arimo, sans-serif" font-size="9" fill="#3D4A40">Церамиды &amp; Сфинголипиды</text>
+  <text x="200" y="207" font-family="Arimo, sans-serif" font-size="9" fill="#9E6A5A" font-weight="bold">Блокада TEWL</text>
+  <text x="200" y="223" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470">(снижение трансэпидерм.</text>
+  <text x="200" y="235" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470">потери воды)</text>
+
+  <!-- Source note (y=291 → bottom edge ≈ 291+8 < 295 margin) -->
+  <text x="200" y="289" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0024 — Tanno 2000, PMID 10971556</text>
 </svg>

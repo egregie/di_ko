@@ -441,6 +441,29 @@ def main():
         except Exception as e:
             pptx_errors.append(f"Failed to audit PPTX: {e}")
             
+    # 5.5 SVG Bounds Check (internal overlaps + edge clipping via qa_svg_bounds.js)
+    svg_bounds_errors = []
+    mechanisms_dir = os.path.join(project_root, "04_design_system", "assets", "mechanisms")
+    qa_svg_script = os.path.join(project_root, "ops", "scripts", "qa_svg_bounds.js")
+    if os.path.isdir(mechanisms_dir) and os.path.isfile(qa_svg_script):
+        svg_files = sorted(f for f in os.listdir(mechanisms_dir) if f.endswith(".svg"))
+        for svg_fname in svg_files:
+            svg_path = os.path.join(mechanisms_dir, svg_fname)
+            try:
+                result = subprocess.run(
+                    ["node", qa_svg_script, svg_path, "5"],
+                    capture_output=True, text=True, timeout=30
+                )
+                if result.returncode != 0:
+                    import re
+                    checks = re.findall(r'"check":\s*"([^"]+)"', result.stderr + result.stdout)
+                    for chk in checks:
+                        svg_bounds_errors.append(f"SVG {svg_fname}: {chk}")
+            except Exception as e:
+                svg_bounds_errors.append(f"SVG bounds check error for {svg_fname}: {e}")
+    
+    pdf_errors.extend(svg_bounds_errors)
+
     # 6. Write QA Audit Report ops/logs/qa_deck_v2.md
     pdf_status = "FAIL" if pdf_errors else "PASS"
     pptx_status = "FAIL" if pptx_errors else "PASS"
