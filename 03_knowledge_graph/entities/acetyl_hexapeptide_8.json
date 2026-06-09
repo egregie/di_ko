@@ -1,0 +1,27 @@
+{
+  "entity_id": "acetyl_hexapeptide_8",
+  "entity_type": "Ingredient",
+  "title": "Acetyl Hexapeptide-8",
+  "aliases": [
+    "Argireline",
+    "acetyl hexapeptide-3"
+  ],
+  "belongs_to": [
+    "peptides"
+  ],
+  "used_for": [
+    "anti_aging",
+    "wrinkles"
+  ],
+  "contraindications": [],
+  "tags": [
+    "neurotransmitter_inhibitor",
+    "wrinkle_reduction",
+    "botox_like"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0054"
+  ],
+  "updated": "2026-06-10"
+}

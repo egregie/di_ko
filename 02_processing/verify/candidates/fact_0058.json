@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0058",
+  "statement": "topical acetyl tetrapeptide-5 has protective anti-aging effects on skin fibroblasts, acts as an angiotensin-converting enzyme inhibitor, and is safe and well-tolerated",
+  "entity_id": "acetyl_tetrapeptide_5",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A051"
+  ],
+  "contradictions": []
+}

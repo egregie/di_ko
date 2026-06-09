@@ -1,0 +1,23 @@
+{
+  "entity_id": "peptides",
+  "entity_type": "Ingredient",
+  "title": "Peptides",
+  "aliases": [
+    "cosmetic peptides",
+    "polypeptides"
+  ],
+  "belongs_to": [],
+  "used_for": [
+    "anti_aging",
+    "wrinkles"
+  ],
+  "contraindications": [],
+  "tags": [
+    "anti_aging",
+    "collagen_booster",
+    "skin_repair"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [],
+  "updated": "2026-06-10"
+}

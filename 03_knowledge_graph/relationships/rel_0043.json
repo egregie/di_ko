@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0043",
+  "from": "palmitoyl_pentapeptide_4",
+  "type": "is_a",
+  "to": "peptides",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A044"
+  ]
+}

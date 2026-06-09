@@ -1,0 +1,16 @@
+{
+  "fact_id": "fact_0061",
+  "statement": "topical palmitoyl pentapeptide-4 cures skin cancer and increases longevity",
+  "entity_id": "palmitoyl_pentapeptide_4",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-TEST-FAKE"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-09T22:43:14.365823Z",
+  "source_title": "",
+  "audit_verdict": "SOURCE_NOT_FOUND",
+  "evidence_ok": false
+}

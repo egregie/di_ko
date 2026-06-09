@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0049",
+  "from": "acetyl_tetrapeptide_5",
+  "type": "is_a",
+  "to": "peptides",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A051"
+  ]
+}

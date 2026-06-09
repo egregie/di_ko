@@ -1,0 +1,20 @@
+{
+  "id": "deck_peptides-s01",
+  "layout": "cover",
+  "section": "Пептиды",
+  "title": "YM PROSKIN · Пептиды",
+  "subtitle": "Классификация и клиническое применение биомиметических пептидов",
+  "body": [],
+  "media": {
+    "type": "image",
+    "asset": "cover_placeholder.png",
+    "fit": "cover",
+    "caption": "[Placeholder] Косметические пептиды в дерматологии"
+  },
+  "components": {},
+  "disclaimers": [
+    "Только для практикующих специалистов"
+  ],
+  "source_refs": [],
+  "notes": "Титульный слайд презентации по Пептидам"
+}

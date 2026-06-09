@@ -1,0 +1,17 @@
+{
+  "fact_id": "fact_0059",
+  "statement": "topical acetyl hexapeptide-8 is a potent SNARE complex inhibitor that completely eliminates facial aging in two days",
+  "entity_id": "acetyl_hexapeptide_8",
+  "confidence": 0.8,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A047"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-09T22:43:12.844413Z",
+  "source_title": "A synthetic hexapeptide (Argireline) with antiwrinkle activity.",
+  "audit_flag": "weak",
+  "audit_verdict": "WEAK",
+  "evidence_ok": true
+}

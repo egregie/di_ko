@@ -1,0 +1,26 @@
+{
+  "entity_id": "palmitoyl_tripeptide_1",
+  "entity_type": "Ingredient",
+  "title": "Palmitoyl Tripeptide-1",
+  "aliases": [
+    "pal-GHK"
+  ],
+  "belongs_to": [
+    "peptides"
+  ],
+  "used_for": [
+    "anti_aging",
+    "wrinkles",
+    "elasticity"
+  ],
+  "contraindications": [],
+  "tags": [
+    "signal_peptide",
+    "collagen_booster"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0056"
+  ],
+  "updated": "2026-06-10"
+}

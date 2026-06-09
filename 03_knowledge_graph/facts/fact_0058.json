@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0058",
+  "statement": "topical acetyl tetrapeptide-5 has protective anti-aging effects on skin fibroblasts, acts as an angiotensin-converting enzyme inhibitor, and is safe and well-tolerated",
+  "entity_id": "acetyl_tetrapeptide_5",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A051"
+  ],
+  "contradictions": [],
+  "verified_via": "cache",
+  "verified_at": "2026-06-09T22:48:11.855282Z",
+  "verified_by": "verifier",
+  "date": "2026-06-09",
+  "source_title": "Protective and Anti-Aging Effects of 5 Cosmeceutical Peptide Mixtures on Hydrogen Peroxide-Induced Premature Senescence in...",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

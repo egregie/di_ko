@@ -1,0 +1,19 @@
+{
+  "fact_id": "fact_0055",
+  "statement": "topical palmitoyl tripeptide-5 stimulates collagen synthesis and protects against collagen degradation",
+  "entity_id": "palmitoyl_tripeptide_5",
+  "confidence": 0.8,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A048"
+  ],
+  "contradictions": [],
+  "verified_via": "cache",
+  "verified_at": "2026-06-09T22:48:11.485886Z",
+  "verified_by": "verifier",
+  "date": "2026-06-09",
+  "source_title": "Supramolecular collagen nanoparticles for anti-wrinkle, skin whitening, and moisturizing effects.",
+  "audit_flag": "weak",
+  "audit_verdict": "WEAK",
+  "evidence_ok": true
+}

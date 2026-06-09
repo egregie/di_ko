@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0053",
+  "statement": "topical GHK-Cu peptide regulates gene expression related to skin regeneration, collagen synthesis, and antioxidant protection",
+  "entity_id": "copper_tripeptide_1",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A046"
+  ],
+  "contradictions": []
+}

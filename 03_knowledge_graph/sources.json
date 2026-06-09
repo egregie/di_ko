@@ -47,6 +47,16 @@
     {"source_id":"SRC-A040","name":"Bissett 2004 (Niacinamide wrinkles & sallowness study)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/18492135/","tier":"A","pmid":"18492135","doi":"10.1111/j.1467-2494.2004.00228.x","accessed":"2026-06-08"},
     {"source_id":"SRC-A041","name":"Ditre 1996 (AHA photoaged skin pilot study)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/8642081/","tier":"A","pmid":"8642081","doi":"10.1016/s0190-9622(96)80110-1","accessed":"2026-06-08"},
     {"source_id":"SRC-A042","name":"Arif 2015 (Salicylic acid peeling review)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/26347269/","tier":"A","pmid":"26347269","doi":"10.2147/CCID.S84765","accessed":"2026-06-08"},
-    {"source_id":"SRC-A043","name":"Sarkar 2019 (Salicylic-mandelic vs Glycolic peels study)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/31619887/","tier":"A","pmid":"31619887","doi":"10.4103/JCAS.JCAS_135_18","accessed":"2026-06-08"}
+    {"source_id":"SRC-A043","name":"Sarkar 2019 (Salicylic-mandelic vs Glycolic peels study)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/31619887/","tier":"A","pmid":"31619887","doi":"10.4103/JCAS.JCAS_135_18","accessed":"2026-06-08"},
+    {"source_id":"SRC-A044","name":"Topical palmitoyl pentapeptide study (PMID 18492182)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/18492182/","tier":"A","pmid":"18492182","doi":"","accessed":"2026-06-10"},
+    {"source_id":"SRC-A045","name":"The human tri-peptide GHK and tissue remodeling (PMID 18644225)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/18644225/","tier":"A","pmid":"18644225","doi":"","accessed":"2026-06-10"},
+    {"source_id":"SRC-A046","name":"Regenerative and Protective Actions of the GHK-Cu Peptide (PMID 29986520)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/29986520/","tier":"A","pmid":"29986520","doi":"","accessed":"2026-06-10"},
+    {"source_id":"SRC-A047","name":"A synthetic hexapeptide (Argireline) with anti-wrinkle activity (PMID 18498523)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/18498523/","tier":"A","pmid":"18498523","doi":"","accessed":"2026-06-10"},
+    {"source_id":"SRC-A048","name":"SYN-COLL nanoparticles study (PMID 39383579)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/39383579/","tier":"A","pmid":"39383579","doi":"","accessed":"2026-06-10"},
+    {"source_id":"SRC-A049","name":"Efficacy of peptide-based cosmetic ingredients (PMID 26236730)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/26236730/","tier":"A","pmid":"26236730","doi":"","accessed":"2026-06-10"},
+    {"source_id":"SRC-A050","name":"A serum containing vitamins C & E and a matrix-repair tripeptide (PMID 33103342)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/33103342/","tier":"A","pmid":"33103342","doi":"","accessed":"2026-06-10"},
+    {"source_id":"SRC-A051","name":"Protective and Anti-Aging Effects of 5 Cosmeceutical Peptide Mixtures (PMID 33849044)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/33849044/","tier":"A","pmid":"33849044","doi":"","accessed":"2026-06-10"},
+    {"source_id":"SRC-TEST-FAKE","name":"Fake Source for Verification Testing","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/99999999/","tier":"A","pmid":"99999999","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-TEST-IRRELEVANT","name":"Real Source but Irrelevant to Vitamin C","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/15773538/","tier":"A","pmid":"15773538","doi":"","accessed":"2026-06-07"}
   ]
 }

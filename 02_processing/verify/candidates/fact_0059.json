@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0059",
+  "statement": "topical acetyl hexapeptide-8 is a potent SNARE complex inhibitor that completely eliminates facial aging in two days",
+  "entity_id": "acetyl_hexapeptide_8",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A047"
+  ],
+  "contradictions": []
+}

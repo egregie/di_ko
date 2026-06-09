@@ -1,50 +1,43 @@
-# WALKTHROUGH — phase-4.5c-diagram-fixes — 2026-06-10
+# WALKTHROUGH — phase-6-peptides — 2026-06-10
 status: done
-scope: Extended Playwright SVG bounds checks for internal text/graphic/box overlaps; corrected scientific and fact-alignment issues in 4 mechanism diagrams (Vitamin C, Niacinamide, Exfoliants); fixed layout, spacing, and label placement across all 7 diagrams; successfully verified all 4 decks under the updated QA gate.
+scope: Ingested Peptides knowledge topic, adding 8 new entities, 8 verified clean facts, and 7 relationships to the active graph; ran live PubMed verification gate; configured slide deck specifications; dual-rendered PDF + PPTX; and verified 100% PASS on all QA gates (Zero Black, Arimo, Slide-to-Fact checks).
 
 ## files_changed
-- [qa_svg_bounds.js](file:///c:/di_ko/ops/scripts/qa_svg_bounds.js) — Extended Playwright/BBox check to detect text-graphic overlaps, box-box overlaps, and text outside parent bounding containers.
-- [qa_deck.py](file:///c:/di_ko/ops/scripts/qa_deck.py) — Integrated internal SVG bounds check into the presentation QA gate (fails deck build on SVG failures).
-- [ascorbic_acid_absorption.svg](file:///c:/di_ko/04_design_system/assets/mechanisms/ascorbic_acid_absorption.svg) — [НАУКА] Adjusted curve to peak at 20% and decline beyond. Removed "Plateau" label. Fixed "Max" clipping and callout overlap.
-- [ceramide_synthesis.svg](file:///c:/di_ko/04_design_system/assets/mechanisms/ceramide_synthesis.svg) — [СВЯЗКА] Removed "SPT" enzyme name to align with fact_0024. Replaced nested lamellae rects with line markers to eliminate overlap.
-- [collagen_synthesis.svg](file:///c:/di_ko/04_design_system/assets/mechanisms/collagen_synthesis.svg) — [СВЯЗКА] Redesigned to show mRNA and transcription levels instead of post-translational hydroxylation. Removed nucleus fill and adjusted title safety.
-- [melanosome_transfer.svg](file:///c:/di_ko/04_design_system/assets/mechanisms/melanosome_transfer.svg) — [СВЯЗКА] Removed "35-68%" range. Enlarged Melanocyte ellipse and isolated Keratinocytes into separate groups to avoid false positives.
-- [rar_rxr_mechanism.svg](file:///c:/di_ko/04_design_system/assets/mechanisms/rar_rxr_mechanism.svg) — Shifted NUCLEUS label up. Created a gap in the DNA helix at the RARE site to ensure the transcription complex is fully visible without overlap.
-- [desmosome_desmolysis.svg](file:///c:/di_ko/04_design_system/assets/mechanisms/desmosome_desmolysis.svg) — Replaced rotated vertical labels with horizontal C-1/C-2 labels above each corneocyte column to prevent vertical axis-aligned bbox collisions.
-- [skin_layers_turnover.svg](file:///c:/di_ko/04_design_system/assets/mechanisms/skin_layers_turnover.svg) — Evened out vertical rhythm spacing. Centered corneocyte flakes vertically inside the Stratum Corneum block.
+- [evidence.py](file:///c:/di_ko/ops/scripts/lib/evidence.py) — Extended cosmetology subjects and keyword normalization to support peptide terms.
+- [verify_gate.py](file:///c:/di_ko/ops/scripts/verify_gate.py) — Modified metadata writing to include required `verified_by` and `date` fields for schema compliance.
+- [sources.json](file:///c:/di_ko/03_knowledge_graph/sources.json) — Registered 8 new PubMed journal sources for Peptide facts.
+- [entities/](file:///c:/di_ko/03_knowledge_graph/entities/) — [NEW] Added 8 entity JSONs: `peptides.json`, `palmitoyl_pentapeptide_4.json`, `copper_tripeptide_1.json`, `acetyl_hexapeptide_8.json`, `palmitoyl_tripeptide_5.json`, `palmitoyl_tripeptide_1.json`, `acetyl_tetrapeptide_5.json`, `palmitoyl_tripeptide_38.json`.
+- [facts/](file:///c:/di_ko/03_knowledge_graph/facts/) — [NEW] Added 8 verified fact JSONs (`fact_0051.json` to `fact_0058.json`).
+- [relationships/](file:///c:/di_ko/03_knowledge_graph/relationships/) — [NEW] Added 7 relationship JSONs (`rel_0043.json` to `rel_0049.json`).
+- [safety_config.json](file:///c:/di_ko/05_content/safety_config.json) — Configured `deck_peptides` (pregnancy slides not required by default for Peptides as they lack pregnancy contraindication facts).
+- [deck_peptides specs](file:///c:/di_ko/05_content/specs/deck_peptides/) — [NEW] Created 8 slide specifications (Title, Classification, Signal Peptides, Carrier Peptides, Neurotransmitter Inhibitors, Special Peptides, Safety slide with alert, Summary slide).
+- [deck_peptides.html](file:///c:/di_ko/06_render/out/deck_peptides.html) — [NEW] Dual-rendered HTML slide deck.
+- [deck_peptides.pptx](file:///c:/di_ko/06_render/out/deck_peptides.pptx) — [NEW] Dual-rendered PowerPoint presentation.
+- [deck_peptides.pdf](file:///c:/di_ko/06_render/out/deck_peptides.pdf) — [NEW] Dual-rendered PDF presentation.
 
 ## commands_run
-- `node ops/scripts/qa_svg_bounds.js <svg_path> 5` — Ran SVGs through the Playwright-based bounding box auditor (7/7 PASS).
-- `python ops/scripts/render_deck.py --deck <name>` — Re-rendered HTML decks.
-- `python ops/scripts/render_pptx.py --deck <name>` — Re-rendered PPTX presentations.
-- `node ops/scripts/compile_pdf.js <name>` — Compiled PDF presentations.
-- `python ops/scripts/qa_deck.py --deck <name>` — Verified 100% PASS on the upgraded QA gate for all 4 decks (vitamin_c, niacinamide, exfoliants, retinoids_v2).
-- `python ops/scripts/run_regression.py` — Confirmed the fact regression test suite is green.
-- `python ops/scripts/validate_graph.py` — Validated knowledge graph integrity.
+- `python ops/scripts/verify_gate.py <candidate> --force-live` — Ran live PubMed verification for 12 candidate facts.
+- `python ops/scripts/build_index.py` — Recompiled knowledge graph search index.
+- `python ops/scripts/validate_graph.py` — Validated graph structure and schema alignment (PASS).
+- `python ops/scripts/render_deck.py --deck deck_peptides` — Rendered HTML.
+- `python ops/scripts/render_pptx.py --deck deck_peptides` — Rendered PPTX.
+- `node ops/scripts/compile_pdf.js deck_peptides` — Compiled PDF.
+- `python ops/scripts/qa_deck.py --deck deck_peptides` — Audited rendered outputs (100% PASS).
+- `python ops/scripts/run_regression.py` — Verified fact regression suite (PASS).
 
 ## acceptance
-- Playwright Overlap Detection: PASS (Successfully detects internal overlapping elements and blocks builds on failures).
-- Scientific Accuracy: PASS (L-AA absorption curve peaks at 20% and falls off; no plateau).
-- Fact Alignment: PASS (SPT enzyme, 35-68% range, and post-translational hydroxylation removed or updated).
-- Visual Integrity: PASS (All overlap issues, clipping, bounding box misalignments, and rotated text issues resolved).
-- Presentation Compliance: PASS (All decks pass offline font audit, Zero Black check, and slide-to-fact claim validations).
+- Facts Ingested: PASS (8 verified clean facts in graph; 4 rejected/quarantined facts; exact 33.3% rejection rate logged).
+- Ontology Alignment: PASS (`validate_graph.py` and `build_index.py` run clean with zero errors).
+- Placeholder Usage: PASS (No new mechanism diagrams were created; instead, signed placeholder graphic assets with attributions were used).
+- Presentation Quality: PASS (Font audit, Zero Black check, and Slide-to-Fact claim validations fully cleared).
+- Dual Rendering: PASS (PDF and PPTX successfully generated from a single deck specification).
 
 ## deltas_vs_plan
 None.
 
 ## project_state_snapshot
-phase: Phase 4.5c (Diagram Defect Fixes & Overlap-Aware QA)
-completed: [Extended qa_svg_bounds.js with 3 new overlap checks, integrated checks into qa_deck.py, corrected 4 scientific/fact alignments, resolved 7 vector layout and collision defects, re-rendered HTML/PDF/PPTX presentations, passed all QA gates and regressions]
+phase: Phase 6 (Topic Scale — Peptides)
+completed: [Ingested Peptides topic, added 8 entities, 8 verified facts, 7 relationships, ran live PubMed verification, reported non-zero rejection rate, wrote 8 slide specs with diagram placeholders, dual-rendered HTML/PDF/PPTX presentations, passed all QA gates and regression tests]
 in_progress: []
 blocked: []
 open_questions: []
-
-## next_recommended
-- Phase 6: Expand clinical-presentation pipeline to support the next skincare topic (e.g. Peptides).
-- Domain Review: Flagged biology diagrams for professional domain review by the user:
-  - [ВЕРИФ user] `ascorbic_acid_absorption.svg` (L-AA absorption peak at 20%)
-  - [ВЕРИФ user] `ceramide_synthesis.svg` (Lipid barrier ceramide synthesis without SPT)
-  - [ВЕРИФ user] `collagen_synthesis.svg` (Vitamin C collagen transcription pathway)
-  - [ВЕРИФ user] `melanosome_transfer.svg` (Melanosome transfer block without 35-68% range)
-  - [ВЕРИФ user] `rar_rxr_mechanism.svg` (RAR/RXR heterodimer complex with RARE DNA gap)
-  - [ВЕРИФ user] `skin_layers_turnover.svg` (Epidermal timeline layout and turnover spacing)

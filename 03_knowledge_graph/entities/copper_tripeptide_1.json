@@ -1,0 +1,29 @@
+{
+  "entity_id": "copper_tripeptide_1",
+  "entity_type": "Ingredient",
+  "title": "Copper Tripeptide-1",
+  "aliases": [
+    "GHK-Cu",
+    "copper peptide"
+  ],
+  "belongs_to": [
+    "peptides"
+  ],
+  "used_for": [
+    "skin_regeneration",
+    "wound_healing",
+    "anti_aging"
+  ],
+  "contraindications": [],
+  "tags": [
+    "carrier_peptide",
+    "collagen_booster",
+    "skin_repair"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0052",
+    "fact_0053"
+  ],
+  "updated": "2026-06-10"
+}

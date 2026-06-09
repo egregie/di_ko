@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0062",
+  "statement": "topical palmitoyl pentapeptide-4 regulates gene expression of matrix metalloproteinases in human skin fibroblasts",
+  "entity_id": "palmitoyl_pentapeptide_4",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-TEST-IRRELEVANT"
+  ],
+  "contradictions": []
+}

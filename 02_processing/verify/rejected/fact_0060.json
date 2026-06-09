@@ -1,0 +1,17 @@
+{
+  "fact_id": "fact_0060",
+  "statement": "topical peptides are contraindicated during pregnancy due to systemic toxicity risks",
+  "entity_id": "peptides",
+  "confidence": 0.8,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A044"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-09T22:43:13.881072Z",
+  "source_title": "Topical palmitoyl pentapeptide provides improvement in photoaged human facial skin.",
+  "audit_flag": "weak",
+  "audit_verdict": "WEAK",
+  "evidence_ok": true
+}

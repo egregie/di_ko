@@ -207,6 +207,8 @@ def assess_claim(statement: str, abstract: str) -> str:
             return "ascorbic"
         if w in ("retinol", "tretinoin", "adapalene", "tazarotene", "retinaldehyde", "palmitate", "retinoid", "retinoids"):
             return "retinoid"
+        if w in ("matrixyl", "argireline", "ghk", "peptides", "peptide", "tripeptide", "pentapeptide", "hexapeptide", "tetrapeptide"):
+            return "peptide"
         return w
 
 
@@ -231,7 +233,7 @@ def assess_claim(statement: str, abstract: str) -> str:
         "retinaldehyde", "palmitate", "retinoid", "retinoids", "ascorbic", "ascorbate",
         "niacinamide", "acid", "acids", "peptide", "peptides", "caffeine", "hyaluronic",
         "salicylic", "glycolic", "lactic", "benzoyl", "peroxide", "sulfur", "clindamycin",
-        "azelaic"
+        "azelaic", "ghk", "matrixyl", "argireline", "tripeptide", "pentapeptide", "hexapeptide", "tetrapeptide"
     }
     # map core_subjects through normalize_word
     core_subjects = set(normalize_word(w) for w in core_subjects)

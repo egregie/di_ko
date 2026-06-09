@@ -1,0 +1,26 @@
+{
+  "entity_id": "palmitoyl_tripeptide_38",
+  "entity_type": "Ingredient",
+  "title": "Palmitoyl Tripeptide-38",
+  "aliases": [
+    "Matrixyl synthe'6"
+  ],
+  "belongs_to": [
+    "peptides"
+  ],
+  "used_for": [
+    "anti_aging",
+    "wrinkles"
+  ],
+  "contraindications": [],
+  "tags": [
+    "signal_peptide",
+    "collagen_booster",
+    "extracellular_matrix_repair"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0057"
+  ],
+  "updated": "2026-06-10"
+}

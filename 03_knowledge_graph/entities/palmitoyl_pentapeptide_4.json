@@ -1,0 +1,27 @@
+{
+  "entity_id": "palmitoyl_pentapeptide_4",
+  "entity_type": "Ingredient",
+  "title": "Palmitoyl Pentapeptide-4",
+  "aliases": [
+    "Matrixyl",
+    "pal-KTTKS"
+  ],
+  "belongs_to": [
+    "peptides"
+  ],
+  "used_for": [
+    "anti_aging",
+    "wrinkles"
+  ],
+  "contraindications": [],
+  "tags": [
+    "signal_peptide",
+    "collagen_booster",
+    "wrinkle_reduction"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0051"
+  ],
+  "updated": "2026-06-10"
+}

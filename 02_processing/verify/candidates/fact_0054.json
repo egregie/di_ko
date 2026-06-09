@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0054",
+  "statement": "topical acetyl hexapeptide-8 (Argireline) mimics SNAP-25 and destabilizes the SNARE complex to inhibit neurotransmitter release and reduce wrinkle depth",
+  "entity_id": "acetyl_hexapeptide_8",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A047"
+  ],
+  "contradictions": []
+}

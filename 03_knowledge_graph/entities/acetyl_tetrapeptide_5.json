@@ -1,0 +1,26 @@
+{
+  "entity_id": "acetyl_tetrapeptide_5",
+  "entity_type": "Ingredient",
+  "title": "Acetyl Tetrapeptide-5",
+  "aliases": [
+    "Eyeseryl"
+  ],
+  "belongs_to": [
+    "peptides"
+  ],
+  "used_for": [
+    "eye_puffiness",
+    "dark_circles",
+    "anti_aging"
+  ],
+  "contraindications": [],
+  "tags": [
+    "decongestant_peptide",
+    "anti_edema"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0058"
+  ],
+  "updated": "2026-06-10"
+}

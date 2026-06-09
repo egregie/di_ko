@@ -165,6 +165,8 @@ def main():
     # Add verification provenance metadata
     fact["verified_via"] = "live" if force_live else "cache"
     fact["verified_at"] = datetime.datetime.utcnow().isoformat() + "Z"
+    fact["verified_by"] = "verifier"
+    fact["date"] = datetime.datetime.utcnow().date().isoformat()
     if best_source and best_source.get("title"):
         fact["source_title"] = truncate_title(best_source["title"])
     else:

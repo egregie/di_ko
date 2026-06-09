@@ -1,0 +1,19 @@
+{
+  "fact_id": "fact_0056",
+  "statement": "topical palmitoyl tripeptide-1 (pal-GHK) acts as a messenger peptide to stimulate collagen and glycosaminoglycan synthesis",
+  "entity_id": "palmitoyl_tripeptide_1",
+  "confidence": 0.8,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A049"
+  ],
+  "contradictions": [],
+  "verified_via": "cache",
+  "verified_at": "2026-06-09T22:48:11.617314Z",
+  "verified_by": "verifier",
+  "date": "2026-06-09",
+  "source_title": "GHK Peptide as a Natural Modulator of Multiple Cellular Pathways in Skin Regeneration.",
+  "audit_flag": "weak",
+  "audit_verdict": "WEAK",
+  "evidence_ok": true
+}

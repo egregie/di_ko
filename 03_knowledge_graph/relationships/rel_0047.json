@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0047",
+  "from": "palmitoyl_tripeptide_1",
+  "type": "is_a",
+  "to": "peptides",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A049"
+  ]
+}

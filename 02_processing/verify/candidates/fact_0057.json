@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0057",
+  "statement": "topical palmitoyl tripeptide-38 formulation improves skin roughness, tone, and reduces wrinkles in aged facial skin",
+  "entity_id": "palmitoyl_tripeptide_38",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A050"
+  ],
+  "contradictions": []
+}

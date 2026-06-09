@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0055",
+  "statement": "topical palmitoyl tripeptide-5 stimulates collagen synthesis and protects against collagen degradation",
+  "entity_id": "palmitoyl_tripeptide_5",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A048"
+  ],
+  "contradictions": []
+}

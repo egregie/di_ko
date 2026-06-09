@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0060",
+  "statement": "topical peptides are contraindicated during pregnancy due to systemic toxicity risks",
+  "entity_id": "peptides",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A044"
+  ],
+  "contradictions": []
+}

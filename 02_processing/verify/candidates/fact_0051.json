@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0051",
+  "statement": "topical palmitoyl pentapeptide-4 (pal-KTTKS) stimulates collagen production, provides significant improvement in fine lines and wrinkles, and is safe and well-tolerated",
+  "entity_id": "palmitoyl_pentapeptide_4",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A044"
+  ],
+  "contradictions": []
+}

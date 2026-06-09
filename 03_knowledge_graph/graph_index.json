@@ -1,5 +1,35 @@
 {
   "entities": {
+    "acetyl_hexapeptide_8": {
+      "entity_id": "acetyl_hexapeptide_8",
+      "entity_type": "Ingredient",
+      "title": "Acetyl Hexapeptide-8",
+      "aliases": [
+        "Argireline",
+        "acetyl hexapeptide-3"
+      ],
+      "tags": [
+        "neurotransmitter_inhibitor",
+        "wrinkle_reduction",
+        "botox_like"
+      ],
+      "evidence_level": "A",
+      "path": "entities/acetyl_hexapeptide_8.json"
+    },
+    "acetyl_tetrapeptide_5": {
+      "entity_id": "acetyl_tetrapeptide_5",
+      "entity_type": "Ingredient",
+      "title": "Acetyl Tetrapeptide-5",
+      "aliases": [
+        "Eyeseryl"
+      ],
+      "tags": [
+        "decongestant_peptide",
+        "anti_edema"
+      ],
+      "evidence_level": "A",
+      "path": "entities/acetyl_tetrapeptide_5.json"
+    },
     "adapalene": {
       "entity_id": "adapalene",
       "entity_type": "Ingredient",
@@ -25,6 +55,22 @@
       ],
       "evidence_level": "A",
       "path": "entities/ascorbyl_glucoside.json"
+    },
+    "copper_tripeptide_1": {
+      "entity_id": "copper_tripeptide_1",
+      "entity_type": "Ingredient",
+      "title": "Copper Tripeptide-1",
+      "aliases": [
+        "GHK-Cu",
+        "copper peptide"
+      ],
+      "tags": [
+        "carrier_peptide",
+        "collagen_booster",
+        "skin_repair"
+      ],
+      "evidence_level": "A",
+      "path": "entities/copper_tripeptide_1.json"
     },
     "exfoliants": {
       "entity_id": "exfoliants",
@@ -112,6 +158,82 @@
       ],
       "evidence_level": "A",
       "path": "entities/niacinamide.json"
+    },
+    "palmitoyl_pentapeptide_4": {
+      "entity_id": "palmitoyl_pentapeptide_4",
+      "entity_type": "Ingredient",
+      "title": "Palmitoyl Pentapeptide-4",
+      "aliases": [
+        "Matrixyl",
+        "pal-KTTKS"
+      ],
+      "tags": [
+        "signal_peptide",
+        "collagen_booster",
+        "wrinkle_reduction"
+      ],
+      "evidence_level": "A",
+      "path": "entities/palmitoyl_pentapeptide_4.json"
+    },
+    "palmitoyl_tripeptide_1": {
+      "entity_id": "palmitoyl_tripeptide_1",
+      "entity_type": "Ingredient",
+      "title": "Palmitoyl Tripeptide-1",
+      "aliases": [
+        "pal-GHK"
+      ],
+      "tags": [
+        "signal_peptide",
+        "collagen_booster"
+      ],
+      "evidence_level": "A",
+      "path": "entities/palmitoyl_tripeptide_1.json"
+    },
+    "palmitoyl_tripeptide_38": {
+      "entity_id": "palmitoyl_tripeptide_38",
+      "entity_type": "Ingredient",
+      "title": "Palmitoyl Tripeptide-38",
+      "aliases": [
+        "Matrixyl synthe'6"
+      ],
+      "tags": [
+        "signal_peptide",
+        "collagen_booster",
+        "extracellular_matrix_repair"
+      ],
+      "evidence_level": "A",
+      "path": "entities/palmitoyl_tripeptide_38.json"
+    },
+    "palmitoyl_tripeptide_5": {
+      "entity_id": "palmitoyl_tripeptide_5",
+      "entity_type": "Ingredient",
+      "title": "Palmitoyl Tripeptide-5",
+      "aliases": [
+        "SYN-COLL"
+      ],
+      "tags": [
+        "signal_peptide",
+        "collagen_booster",
+        "firming"
+      ],
+      "evidence_level": "A",
+      "path": "entities/palmitoyl_tripeptide_5.json"
+    },
+    "peptides": {
+      "entity_id": "peptides",
+      "entity_type": "Ingredient",
+      "title": "Peptides",
+      "aliases": [
+        "cosmetic peptides",
+        "polypeptides"
+      ],
+      "tags": [
+        "anti_aging",
+        "collagen_booster",
+        "skin_repair"
+      ],
+      "evidence_level": "A",
+      "path": "entities/peptides.json"
     },
     "retinaldehyde": {
       "entity_id": "retinaldehyde",
@@ -492,6 +614,62 @@
       "entity_id": "exfoliants",
       "evidence_level": "A",
       "path": "facts/fact_0050.json"
+    },
+    "fact_0051": {
+      "fact_id": "fact_0051",
+      "statement": "topical palmitoyl pentapeptide-4 (pal-KTTKS) stimulates collagen production, provides significant improvement in fine lines and wrinkles, and is safe and well-tolerated",
+      "entity_id": "palmitoyl_pentapeptide_4",
+      "evidence_level": "A",
+      "path": "facts/fact_0051.json"
+    },
+    "fact_0052": {
+      "fact_id": "fact_0052",
+      "statement": "topical copper tripeptide-1 (GHK-Cu) stimulates collagen and glycosaminoglycan synthesis during tissue remodeling",
+      "entity_id": "copper_tripeptide_1",
+      "evidence_level": "A",
+      "path": "facts/fact_0052.json"
+    },
+    "fact_0053": {
+      "fact_id": "fact_0053",
+      "statement": "topical GHK-Cu peptide regulates gene expression related to skin regeneration, collagen synthesis, and antioxidant protection",
+      "entity_id": "copper_tripeptide_1",
+      "evidence_level": "A",
+      "path": "facts/fact_0053.json"
+    },
+    "fact_0054": {
+      "fact_id": "fact_0054",
+      "statement": "topical acetyl hexapeptide-8 (Argireline) mimics SNAP-25 and destabilizes the SNARE complex to inhibit neurotransmitter release and reduce wrinkle depth",
+      "entity_id": "acetyl_hexapeptide_8",
+      "evidence_level": "A",
+      "path": "facts/fact_0054.json"
+    },
+    "fact_0055": {
+      "fact_id": "fact_0055",
+      "statement": "topical palmitoyl tripeptide-5 stimulates collagen synthesis and protects against collagen degradation",
+      "entity_id": "palmitoyl_tripeptide_5",
+      "evidence_level": "A",
+      "path": "facts/fact_0055.json"
+    },
+    "fact_0056": {
+      "fact_id": "fact_0056",
+      "statement": "topical palmitoyl tripeptide-1 (pal-GHK) acts as a messenger peptide to stimulate collagen and glycosaminoglycan synthesis",
+      "entity_id": "palmitoyl_tripeptide_1",
+      "evidence_level": "A",
+      "path": "facts/fact_0056.json"
+    },
+    "fact_0057": {
+      "fact_id": "fact_0057",
+      "statement": "topical palmitoyl tripeptide-38 formulation improves skin roughness, tone, and reduces wrinkles in aged facial skin",
+      "entity_id": "palmitoyl_tripeptide_38",
+      "evidence_level": "A",
+      "path": "facts/fact_0057.json"
+    },
+    "fact_0058": {
+      "fact_id": "fact_0058",
+      "statement": "topical acetyl tetrapeptide-5 has protective anti-aging effects on skin fibroblasts, acts as an angiotensin-converting enzyme inhibitor, and is safe and well-tolerated",
+      "entity_id": "acetyl_tetrapeptide_5",
+      "evidence_level": "A",
+      "path": "facts/fact_0058.json"
     }
   },
   "relationships": {
@@ -830,6 +1008,62 @@
       "to": "barrier",
       "evidence_level": "A",
       "path": "relationships/rel_0042.json"
+    },
+    "rel_0043": {
+      "rel_id": "rel_0043",
+      "from": "palmitoyl_pentapeptide_4",
+      "type": "is_a",
+      "to": "peptides",
+      "evidence_level": "A",
+      "path": "relationships/rel_0043.json"
+    },
+    "rel_0044": {
+      "rel_id": "rel_0044",
+      "from": "copper_tripeptide_1",
+      "type": "is_a",
+      "to": "peptides",
+      "evidence_level": "A",
+      "path": "relationships/rel_0044.json"
+    },
+    "rel_0045": {
+      "rel_id": "rel_0045",
+      "from": "acetyl_hexapeptide_8",
+      "type": "is_a",
+      "to": "peptides",
+      "evidence_level": "A",
+      "path": "relationships/rel_0045.json"
+    },
+    "rel_0046": {
+      "rel_id": "rel_0046",
+      "from": "palmitoyl_tripeptide_5",
+      "type": "is_a",
+      "to": "peptides",
+      "evidence_level": "A",
+      "path": "relationships/rel_0046.json"
+    },
+    "rel_0047": {
+      "rel_id": "rel_0047",
+      "from": "palmitoyl_tripeptide_1",
+      "type": "is_a",
+      "to": "peptides",
+      "evidence_level": "A",
+      "path": "relationships/rel_0047.json"
+    },
+    "rel_0048": {
+      "rel_id": "rel_0048",
+      "from": "palmitoyl_tripeptide_38",
+      "type": "is_a",
+      "to": "peptides",
+      "evidence_level": "A",
+      "path": "relationships/rel_0048.json"
+    },
+    "rel_0049": {
+      "rel_id": "rel_0049",
+      "from": "acetyl_tetrapeptide_5",
+      "type": "is_a",
+      "to": "peptides",
+      "evidence_level": "A",
+      "path": "relationships/rel_0049.json"
     }
   }
 }

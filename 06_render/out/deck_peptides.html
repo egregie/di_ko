@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>YM PROSKIN — deck_peptides</title>
+    <style>
+        @font-face {
+            font-family: 'Arimo';
+            font-style: normal;
+            font-weight: 100 900;
+            src: url('../../04_design_system/fonts/Arimo[wght].ttf') format('truetype');
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;700&display=swap');
+        
+        :root {
+            --bg: #F8F6F4;
+            --bg-alt: #E6D2CA;
+            --sage: #D7E0CE;
+            --herbal: #6D8470;
+            --dark: #2C3440;
+            --text: #3D4A40;
+            --border: #D7E0CE;
+            --warn: #9E6A5A;
+            
+            --font-family: 'Arimo', sans-serif;
+            --lh-min: 1.5;
+            
+            --radius-btn: 8px;
+            --radius-card: 16px;
+            --radius-badge: 100px;
+            
+            --fs-display: 52px;
+            --fs-h1: 36px;
+            --fs-h2: 26px;
+            --fs-h3: 20px;
+            --fs-label: 10px;
+            --fs-body: 15px;
+            --fs-body-sm: 13px;
+            --fs-caption: 11px;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark);
+            font-family: var(--font-family);
+            color: var(--text);
+            line-height: var(--lh-min);
+            box-sizing: border-box;
+        }
+        
+        .slide {
+            width: 1024px;
+            height: 576px;
+            background-color: var(--bg);
+            position: relative;
+            box-sizing: border-box;
+            padding: 40px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-bottom: 20px; /* spacing in HTML view */
+        }
+        
+        @media print {
+            body {
+                background-color: transparent;
+            }
+            .slide {
+                margin-bottom: 0;
+                page-break-after: always;
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Typography Elements */
+        .slide-header {
+            margin-bottom: 24px;
+        }
+        
+        .slide-title {
+            font-size: var(--fs-h2);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+            letter-spacing: -0.01em;
+        }
+        
+        .slide-subtitle {
+            font-size: var(--fs-body);
+            color: var(--herbal);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* Bullets */
+        .bullets-list {
+            margin: 0;
+            padding-left: 20px;
+            font-size: var(--fs-body);
+        }
+        
+        .bullets-list li {
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+        
+        /* Footer Metadata */
+        .disclaimers {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            font-size: var(--fs-caption);
+            color: var(--herbal);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: 700;
+        }
+        
+        .sources-ref {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            font-size: var(--fs-caption);
+            color: var(--text);
+            font-weight: 500;
+        }
+        
+        /* Media box */
+        .media-box {
+            background-color: var(--sage);
+            border-radius: var(--radius-card);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            box-sizing: border-box;
+            color: var(--herbal);
+            font-size: var(--fs-body-sm);
+            font-weight: 500;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Layout specific styles */
+        
+        /* 1. Cover */
+        .cover-layout {
+            background-color: var(--bg-alt);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .cover-layout .header-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .category-tag {
+            font-size: var(--fs-label);
+            font-weight: 700;
+            color: var(--herbal);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 12px;
+        }
+        
+        .display-title {
+            font-size: var(--fs-h1);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 16px 0;
+            line-height: 1.2;
+        }
+        
+        .cover-layout .subtitle-text {
+            font-size: var(--fs-body);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        .cover-media {
+            height: 320px;
+        }
+        
+        /* 2. Section Divider */
+        .section-divider-layout {
+            background-color: var(--bg-alt);
+            padding: 80px 40px;
+            justify-content: center;
+        }
+        
+        .divider-title {
+            font-size: var(--fs-display);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 24px 0 16px 0;
+            line-height: 1.1;
+        }
+        
+        .divider-subtitle {
+            font-size: var(--fs-h3);
+            color: var(--text);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* 3. Quote Callout */
+        .quote-layout .quote-container {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 0 40px;
+        }
+        
+        .quote-mark {
+            font-size: 80px;
+            color: var(--sage);
+            line-height: 0.1;
+            font-family: serif;
+        }
+        
+        .quote-text {
+            font-size: var(--fs-h3);
+            font-style: italic;
+            color: var(--dark);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* 4. Two columns */
+        .two-columns-layout .columns-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+            height: 300px;
+        }
+        
+        /* 5. Three cards */
+        .three-cards-layout .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }
+        
+        .three-cards-layout .card {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            border: 1px solid var(--border);
+        }
+        
+        .card-title {
+            font-size: var(--fs-h3);
+            color: var(--dark);
+            margin: 0 0 12px 0;
+            font-weight: 700;
+        }
+        
+        .card-text {
+            font-size: var(--fs-body-sm);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 6. Timeline Protocol */
+        .timeline-layout .timeline-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }
+        
+        .timeline-step {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 20px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-sizing: border-box;
+        }
+        
+        .step-num {
+            font-size: var(--fs-caption);
+            background-color: var(--herbal);
+            color: var(--bg);
+            border-radius: var(--radius-badge);
+            padding: 4px 10px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .step-label {
+            font-size: var(--fs-body);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+        }
+        
+        .step-desc {
+            font-size: var(--fs-caption);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 7. Comparison */
+        .comparison-layout .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            height: 300px;
+        }
+        
+        .compare-card {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            border: 1px solid var(--border);
+            box-sizing: border-box;
+        }
+        
+        .compare-label {
+            font-size: var(--fs-h3);
+            font-weight: 700;
+            color: var(--herbal);
+            display: block;
+            margin-bottom: 16px;
+        }
+        
+        .compare-text {
+            font-size: var(--fs-body);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 8. Statistics */
+        .statistics-layout .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            height: 300px;
+        }
+        
+        .stat-card {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 24px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+        
+        .stat-number {
+            font-size: var(--fs-display);
+            font-weight: 700;
+            color: var(--herbal);
+            line-height: 1;
+            margin-bottom: 12px;
+        }
+        
+        .stat-label {
+            font-size: var(--fs-h3);
+            font-weight: 700;
+            color: var(--dark);
+            margin: 0 0 8px 0;
+        }
+        
+        .stat-desc {
+            font-size: var(--fs-body-sm);
+            color: var(--text);
+            margin: 0;
+        }
+        
+        /* 9. Alert */
+        .alert-layout .alert-box {
+            background-color: var(--bg-alt);
+            border: 2px solid var(--warn);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-top: 40px;
+        }
+        
+        .alert-icon {
+            font-size: 48px;
+        }
+        
+        .alert-content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .alert-box-title {
+            font-size: var(--fs-h3);
+            color: var(--warn);
+            margin: 0 0 8px 0;
+            font-weight: 700;
+        }
+        
+        .alert-box-text {
+            font-size: var(--fs-body);
+            color: var(--text);
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        /* 10. Summary */
+        .summary-layout .summary-box {
+            background-color: var(--bg-alt);
+            border-radius: var(--radius-card);
+            padding: 32px;
+            height: 300px;
+            box-sizing: border-box;
+            border: 1px solid var(--border);
+        }
+        
+        .summary-list li {
+            margin-bottom: 16px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="slide cover-layout">
+                <div class="header-group">
+                    <span class="category-tag">Пептиды</span>
+                    <h1 class="display-title">YM PROSKIN · Пептиды</h1>
+                    <p class="subtitle-text">Классификация и клиническое применение биомиметических пептидов</p>
+                </div>
+                <div class="cover-media">
+                    
+                <div class="media-box placeholder-media">
+                    <span class="media-caption">[Placeholder] Косметические пептиды в дерматологии</span>
+                </div>
+                
+                </div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide three-cards-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Классификация косметических пептидов</h2>
+                    <p class="slide-subtitle">Основные функциональные группы биомиметических пептидов в косметологии</p>
+                </div>
+                <div class="cards-grid">
+                    
+                    <div class="card">
+                        <h3 class="card-title">Сигнальные пептиды</h3>
+                        <p class="card-text">Стимулируют активность фибробластов и производство коллагена, эластина и гиалуроновой кислоты для восстановления матрикса кожи.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">Пептиды-носители</h3>
+                        <p class="card-text">Стабилизируют и доставляют микроэлементы (например, медь) к клеткам, ускоряя регенерацию, синтез коллагена и заживление.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">Ингибиторы нейротрансмиттеров</h3>
+                        <p class="card-text">Блокируют передачу нервных импульсов к мимическим мышцам за счет ингибирования SNARE-комплекса, разглаживая мимические морщины.</p>
+                    </div>
+                    
+                </div>
+                <div class="sources-ref">Источники: fact_0051, fact_0052, fact_0054</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide two-columns-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Сигнальные пептиды (Signal Peptides)</h2>
+                    <p class="slide-subtitle">Стимуляция синтеза внеклеточного матрикса и неоколлагенеза</p>
+                </div>
+                <div class="columns-grid">
+                    <div class="column-left">
+                        <ul class="bullets-list">
+                            <li>Пальмитоил пентапептид-4 (pal-KTTKS / Matrixyl) стимулирует производство коллагена I, III, IV, эластина и гликозаминогликанов.</li><li>Пальмитоил трипептид-5 стимулирует синтез коллагена за счет активации фактора роста TGF-beta и защиты от металлопротеиназ.</li><li>Клинически доказано существенное улучшение текстуры кожи, уменьшение выраженности морщин и повышение упругости.</li>
+                        </ul>
+                    </div>
+                    <div class="column-right">
+                        
+                <div class="media-box placeholder-media">
+                    <span class="media-caption">[Placeholder] Механизм стимуляции неоколлагенеза сигнальными пептидами</span>
+                </div>
+                
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0051, fact_0055, SRC-A044, SRC-A048</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide two-columns-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Пептиды-носители (Carrier Peptides)</h2>
+                    <p class="slide-subtitle">Медный трипептид GHK-Cu в процессах ремоделирования и регенерации</p>
+                </div>
+                <div class="columns-grid">
+                    <div class="column-left">
+                        <ul class="bullets-list">
+                            <li>Copper Tripeptide-1 (GHK-Cu) стабилизирует и переносит ионы меди, необходимые для работы лизилоксидазы и синтеза коллагена.</li><li>Регулирует экспрессию генов, вовлеченных в процессы заживления ран, синтеза межклеточного матрикса и нейтрализации свободных радикалов.</li><li>Повышает плотность дермы, стимулирует синтез гликозаминогликанов и ускоряет ремоделирование поврежденных тканей.</li>
+                        </ul>
+                    </div>
+                    <div class="column-right">
+                        
+                <div class="media-box placeholder-media">
+                    <span class="media-caption">[Placeholder] Влияние медного трипептида GHK-Cu на метаболизм фибробластов и регенерацию</span>
+                </div>
+                
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0052, fact_0053, SRC-A045, SRC-A046</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide two-columns-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Ингибиторы нейротрансмиттеров</h2>
+                    <p class="slide-subtitle">Аргирелин как альтернатива инъекционной нейромодуляции мимических морщин</p>
+                </div>
+                <div class="columns-grid">
+                    <div class="column-left">
+                        <ul class="bullets-list">
+                            <li>Acetyl Hexapeptide-8 (Argireline) конкурирует с белком SNAP-25, нарушая стабилизацию везикулярного SNARE-комплекса.</li><li>Снижает выброс ацетилхолина в синаптическую щель, блокируя передачу импульса к мимическим мышцам лица.</li><li>Клинически уменьшает выраженность динамических морщин и складок кожи без риска паралича мышечных волокон.</li>
+                        </ul>
+                    </div>
+                    <div class="column-right">
+                        
+                <div class="media-box placeholder-media">
+                    <span class="media-caption">[Placeholder] Схема ингибирования везикулярного выброса медиатора в синапсе молекулой Argireline</span>
+                </div>
+                
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0054, SRC-A047</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide three-cards-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Специализированные пептиды</h2>
+                    <p class="slide-subtitle">Клиническое применение регуляторных и противоотечных пептидов</p>
+                </div>
+                <div class="cards-grid">
+                    
+                    <div class="card">
+                        <h3 class="card-title">Palmitoyl Tripeptide-1</h3>
+                        <p class="card-text">Активирует синтез коллагена и гликозаминогликанов фибробластами в процессах восстановления структуры дермального слоя.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">Palmitoyl Tripeptide-38</h3>
+                        <p class="card-text">Улучшает изотропию дермы, разглаживает микрорельеф кожи и сокращает площадь морщин в клинических исследованиях.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title">Acetyl Tetrapeptide-5</h3>
+                        <p class="card-text">Ингибирует ангиотензинпревращающий фермент (ACE-1), снижая сосудистое давление и выраженность отечности под глазами.</p>
+                    </div>
+                    
+                </div>
+                <div class="sources-ref">Источники: fact_0056, fact_0057, fact_0058, SRC-A049, SRC-A050, SRC-A051</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide alert-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Клиническая безопасность и переносимость</h2>
+                    <p class="slide-subtitle">Профиль безопасности биомиметических пептидов в косметических формулах</p>
+                </div>
+                <div class="alert-box">
+                    <div class="alert-icon">⚠️</div>
+                    <div class="alert-content">
+                        <h3 class="alert-box-title">Высокая переносимость и безопасность</h3>
+                        <p class="alert-box-text">Косметические пептиды (включая сигнальные пептиды и ацетил тетрапептид-5) демонстрируют высокий профиль безопасности. Они хорошо переносятся клетками кожи и подходят для ежедневного терапевтического применения.</p>
+                    </div>
+                </div>
+                <div class="sources-ref">Источники: fact_0051, fact_0058, SRC-A044, SRC-A051</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div><div class="slide summary-layout">
+                <div class="slide-header">
+                    <h2 class="slide-title">Терапевтические выводы</h2>
+                    <p class="slide-subtitle">Резюме по применению биомиметических пептидов</p>
+                </div>
+                <div class="summary-box">
+                    <ul class="bullets-list summary-list">
+                        <li>Пептиды делятся на сигнальные пептиды (стимуляция коллагена), пептиды-носители (GHK-Cu для регенерации) и ингибиторы нейротрансмиттеров (SNAP-25 имитаторы).</li><li>Клинические данные подтверждают уменьшение выраженности морщин, повышение плотности кожи и улучшение ее рельефа.</li><li>Все исследованные молекулы демонстрируют высокий профиль безопасности, хорошую тканевую переносимость и отсутствие побочных эффектов.</li>
+                    </ul>
+                </div>
+                <div class="sources-ref">Источники: fact_0051, fact_0052, fact_0054, fact_0058</div>
+                <div class="disclaimers">Только для практикующих специалистов</div>
+            </div>
+</body>
+</html>
