@@ -172,7 +172,7 @@ def main():
     else:
         fact["source_title"] = ""
     
-    if verdict in ("SOURCE_NOT_FOUND", "UNSUPPORTED"):
+    if verdict in ("SOURCE_NOT_FOUND", "UNSUPPORTED", "WEAK"):
         action = "reject"
         fact["audit_verdict"] = verdict
         fact["evidence_ok"] = evidence_ok
@@ -180,18 +180,6 @@ def main():
         # Clean up from active graph if it was there
         if os.path.exists(target_graph_path):
             os.remove(target_graph_path)
-            
-    elif verdict == "WEAK":
-        action = "write"
-        # Modify confidence to <= 0.80 and add audit flag
-        fact["confidence"] = min(0.80, fact.get("confidence", 0.80))
-        fact["audit_flag"] = "weak"
-        fact["audit_verdict"] = verdict
-        fact["evidence_ok"] = evidence_ok
-        write_json(target_graph_path, fact)
-        # Clean up from rejected if it was there
-        if os.path.exists(target_reject_path):
-            os.remove(target_reject_path)
             
     elif verdict == "NEEDS_MANUAL":
         action = "write"

@@ -540,7 +540,7 @@ DIAGRAMS = [
                 {"label": "Экспрессия генов", "sublabel": "mRNA COL1A1/3"},
                 {"label": "Коллаген I / III", "sublabel": "Тройная спираль"}
             ],
-            "source_note": "Источник: fact_0030/46 - Pinnell 2001, PMID 11207686",
+            "source_note": "Источник: fact_0030/46 - Nusgens 2001, PMID 11407971",
             "extra_drawing_func": lambda bw, hg: collagen_extra_drawing(padding, min_gap, colors, font, 400, 300)
         }
     },

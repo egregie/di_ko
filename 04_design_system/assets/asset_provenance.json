@@ -193,7 +193,7 @@
     "id": "collagen_synthesis",
     "type": "mechanism",
     "path": "04_design_system/assets/mechanisms/collagen_synthesis.svg",
-    "source_of_truth": "PMID 18505499 (Vitamin C in skin health) + Servier Medical Art templates",
+    "source_of_truth": "PMID 11407971 (Nusgens 2001, Topical Vitamin C collagen mRNA studies) + Servier Medical Art templates",
     "license": "own/generated",
     "attribution": "Servier Medical Art by Les Laboratoires Servier (CC-BY 4.0)",
     "generated_by": "gen_diagrams.py",

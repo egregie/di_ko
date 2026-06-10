@@ -5,15 +5,15 @@
   "confidence": 0.8,
   "evidence_level": "A",
   "sources": [
-    "SRC-A013"
+    "SRC-A053"
   ],
   "contradictions": [],
   "verified_by": "verifier",
-  "date": "2026-06-09",
-  "audit_verdict": "WEAK",
+  "date": "2026-06-10",
+  "audit_verdict": "SUPPORTED",
   "evidence_ok": true,
   "verified_via": "cache",
-  "verified_at": "2026-06-09T23:41:40.342060Z",
-  "source_title": "Topical tazarotene therapy for psoriasis, acne vulgaris, and photoaging.",
+  "verified_at": "2026-06-10T10:44:23.585938Z",
+  "source_title": "Tazarotene: the first receptor-selective topical retinoid for the treatment of psoriasis.",
   "audit_flag": "weak"
 }

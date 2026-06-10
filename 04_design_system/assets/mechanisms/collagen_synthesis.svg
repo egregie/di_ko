@@ -38,5 +38,5 @@
   <path d="M 230 213 Q 250 198 270 213 T 310 213 T 350 213" fill="none" stroke="#3D4A40" stroke-width="2.5" opacity="0.5"/>
   <path d="M 230 233 Q 250 248 270 233 T 310 233 T 350 233" fill="none" stroke="#6D8470" stroke-width="2.5" opacity="0.5"/>
   <text x="290" y="252" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="middle">Хроматин</text>
-  <text x="200.0" y="288" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0030/46 - Pinnell 2001, PMID 11207686</text>
+  <text x="200.0" y="288" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0030/46 - Nusgens 2001, PMID 11407971</text>
 </svg>

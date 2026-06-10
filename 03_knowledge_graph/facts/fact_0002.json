@@ -5,15 +5,15 @@
   "confidence": 0.8,
   "evidence_level": "A",
   "sources": [
-    "SRC-A010"
+    "SRC-A009"
   ],
   "contradictions": [],
   "verified_by": "verifier",
-  "date": "2026-06-09",
+  "date": "2026-06-10",
   "audit_flag": "weak",
-  "audit_verdict": "WEAK",
+  "audit_verdict": "SUPPORTED",
   "evidence_ok": true,
   "verified_via": "cache",
-  "verified_at": "2026-06-09T23:41:38.135796Z",
-  "source_title": "An Updated Review of Topical Tretinoin in Dermatology: From Acne and Photoaging to Skin Cancer."
+  "verified_at": "2026-06-10T10:44:21.587711Z",
+  "source_title": "The mechanism of action of topical retinoids."
 }

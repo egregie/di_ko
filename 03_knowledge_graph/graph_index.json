@@ -365,7 +365,7 @@
   "facts": {
     "fact_0001": {
       "fact_id": "fact_0001",
-      "statement": "Retinoids regulate gene transcription by binding to RAR and RXR nuclear receptors.",
+      "statement": "retinoid action is mediated through retinoic acid receptors RARs and retinoid X receptors RXRs",
       "entity_id": "retinoids",
       "evidence_level": "A",
       "path": "facts/fact_0001.json"
@@ -386,7 +386,7 @@
     },
     "fact_0005": {
       "fact_id": "fact_0005",
-      "statement": "Tretinoin is the gold standard for clinical improvement of photoaged skin.",
+      "statement": "topical tretinoin has well-established efficacy and benefit in the treatment of acne and photoaging",
       "entity_id": "tretinoin",
       "evidence_level": "A",
       "path": "facts/fact_0005.json"
@@ -645,14 +645,14 @@
     },
     "fact_0055": {
       "fact_id": "fact_0055",
-      "statement": "topical palmitoyl tripeptide-5 stimulates collagen synthesis and protects against collagen degradation",
+      "statement": "topical palmitoyl tripeptide-5 in supramolecular nanoparticles improves skin firmness, elasticity, and reduces wrinkles",
       "entity_id": "palmitoyl_tripeptide_5",
       "evidence_level": "A",
       "path": "facts/fact_0055.json"
     },
     "fact_0056": {
       "fact_id": "fact_0056",
-      "statement": "topical palmitoyl tripeptide-1 (pal-GHK) acts as a messenger peptide to stimulate collagen and glycosaminoglycan synthesis",
+      "statement": "topical palmitoyl tripeptide-1 contains the GHK sequence which stimulates collagen and glycosaminoglycan synthesis",
       "entity_id": "palmitoyl_tripeptide_1",
       "evidence_level": "A",
       "path": "facts/fact_0056.json"

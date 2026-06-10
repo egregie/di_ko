@@ -210,6 +210,46 @@ def main():
         log_lines.append(f"- **Status**: {status_str}")
         log_lines.append("")
         
+        # CASE 4: Marginally Weak Claim (overlap < 40% but >= 15%)
+        log_lines.append("## Case 4: Marginally Weak Claim")
+        log_lines.append("A candidate fact with a real PMID but weak claim alignment (overlap < 40%) must be automatically rejected under the tightened gate.")
+        log_lines.append("")
+        
+        weak_fact_path = os.path.join(script_dir, "fact_weak_mismatch.json")
+        weak_fact_data = {
+            "fact_id": "fact_weak_mismatch",
+            "statement": "topical niacinamide regulates gene transcription and binds directly to receptors",
+            "entity_id": "niacinamide",
+            "confidence": 0.95,
+            "evidence_level": "A",
+            "sources": ["SRC-A026"],
+            "contradictions": [],
+            "verified_by": "verifier",
+            "date": "2026-06-07"
+        }
+        with open(weak_fact_path, "w", encoding="utf-8") as f:
+            json.dump(weak_fact_data, f, indent=2)
+            
+        code, stdout, stderr = run_cmd(["python", "ops/scripts/verify_gate.py", weak_fact_path], project_root)
+        try:
+            out = json.loads(stdout)
+            verdict = out.get("verdict")
+            action = out.get("action")
+        except Exception:
+            verdict = "parse_error"
+            action = "error"
+            
+        rejected_file_exists = os.path.exists(os.path.join(project_root, "02_processing", "verify", "rejected", "fact_weak_mismatch.json"))
+        status_str = "PASS" if (code != 0 and verdict == "UNSUPPORTED" and action == "reject" and rejected_file_exists) else "FAIL"
+        
+        log_lines.append(f"- Candidate Fact ID: `fact_weak_mismatch`")
+        log_lines.append(f"- Exit Code: `{code}` (Expected: non-zero)")
+        log_lines.append(f"- Output Verdict: `{verdict}` (Expected: `UNSUPPORTED`)")
+        log_lines.append(f"- Routing Action: `{action}` (Expected: `reject`)")
+        log_lines.append(f"- In Rejected Folder: `{rejected_file_exists}` (Expected: `True`)")
+        log_lines.append(f"- **Status**: {status_str}")
+        log_lines.append("")
+        
     finally:
         # Restore sources.json
         if os.path.exists(sources_backup):
@@ -217,7 +257,7 @@ def main():
             os.remove(sources_backup)
             
         # Clean up test files in scratch
-        for f_name in ["fact_fake_pmid.json", "fact_irrelevant.json"]:
+        for f_name in ["fact_fake_pmid.json", "fact_irrelevant.json", "fact_weak_mismatch.json"]:
             p = os.path.join(script_dir, f_name)
             if os.path.exists(p):
                 os.remove(p)
@@ -230,6 +270,10 @@ def main():
         rejected_irrelevant = os.path.join(project_root, "02_processing", "verify", "rejected", "fact_irrelevant.json")
         if os.path.exists(rejected_irrelevant):
             os.remove(rejected_irrelevant)
+            
+        rejected_weak = os.path.join(project_root, "02_processing", "verify", "rejected", "fact_weak_mismatch.json")
+        if os.path.exists(rejected_weak):
+            os.remove(rejected_weak)
             
     # Write output log
     out_log_path = os.path.join(project_root, "ops", "logs", "hardening_regression.md")

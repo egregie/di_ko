@@ -255,8 +255,6 @@ def assess_claim(statement: str, abstract: str) -> str:
     
     if overlap_ratio >= 0.4:
         return "SUPPORTED"
-    elif overlap_ratio >= 0.15:
-        return "WEAK"
     else:
         return "UNSUPPORTED"
 

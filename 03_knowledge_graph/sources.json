@@ -33,7 +33,7 @@
     {"source_id":"SRC-A026","name":"Niacinamide barrier function and acne clinical review","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/17147561/","tier":"A","pmid":"17147561","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-A027","name":"Niacinamide in acne treatment review","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/28220628/","tier":"A","pmid":"28220628","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-A028","name":"Pinnell 2001 (L-ascorbic acid absorption studies)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/11207686/","tier":"A","pmid":"11207686","doi":"","accessed":"2026-06-07"},
-    {"source_id":"SRC-A029","name":"Kang 2001 (Topical Vitamin C collagen mRNA studies)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/11407971/","tier":"A","pmid":"11407971","doi":"","accessed":"2026-06-07"},
+    {"source_id":"SRC-A029","name":"Nusgens 2001 (Topical Vitamin C collagen mRNA studies)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/11407971/","tier":"A","pmid":"11407971","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-A030","name":"Fibroblast collagen synthesis (Vitamin C derivatives)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/18505499/","tier":"A","pmid":"18505499","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-A031","name":"Vitamin C ultrasound collagen synthesis study","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/26327894/","tier":"A","pmid":"26327894","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-A032","name":"Feldmann 2002 (Niacinamide pigmentation study)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/12100180/","tier":"A","pmid":"12100180","doi":"","accessed":"2026-06-07"},
@@ -56,6 +56,8 @@
     {"source_id":"SRC-A049","name":"Efficacy of peptide-based cosmetic ingredients (PMID 26236730)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/26236730/","tier":"A","pmid":"26236730","doi":"","accessed":"2026-06-10"},
     {"source_id":"SRC-A050","name":"A serum containing vitamins C & E and a matrix-repair tripeptide (PMID 33103342)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/33103342/","tier":"A","pmid":"33103342","doi":"","accessed":"2026-06-10"},
     {"source_id":"SRC-A051","name":"Protective and Anti-Aging Effects of 5 Cosmeceutical Peptide Mixtures (PMID 33849044)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/33849044/","tier":"A","pmid":"33849044","doi":"","accessed":"2026-06-10"},
+    {"source_id":"SRC-A052","name":"Siegenthaler 1990 (Retinol and retinal metabolism)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/2163611/","tier":"A","pmid":"2163611","doi":"","accessed":"2026-06-10"},
+    {"source_id":"SRC-A053","name":"Chandraratna 1997 (Topical tazarotene review)","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/9270551/","tier":"A","pmid":"9270551","doi":"","accessed":"2026-06-10"},
     {"source_id":"SRC-TEST-FAKE","name":"Fake Source for Verification Testing","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/99999999/","tier":"A","pmid":"99999999","doi":"","accessed":"2026-06-07"},
     {"source_id":"SRC-TEST-IRRELEVANT","name":"Real Source but Irrelevant to Vitamin C","type":"journal","url":"https://pubmed.ncbi.nlm.nih.gov/15773538/","tier":"A","pmid":"15773538","doi":"","accessed":"2026-06-07"}
   ]
