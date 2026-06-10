@@ -22,7 +22,7 @@
   <g transform="translate(278.7, 60)">
     <rect x="0" y="0" width="97.3" height="50" rx="6" fill="#F8F6F4" stroke="#2C3440" stroke-width="1.5"/>
     <text x="48.7" y="22" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#2C3440" text-anchor="middle">Сфинголипиды</text>
-    <text x="48.7" y="36" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">& Церамиды</text>
+    <text x="48.7" y="36" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">&amp; Церамиды</text>
   </g>
   <path d="M 327 110 L 327 148" fill="none" stroke="#2C3440" stroke-width="2" marker-end="url(#arrow)"/>
   <rect x="30" y="155" width="340" height="108" rx="6" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5"/>
@@ -49,5 +49,5 @@
   <text x="200" y="207" font-family="Arimo, sans-serif" font-size="9" fill="#9E6A5A" font-weight="bold">Блокада TEWL</text>
   <text x="200" y="223" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470">снижение испарения</text>
   <text x="200" y="235" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470">воды кожей</text>
-  <text x="200.0" y="288" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0024 - Tanno...</text>
+  <text x="200.0" y="288" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0024 - Tanno 2000, PMID 10971556</text>
 </svg>

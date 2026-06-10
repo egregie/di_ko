@@ -18,12 +18,44 @@ async function main() {
     const browser = await chromium.launch({ headless: true });
     const page = await browser.newPage();
     const absoluteSvgPath = path.resolve(svgFile);
+    const svgContent = fs.readFileSync(absoluteSvgPath, 'utf8');
     const fileUrl = `file://${absoluteSvgPath.replace(/\\/g, '/')}`;
     await page.goto(fileUrl);
 
-    const auditResult = await page.evaluate((marginThreshold) => {
+    const auditResult = await page.evaluate(async ({ content, marginThreshold }) => {
+        // 1. XML Well-formedness check using DOMParser
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(content, 'image/svg+xml');
+        const parserError = doc.querySelector('parsererror');
+        if (parserError) {
+            return {
+                success: false,
+                errorType: 'xml_parsing',
+                error: 'XML parse error: ' + parserError.textContent.trim(),
+                errors: [{ check: 'xml_wellformedness', element: 'XML Parser', details: parserError.textContent.trim() }]
+            };
+        }
+
+        // Check if browser loaded page contains parsererror
+        const pageParserError = document.querySelector('parsererror');
+        if (pageParserError) {
+            return {
+                success: false,
+                errorType: 'xml_parsing',
+                error: 'Page XML parse error: ' + pageParserError.textContent.trim(),
+                errors: [{ check: 'xml_wellformedness', element: 'Page Parser', details: pageParserError.textContent.trim() }]
+            };
+        }
+
         const svg = document.querySelector('svg');
-        if (!svg) return { success: false, error: 'No SVG element found' };
+        if (!svg) {
+            return {
+                success: false,
+                errorType: 'svg_not_found',
+                error: 'No SVG element found in DOM',
+                errors: [{ check: 'render_nonempty', element: 'svg', details: 'No SVG element found in DOM' }]
+            };
+        }
 
         let W = 400, H = 300;
         if (svg.viewBox && svg.viewBox.baseVal) {
@@ -32,6 +64,93 @@ async function main() {
         } else {
             W = parseFloat(svg.getAttribute('width')) || W;
             H = parseFloat(svg.getAttribute('height')) || H;
+        }
+
+        function isBackground(el) {
+            if (el.tagName.toLowerCase() !== 'rect') return false;
+            const rx = parseFloat(el.getAttribute('x')) || 0;
+            const ry = parseFloat(el.getAttribute('y')) || 0;
+            const rw = parseFloat(el.getAttribute('width')) || 0;
+            const rh = parseFloat(el.getAttribute('height')) || 0;
+            return Math.abs(rx) < 1 && Math.abs(ry) < 1 &&
+                   Math.abs(rw - W) < 2 && Math.abs(rh - H) < 2;
+        }
+
+        function inDefsOrMarker(el) {
+            return el.closest('defs') || el.closest('marker') || el.closest('style');
+        }
+
+        // Check if there are any visual child elements with non-zero dimensions
+        const drawableElements = svg.querySelectorAll('rect, circle, ellipse, line, path, polygon, polyline, text, image');
+        let hasVisibleContent = false;
+        let visibleCount = 0;
+        for (const el of drawableElements) {
+            if (inDefsOrMarker(el)) continue;
+            if (isBackground(el)) continue;
+            const r = el.getBoundingClientRect();
+            if (r.width > 0 && r.height > 0) {
+                hasVisibleContent = true;
+                visibleCount++;
+            }
+        }
+
+        if (!hasVisibleContent || visibleCount === 0) {
+            return {
+                success: false,
+                errorType: 'render_empty',
+                error: 'SVG has no visible content elements (render is empty or contains only background/defs)',
+                errors: [{ check: 'render_nonempty', element: 'visual elements', details: 'No visible graphic elements found with width/height > 0 (excluding background)' }]
+            };
+        }
+
+        // 2. Rasterization check via Canvas
+        try {
+            const serializer = new XMLSerializer();
+            const svgString = serializer.serializeToString(svg);
+            const svgBlob = new Blob([svgString], { type: 'image/svg+xml;charset=utf-8' });
+            const url = URL.createObjectURL(svgBlob);
+            
+            const img = new Image();
+            img.src = url;
+            
+            await new Promise((resolve, reject) => {
+                img.onload = () => resolve();
+                img.onerror = () => reject(new Error('Image failed to load'));
+                setTimeout(() => reject(new Error('Image load timeout')), 2000);
+            });
+            
+            const canvas = document.createElementNS('http://www.w3.org/1999/xhtml', 'canvas');
+            canvas.width = W;
+            canvas.height = H;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, W, H);
+            URL.revokeObjectURL(url);
+            
+            const imgData = ctx.getImageData(0, 0, W, H);
+            const data = imgData.data;
+            
+            let nonTransparentPixels = 0;
+            for (let i = 3; i < data.length; i += 4) {
+                if (data[i] > 10) {
+                    nonTransparentPixels++;
+                }
+            }
+            
+            if (nonTransparentPixels === 0) {
+                return {
+                    success: false,
+                    errorType: 'raster_empty',
+                    error: 'Rasterization result is completely transparent (no pixels rendered)',
+                    errors: [{ check: 'raster_nonempty', element: 'canvas', details: 'Rasterized canvas contains 0 non-transparent pixels' }]
+                };
+            }
+        } catch (rasterErr) {
+            return {
+                success: false,
+                errorType: 'raster_failed',
+                error: 'Rasterization failed: ' + rasterErr.message,
+                errors: [{ check: 'raster_nonempty', element: 'canvas', details: 'Rasterization exception: ' + rasterErr.message }]
+            };
         }
 
         const svgRect = svg.getBoundingClientRect();
@@ -203,9 +322,8 @@ async function main() {
                 });
             }
         }
-
         return { success: errors.length === 0, viewBox: { width: W, height: H }, errors };
-    }, margin);
+    }, { content: svgContent, marginThreshold: margin });
 
     await browser.close();
 

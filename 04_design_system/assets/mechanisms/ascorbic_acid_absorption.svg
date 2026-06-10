@@ -25,12 +25,13 @@
   <text x="335" y="62" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Зависимость от конц.</text>
   <line x1="335" y1="79" x2="335" y2="229" stroke="#6D8470" stroke-width="1.5" stroke-dasharray="3,3"/>
   <path d="M 258 227 Q 300 120 335 92 Q 370 122 413 170" fill="none" stroke="#6D8470" stroke-width="2.5"/>
-  <rect x="338" y="82" width="62" height="28" fill="#E6D2CA" rx="4" stroke="#9E6A5A" stroke-width="1"/>
-  <text x="369" y="94" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#9E6A5A" text-anchor="middle">Пик @20%</text>
-  <text x="369" y="106" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="middle">макс абсорб</text>
-  <line x1="338" y1="92" x2="335" y2="92" stroke="#9E6A5A" stroke-width="1"/>
-  <text x="387" y="155" font-family="Arimo, sans-serif" font-size="8" fill="#9E6A5A" text-anchor="middle">спад</text>
-  <text x="387" y="166" font-family="Arimo, sans-serif" font-size="8" fill="#9E6A5A" text-anchor="middle">выше 20%</text>
+  <rect x="348" y="70" width="60" height="26" fill="#E6D2CA" rx="4" stroke="#9E6A5A" stroke-width="1"/>
+  <text x="378" y="80" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#9E6A5A" text-anchor="middle">Пик @20%</text>
+  <text x="378" y="90" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="middle">макс абсорб</text>
+  <line x1="348" y1="83" x2="335" y2="92" stroke="#9E6A5A" stroke-width="1"/>
+  <text x="388" y="112" font-family="Arimo, sans-serif" font-size="8" fill="#9E6A5A" text-anchor="middle">спад</text>
+  <text x="388" y="122" font-family="Arimo, sans-serif" font-size="8" fill="#9E6A5A" text-anchor="middle">выше 20%</text>
+  <line x1="388" y1="127" x2="388" y2="142" stroke="#9E6A5A" stroke-width="1"/>
   <line x1="254" y1="92" x2="258" y2="92" stroke="#2C3440"/>
   <text x="252" y="96" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="end">Max</text>
   <line x1="254" y1="229" x2="258" y2="229" stroke="#2C3440"/>

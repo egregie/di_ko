@@ -8,8 +8,8 @@
       <path d="M 0 2 L 8 5 L 0 8 z" fill="#1D291C"/>
     </marker>
   </defs>
-  <text x="200.0" y="22" font-family="Arimo, sans-serif" font-size="13" font-weight="bold" fill="#1D291C" text-anchor="middle">МЕХАНИЗМ RAR / RXR...</text>
-  <text x="200.0" y="37" font-family="Arimo, sans-serif" font-size="10" fill="#6D8470" text-anchor="middle">Связывание ретиноевой кислоты с...</text>
+  <text x="200.0" y="22" font-family="Arimo, sans-serif" font-size="13" font-weight="bold" fill="#1D291C" text-anchor="middle">МЕХАНИЗМ RAR / RXR RECEPTORS</text>
+  <text x="200.0" y="37" font-family="Arimo, sans-serif" font-size="10" fill="#6D8470" text-anchor="middle">Связывание ретиноевой кислоты с рецепторами ядра</text>
   <path d="M 90 290 C 90 118, 390 118, 390 290" fill="none" stroke="#6D8470" stroke-width="1.5" stroke-dasharray="4,4"/>
   <text x="335" y="82" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#6D8470" letter-spacing="0.1em" text-anchor="middle">ЯДРО / NUCLEUS</text>
   <text x="48" y="80" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#6D8470" letter-spacing="0.1em">ЦИТОПЛАЗМА</text>
@@ -54,5 +54,5 @@
     <text x="41" y="14" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#1D291C" text-anchor="middle">ТРАНСКРИПЦИЯ</text>
     <text x="41" y="26" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="middle">активация генов</text>
   </g>
-  <text x="200.0" y="288" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0001/02 - PMID...</text>
+  <text x="200.0" y="288" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0001/02 - PMID 15773538 (Kang 2005)</text>
 </svg>

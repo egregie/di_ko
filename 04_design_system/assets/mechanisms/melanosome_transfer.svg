@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
   <rect width="400" height="300" rx="16" fill="#F8F6F4" stroke="#D7E0CE" stroke-width="1.5"/>
   <text x="200.0" y="25" font-family="Arimo, sans-serif" font-size="13" font-weight="bold" fill="#2C3440" text-anchor="middle">Подавление переноса меланосом</text>
-  <text x="200.0" y="40" font-family="Arimo, sans-serif" font-size="10" fill="#6D8470" text-anchor="middle">Ниацинамид блокирует перенос в...</text>
+  <text x="200.0" y="40" font-family="Arimo, sans-serif" font-size="10" fill="#6D8470" text-anchor="middle">Ниацинамид блокирует перенос в кератиноциты</text>
   <g transform="translate(30, 55)">
     <rect x="0" y="0" width="140" height="50" rx="4" fill="#D7E0CE" stroke="#6D8470" stroke-width="1.5"/>
     <text x="70" y="22" font-family="Arimo, sans-serif" font-size="11" font-weight="bold" fill="#2C3440" text-anchor="middle">Keratinocyte</text>
@@ -29,5 +29,5 @@
   <ellipse cx="190" cy="245" rx="88" ry="36" fill="#F8F6F4" stroke="#2C3440" stroke-width="2"/>
   <text x="190" y="241" font-family="Arimo, sans-serif" font-size="12" font-weight="bold" fill="#2C3440" text-anchor="middle">Melanocyte</text>
   <text x="190" y="256" font-family="Arimo, sans-serif" font-size="9" fill="#6D8470" text-anchor="middle">Меланоцит</text>
-  <text x="200.0" y="288" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0034 - Hakozaki...</text>
+  <text x="200.0" y="288" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0034 - Hakozaki 2002, PMID 12100180</text>
 </svg>

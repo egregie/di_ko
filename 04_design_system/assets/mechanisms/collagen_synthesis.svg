@@ -24,19 +24,19 @@
     <text x="48.7" y="22" font-family="Arimo, sans-serif" font-size="10" font-weight="bold" fill="#2C3440" text-anchor="middle">Коллаген I / III</text>
     <text x="48.7" y="36" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Тройная спираль</text>
   </g>
-  <text x="24" y="135" font-family="Arimo, sans-serif" font-size="9" fill="#6D8470" font-weight="bold">Транскрипция генов:</text>
+  <text x="36" y="135" font-family="Arimo, sans-serif" font-size="9" fill="#6D8470" font-weight="bold">Транскрипция генов:</text>
   <ellipse cx="200" cy="220" rx="168" ry="60" fill="none" stroke="#6D8470" stroke-width="1.5" stroke-dasharray="5,4"/>
   <text x="200" y="152" font-family="Arimo, sans-serif" font-size="9" font-weight="bold" fill="#6D8470" letter-spacing="0.08em" text-anchor="middle">ЯДРО / NUCLEUS</text>
-  <path d="M 38 213 Q 58 198 78 213 T 118 213 T 158 213" fill="none" stroke="#3D4A40" stroke-width="2.5"/>
-  <path d="M 38 233 Q 58 248 78 233 T 118 233 T 158 233" fill="none" stroke="#6D8470" stroke-width="2.5"/>
-  <line x1="58" y1="214" x2="58" y2="232" stroke="#3D4A40" stroke-width="1" opacity="0.5"/>
-  <line x1="98" y1="214" x2="98" y2="232" stroke="#3D4A40" stroke-width="1" opacity="0.5"/>
-  <line x1="138" y1="214" x2="138" y2="232" stroke="#3D4A40" stroke-width="1" opacity="0.5"/>
-  <text x="98" y="252" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="middle">ДНК - гены COL1A1/3</text>
+  <path d="M 50 213 Q 70 198 90 213 T 130 213 T 170 213" fill="none" stroke="#3D4A40" stroke-width="2.5"/>
+  <path d="M 50 233 Q 70 248 90 233 T 130 233 T 170 233" fill="none" stroke="#6D8470" stroke-width="2.5"/>
+  <line x1="70" y1="214" x2="70" y2="232" stroke="#3D4A40" stroke-width="1" opacity="0.5"/>
+  <line x1="110" y1="214" x2="110" y2="232" stroke="#3D4A40" stroke-width="1" opacity="0.5"/>
+  <line x1="150" y1="214" x2="150" y2="232" stroke="#3D4A40" stroke-width="1" opacity="0.5"/>
+  <text x="110" y="252" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="middle">ДНК - гены COL1A1/3</text>
   <path d="M 200 208 L 200 168" fill="none" stroke="#9E6A5A" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrow)"/>
   <text x="210" y="190" font-family="Arimo, sans-serif" font-size="8" fill="#9E6A5A">мРНК</text>
-  <path d="M 250 213 Q 270 198 290 213 T 330 213 T 360 213" fill="none" stroke="#3D4A40" stroke-width="2.5" opacity="0.5"/>
-  <path d="M 250 233 Q 270 248 290 233 T 330 233 T 360 233" fill="none" stroke="#6D8470" stroke-width="2.5" opacity="0.5"/>
-  <text x="305" y="252" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="middle">Хроматин</text>
-  <text x="200.0" y="288" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0030/46 - Pinnell...</text>
+  <path d="M 230 213 Q 250 198 270 213 T 310 213 T 350 213" fill="none" stroke="#3D4A40" stroke-width="2.5" opacity="0.5"/>
+  <path d="M 230 233 Q 250 248 270 233 T 310 233 T 350 233" fill="none" stroke="#6D8470" stroke-width="2.5" opacity="0.5"/>
+  <text x="290" y="252" font-family="Arimo, sans-serif" font-size="8" fill="#3D4A40" text-anchor="middle">Хроматин</text>
+  <text x="200.0" y="288" font-family="Arimo, sans-serif" font-size="8" fill="#6D8470" text-anchor="middle">Источник: fact_0030/46 - Pinnell 2001, PMID 11207686</text>
 </svg>

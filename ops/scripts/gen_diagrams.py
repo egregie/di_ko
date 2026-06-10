@@ -48,24 +48,29 @@ def ceramide_extra_drawing(pad, gap, colors, font, width, height):
     svg.append(f'  <text x="200" y="235" font-family="{font}" font-size="8" fill="{colors["herbal"]}">воды кожей</text>')
     return "\n".join(svg)
 
+def xml_escape(text):
+    if not text:
+        return ""
+    return str(text).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;").replace("'", "&apos;")
+
 def collagen_extra_drawing(pad, gap, colors, font, width, height):
     svg = []
-    svg.append(f'  <text x="24" y="135" font-family="{font}" font-size="9" fill="{colors["herbal"]}" font-weight="bold">Транскрипция генов:</text>')
+    svg.append(f'  <text x="36" y="135" font-family="{font}" font-size="9" fill="{colors["herbal"]}" font-weight="bold">Транскрипция генов:</text>')
     svg.append(f'  <ellipse cx="200" cy="220" rx="168" ry="60" fill="none" stroke="{colors["herbal"]}" stroke-width="1.5" stroke-dasharray="5,4"/>')
     svg.append(f'  <text x="200" y="152" font-family="{font}" font-size="9" font-weight="bold" fill="{colors["herbal"]}" letter-spacing="0.08em" text-anchor="middle">ЯДРО / NUCLEUS</text>')
     
-    svg.append(f'  <path d="M 38 213 Q 58 198 78 213 T 118 213 T 158 213" fill="none" stroke="{colors["text"]}" stroke-width="2.5"/>')
-    svg.append(f'  <path d="M 38 233 Q 58 248 78 233 T 118 233 T 158 233" fill="none" stroke="{colors["herbal"]}" stroke-width="2.5"/>')
-    for px in [58, 98, 138]:
+    svg.append(f'  <path d="M 50 213 Q 70 198 90 213 T 130 213 T 170 213" fill="none" stroke="{colors["text"]}" stroke-width="2.5"/>')
+    svg.append(f'  <path d="M 50 233 Q 70 248 90 233 T 130 233 T 170 233" fill="none" stroke="{colors["herbal"]}" stroke-width="2.5"/>')
+    for px in [70, 110, 150]:
         svg.append(f'  <line x1="{px}" y1="214" x2="{px}" y2="232" stroke="{colors["text"]}" stroke-width="1" opacity="0.5"/>')
-    svg.append(f'  <text x="98" y="252" font-family="{font}" font-size="8" fill="{colors["text"]}" text-anchor="middle">ДНК - гены COL1A1/3</text>')
+    svg.append(f'  <text x="110" y="252" font-family="{font}" font-size="8" fill="{colors["text"]}" text-anchor="middle">ДНК - гены COL1A1/3</text>')
     
     svg.append(f'  <path d="M 200 208 L 200 168" fill="none" stroke="{colors["warn"]}" stroke-width="1.5" stroke-dasharray="3,2" marker-end="url(#arrow)"/>')
     svg.append(f'  <text x="210" y="190" font-family="{font}" font-size="8" fill="{colors["warn"]}">мРНК</text>')
     
-    svg.append(f'  <path d="M 250 213 Q 270 198 290 213 T 330 213 T 360 213" fill="none" stroke="{colors["text"]}" stroke-width="2.5" opacity="0.5"/>')
-    svg.append(f'  <path d="M 250 233 Q 270 248 290 233 T 330 233 T 360 233" fill="none" stroke="{colors["herbal"]}" stroke-width="2.5" opacity="0.5"/>')
-    svg.append(f'  <text x="305" y="252" font-family="{font}" font-size="8" fill="{colors["text"]}" text-anchor="middle">Хроматин</text>')
+    svg.append(f'  <path d="M 230 213 Q 250 198 270 213 T 310 213 T 350 213" fill="none" stroke="{colors["text"]}" stroke-width="2.5" opacity="0.5"/>')
+    svg.append(f'  <path d="M 230 233 Q 250 248 270 233 T 310 233 T 350 233" fill="none" stroke="{colors["herbal"]}" stroke-width="2.5" opacity="0.5"/>')
+    svg.append(f'  <text x="290" y="252" font-family="{font}" font-size="8" fill="{colors["text"]}" text-anchor="middle">Хроматин</text>')
     return "\n".join(svg)
 
 def clean_label(text):
@@ -106,9 +111,9 @@ def make_process_flow(title, subtitle, steps, source_note, extra_drawing_func=No
     svg.append('  </defs>')
     
     # Title & Subtitle
-    svg.append(f'  <text x="{width/2}" y="24" font-family="{font}" font-size="{font_sizes["title"]}" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{clean_label(title)}</text>')
+    svg.append(f'  <text x="{width/2}" y="24" font-family="{font}" font-size="{font_sizes["title"]}" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{xml_escape(title)}</text>')
     if subtitle:
-        svg.append(f'  <text x="{width/2}" y="38" font-family="{font}" font-size="{font_sizes["label"]}" fill="{colors["herbal"]}" text-anchor="middle">{clean_label(subtitle)}</text>')
+        svg.append(f'  <text x="{width/2}" y="38" font-family="{font}" font-size="{font_sizes["label"]}" fill="{colors["herbal"]}" text-anchor="middle">{xml_escape(subtitle)}</text>')
         
     # Steps
     n = len(steps)
@@ -120,8 +125,8 @@ def make_process_flow(title, subtitle, steps, source_note, extra_drawing_func=No
     
     for i, step in enumerate(steps):
         x = padding + i * (box_w + h_gap)
-        lbl = clean_label(step["label"])
-        sub = clean_label(step.get("sublabel", ""))
+        lbl = xml_escape(clean_label(step["label"]))
+        sub = xml_escape(clean_label(step.get("sublabel", "")))
         
         rect_color = colors["bgAlt"] if i == 0 else (colors["sage"] if i == 1 else colors["bg"])
         stroke_color = colors["herbal"] if i < 2 else colors["dark"]
@@ -145,7 +150,7 @@ def make_process_flow(title, subtitle, steps, source_note, extra_drawing_func=No
         svg.append(extra_drawing_func(box_w, h_gap))
         
     if source_note:
-        svg.append(f'  <text x="{width/2}" y="{height - 12}" font-family="{font}" font-size="{font_sizes["sublabel"]}" fill="{colors["herbal"]}" text-anchor="middle">{clean_label(source_note)}</text>')
+        svg.append(f'  <text x="{width/2}" y="{height - 12}" font-family="{font}" font-size="{font_sizes["sublabel"]}" fill="{colors["herbal"]}" text-anchor="middle">{xml_escape(source_note)}</text>')
         
     svg.append('</svg>')
     return "\n".join(svg)
@@ -157,9 +162,9 @@ def make_layered_anatomy(title, subtitle, layers, stages, source_note, width=450
     svg.append(f'  <rect width="{width}" height="{height}" rx="16" fill="{colors["bg"]}" stroke="{colors["border"]}" stroke-width="1.5"/>')
     
     # Title
-    svg.append(f'  <text x="{width/2}" y="24" font-family="{font}" font-size="{font_sizes["title"]}" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{clean_label(title)}</text>')
+    svg.append(f'  <text x="{width/2}" y="24" font-family="{font}" font-size="{font_sizes["title"]}" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{xml_escape(title)}</text>')
     if subtitle:
-        svg.append(f'  <text x="{width/2}" y="38" font-family="{font}" font-size="{font_sizes["label"]}" fill="{colors["herbal"]}" text-anchor="middle">{clean_label(subtitle)}</text>')
+        svg.append(f'  <text x="{width/2}" y="38" font-family="{font}" font-size="{font_sizes["label"]}" fill="{colors["herbal"]}" text-anchor="middle">{xml_escape(subtitle)}</text>')
         
     svg.append('  <defs>')
     svg.append(f'    <marker id="arrow-dark" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">')
@@ -197,15 +202,15 @@ def make_layered_anatomy(title, subtitle, layers, stages, source_note, width=450
         svg.append('  </g>')
         
         # Label below layer bar
-        svg.append(f'  <text x="22" y="{y + h + 11}" font-family="{font}" font-size="8" font-weight="bold" fill="{stroke_val}">{clean_label(layer["label"])}</text>')
+        svg.append(f'  <text x="22" y="{y + h + 11}" font-family="{font}" font-size="8" font-weight="bold" fill="{stroke_val}">{xml_escape(clean_label(layer["label"]))}</text>')
         
     # Right differentiation timeline
     svg.append(f'  <path d="M 250 252 L 250 62" fill="none" stroke="{colors["moleculeStroke"]}" stroke-width="2.5" stroke-dasharray="2,2" marker-end="url(#arrow-dark)"/>')
     
     for stage in stages:
         ty = stage["y"]
-        lbl1 = clean_label(stage["title"])
-        lbl2 = clean_label(stage.get("sub", ""))
+        lbl1 = xml_escape(clean_label(stage["title"]))
+        lbl2 = xml_escape(clean_label(stage.get("sub", "")))
         is_badge = stage.get("is_badge", False)
         
         if is_badge:
@@ -218,7 +223,7 @@ def make_layered_anatomy(title, subtitle, layers, stages, source_note, width=450
                 svg.append(f'  <text x="264" y="{ty+13}" font-family="{font}" font-size="8" fill="{colors["text"]}">{lbl2}</text>')
                 
     if source_note:
-        svg.append(f'  <text x="{width/2}" y="{height - 12}" font-family="{font}" font-size="{font_sizes["sublabel"]}" fill="{colors["herbal"]}" text-anchor="middle">{clean_label(source_note)}</text>')
+        svg.append(f'  <text x="{width/2}" y="{height - 12}" font-family="{font}" font-size="{font_sizes["sublabel"]}" fill="{colors["herbal"]}" text-anchor="middle">{xml_escape(source_note)}</text>')
         
     svg.append('</svg>')
     return "\n".join(svg)
@@ -230,7 +235,7 @@ def make_xy_curve(title, left_panel, right_panel, source_note, width=450, height
     svg.append(f'  <rect width="{width}" height="{height}" rx="16" fill="{colors["bg"]}" stroke="{colors["border"]}" stroke-width="1.5"/>')
     
     # Title
-    svg.append(f'  <text x="{width/2}" y="24" font-family="{font}" font-size="{font_sizes["title"]}" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{clean_label(title)}</text>')
+    svg.append(f'  <text x="{width/2}" y="24" font-family="{font}" font-size="{font_sizes["title"]}" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{xml_escape(title)}</text>')
     
     # --- LEFT Panel ---
     # Optimum range box
@@ -238,7 +243,7 @@ def make_xy_curve(title, left_panel, right_panel, source_note, width=450, height
     svg.append(f'  <line x1="70" y1="229" x2="200" y2="229" stroke="{colors["dark"]}" stroke-width="1.5"/>')
     svg.append(f'  <line x1="70" y1="79"  x2="70"  y2="229" stroke="{colors["dark"]}" stroke-width="1.5"/>')
     
-    svg.append(f'  <text x="135" y="62" font-family="{font}" font-size="11" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{clean_label(left_panel["title"])}</text>')
+    svg.append(f'  <text x="135" y="62" font-family="{font}" font-size="11" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{xml_escape(left_panel["title"])}</text>')
     svg.append(f'  <text x="104" y="108" font-family="{font}" font-size="9" fill="{colors["herbal"]}" font-weight="bold" text-anchor="middle">Оптимум</text>')
     svg.append(f'  <text x="104" y="120" font-family="{font}" font-size="9" fill="{colors["herbal"]}" font-weight="bold" text-anchor="middle">(pH &lt; 3.5)</text>')
     
@@ -265,7 +270,7 @@ def make_xy_curve(title, left_panel, right_panel, source_note, width=450, height
     svg.append(f'  <line x1="258" y1="229" x2="413" y2="229" stroke="{colors["dark"]}" stroke-width="1.5"/>')
     svg.append(f'  <line x1="258" y1="79"  x2="258" y2="229" stroke="{colors["dark"]}" stroke-width="1.5"/>')
     
-    svg.append(f'  <text x="335" y="62" font-family="{font}" font-size="11" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{clean_label(right_panel["title"])}</text>')
+    svg.append(f'  <text x="335" y="62" font-family="{font}" font-size="11" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{xml_escape(right_panel["title"])}</text>')
     
     # peak dashed line
     svg.append(f'  <line x1="335" y1="79" x2="335" y2="229" stroke="{colors["herbal"]}" stroke-width="1.5" stroke-dasharray="3,3"/>')
@@ -274,13 +279,14 @@ def make_xy_curve(title, left_panel, right_panel, source_note, width=450, height
     svg.append(f'  <path d="M 258 227 Q 300 120 335 92 Q 370 122 413 170" fill="none" stroke="{colors["herbal"]}" stroke-width="2.5"/>')
     
     # Callout Box
-    svg.append(f'  <rect x="338" y="82" width="62" height="28" fill="{colors["bgAlt"]}" rx="4" stroke="{colors["warn"]}" stroke-width="1"/>')
-    svg.append(f'  <text x="369" y="94" font-family="{font}" font-size="9" font-weight="bold" fill="{colors["warn"]}" text-anchor="middle">Пик @20%</text>')
-    svg.append(f'  <text x="369" y="106" font-family="{font}" font-size="8" fill="{colors["text"]}" text-anchor="middle">макс абсорб</text>')
-    svg.append(f'  <line x1="338" y1="92" x2="335" y2="92" stroke="{colors["warn"]}" stroke-width="1"/>')
+    svg.append(f'  <rect x="348" y="70" width="60" height="26" fill="{colors["bgAlt"]}" rx="4" stroke="{colors["warn"]}" stroke-width="1"/>')
+    svg.append(f'  <text x="378" y="80" font-family="{font}" font-size="9" font-weight="bold" fill="{colors["warn"]}" text-anchor="middle">Пик @20%</text>')
+    svg.append(f'  <text x="378" y="90" font-family="{font}" font-size="8" fill="{colors["text"]}" text-anchor="middle">макс абсорб</text>')
+    svg.append(f'  <line x1="348" y1="83" x2="335" y2="92" stroke="{colors["warn"]}" stroke-width="1"/>')
     
-    svg.append(f'  <text x="387" y="155" font-family="{font}" font-size="8" fill="{colors["warn"]}" text-anchor="middle">спад</text>')
-    svg.append(f'  <text x="387" y="166" font-family="{font}" font-size="8" fill="{colors["warn"]}" text-anchor="middle">выше 20%</text>')
+    svg.append(f'  <text x="388" y="112" font-family="{font}" font-size="8" fill="{colors["warn"]}" text-anchor="middle">спад</text>')
+    svg.append(f'  <text x="388" y="122" font-family="{font}" font-size="8" fill="{colors["warn"]}" text-anchor="middle">выше 20%</text>')
+    svg.append(f'  <line x1="388" y1="127" x2="388" y2="142" stroke="{colors["warn"]}" stroke-width="1"/>')
     
     # Y-axis marks
     svg.append(f'  <line x1="254" y1="92" x2="258" y2="92" stroke="{colors["dark"]}"/>')
@@ -307,9 +313,9 @@ def make_melanosome_transfer(title, subtitle, source_note, width=400, height=300
     svg.append(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {width} {height}" width="100%" height="100%">')
     svg.append(f'  <rect width="{width}" height="{height}" rx="16" fill="{colors["bg"]}" stroke="{colors["border"]}" stroke-width="1.5"/>')
     
-    svg.append(f'  <text x="{width/2}" y="25" font-family="{font}" font-size="{font_sizes["title"]}" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{clean_label(title)}</text>')
+    svg.append(f'  <text x="{width/2}" y="25" font-family="{font}" font-size="{font_sizes["title"]}" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{xml_escape(title)}</text>')
     if subtitle:
-        svg.append(f'  <text x="{width/2}" y="40" font-family="{font}" font-size="{font_sizes["label"]}" fill="{colors["herbal"]}" text-anchor="middle">{clean_label(subtitle)}</text>')
+        svg.append(f'  <text x="{width/2}" y="40" font-family="{font}" font-size="{font_sizes["label"]}" fill="{colors["herbal"]}" text-anchor="middle">{xml_escape(subtitle)}</text>')
         
     # Keratinocyte 1
     svg.append('  <g transform="translate(30, 55)">')
@@ -351,7 +357,7 @@ def make_melanosome_transfer(title, subtitle, source_note, width=400, height=300
     svg.append(f'  <text x="190" y="256" font-family="{font}" font-size="9" fill="{colors["herbal"]}" text-anchor="middle">Меланоцит</text>')
     
     if source_note:
-        svg.append(f'  <text x="{width/2}" y="{height - 12}" font-family="{font}" font-size="{font_sizes["sublabel"]}" fill="{colors["herbal"]}" text-anchor="middle">{clean_label(source_note)}</text>')
+        svg.append(f'  <text x="{width/2}" y="{height - 12}" font-family="{font}" font-size="{font_sizes["sublabel"]}" fill="{colors["herbal"]}" text-anchor="middle">{xml_escape(source_note)}</text>')
         
     svg.append('</svg>')
     return "\n".join(svg)
@@ -368,7 +374,7 @@ def make_desmosome_desmolysis(title, subtitle, source_note, width=400, height=30
     svg.append('    </marker>')
     svg.append('  </defs>')
     
-    svg.append(f'  <text x="{width/2}" y="25" font-family="{font}" font-size="{font_sizes["title"]}" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{clean_label(title)}</text>')
+    svg.append(f'  <text x="{width/2}" y="25" font-family="{font}" font-size="{font_sizes["title"]}" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">{xml_escape(title)}</text>')
     
     # Left Section
     svg.append(f'  <text x="95" y="58" font-family="{font}" font-size="11" font-weight="bold" fill="{colors["dark"]}" text-anchor="middle">Плотный роговой слой</text>')
@@ -412,7 +418,7 @@ def make_desmosome_desmolysis(title, subtitle, source_note, width=400, height=30
     svg.append(f'  <text x="305" y="252" font-family="{font}" font-size="9" fill="{colors["warn"]}" font-weight="bold" text-anchor="middle">Связи разрушены BHA</text>')
     
     if source_note:
-        svg.append(f'  <text x="{width/2}" y="{height - 12}" font-family="{font}" font-size="{font_sizes["sublabel"]}" fill="{colors["herbal"]}" text-anchor="middle">{clean_label(source_note)}</text>')
+        svg.append(f'  <text x="{width/2}" y="{height - 12}" font-family="{font}" font-size="{font_sizes["sublabel"]}" fill="{colors["herbal"]}" text-anchor="middle">{xml_escape(source_note)}</text>')
         
     svg.append('</svg>')
     return "\n".join(svg)
@@ -432,9 +438,9 @@ def make_rar_rxr_mechanism(title, subtitle, source_note, width=400, height=300):
     svg.append('    </marker>')
     svg.append('  </defs>')
     
-    svg.append(f'  <text x="{width/2}" y="22" font-family="{font}" font-size="{font_sizes["title"]}" font-weight="bold" fill="{colors["moleculeStroke"]}" text-anchor="middle">{clean_label(title)}</text>')
+    svg.append(f'  <text x="{width/2}" y="22" font-family="{font}" font-size="{font_sizes["title"]}" font-weight="bold" fill="{colors["moleculeStroke"]}" text-anchor="middle">{xml_escape(title)}</text>')
     if subtitle:
-        svg.append(f'  <text x="{width/2}" y="37" font-family="{font}" font-size="{font_sizes["label"]}" fill="{colors["herbal"]}" text-anchor="middle">{clean_label(subtitle)}</text>')
+        svg.append(f'  <text x="{width/2}" y="37" font-family="{font}" font-size="{font_sizes["label"]}" fill="{colors["herbal"]}" text-anchor="middle">{xml_escape(subtitle)}</text>')
         
     # Nucleus outline
     svg.append(f'  <path d="M 90 290 C 90 118, 390 118, 390 290" fill="none" stroke="{colors["herbal"]}" stroke-width="1.5" stroke-dasharray="4,4"/>')
@@ -501,7 +507,7 @@ def make_rar_rxr_mechanism(title, subtitle, source_note, width=400, height=300):
     svg.append('  </g>')
     
     if source_note:
-        svg.append(f'  <text x="{width/2}" y="{height - 12}" font-family="{font}" font-size="{font_sizes["sublabel"]}" fill="{colors["herbal"]}" text-anchor="middle">{clean_label(source_note)}</text>')
+        svg.append(f'  <text x="{width/2}" y="{height - 12}" font-family="{font}" font-size="{font_sizes["sublabel"]}" fill="{colors["herbal"]}" text-anchor="middle">{xml_escape(source_note)}</text>')
         
     svg.append('</svg>')
     return "\n".join(svg)
