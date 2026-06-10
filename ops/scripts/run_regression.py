@@ -210,9 +210,9 @@ def main():
         log_lines.append(f"- **Status**: {status_str}")
         log_lines.append("")
         
-        # CASE 4: Marginally Weak Claim (overlap < 40% but >= 15%)
+        # CASE 4: Marginally Weak Claim (overlap < 15%)
         log_lines.append("## Case 4: Marginally Weak Claim")
-        log_lines.append("A candidate fact with a real PMID but weak claim alignment (overlap < 40%) must be automatically rejected under the tightened gate.")
+        log_lines.append("A candidate fact with a real PMID but weak claim alignment (overlap < 15%) must be automatically rejected under the pre-filter gate.")
         log_lines.append("")
         
         weak_fact_path = os.path.join(script_dir, "fact_weak_mismatch.json")

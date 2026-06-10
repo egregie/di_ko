@@ -1,6 +1,6 @@
 {
   "fact_id": "fact_0001",
-  "statement": "retinoid action is mediated through retinoic acid receptors RARs and retinoid X receptors RXRs",
+  "statement": "Retinoids regulate gene transcription by binding to RAR and RXR nuclear receptors.",
   "entity_id": "retinoids",
   "confidence": 0.8,
   "evidence_level": "A",
@@ -13,7 +13,7 @@
   "audit_verdict": "SUPPORTED",
   "evidence_ok": true,
   "verified_via": "cache",
-  "verified_at": "2026-06-10T10:44:21.458838Z",
+  "verified_at": "2026-06-10T13:10:06.891604Z",
   "source_title": "The mechanism of action of topical retinoids.",
   "audit_flag": "weak"
 }

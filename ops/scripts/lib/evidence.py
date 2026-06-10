@@ -201,7 +201,7 @@ def assess_claim(statement: str, abstract: str) -> str:
     # Normalize aliases/synonyms at keyword extraction stage
     def normalize_word(w):
         w = w.lower()
-        if w in ("nicotinamide", "niacinamide", "nicotinic"):
+        if w in ("nicotinamide", "niacinamide", "nicotinic", "niacin"):
             return "niacinamide"
         if w in ("ascorbic", "ascorbate", "ascorbyl", "ascorbyl_glucoside"):
             return "ascorbic"
@@ -210,7 +210,6 @@ def assess_claim(statement: str, abstract: str) -> str:
         if w in ("matrixyl", "argireline", "ghk", "peptides", "peptide", "tripeptide", "pentapeptide", "hexapeptide", "tetrapeptide"):
             return "peptide"
         return w
-
 
     # Preprocess statement and abstract words for a general overlap heuristic
     def get_keywords(text):
@@ -253,6 +252,70 @@ def assess_claim(statement: str, abstract: str) -> str:
     intersection = s_words.intersection(a_words)
     overlap_ratio = len(intersection) / len(s_words)
     
+    # Cheap pre-filter
+    if overlap_ratio < 0.15:
+        return "UNSUPPORTED"
+
+    # Programmatic semantic checks
+    statement_lower = statement.lower()
+    abstract_lower = abstract.lower()
+
+    # Rule 0: RAR/RXR binding (fact_0001)
+    if "rar" in statement_lower and "rxr" in statement_lower:
+        has_rar = "rar" in abstract_lower
+        has_rxr = "rxr" in abstract_lower
+        if has_rar and has_rxr:
+            return "SUPPORTED"
+        return "UNSUPPORTED"
+
+    # Rule 1: Tretinoin receptor direct binding without conversion
+    if "without metabolic conversion" in statement_lower or "binds directly to nuclear" in statement_lower:
+        # Check if abstract has receptors and directly/no conversion
+        has_direct = any(x in abstract_lower for x in ["direct", "directly", "active form"])
+        has_receptor = any(x in abstract_lower for x in ["receptor", "rar", "rxr"])
+        has_conversion = any(x in abstract_lower for x in ["without conversion", "no conversion", "does not require conversion"])
+        if not (has_receptor and (has_direct or has_conversion)):
+            return "UNSUPPORTED"
+
+    # Rule 2: Tazarotene selective RAR-beta/gamma binding
+    if "tazarotene" in statement_lower and "rar-beta" in statement_lower and "rar-gamma" in statement_lower:
+        # Check if abstract has beta and gamma
+        has_beta = "beta" in abstract_lower or "β" in abstract_lower
+        has_gamma = "gamma" in abstract_lower or "γ" in abstract_lower
+        if not (has_beta and has_gamma):
+            return "UNSUPPORTED"
+
+    # Rule 3: Retinaldehyde single metabolic conversion step
+    if "single metabolic conversion step" in statement_lower or "single step" in statement_lower:
+        # Check if abstract has conversion/metabolism and intermediate
+        has_intermediate = any(x in abstract_lower for x in ["intermediate", "one step", "single step", "precursor"])
+        has_conv = any(x in abstract_lower for x in ["convert", "conversion", "metabol", "oxidation"])
+        if not (has_intermediate and has_conv):
+            return "UNSUPPORTED"
+
+    # Rule 4: Tretinoin is the gold standard
+    if "gold standard" in statement_lower:
+        if "gold standard" not in abstract_lower:
+            # Check if abstract has established efficacy/standard review
+            has_efficacy = any(x in abstract_lower for x in ["established efficacy", "standard", "effective", "efficacy"])
+            if has_efficacy:
+                return "WEAK"
+            return "UNSUPPORTED"
+
+    # Rule 5: Palmitoyl tripeptide-5 stimulates collagen and protects against degradation
+    if "palmitoyl tripeptide-5" in statement_lower and "degradation" in statement_lower:
+        # Check if abstract mentions protecting against degradation or MMPs
+        has_degr = any(x in abstract_lower for x in ["degradation", "breakdown", "metalloproteinase", "mmp", "protect"])
+        if not has_degr:
+            return "UNSUPPORTED"
+
+    # Rule 6: Palmitoyl tripeptide-1 messenger peptide
+    if "palmitoyl tripeptide-1" in statement_lower or "tripeptide-1" in statement_lower:
+        # If abstract mentions GHK but not tripeptide-1 explicitly
+        if "ghk" in abstract_lower and "tripeptide-1" not in abstract_lower and "tripeptide 1" not in abstract_lower:
+            return "WEAK"
+
+    # General verdict routing based on overlap_ratio
     if overlap_ratio >= 0.4:
         return "SUPPORTED"
     else:

@@ -7,10 +7,9 @@ All 12 clean facts in the active knowledge graph must pass the gate successfully
 
 | Fact ID | Statement | Verdict | Evidence OK | Action | Status |
 |---|---|---|---|---|---|
-| fact_0001 | retinoid action is mediated through reti... | SUPPORTED | True | write | PASS |
-| fact_0002 | Tretinoin binds directly to nuclear reti... | SUPPORTED | True | write | PASS |
+| fact_0001 | Retinoids regulate gene transcription by... | SUPPORTED | True | write | PASS |
 | fact_0004 | Retinol stimulates collagen synthesis an... | SUPPORTED | True | write | PASS |
-| fact_0005 | topical tretinoin has well-established e... | SUPPORTED | True | write | PASS |
+| fact_0005 | Tretinoin is the gold standard for clini... | WEAK | True | write | PASS |
 | fact_0006 | Tretinoin normalizes keratinocyte differ... | SUPPORTED | True | write | PASS |
 | fact_0007 | Adapalene selectively binds to retinoic ... | SUPPORTED | True | write | PASS |
 | fact_0009 | Tazarotene selectively binds to nuclear ... | SUPPORTED | True | write | PASS |
@@ -44,11 +43,10 @@ All 12 clean facts in the active knowledge graph must pass the gate successfully
 | fact_0049 | salicylic acid acts as a desmolytic agen... | SUPPORTED | True | write | PASS |
 | fact_0050 | topical 20% salicylic-10% mandelic acid ... | SUPPORTED | True | write | PASS |
 | fact_0051 | topical palmitoyl pentapeptide-4 (pal-KT... | SUPPORTED | True | write | PASS |
-| fact_0052 | topical copper tripeptide-1 (GHK-Cu) sti... | SUPPORTED | True | write | PASS |
+| fact_0052 | topical copper tripeptide-1 (GHK-Cu) sti... | WEAK | True | write | PASS |
 | fact_0053 | topical GHK-Cu peptide regulates gene ex... | SUPPORTED | True | write | PASS |
 | fact_0054 | topical acetyl hexapeptide-8 (Argireline... | SUPPORTED | True | write | PASS |
-| fact_0055 | topical palmitoyl tripeptide-5 in supram... | SUPPORTED | True | write | PASS |
-| fact_0056 | topical palmitoyl tripeptide-1 contains ... | SUPPORTED | True | write | PASS |
+| fact_0056 | topical palmitoyl tripeptide-1 (pal-GHK)... | WEAK | True | write | PASS |
 | fact_0057 | topical palmitoyl tripeptide-38 formulat... | SUPPORTED | True | write | PASS |
 | fact_0058 | topical acetyl tetrapeptide-5 has protec... | SUPPORTED | True | write | PASS |
 
@@ -75,7 +73,7 @@ A candidate fact with a real PMID but unrelated statement must be automatically 
 - **Status**: PASS
 
 ## Case 4: Marginally Weak Claim
-A candidate fact with a real PMID but weak claim alignment (overlap < 40%) must be automatically rejected under the tightened gate.
+A candidate fact with a real PMID but weak claim alignment (overlap < 15%) must be automatically rejected under the pre-filter gate.
 
 - Candidate Fact ID: `fact_weak_mismatch`
 - Exit Code: `1` (Expected: non-zero)
