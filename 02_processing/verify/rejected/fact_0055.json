@@ -9,11 +9,12 @@
   ],
   "contradictions": [],
   "verified_via": "cache",
-  "verified_at": "2026-06-10T12:56:48.216191Z",
+  "verified_at": "2026-06-10T15:38:34.091605Z",
   "verified_by": "verifier",
   "date": "2026-06-10",
   "source_title": "Supramolecular collagen nanoparticles for anti-wrinkle, skin whitening, and moisturizing effects.",
   "audit_flag": "weak",
   "audit_verdict": "UNSUPPORTED",
-  "evidence_ok": true
+  "evidence_ok": true,
+  "status": "needs_manual"
 }

@@ -9,11 +9,12 @@
   ],
   "contradictions": [],
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:15.850966Z",
+  "verified_at": "2026-06-10T17:48:05.599495Z",
   "verified_by": "verifier",
   "date": "2026-06-10",
   "source_title": "The human tri-peptide GHK and tissue remodeling.",
-  "audit_verdict": "WEAK",
+  "audit_verdict": "NEEDS_MANUAL",
   "evidence_ok": true,
-  "audit_flag": "weak"
+  "audit_flag": "weak",
+  "status": "needs_manual"
 }

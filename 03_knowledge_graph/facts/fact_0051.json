@@ -9,10 +9,11 @@
   ],
   "contradictions": [],
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:15.733965Z",
+  "verified_at": "2026-06-10T17:48:03.403859Z",
   "verified_by": "verifier",
   "date": "2026-06-10",
   "source_title": "Topical palmitoyl pentapeptide provides improvement in photoaged human facial skin.",
-  "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true,
+  "status": "needs_manual"
 }

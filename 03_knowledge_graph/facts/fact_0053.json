@@ -9,10 +9,11 @@
   ],
   "contradictions": [],
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:15.969965Z",
+  "verified_at": "2026-06-10T17:48:07.745253Z",
   "verified_by": "verifier",
   "date": "2026-06-10",
   "source_title": "Regenerative and Protective Actions of the GHK-Cu Peptide in the Light of the New Gene...",
-  "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true,
+  "status": "needs_manual"
 }

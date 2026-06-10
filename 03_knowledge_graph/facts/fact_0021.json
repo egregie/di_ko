@@ -10,9 +10,10 @@
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-10",
-  "audit_verdict": "SUPPORTED",
+  "audit_verdict": "NEEDS_MANUAL",
   "evidence_ok": true,
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:13.335807Z",
-  "source_title": "Topical Vitamin C and the Skin: Mechanisms of Action and Clinical Applications."
+  "verified_at": "2026-06-10T17:47:20.882150Z",
+  "source_title": "Topical Vitamin C and the Skin: Mechanisms of Action and Clinical Applications.",
+  "status": "needs_manual"
 }

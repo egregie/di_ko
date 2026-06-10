@@ -10,10 +10,10 @@
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-10",
-  "audit_verdict": "SUPPORTED",
+  "audit_verdict": "WEAK",
   "evidence_ok": true,
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:10.005533Z",
+  "verified_at": "2026-06-10T17:52:45.365124Z",
   "source_title": "Retinol and retinal metabolism. Relationship to the state of differentiation of cultured human keratinocytes.",
   "audit_flag": "weak"
 }

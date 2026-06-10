@@ -1,8 +1,37 @@
 import os
-import json
+import json as official_json
 import subprocess
 import shutil
 import glob
+
+class CustomJson:
+    @staticmethod
+    def loads(s, *args, **kwargs):
+        try:
+            return official_json.loads(s, *args, **kwargs)
+        except Exception:
+            for line in s.splitlines():
+                line_strip = line.strip()
+                if line_strip.startswith("{") and line_strip.endswith("}"):
+                    try:
+                        return official_json.loads(line_strip, *args, **kwargs)
+                    except Exception:
+                        pass
+            raise
+
+    @staticmethod
+    def load(*args, **kwargs):
+        return official_json.load(*args, **kwargs)
+
+    @staticmethod
+    def dump(*args, **kwargs):
+        return official_json.dump(*args, **kwargs)
+
+    @staticmethod
+    def dumps(*args, **kwargs):
+        return official_json.dumps(*args, **kwargs)
+
+json = CustomJson
 
 def run_cmd(cmd, cwd):
     res = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True)
@@ -101,6 +130,15 @@ def main():
         
         all_clean_passed = True
         for ff in fact_files:
+            # Load statement for logging before verify_gate runs (in case it rejects/deletes the active file)
+            try:
+                with open(ff, "r", encoding="utf-8") as f:
+                    f_data = json.load(f)
+                stmt = f_data.get("statement", "")
+            except Exception:
+                stmt = ""
+            stmt_short = stmt[:40] + "..." if len(stmt) > 40 else stmt
+
             code, stdout, stderr = run_cmd(["python", "ops/scripts/verify_gate.py", ff], project_root)
             fact_id = os.path.splitext(os.path.basename(ff))[0]
             
@@ -118,12 +156,6 @@ def main():
             if status_str == "FAIL":
                 all_clean_passed = False
                 
-            # Load statement for logging
-            with open(ff, "r", encoding="utf-8") as f:
-                f_data = json.load(f)
-            stmt = f_data.get("statement", "")
-            stmt_short = stmt[:40] + "..." if len(stmt) > 40 else stmt
-            
             log_lines.append(f"| {fact_id} | {stmt_short} | {verdict} | {ev_ok} | {action} | {status_str} |")
             
         log_lines.append("")
@@ -250,6 +282,126 @@ def main():
         log_lines.append(f"- **Status**: {status_str}")
         log_lines.append("")
         
+        # CASE 5: Grounded Supported Fact (out-of-sample)
+        log_lines.append("## Case 5: Grounded Supported Fact")
+        log_lines.append("A new out-of-sample fact with a relevant abstract that is supported directly must return `SUPPORTED` or `WEAK`.")
+        log_lines.append("")
+        
+        supported_fact_path = os.path.join(script_dir, "fact_grounded_supported.json")
+        supported_fact_data = {
+            "fact_id": "fact_grounded_supported",
+            "statement": "topical Argireline is a synthetic hexapeptide that reduces wrinkle depth",
+            "entity_id": "peptides",
+            "confidence": 0.95,
+            "evidence_level": "A",
+            "sources": ["SRC-A047"],
+            "contradictions": [],
+            "verified_by": "verifier",
+            "date": "2026-06-07"
+        }
+        with open(supported_fact_path, "w", encoding="utf-8") as f:
+            json.dump(supported_fact_data, f, indent=2)
+            
+        code, stdout, stderr = run_cmd(["python", "ops/scripts/verify_gate.py", supported_fact_path], project_root)
+        try:
+            out = json.loads(stdout)
+            verdict = out.get("verdict")
+            action = out.get("action")
+        except Exception:
+            verdict = "parse_error"
+            action = "error"
+            
+        active_file_exists = os.path.exists(os.path.join(project_root, "03_knowledge_graph", "facts", "fact_grounded_supported.json"))
+        status_str = "PASS" if (code == 0 and verdict in ("SUPPORTED", "WEAK") and action == "write" and active_file_exists) else "FAIL"
+        
+        log_lines.append(f"- Candidate Fact ID: `fact_grounded_supported`")
+        log_lines.append(f"- Exit Code: `{code}` (Expected: 0)")
+        log_lines.append(f"- Output Verdict: `{verdict}` (Expected: `SUPPORTED` or `WEAK`)")
+        log_lines.append(f"- Routing Action: `{action}` (Expected: `write`)")
+        log_lines.append(f"- In Active Folder: `{active_file_exists}` (Expected: `True`)")
+        log_lines.append(f"- **Status**: {status_str}")
+        log_lines.append("")
+
+        # CASE 6: Grounded Weak Fact (out-of-sample)
+        log_lines.append("## Case 6: Grounded Weak Fact")
+        log_lines.append("A new out-of-sample fact with a review abstract supporting it indirectly must return `WEAK`.")
+        log_lines.append("")
+        
+        weak_fact_path = os.path.join(script_dir, "fact_grounded_weak.json")
+        weak_fact_data = {
+            "fact_id": "fact_grounded_weak",
+            "statement": "topical vitamin C protects against photoaging and increases collagen synthesis",
+            "entity_id": "vitamin_c",
+            "confidence": 0.95,
+            "evidence_level": "A",
+            "sources": ["SRC-A023"],
+            "contradictions": [],
+            "verified_by": "verifier",
+            "date": "2026-06-07"
+        }
+        with open(weak_fact_path, "w", encoding="utf-8") as f:
+            json.dump(weak_fact_data, f, indent=2)
+            
+        code, stdout, stderr = run_cmd(["python", "ops/scripts/verify_gate.py", weak_fact_path], project_root)
+        try:
+            out = json.loads(stdout)
+            verdict = out.get("verdict")
+            action = out.get("action")
+        except Exception:
+            verdict = "parse_error"
+            action = "error"
+            
+        active_file_exists = os.path.exists(os.path.join(project_root, "03_knowledge_graph", "facts", "fact_grounded_weak.json"))
+        status_str = "PASS" if (code == 0 and verdict == "WEAK" and action == "write" and active_file_exists) else "FAIL"
+        
+        log_lines.append(f"- Candidate Fact ID: `fact_grounded_weak`")
+        log_lines.append(f"- Exit Code: `{code}` (Expected: 0)")
+        log_lines.append(f"- Output Verdict: `{verdict}` (Expected: `WEAK`)")
+        log_lines.append(f"- Routing Action: `{action}` (Expected: `write`)")
+        log_lines.append(f"- In Active Folder: `{active_file_exists}` (Expected: `True`)")
+        log_lines.append(f"- **Status**: {status_str}")
+        log_lines.append("")
+
+        # CASE 7: Grounded Unsupported Fact (out-of-sample)
+        log_lines.append("## Case 7: Grounded Unsupported Fact")
+        log_lines.append("A new out-of-sample fact with keyword overlap but unsupported claim must return `UNSUPPORTED`.")
+        log_lines.append("")
+        
+        ungrounded_fact_path = os.path.join(script_dir, "fact_grounded_unsupported.json")
+        ungrounded_fact_data = {
+            "fact_id": "fact_grounded_unsupported",
+            "statement": "topical vitamin C has an antiaging effect by binding to nuclear RAR and RXR receptors",
+            "entity_id": "vitamin_c",
+            "confidence": 0.95,
+            "evidence_level": "A",
+            "sources": ["SRC-A023"],
+            "contradictions": [],
+            "verified_by": "verifier",
+            "date": "2026-06-07"
+        }
+        with open(ungrounded_fact_path, "w", encoding="utf-8") as f:
+            json.dump(ungrounded_fact_data, f, indent=2)
+            
+        code, stdout, stderr = run_cmd(["python", "ops/scripts/verify_gate.py", ungrounded_fact_path], project_root)
+        try:
+            out = json.loads(stdout)
+            verdict = out.get("verdict")
+            action = out.get("action")
+        except Exception:
+            verdict = "parse_error"
+            action = "error"
+            
+        rejected_file_exists = os.path.exists(os.path.join(project_root, "02_processing", "verify", "rejected", "fact_grounded_unsupported.json"))
+        status_str = "PASS" if (code != 0 and verdict == "UNSUPPORTED" and action == "reject" and rejected_file_exists) else "FAIL"
+        
+        log_lines.append(f"- Candidate Fact ID: `fact_grounded_unsupported`")
+        log_lines.append(f"- Exit Code: `{code}` (Expected: non-zero)")
+        log_lines.append(f"- Output Verdict: `{verdict}` (Expected: `UNSUPPORTED`)")
+        log_lines.append(f"- Routing Action: `{action}` (Expected: `reject`)")
+        log_lines.append(f"- In Rejected Folder: `{rejected_file_exists}` (Expected: `True`)")
+        log_lines.append(f"- **Status**: {status_str}")
+        log_lines.append("")
+        
     finally:
         # Restore sources.json
         if os.path.exists(sources_backup):
@@ -257,23 +409,19 @@ def main():
             os.remove(sources_backup)
             
         # Clean up test files in scratch
-        for f_name in ["fact_fake_pmid.json", "fact_irrelevant.json", "fact_weak_mismatch.json"]:
+        for f_name in ["fact_fake_pmid.json", "fact_irrelevant.json", "fact_weak_mismatch.json", "fact_grounded_supported.json", "fact_grounded_weak.json", "fact_grounded_unsupported.json"]:
             p = os.path.join(script_dir, f_name)
             if os.path.exists(p):
                 os.remove(p)
                 
-        # Clean up rejected files as requested by TZ (Case 2: "Затем удалить тестовый факт из rejected")
-        rejected_fake = os.path.join(project_root, "02_processing", "verify", "rejected", "fact_fake_pmid.json")
-        if os.path.exists(rejected_fake):
-            os.remove(rejected_fake)
-            
-        rejected_irrelevant = os.path.join(project_root, "02_processing", "verify", "rejected", "fact_irrelevant.json")
-        if os.path.exists(rejected_irrelevant):
-            os.remove(rejected_irrelevant)
-            
-        rejected_weak = os.path.join(project_root, "02_processing", "verify", "rejected", "fact_weak_mismatch.json")
-        if os.path.exists(rejected_weak):
-            os.remove(rejected_weak)
+        # Clean up rejected/active generated test files
+        for f_id in ["fact_fake_pmid", "fact_irrelevant", "fact_weak_mismatch", "fact_grounded_supported", "fact_grounded_weak", "fact_grounded_unsupported"]:
+            rejected_p = os.path.join(project_root, "02_processing", "verify", "rejected", f"{f_id}.json")
+            if os.path.exists(rejected_p):
+                os.remove(rejected_p)
+            active_p = os.path.join(project_root, "03_knowledge_graph", "facts", f"{f_id}.json")
+            if os.path.exists(active_p):
+                os.remove(active_p)
             
     # Write output log
     out_log_path = os.path.join(project_root, "ops", "logs", "hardening_regression.md")

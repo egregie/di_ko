@@ -9,10 +9,11 @@
   ],
   "contradictions": [],
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:16.317692Z",
+  "verified_at": "2026-06-10T17:48:12.013446Z",
   "verified_by": "verifier",
   "date": "2026-06-10",
   "source_title": "A serum containing vitamins C & E and a matrix-repair tripeptide reduces facial signs of...",
-  "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true,
+  "status": "needs_manual"
 }

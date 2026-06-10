@@ -2,7 +2,7 @@
   "fact_id": "fact_0014",
   "statement": "Retinyl palmitate nano-formulation reduces inflammatory and non-inflammatory lesions in mild acne.",
   "entity_id": "retinyl_palmitate",
-  "confidence": 0.92,
+  "confidence": 0.8,
   "evidence_level": "A",
   "sources": [
     "SRC-A017"
@@ -10,10 +10,11 @@
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-10",
-  "audit_verdict": "SUPPORTED",
+  "audit_verdict": "NEEDS_MANUAL",
   "evidence_ok": true,
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:11.958560Z",
+  "verified_at": "2026-06-10T17:47:12.290702Z",
   "source_title": "Tailoring of Retinyl Palmitate-Based Ethosomal Hydrogel as a Novel Nanoplatform for Acne Vulgaris Management: Fabrication,...",
-  "status": "needs_manual"
+  "status": "needs_manual",
+  "audit_flag": "weak"
 }

@@ -9,10 +9,11 @@
   ],
   "contradictions": [],
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:16.086965Z",
+  "verified_at": "2026-06-10T17:48:09.901574Z",
   "verified_by": "verifier",
   "date": "2026-06-10",
   "source_title": "A synthetic hexapeptide (Argireline) with antiwrinkle activity.",
-  "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true,
+  "status": "needs_manual"
 }

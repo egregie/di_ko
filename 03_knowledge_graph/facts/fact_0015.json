@@ -2,7 +2,7 @@
   "fact_id": "fact_0015",
   "statement": "Topical retinoids are contraindicated during pregnancy due to potential teratogenic risks.",
   "entity_id": "retinoids",
-  "confidence": 0.95,
+  "confidence": 0.8,
   "evidence_level": "B",
   "sources": [
     "SRC-A018"
@@ -10,10 +10,11 @@
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-10",
-  "audit_verdict": "SUPPORTED",
+  "audit_verdict": "WEAK",
   "evidence_ok": true,
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:12.721317Z",
+  "verified_at": "2026-06-10T17:50:40.489007Z",
   "source_title": "Pregnancy outcomes following first-trimester exposure to topical retinoids: a systematic review and meta-analysis.",
-  "status": "needs_manual"
+  "status": "needs_manual",
+  "audit_flag": "weak"
 }

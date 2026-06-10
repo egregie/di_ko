@@ -10,9 +10,10 @@
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-10",
-  "audit_verdict": "SUPPORTED",
+  "audit_verdict": "NEEDS_MANUAL",
   "evidence_ok": true,
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:13.581560Z",
-  "source_title": "Nicotinic acid/niacinamide and the skin."
+  "verified_at": "2026-06-10T17:47:25.314787Z",
+  "source_title": "Nicotinic acid/niacinamide and the skin.",
+  "status": "needs_manual"
 }

@@ -9,11 +9,12 @@
   ],
   "contradictions": [],
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:16.201573Z",
+  "verified_at": "2026-06-10T17:25:36.470169Z",
   "verified_by": "verifier",
   "date": "2026-06-10",
   "source_title": "GHK Peptide as a Natural Modulator of Multiple Cellular Pathways in Skin Regeneration.",
   "audit_flag": "weak",
-  "audit_verdict": "WEAK",
-  "evidence_ok": true
+  "audit_verdict": "UNSUPPORTED",
+  "evidence_ok": true,
+  "status": "needs_manual"
 }

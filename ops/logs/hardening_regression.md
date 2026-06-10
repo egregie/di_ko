@@ -7,48 +7,41 @@ All 12 clean facts in the active knowledge graph must pass the gate successfully
 
 | Fact ID | Statement | Verdict | Evidence OK | Action | Status |
 |---|---|---|---|---|---|
-| fact_0001 | Retinoids regulate gene transcription by... | SUPPORTED | True | write | PASS |
-| fact_0004 | Retinol stimulates collagen synthesis an... | SUPPORTED | True | write | PASS |
+| fact_0001 | Retinoids regulate gene transcription by... | WEAK | True | write | PASS |
 | fact_0005 | Tretinoin is the gold standard for clini... | WEAK | True | write | PASS |
-| fact_0006 | Tretinoin normalizes keratinocyte differ... | SUPPORTED | True | write | PASS |
 | fact_0007 | Adapalene selectively binds to retinoic ... | SUPPORTED | True | write | PASS |
 | fact_0009 | Tazarotene selectively binds to nuclear ... | SUPPORTED | True | write | PASS |
-| fact_0010 | Tazarotene 0.1% cream is effective for t... | SUPPORTED | True | write | PASS |
-| fact_0011 | Retinaldehyde requires only a single met... | SUPPORTED | True | write | PASS |
-| fact_0012 | Topical retinaldehyde improves skin hydr... | SUPPORTED | True | write | PASS |
-| fact_0014 | Retinyl palmitate nano-formulation reduc... | SUPPORTED | True | write | PASS |
-| fact_0015 | Topical retinoids are contraindicated du... | SUPPORTED | True | write | PASS |
-| fact_0017 | glycolic acid and salicylic acid combina... | SUPPORTED | True | write | PASS |
-| fact_0018 | salicylic-mandelic acid peels are effect... | SUPPORTED | True | write | PASS |
-| fact_0019 | topical 30% salicylic acid peels reduce ... | SUPPORTED | True | write | PASS |
-| fact_0020 | glycolic acid peels clinical application... | SUPPORTED | True | write | PASS |
-| fact_0021 | topical l-ascorbic acid promotes collage... | SUPPORTED | True | write | PASS |
-| fact_0022 | topical 5% sodium ascorbyl phosphate lot... | SUPPORTED | True | write | PASS |
-| fact_0024 | topical niacinamide enhances ceramide sy... | SUPPORTED | True | write | PASS |
-| fact_0025 | topical niacinamide reduces inflammatory... | SUPPORTED | True | write | PASS |
-| fact_0028 | topical L-ascorbic acid formulation requ... | SUPPORTED | True | write | PASS |
-| fact_0029 | maximal percutaneous absorption of topic... | SUPPORTED | True | write | PASS |
-| fact_0030 | topical L-ascorbic acid increases mRNA l... | SUPPORTED | True | write | PASS |
-| fact_0034 | topical niacinamide reduces hyperpigment... | SUPPORTED | True | write | PASS |
-| fact_0035 | topical niacinamide 4% is effective in t... | SUPPORTED | True | write | PASS |
-| fact_0036 | topical niacinamide 2% and 5% concentrat... | SUPPORTED | True | write | PASS |
-| fact_0038 | topical niacinamide improves stratum cor... | SUPPORTED | True | write | PASS |
+| fact_0010 | Tazarotene 0.1% cream is effective for t... | NEEDS_MANUAL | True | write | PASS |
+| fact_0014 | Retinyl palmitate nano-formulation reduc... | NEEDS_MANUAL | True | write | PASS |
+| fact_0018 | salicylic-mandelic acid peels are effect... | NEEDS_MANUAL | True | write | PASS |
+| fact_0019 | topical 30% salicylic acid peels reduce ... | NEEDS_MANUAL | True | write | PASS |
+| fact_0020 | glycolic acid peels clinical application... | NEEDS_MANUAL | True | write | PASS |
+| fact_0021 | topical l-ascorbic acid promotes collage... | NEEDS_MANUAL | True | write | PASS |
+| fact_0022 | topical 5% sodium ascorbyl phosphate lot... | NEEDS_MANUAL | True | write | PASS |
+| fact_0024 | topical niacinamide enhances ceramide sy... | NEEDS_MANUAL | True | write | PASS |
+| fact_0025 | topical niacinamide reduces inflammatory... | NEEDS_MANUAL | True | write | PASS |
+| fact_0028 | topical L-ascorbic acid formulation requ... | NEEDS_MANUAL | True | write | PASS |
+| fact_0029 | maximal percutaneous absorption of topic... | NEEDS_MANUAL | True | write | PASS |
+| fact_0030 | topical L-ascorbic acid increases mRNA l... | NEEDS_MANUAL | True | write | PASS |
+| fact_0034 | topical niacinamide reduces hyperpigment... | NEEDS_MANUAL | True | write | PASS |
+| fact_0035 | topical niacinamide 4% is effective in t... | NEEDS_MANUAL | True | write | PASS |
+| fact_0036 | topical niacinamide 2% and 5% concentrat... | NEEDS_MANUAL | True | write | PASS |
+| fact_0038 | topical niacinamide improves stratum cor... | NEEDS_MANUAL | True | write | PASS |
 | fact_0039 | topical niacinamide reduces transepiderm... | SUPPORTED | True | write | PASS |
-| fact_0041 | 45% mandelic acid peels are equally effe... | SUPPORTED | True | write | PASS |
-| fact_0044 | topical L-ascorbic acid formulation requ... | SUPPORTED | True | write | PASS |
-| fact_0045 | maximal percutaneous absorption of topic... | SUPPORTED | True | write | PASS |
-| fact_0046 | topical L-ascorbic acid increases mRNA l... | SUPPORTED | True | write | PASS |
-| fact_0047 | topical 5% niacinamide reduces fine line... | SUPPORTED | True | write | PASS |
-| fact_0048 | topical alpha-hydroxy acids application ... | SUPPORTED | True | write | PASS |
-| fact_0049 | salicylic acid acts as a desmolytic agen... | SUPPORTED | True | write | PASS |
-| fact_0050 | topical 20% salicylic-10% mandelic acid ... | SUPPORTED | True | write | PASS |
-| fact_0051 | topical palmitoyl pentapeptide-4 (pal-KT... | SUPPORTED | True | write | PASS |
-| fact_0052 | topical copper tripeptide-1 (GHK-Cu) sti... | WEAK | True | write | PASS |
-| fact_0053 | topical GHK-Cu peptide regulates gene ex... | SUPPORTED | True | write | PASS |
-| fact_0054 | topical acetyl hexapeptide-8 (Argireline... | SUPPORTED | True | write | PASS |
-| fact_0056 | topical palmitoyl tripeptide-1 (pal-GHK)... | WEAK | True | write | PASS |
-| fact_0057 | topical palmitoyl tripeptide-38 formulat... | SUPPORTED | True | write | PASS |
-| fact_0058 | topical acetyl tetrapeptide-5 has protec... | SUPPORTED | True | write | PASS |
+| fact_0041 | 45% mandelic acid peels are equally effe... | NEEDS_MANUAL | True | write | PASS |
+| fact_0044 | topical L-ascorbic acid formulation requ... | NEEDS_MANUAL | True | write | PASS |
+| fact_0045 | maximal percutaneous absorption of topic... | NEEDS_MANUAL | True | write | PASS |
+| fact_0046 | topical L-ascorbic acid increases mRNA l... | NEEDS_MANUAL | True | write | PASS |
+| fact_0047 | topical 5% niacinamide reduces fine line... | NEEDS_MANUAL | True | write | PASS |
+| fact_0048 | topical alpha-hydroxy acids application ... | NEEDS_MANUAL | True | write | PASS |
+| fact_0049 | salicylic acid acts as a desmolytic agen... | NEEDS_MANUAL | True | write | PASS |
+| fact_0050 | topical 20% salicylic-10% mandelic acid ... | NEEDS_MANUAL | True | write | PASS |
+| fact_0051 | topical palmitoyl pentapeptide-4 (pal-KT... | NEEDS_MANUAL | True | write | PASS |
+| fact_0052 | topical copper tripeptide-1 (GHK-Cu) sti... | NEEDS_MANUAL | True | write | PASS |
+| fact_0053 | topical GHK-Cu peptide regulates gene ex... | NEEDS_MANUAL | True | write | PASS |
+| fact_0054 | topical acetyl hexapeptide-8 (Argireline... | NEEDS_MANUAL | True | write | PASS |
+| fact_0057 | topical palmitoyl tripeptide-38 formulat... | NEEDS_MANUAL | True | write | PASS |
+| fact_0058 | topical acetyl tetrapeptide-5 has protec... | NEEDS_MANUAL | True | write | PASS |
 
 **Case 1 Result**: SUCCESS
 
@@ -76,6 +69,36 @@ A candidate fact with a real PMID but unrelated statement must be automatically 
 A candidate fact with a real PMID but weak claim alignment (overlap < 15%) must be automatically rejected under the pre-filter gate.
 
 - Candidate Fact ID: `fact_weak_mismatch`
+- Exit Code: `1` (Expected: non-zero)
+- Output Verdict: `UNSUPPORTED` (Expected: `UNSUPPORTED`)
+- Routing Action: `reject` (Expected: `reject`)
+- In Rejected Folder: `True` (Expected: `True`)
+- **Status**: PASS
+
+## Case 5: Grounded Supported Fact
+A new out-of-sample fact with a relevant abstract that is supported directly must return `SUPPORTED` or `WEAK`.
+
+- Candidate Fact ID: `fact_grounded_supported`
+- Exit Code: `0` (Expected: 0)
+- Output Verdict: `SUPPORTED` (Expected: `SUPPORTED` or `WEAK`)
+- Routing Action: `write` (Expected: `write`)
+- In Active Folder: `True` (Expected: `True`)
+- **Status**: PASS
+
+## Case 6: Grounded Weak Fact
+A new out-of-sample fact with a review abstract supporting it indirectly must return `WEAK`.
+
+- Candidate Fact ID: `fact_grounded_weak`
+- Exit Code: `0` (Expected: 0)
+- Output Verdict: `WEAK` (Expected: `WEAK`)
+- Routing Action: `write` (Expected: `write`)
+- In Active Folder: `True` (Expected: `True`)
+- **Status**: PASS
+
+## Case 7: Grounded Unsupported Fact
+A new out-of-sample fact with keyword overlap but unsupported claim must return `UNSUPPORTED`.
+
+- Candidate Fact ID: `fact_grounded_unsupported`
 - Exit Code: `1` (Expected: non-zero)
 - Output Verdict: `UNSUPPORTED` (Expected: `UNSUPPORTED`)
 - Routing Action: `reject` (Expected: `reject`)

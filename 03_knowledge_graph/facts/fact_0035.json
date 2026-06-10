@@ -11,8 +11,9 @@
   "verified_by": "verifier",
   "date": "2026-06-10",
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:14.321253Z",
+  "verified_at": "2026-06-10T17:47:38.208693Z",
   "source_title": "A Double-Blind, Randomized Clinical Trial of Niacinamide 4% versus Hydroquinone 4% in the Treatment of...",
-  "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true,
+  "status": "needs_manual"
 }

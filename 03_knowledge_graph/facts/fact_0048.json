@@ -11,8 +11,9 @@
   "verified_by": "verifier",
   "date": "2026-06-10",
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:15.387611Z",
+  "verified_at": "2026-06-10T17:47:56.979856Z",
   "source_title": "Effects of alpha-hydroxy acids on photoaged skin: a pilot clinical, histologic, and ultrastructural study.",
-  "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true,
+  "status": "needs_manual"
 }

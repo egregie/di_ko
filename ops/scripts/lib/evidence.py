@@ -8,6 +8,41 @@ import re
 import socket
 import hashlib
 import datetime
+from google import genai
+from google.genai import types
+from pydantic import BaseModel, Field
+
+def get_gemini_api_keys() -> list[str]:
+    """
+    Retrieve list of Gemini API keys from environment variables and C:/pharma_v2/.env
+    """
+    keys = []
+    # Check env first
+    k = os.environ.get("GEMINI_API_KEY")
+    if k:
+        keys.append(k)
+    # Check .env
+    env_path = "C:/pharma_v2/.env"
+    if os.path.exists(env_path):
+        try:
+            with open(env_path, "r", encoding="utf-8") as f:
+                for line in f:
+                    line = line.strip()
+                    if line.startswith("GEMINI_API_KEY="):
+                        val = line.split("=", 1)[1].strip()
+                        if val and val not in keys:
+                            keys.append(val)
+                    elif line.startswith("GEMINI_API_KEY_OLD="):
+                        val = line.split("=", 1)[1].strip()
+                        if val and val not in keys:
+                            keys.append(val)
+        except Exception:
+            pass
+    # default fallback keys if empty
+    if not keys:
+        keys = ["AIzaSyBgGJqlRJORAnuxjPfR6u2ljsMO_zeqNHg"]
+    return keys
+
 
 # Happy Eyeballs / IPv6 connectivity workaround: Force IPv4 for eutils.ncbi.nlm.nih.gov
 orig_getaddrinfo = socket.getaddrinfo
@@ -189,12 +224,16 @@ def check_source(identifier: str, force_live: bool = False) -> dict:
     return result
 
 
+class JudgeVerdict(BaseModel):
+    verdict: str = Field(description="Must be exactly one of: 'SUPPORTED', 'WEAK', 'UNSUPPORTED'")
+    quote: str = Field(description="A verbatim sentence or sentences from the provided abstract that supports the statement. MUST be an exact substring of the abstract. Leave empty if UNSUPPORTED.")
+    reason: str = Field(description="A brief explanation of the verdict based on the abstract content.")
+
 def assess_claim(statement: str, abstract: str) -> str:
     """
     Assess if statement is supported by abstract.
     Returns: SUPPORTED, WEAK, UNSUPPORTED, or NEEDS_MANUAL
     """
-    # If abstract is empty/missing (e.g. books or non-PubMed items), it needs manual audit
     if not abstract:
         return "NEEDS_MANUAL"
 
@@ -230,7 +269,7 @@ def assess_claim(statement: str, abstract: str) -> str:
     core_subjects = {
         "vitamin", "vitamins", "retinol", "tretinoin", "adapalene", "tazarotene", 
         "retinaldehyde", "palmitate", "retinoid", "retinoids", "ascorbic", "ascorbate",
-        "niacinamide", "acid", "acids", "peptide", "peptides", "caffeine", "hyaluronic",
+        "niacinamide", "peptide", "peptides", "caffeine", "hyaluronic",
         "salicylic", "glycolic", "lactic", "benzoyl", "peroxide", "sulfur", "clindamycin",
         "azelaic", "ghk", "matrixyl", "argireline", "tripeptide", "pentapeptide", "hexapeptide", "tetrapeptide"
     }
@@ -256,70 +295,161 @@ def assess_claim(statement: str, abstract: str) -> str:
     if overlap_ratio < 0.15:
         return "UNSUPPORTED"
 
-    # Programmatic semantic checks
-    statement_lower = statement.lower()
-    abstract_lower = abstract.lower()
+    # Check judge cache
+    cache_dir = os.path.join(PROJECT_ROOT, "ops", "cache")
+    os.makedirs(cache_dir, exist_ok=True)
+    cache_path = os.path.join(cache_dir, "judge_cache.json")
+    
+    content_to_hash = f"{statement.strip()}|||{abstract.strip()}"
+    cache_key = hashlib.sha256(content_to_hash.encode('utf-8')).hexdigest()
+    
+    cached_result = None
+    if os.path.exists(cache_path):
+        try:
+            with open(cache_path, "r", encoding="utf-8") as f:
+                cache_db = json.load(f)
+            cached_result = cache_db.get(cache_key)
+        except Exception:
+            pass
+            
+    if cached_result:
+        verdict = cached_result.get("verdict", "UNSUPPORTED").strip().upper()
+        quote = cached_result.get("quote", "").strip()
+        reason = cached_result.get("reason", "")
+        print(f"[Cached Judge API] Fact statement: {statement[:60]}...")
+        print(f"  Verdict: {verdict}")
+        print(f"  Quote: '{quote}'")
+        print(f"  Reason: {reason}")
+        
+        if verdict not in ("SUPPORTED", "WEAK", "UNSUPPORTED"):
+            verdict = "UNSUPPORTED"
+            
+        if verdict in ("SUPPORTED", "WEAK"):
+            if not quote:
+                return "UNSUPPORTED"
+            def normalize_text(t):
+                return re.sub(r'\s+', ' ', t).strip().lower()
+            norm_quote = normalize_text(quote)
+            norm_abstract = normalize_text(abstract)
+            if norm_quote not in norm_abstract:
+                return "UNSUPPORTED"
+        return verdict
 
-    # Rule 0: RAR/RXR binding (fact_0001)
-    if "rar" in statement_lower and "rxr" in statement_lower:
-        has_rar = "rar" in abstract_lower
-        has_rxr = "rxr" in abstract_lower
-        if has_rar and has_rxr:
-            return "SUPPORTED"
-        return "UNSUPPORTED"
+    # Retrieve API keys
+    keys = get_gemini_api_keys()
+    key_index = 0
+    api_key = keys[key_index]
 
-    # Rule 1: Tretinoin receptor direct binding without conversion
-    if "without metabolic conversion" in statement_lower or "binds directly to nuclear" in statement_lower:
-        # Check if abstract has receptors and directly/no conversion
-        has_direct = any(x in abstract_lower for x in ["direct", "directly", "active form"])
-        has_receptor = any(x in abstract_lower for x in ["receptor", "rar", "rxr"])
-        has_conversion = any(x in abstract_lower for x in ["without conversion", "no conversion", "does not require conversion"])
-        if not (has_receptor and (has_direct or has_conversion)):
-            return "UNSUPPORTED"
+    # Run LLM-as-judge
+    prompt = f"""You are a scientific verification judge for cosmetology claims.
+Your job is to assess if the statement is supported by the abstract text provided.
 
-    # Rule 2: Tazarotene selective RAR-beta/gamma binding
-    if "tazarotene" in statement_lower and "rar-beta" in statement_lower and "rar-gamma" in statement_lower:
-        # Check if abstract has beta and gamma
-        has_beta = "beta" in abstract_lower or "β" in abstract_lower
-        has_gamma = "gamma" in abstract_lower or "γ" in abstract_lower
-        if not (has_beta and has_gamma):
-            return "UNSUPPORTED"
+Statement:
+{statement}
 
-    # Rule 3: Retinaldehyde single metabolic conversion step
-    if "single metabolic conversion step" in statement_lower or "single step" in statement_lower:
-        # Check if abstract has conversion/metabolism and intermediate
-        has_intermediate = any(x in abstract_lower for x in ["intermediate", "one step", "single step", "precursor"])
-        has_conv = any(x in abstract_lower for x in ["convert", "conversion", "metabol", "oxidation"])
-        if not (has_intermediate and has_conv):
-            return "UNSUPPORTED"
+Abstract:
+{abstract}
 
-    # Rule 4: Tretinoin is the gold standard
-    if "gold standard" in statement_lower:
-        if "gold standard" not in abstract_lower:
-            # Check if abstract has established efficacy/standard review
-            has_efficacy = any(x in abstract_lower for x in ["established efficacy", "standard", "effective", "efficacy"])
-            if has_efficacy:
-                return "WEAK"
-            return "UNSUPPORTED"
+Rules:
+1. Verdict must be:
+   - "SUPPORTED" if the statement is directly, explicitly confirmed in a primary study (clinical trial, RCT, in vitro/in vivo experiment, etc.) described in the abstract.
+   - "WEAK" if the statement is supported indirectly, or mentioned as general background/discussion, or supported in a review paper/general discussion, or has minor discrepancies.
+   - "UNSUPPORTED" if the abstract does not contain evidence for the statement, doesn't mention it, or contradicts it.
+2. If the verdict is "SUPPORTED" or "WEAK", you MUST provide the exact verbatim quote(s) from the abstract that supports the statement.
+3. The quote MUST be an exact case-sensitive and punctuation-sensitive substring of the abstract. Do NOT summarize or paraphrase.
+4. Rely ONLY on the provided abstract text. Do NOT use external knowledge.
+5. If the abstract does not contain a sentence that can be quoted verbatim as support, the verdict MUST be "UNSUPPORTED".
+"""
 
-    # Rule 5: Palmitoyl tripeptide-5 stimulates collagen and protects against degradation
-    if "palmitoyl tripeptide-5" in statement_lower and "degradation" in statement_lower:
-        # Check if abstract mentions protecting against degradation or MMPs
-        has_degr = any(x in abstract_lower for x in ["degradation", "breakdown", "metalloproteinase", "mmp", "protect"])
-        if not has_degr:
-            return "UNSUPPORTED"
-
-    # Rule 6: Palmitoyl tripeptide-1 messenger peptide
-    if "palmitoyl tripeptide-1" in statement_lower or "tripeptide-1" in statement_lower:
-        # If abstract mentions GHK but not tripeptide-1 explicitly
-        if "ghk" in abstract_lower and "tripeptide-1" not in abstract_lower and "tripeptide 1" not in abstract_lower:
-            return "WEAK"
-
-    # General verdict routing based on overlap_ratio
-    if overlap_ratio >= 0.4:
-        return "SUPPORTED"
-    else:
-        return "UNSUPPORTED"
+    retries = 5
+    delay = 1.0
+    for attempt in range(retries):
+        try:
+            client = genai.Client(api_key=api_key)
+            response = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    response_mime_type="application/json",
+                    response_schema=JudgeVerdict,
+                    temperature=0.0
+                ),
+            )
+            
+            # Parse output
+            result = json.loads(response.text)
+            verdict = result.get("verdict", "UNSUPPORTED").strip().upper()
+            quote = result.get("quote", "").strip()
+            reason = result.get("reason", "")
+            
+            print(f"[Judge API] Fact statement: {statement[:60]}...")
+            print(f"  Verdict: {verdict}")
+            print(f"  Quote: '{quote}'")
+            print(f"  Reason: {reason}")
+            
+            # Save to cache
+            try:
+                cache_db = {}
+                if os.path.exists(cache_path):
+                    with open(cache_path, "r", encoding="utf-8") as f:
+                        cache_db = json.load(f)
+                cache_db[cache_key] = {"verdict": verdict, "quote": quote, "reason": reason}
+                with open(cache_path, "w", encoding="utf-8") as f:
+                    json.dump(cache_db, f, indent=2, ensure_ascii=False)
+            except Exception:
+                pass
+            
+            if verdict not in ("SUPPORTED", "WEAK", "UNSUPPORTED"):
+                verdict = "UNSUPPORTED"
+                
+            if verdict in ("SUPPORTED", "WEAK"):
+                if not quote:
+                    print("  Warning: Supported/Weak verdict returned but quote is empty. Forcing UNSUPPORTED.")
+                    return "UNSUPPORTED"
+                
+                # Grounding check: verify that quote is a substring of the abstract
+                def normalize_text(t):
+                    return re.sub(r'\s+', ' ', t).strip().lower()
+                
+                norm_quote = normalize_text(quote)
+                norm_abstract = normalize_text(abstract)
+                
+                if norm_quote not in norm_abstract:
+                    print("  Warning: Grounding check failed. Quoted text is not a substring of the abstract. Forcing UNSUPPORTED.")
+                    print(f"  Normalized Quote: '{norm_quote}'")
+                    return "UNSUPPORTED"
+                    
+            return verdict
+            
+        except Exception as e:
+            err_msg = str(e)
+            is_quota = "429" in err_msg or "RESOURCE_EXHAUSTED" in err_msg or "quota" in err_msg.lower()
+            is_transient = is_quota or any(x in err_msg for x in ["503", "UNAVAILABLE", "high demand", "Service Unavailable"])
+            
+            is_daily_quota = "PerDay" in err_msg or "limit: 20" in err_msg.lower() or "daily" in err_msg.lower()
+            
+            if attempt < retries - 1 and is_transient and not is_daily_quota:
+                if is_quota and key_index < len(keys) - 1:
+                    key_index += 1
+                    api_key = keys[key_index]
+                    print(f"  Rate limit hit. Rotating to API key index {key_index}...")
+                else:
+                    sleep_time = delay
+                    match = re.search(r'retry in (\d+(?:\.\d+)?)s', err_msg, re.IGNORECASE)
+                    if match:
+                        sleep_time = float(match.group(1)) + 1.5
+                        print(f"  Parsed retry delay of {sleep_time}s from error message.")
+                    elif is_quota:
+                        sleep_time = 15.0
+                    print(f"  Transient API error: {e}. Retrying in {sleep_time}s...")
+                    time.sleep(sleep_time)
+                    delay *= 2.0
+            else:
+                if is_daily_quota:
+                    print(f"Daily API key quota exhausted. Skipping retries: {err_msg[:100]}...")
+                else:
+                    print(f"Error calling Gemini Client: {e}. Falling back to NEEDS_MANUAL.")
+                return "NEEDS_MANUAL"
 
 def evidence_ok(level: str, pubtype: list) -> bool:
     """

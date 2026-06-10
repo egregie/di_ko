@@ -11,8 +11,9 @@
   "verified_by": "verifier",
   "date": "2026-06-10",
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:15.036950Z",
+  "verified_at": "2026-06-10T17:47:50.658325Z",
   "source_title": "Topical L-ascorbic acid: percutaneous absorption studies.",
-  "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true,
+  "status": "needs_manual"
 }

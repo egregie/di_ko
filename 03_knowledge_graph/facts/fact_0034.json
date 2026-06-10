@@ -11,8 +11,9 @@
   "verified_by": "verifier",
   "date": "2026-06-10",
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:14.198995Z",
+  "verified_at": "2026-06-10T17:47:36.025395Z",
   "source_title": "The effect of niacinamide on reducing cutaneous pigmentation and suppression of melanosome transfer.",
-  "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true,
+  "status": "needs_manual"
 }

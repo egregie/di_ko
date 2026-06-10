@@ -11,8 +11,9 @@
   "verified_by": "verifier",
   "date": "2026-06-10",
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:15.502390Z",
+  "verified_at": "2026-06-10T17:47:59.202555Z",
   "source_title": "Salicylic acid as a peeling agent: a comprehensive review.",
-  "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true,
+  "status": "needs_manual"
 }

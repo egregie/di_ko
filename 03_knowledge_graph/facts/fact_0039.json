@@ -11,9 +11,10 @@
   "verified_by": "verifier",
   "date": "2026-06-10",
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:14.680693Z",
+  "verified_at": "2026-06-10T17:47:44.354164Z",
   "source_title": "Nicotinic acid/niacinamide and the skin.",
   "audit_verdict": "SUPPORTED",
   "evidence_ok": true,
-  "audit_flag": "weak"
+  "audit_flag": "weak",
+  "status": "needs_manual"
 }

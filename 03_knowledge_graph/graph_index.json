@@ -370,26 +370,12 @@
       "evidence_level": "A",
       "path": "facts/fact_0001.json"
     },
-    "fact_0004": {
-      "fact_id": "fact_0004",
-      "statement": "Retinol stimulates collagen synthesis and inhibits matrix metalloproteinases (MMPs) to reduce dermal degradation.",
-      "entity_id": "retinol",
-      "evidence_level": "A",
-      "path": "facts/fact_0004.json"
-    },
     "fact_0005": {
       "fact_id": "fact_0005",
       "statement": "Tretinoin is the gold standard for clinical improvement of photoaged skin.",
       "entity_id": "tretinoin",
       "evidence_level": "A",
       "path": "facts/fact_0005.json"
-    },
-    "fact_0006": {
-      "fact_id": "fact_0006",
-      "statement": "Tretinoin normalizes keratinocyte differentiation to prevent follicular occlusion in acne vulgaris.",
-      "entity_id": "tretinoin",
-      "evidence_level": "A",
-      "path": "facts/fact_0006.json"
     },
     "fact_0007": {
       "fact_id": "fact_0007",
@@ -419,13 +405,6 @@
       "evidence_level": "A",
       "path": "facts/fact_0011.json"
     },
-    "fact_0012": {
-      "fact_id": "fact_0012",
-      "statement": "Topical retinaldehyde improves skin hydration, elasticity, and reduces wrinkle depth.",
-      "entity_id": "retinaldehyde",
-      "evidence_level": "A",
-      "path": "facts/fact_0012.json"
-    },
     "fact_0014": {
       "fact_id": "fact_0014",
       "statement": "Retinyl palmitate nano-formulation reduces inflammatory and non-inflammatory lesions in mild acne.",
@@ -439,13 +418,6 @@
       "entity_id": "retinoids",
       "evidence_level": "B",
       "path": "facts/fact_0015.json"
-    },
-    "fact_0017": {
-      "fact_id": "fact_0017",
-      "statement": "glycolic acid and salicylic acid combination improves mild to moderate acne",
-      "entity_id": "glycolic_acid",
-      "evidence_level": "A",
-      "path": "facts/fact_0017.json"
     },
     "fact_0018": {
       "fact_id": "fact_0018",
@@ -635,13 +607,6 @@
       "entity_id": "acetyl_hexapeptide_8",
       "evidence_level": "A",
       "path": "facts/fact_0054.json"
-    },
-    "fact_0056": {
-      "fact_id": "fact_0056",
-      "statement": "topical palmitoyl tripeptide-1 (pal-GHK) acts as a messenger peptide to stimulate collagen and glycosaminoglycan synthesis",
-      "entity_id": "palmitoyl_tripeptide_1",
-      "evidence_level": "A",
-      "path": "facts/fact_0056.json"
     },
     "fact_0057": {
       "fact_id": "fact_0057",

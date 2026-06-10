@@ -10,9 +10,10 @@
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-10",
-  "audit_verdict": "SUPPORTED",
+  "audit_verdict": "NEEDS_MANUAL",
   "evidence_ok": true,
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:13.213105Z",
-  "source_title": "Clinical improvement of photoaged skin with 50% glycolic acid. A double-blind vehicle-controlled study."
+  "verified_at": "2026-06-10T17:47:18.745450Z",
+  "source_title": "Clinical improvement of photoaged skin with 50% glycolic acid. A double-blind vehicle-controlled study.",
+  "status": "needs_manual"
 }

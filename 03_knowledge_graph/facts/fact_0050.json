@@ -11,8 +11,9 @@
   "verified_by": "verifier",
   "date": "2026-06-10",
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:15.618902Z",
+  "verified_at": "2026-06-10T17:48:01.287882Z",
   "source_title": "Comparative Study of 35% Glycolic Acid, 20% Salicylic-10% Mandelic Acid, and Phytic Acid Combination Peels...",
-  "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true,
+  "status": "needs_manual"
 }

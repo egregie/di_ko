@@ -10,9 +10,10 @@
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-10",
-  "audit_verdict": "SUPPORTED",
+  "audit_verdict": "NEEDS_MANUAL",
   "evidence_ok": true,
   "verified_via": "cache",
-  "verified_at": "2026-06-10T13:10:13.089895Z",
-  "source_title": "Salicylic acid peels for the treatment of photoaging."
+  "verified_at": "2026-06-10T17:47:16.598760Z",
+  "source_title": "Salicylic acid peels for the treatment of photoaging.",
+  "status": "needs_manual"
 }
