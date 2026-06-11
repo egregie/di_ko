@@ -28,6 +28,19 @@ This document defines the naming conventions for all entities, facts, relationsh
 - **Format**: `<deck_name>-s<slide_number>` where slide_number is a 2-digit zero-padded integer.
 - **Example**: `deck01-s03`, `acne_course-s12`
 
+### 1.6 Placeholder ID (`placeholder_id`) — composite, Phase 8+
+- **Format**: `id_<type>_s<NN>_<slug>` where `type` ∈ `img | graph | illustration | logo`,
+  `NN` is the 2-digit slide number, `slug` is a short lowercase snake_case content hint.
+- **Rules**: unique within a deck; immutable after contract emission (Stage 2 performs binary
+  replacement by this ID); registered in `05_content/contracts/<deck_id>_contract.json`.
+- **Example**: `id_illustration_s04_moa`, `id_img_s13_before_after`, `id_logo_s01_brand`
+
+### 1.7 Layout ID (`layout_id`) — Layout Library v2, Phase 8+
+- **Format**: `layout_<descriptive_snake_case>`; mirrored split variants use `_left` / `_right` suffix.
+- **Rules**: prefix `layout_` is mandatory (`tpl_` rejected); v1 names are kept as `alias` for
+  backward compatibility with the current renderer.
+- **Example**: `layout_clinical_50_50_left`, `layout_hero_asymmetric`
+
 ## 2. File Naming and Organization
 
 ### 2.1 Knowledge Graph Files

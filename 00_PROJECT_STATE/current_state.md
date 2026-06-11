@@ -1,8 +1,8 @@
 # Current State - YM PROSKIN
 
 ## Metadata
-- **Current Phase**: Phase 7: Diagram Engine v2
-- **Status**: Completed / tag `phase-7-diagram-engine`
+- **Current Phase**: Phase 8: Two-Stage Architecture + Slide Planning Engine
+- **Status**: 8.0 groundwork completed (2026-06-11); 8.1 blocked on client donor files + carcass approval
 
 ## Project Status Snapshot
 - **Phase 0 (Foundation)**: Completed. Core files, ontology, naming conventions, and data schemas initialized.
@@ -25,6 +25,12 @@
 - **Phase 4.5c (Diagram Defect Fixes & Overlap-Aware QA)**: Completed. Extended `qa_svg_bounds.js` with internal Playwright overlap checks, integrated bounds checks in `qa_deck.py`, resolved scientific and fact alignments across 4 SVGs, fixed layout issues for all 7 SVGs, re-rendered presentations, and cleared all QA gates.
 - **Phase 6 (Topic Scale — Peptides)**: Completed. Ingested Peptides topic, added 8 entities, 8 verified facts, 7 relationships, ran live PubMed verification (reporting 33.3% rejection rate), wrote 8 slide specs with diagram placeholders, dual-rendered HTML/PDF/PPTX presentations, and passed all QA gates and regression tests.
 - **Phase 7 (Diagram Engine v2)**: Completed. Created diagram_tokens.json, registered P020 and DEC-016 in AGENTS.md and decisions_log.md, wrote gen_diagrams.py containing parametric layout templates (process_flow, layered_anatomy, xy_curve), programmatically regenerated all 7 mechanism diagram SVGs, verified that all pass the deterministic qa_svg_bounds.js check, and successfully rendered and audited all 5 presentations in HTML, PDF, and PPTX formats.
+- **Phase 7.1 (Diagram Hardening)**: Completed (backfilled from git fb595ba — this file had drifted). Diagram engine hardening, visual layout fixes, and QA gate validations.
+- **Phase 7.2 (Graph Integrity Audit Source↔Claim)**: Completed (backfilled from git 877459d). Mismatches resolved, active facts aligned, gatekeeper hardened, all active decks QA-verified.
+- **Integrity Rollback (ground truth)**: Completed (backfilled from git 5971843; walkthrough in `ops/logs/walkthrough_integrity_rollback_groundtruth.md`). Semantic gate, 8 facts restored, fact_0002 + fact_0055 quarantined.
+- **Gate Generalization**: Completed (backfilled from git af74e4a). Claim-support gatekeeper generalized with grounded LLM-as-judge, local caching layer, rate-limit safety; all 5 decks QA PASS.
+- **Brand Chrome Layer**: Completed (backfilled from git c883e87). Logos + Arimo + palette applied to all 5 content decks.
+- **Phase 8.0 (Two-Stage Architecture — Groundwork)**: Completed 2026-06-11. Consolidated Gemini×Grok+GPT cross-review integrated and corrected against repo facts: layouts.json audited (10 descriptive layouts, NO geometry — Template Library v1 refuted, DEC-018); donor files (`hd_1`, design concept) confirmed absent (blocked input); `[Placeholder]` literal reclassified as convention, footer-overlap not reproduced. Adopted two-stage architecture with placeholder routing (DEC-017/P021: logo→SVG registry, illustration/graph→deterministic engine, img→generation/stock), deterministic slot-filling (DEC-019/P022), deck scope gate 13–20 (P023), anti-overengineering scope (DEC-020). Created `placeholder_contract.json` schema, composite placeholder ID + layout_id naming rules (naming.md §1.6/1.7), `slide-plan` skill (A09), updated A09 architect prompt, fixed Phase 8 roadmap in TZ `YM_PROSKIN_TZ_Phase8_TwoStage_SlidePlanning.md` and next_steps.md. Implementation (8.1+) blocked on client donors + carcass approval.
 
 
 

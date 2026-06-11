@@ -24,6 +24,16 @@ specialists. One graph -> many outputs.
 discover -> collect -> extract -> dedup -> verify -> librarian/ontology -> graph
    (later) -> narrative -> architect -> build -> QA. Each stage logs to ops/logs.
 
+## Two-Stage Render Architecture (Phase 8+, DEC-017)
+Stage 1 (Antigravity, this repo): graph -> content -> slide planning (intent ->
+deterministic layout select -> slot fill) -> designer-ready PPTX/HTML where ALL
+visuals exist only as placeholder blocks (composite IDs, grey plates) + emitted
+`placeholder_contract.json` per deck. Stage 2 (Claude Design): binary replacement
+of placeholders strictly per contract; structure/content untouched.
+Placeholder routing by type: id_logo -> fixed brand SVG (logo registry);
+id_illustration / id_graph -> deterministic diagram engine (source-grounded from
+active graph, NEVER prompt-generated); id_img -> generation/stock (provenance required).
+
 ## Principles
 - **P001 Schema First**: Data model templates dictate integration properties.
 - **P002 Knowledge Graph Before Templates**: Database and index creation take priority over slide templates.
@@ -44,6 +54,9 @@ discover -> collect -> extract -> dedup -> verify -> librarian/ontology -> graph
 - **P018 Slide-Fact Alignment**: A clinical claim/thesis on a slide must be supported by the `statement` of at least one cited fact in the active graph; simply having a source_ref reference is insufficient.
 - **P019 Diagram Provenance**: No visual asset can be used in a deck without a logged record in `asset_provenance.json` detailing its source of truth, license type, and attribution credit (if CC-BY). Permitted licenses: own/generated, CC0, CC-BY, public-domain. Forbidden licenses: CC-BY-SA, NC, BioRender without industry license, and unknown/undeclared licenses.
 - **P020 Diagram-engine**: (a) diagram carries only short labels (≤4 words, ≤6 labels total / ≤3 key bullets); all prose resides in the slide body, not in the illustration; (b) diagram geometry is calculated dynamically via template/tokens and not positioned manually; (c) no diagram is saved or integrated without passing the deterministic bounds check.
+- **P021 Placeholder Contract & Routing**: Stage 1 never embeds final visuals; every visual area is a placeholder block with a composite ID (`id_{type}_s{NN}_{slug}`, naming.md §1.6) registered in the deck's `placeholder_contract.json` (schema in `00_governance/schemas/`). Stage 2 fills strictly by contract routing: `id_logo`→logo registry SVG; `id_illustration`/`id_graph`→deterministic diagram engine grounded in active graph facts (P018/P019/P020 apply); `id_img`→generation/stock with mandatory `asset_provenance.json` entry. A placeholder without a contract entry, or with a `route` mismatching its `type`, is a QA FAIL. Prompt-generation of EBM visuals (mechanisms, anatomy, charts, numbers) is forbidden.
+- **P022 Deterministic Slot-Filling**: LLM is forbidden to generate or choose slide composition. Layout selection is rule-based only: intent (rule-based detection) → decision tree over structural metrics → `layout_id` from the approved pool in `layouts.json`; fallback cascade primary → secondary → `layout_text_dense_fallback`. Content fills fixed slots; exceeding a slot's `max_chars` is a Stage-1 validation error (fail fast, before render). Geometry is stored as `bounds` (px, 1280×720) plus `relative_bounds` (0.0–1.0); both must stay in parity (±1px).
+- **P023 Deck Scope Gate**: a deck contains 13–20 slides; fewer than 13 or more than 20 is a hard QA FAIL. Effective for every deck produced by the Phase-8 pipeline; legacy decks (7–10 slides) remain valid only until their migration.
 
 
 

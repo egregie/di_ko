@@ -1,0 +1,14 @@
+{
+  "skill_name": "slide-plan",
+  "scope": "workspace",
+  "version": "1.0",
+  "purpose": "Deterministic slide planning: intent detection, layout selection from approved pool, slot filling, placeholder contract emission (Stage 1).",
+  "input": "Narrative + active graph facts + layouts.json + slide_intents.json",
+  "output": "Slide specs (13-20 per deck) and placeholder_contract.json per deck",
+  "dependencies": [
+    "04_design_system/layouts.json",
+    "00_governance/schemas/placeholder_contract.json",
+    "ops/scripts/qa_deck.py",
+    "ops/scripts/slide_planner.py (planned, Phase 8.4)"
+  ]
+}

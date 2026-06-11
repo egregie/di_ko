@@ -1,0 +1,35 @@
+{
+  "contract_version": "1.0",
+  "deck_id": "deck_retinoids_v3",
+  "canvas": { "w": 1280, "h": 720, "aspect": "16:9" },
+  "routing_rules": {
+    "logo": "logo_registry — fixed brand SVG from 04_design_system/assets/logo/ (never generated)",
+    "illustration": "diagram_engine — gen_diagrams.py parametric, source-grounded from active graph (P019/P020)",
+    "graph": "diagram_engine — data exclusively from verified facts (P018)",
+    "img": "stage2_claude_design — generation/stock allowed; asset_provenance.json entry required (P019)"
+  },
+  "placeholders": [
+    {
+      "placeholder_id": "id_illustration_s04_moa",
+      "slide_id": "deck_retinoids_v3-s04",
+      "type": "illustration",
+      "route": "diagram_engine",
+      "owner": "diagram_engine",
+      "bounds": { "x": 680, "y": 140, "w": 520, "h": 440 },
+      "relative_bounds": { "x": 0.5313, "y": 0.1944, "w": 0.4063, "h": 0.6111 },
+      "aspect_ratio": "free",
+      "prompt": {
+        "title": "RAR/RXR receptor interaction",
+        "style": "scientific medical illustration",
+        "complexity": "medium",
+        "composition": "receptors binding with retinoid molecule",
+        "palette": "design-tokens",
+        "labels": "minimal",
+        "background": "clean"
+      },
+      "source_refs": ["fact_0001"],
+      "priority": "required",
+      "status": "open"
+    }
+  ]
+}

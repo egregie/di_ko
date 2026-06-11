@@ -19,6 +19,13 @@
   - `fact_0042`: Lactic Acid epidermal/dermal thickness (cites PMID 8854589, which is unrelated/unsupported).
   - `fact_0043`: Lactic Acid smoothness and fine lines (cites PMID 8854589, which is unrelated/unsupported).
 - **Per-Topic Fact Shortfall**: Resolved. All thin topics (Vitamin C, Niacinamide, Exfoliants) have been backfilled to exactly 8 verified, clean facts each.
+- **Phase 8 Blockers (registered 2026-06-11)**:
+  - `layouts.json` has no geometry layer (10 descriptive entries only, no bounds/max_chars/placeholder slots) — blocks Slide Planning Engine (DEC-018).
+  - Donor files absent from repo: `hd_1` (approved Postacne redesign, ~80% review), design concept, `Retinoid.pdf`, `Постакне_nov20.pdf` — required for Layout Library v2 geometry; request from client. `tpl1`/`tpl2` must NOT be parsed (dirty geometry).
+  - Client approval of 2 layout carcasses pending — hard precondition for Phase 8.3+.
+  - All 5 active decks are 7–10 slides and will fail the new P023 scope gate (13–20); gate applies only to Phase-8 pipeline decks until legacy migration.
+  - Postacne topic: 0 facts in active graph; P011 requires ≥8 verified facts before its deck (separate collection TZ needed).
+- **Stale-Export Artifacts (resolved as non-issues 2026-06-11)**: the cross-review's "literal `[Placeholder]` bug" is an enforced convention (`qa_deck.py` requires the prefix; superseded in Phase 8.5); "footer-overlap" not reproduced — current bounds/overlap QA passes 100% on all 5 decks.
 
 
 
