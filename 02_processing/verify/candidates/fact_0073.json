@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0073",
+  "statement": "The chemical reconstruction of skin scars (CROSS) technique using trichloroacetic acid is well-tolerated and effective for treating ice pick atrophic acne scars",
+  "entity_id": "atrophic_acne_scars",
+  "confidence": 0.9,
+  "evidence_level": "B",
+  "sources": [
+    "SRC-A064"
+  ],
+  "contradictions": []
+}

@@ -26,6 +26,8 @@
   - All 5 active decks are 7–10 slides and will fail the new P023 scope gate (13–20); gate applies only to Phase-8 pipeline decks until legacy migration.
   - Postacne topic: 0 facts in active graph; P011 requires ≥8 verified facts before its deck (separate collection TZ needed).
 - **Stale-Export Artifacts (resolved as non-issues 2026-06-11)**: the cross-review's "literal `[Placeholder]` bug" is an enforced convention (`qa_deck.py` requires the prefix; superseded in Phase 8.5); "footer-overlap" not reproduced — current bounds/overlap QA passes 100% on all 5 decks.
+- **Verification Judge Key BLOCKED (2026-06-11)**: the Gemini judge key (`GEMINI_API_KEY`) returns 403 "API key was reported as leaked" — it was the key hardcoded in `ops/scripts/lib/evidence.py` (now removed from source). 403 does not trigger key rotation (only 429 does), so the grounded claim-support judge cannot run; the gate falls back to NEEDS_MANUAL. **Impact:** new fact verification is blocked until a valid, non-leaked key is configured. Postacne collection (Phase 8.7a) is stuck at 1/≥8 verified facts because of this. Action: user sets a fresh `GEMINI_API_KEY`, then re-run the 9 staged candidates `fact_0063–0067, 0071–0074`.
+- **Postacne not deck-ready**: 1 verified fact (`fact_0070`) vs P011 threshold ≥8. 9 candidates staged for re-judge (blocked on key above); a second discovery round may be needed to clear ≥8 after the gate's expected 25–33% reject rate.
 
 
 

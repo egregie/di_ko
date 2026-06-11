@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0072",
+  "statement": "In a split-face study both 70 percent glycolic acid and 30 percent trichloroacetic acid peels significantly reduced facial atrophic acne scars, with the trichloroacetic acid side showing greater improvement",
+  "entity_id": "glycolic_acid",
+  "confidence": 0.9,
+  "evidence_level": "B",
+  "sources": [
+    "SRC-A063"
+  ],
+  "contradictions": []
+}

@@ -1,0 +1,22 @@
+{
+  "entity_id": "atrophic_acne_scars",
+  "entity_type": "Condition",
+  "title": "Atrophic Acne Scars",
+  "aliases": [
+    "postacne atrophic scars",
+    "acne scarring"
+  ],
+  "belongs_to": [],
+  "used_for": [],
+  "contraindications": [],
+  "tags": [
+    "postacne",
+    "icepick_boxcar_rolling",
+    "dermal_remodeling"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0070"
+  ],
+  "updated": "2026-06-11"
+}

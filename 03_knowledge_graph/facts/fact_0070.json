@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0070",
+  "statement": "Meta-analysis found fractional picosecond laser achieves clinical improvement of atrophic acne scars similar to other fractional lasers but with lower risk of post-inflammatory hyperpigmentation and lower pain",
+  "entity_id": "atrophic_acne_scars",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A061"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-11T11:16:09.519921Z",
+  "verified_by": "verifier",
+  "date": "2026-06-11",
+  "source_title": "Fractional picosecond laser for atrophic acne scars: A meta-analysis.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0069",
+  "statement": "A systematic review found ablative fractional carbon dioxide laser is an effective therapy for atrophic acne scars, with treatment parameters customized per patient",
+  "entity_id": "atrophic_acne_scars",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A060"
+  ],
+  "contradictions": []
+}

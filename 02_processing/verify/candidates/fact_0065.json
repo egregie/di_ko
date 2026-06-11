@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0065",
+  "statement": "In a systematic review of topical treatments for post-inflammatory hyperpigmentation, retinoids and hydroxy acids were supported by the greatest number of high-quality studies, with broad-spectrum sunscreen recommended",
+  "entity_id": "post_inflammatory_hyperpigmentation",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A056"
+  ],
+  "contradictions": []
+}

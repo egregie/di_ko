@@ -78,6 +78,12 @@
 - [ ] Renderer refactor: relative→absolute, grey plates with composite IDs [Phase 8.5]
 - [ ] Add QA gates: deck scope 13–20 (P023), contract completeness, route↔type, bounds parity [Phase 8.6]
 - [ ] Pilot: Retinoids 13–20 slides through new pipeline; zero regression on legacy decks [Phase 8.7]
-- [ ] Postacne knowledge collection to ≥8 verified facts (P011), then Postacne deck [Phase 8.7]
+- [~] Postacne knowledge collection to ≥8 verified facts (P011) [Phase 8.7a — PARTIAL/BLOCKED]
+  - [x] Live PubMed discovery (10 queries, 67 abstracts) [Phase 8.7a Block A]
+  - [x] Author 12 candidates (fact_0063–0074) + register 12 sources (SRC-A054–A065) [Phase 8.7a Block B]
+  - [x] Run live gate; 1 verified (fact_0070), 2 rejected, 9 blocked by leaked judge key [Phase 8.7a Block B]
+  - [x] Remove leaked hardcoded key from evidence.py; clean unjudged facts from graph; keep fact_0070 + atrophic_acne_scars entity [Phase 8.7a Block C]
+  - [ ] BLOCKED: set valid GEMINI_API_KEY, re-judge 9 staged candidates, reach ≥8 verified [Phase 8.7a]
+- [ ] Postacne deck via new pipeline (after ≥8 verified facts AND Phase 8.4–8.6) [Phase 8.7]
 - [ ] Claude Design Integration (Stage 2): id_img fill with provenance; binary replacement protocol [Phase 8.7]
 

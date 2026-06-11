@@ -601,44 +601,124 @@
       "accessed": "2026-06-07"
     },
     {
-      "source_id": "SRC-TEST-FAKE",
-      "name": "Fake Source for Verification Testing",
+      "source_id": "SRC-A054",
+      "name": "Effects of 15% Azelaic Acid Gel in the Management of Post-Inflammatory Erythema and Post-Inflammatory Hyperpigmentation in Acne Vulgaris",
       "type": "journal",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/99999999/",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38734843/",
       "tier": "A",
-      "pmid": "99999999",
-      "doi": "",
-      "accessed": "2026-06-07"
+      "pmid": "38734843",
+      "doi": "10.1007/s13555-024-01176-2",
+      "accessed": "2026-06-11"
     },
     {
-      "source_id": "SRC-TEST-IRRELEVANT",
-      "name": "Real Source but Irrelevant to Vitamin C",
+      "source_id": "SRC-A055",
+      "name": "A systematic review to evaluate the efficacy of azelaic acid in the management of acne, rosacea, melasma and skin aging",
       "type": "journal",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/15773538/",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37550898/",
       "tier": "A",
-      "pmid": "15773538",
-      "doi": "",
-      "accessed": "2026-06-07"
+      "pmid": "37550898",
+      "doi": "10.1111/jocd.15923",
+      "accessed": "2026-06-11"
     },
     {
-      "source_id": "SRC-TEST-FAKE",
-      "name": "Fake Source for Verification Testing",
+      "source_id": "SRC-A056",
+      "name": "Topical treatment for postinflammatory hyperpigmentation: a systematic review",
       "type": "journal",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/99999999/",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34525885/",
       "tier": "A",
-      "pmid": "99999999",
-      "doi": "",
-      "accessed": "2026-06-07"
+      "pmid": "34525885",
+      "doi": "10.1080/09546634.2021.1981814",
+      "accessed": "2026-06-11"
     },
     {
-      "source_id": "SRC-TEST-IRRELEVANT",
-      "name": "Real Source but Irrelevant to Vitamin C",
+      "source_id": "SRC-A057",
+      "name": "The effect of niacinamide on reducing cutaneous pigmentation and suppression of melanosome transfer",
       "type": "journal",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/15773538/",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12100180/",
       "tier": "A",
-      "pmid": "15773538",
-      "doi": "",
-      "accessed": "2026-06-07"
+      "pmid": "12100180",
+      "doi": "10.1046/j.1365-2133.2002.04834.x",
+      "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A058",
+      "name": "Microneedling in the treatment of atrophic scars: A systematic review of randomised controlled trials",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33538106/",
+      "tier": "A",
+      "pmid": "33538106",
+      "doi": "10.1111/iwj.13559",
+      "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A059",
+      "name": "Chemical peeling in combination with microneedling versus chemical peeling or microneedling monotherapy in the treatment of acne scars: a systematic review and meta-analysis",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41640476/",
+      "tier": "A",
+      "pmid": "41640476",
+      "doi": "10.5114/ada.2025.154436",
+      "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A060",
+      "name": "Ablative Fractional CO2 Laser for Facial Atrophic Acne Scars",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29304516/",
+      "tier": "A",
+      "pmid": "29304516",
+      "doi": "10.1055/s-0037-1606096",
+      "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A061",
+      "name": "Fractional picosecond laser for atrophic acne scars: A meta-analysis",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37310182/",
+      "tier": "A",
+      "pmid": "37310182",
+      "doi": "10.1111/jocd.15862",
+      "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A062",
+      "name": "Long-Term Effectiveness and Safety of Up to 48 Weeks Treatment with Topical Adapalene 0.3% Benzoyl Peroxide 2.5% Gel in the Prevention and Reduction of Atrophic Acne Scars",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31209851/",
+      "tier": "A",
+      "pmid": "31209851",
+      "doi": "10.1007/s40257-019-00454-6",
+      "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A063",
+      "name": "A comparative study of 70% glycolic acid and 30% trichloroacetic acid peel in the treatment of facial atrophic acne scars: A split-face study",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39483653/",
+      "tier": "A",
+      "pmid": "39483653",
+      "doi": "10.25259/jcas_117_23",
+      "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A064",
+      "name": "Comparing the Use of 80% Trichloroacetic Acid and 50% Trichloroacetic Acid for the Treatment of Ice Pick Acne Scars",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38722745/",
+      "tier": "A",
+      "pmid": "38722745",
+      "doi": "10.1097/DSS.0000000000004228",
+      "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A065",
+      "name": "The multiple uses of azelaic acid in dermatology: mechanism of action, preparations, and potential therapeutic applications",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38282869/",
+      "tier": "A",
+      "pmid": "38282869",
+      "doi": "10.5114/ada.2023.133955",
+      "accessed": "2026-06-11"
     }
   ]
 }

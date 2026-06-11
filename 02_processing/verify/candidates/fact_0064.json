@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0064",
+  "statement": "A systematic review of randomized controlled trials found topical azelaic acid is more effective than vehicle for acne and melasma and is generally well tolerated",
+  "entity_id": "azelaic_acid",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A055"
+  ],
+  "contradictions": []
+}

@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0066",
+  "statement": "Topical niacinamide inhibits melanosome transfer from melanocytes to keratinocytes and significantly decreases facial hyperpigmentation compared with vehicle",
+  "entity_id": "niacinamide",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A057"
+  ],
+  "contradictions": []
+}

@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0068",
+  "statement": "Meta-analysis found combining microneedling with chemical peeling is superior to either treatment alone for atrophic acne scars, with mild and transient adverse events",
+  "entity_id": "atrophic_acne_scars",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A059"
+  ],
+  "contradictions": []
+}

@@ -2,7 +2,7 @@
 
 ## Metadata
 - **Current Phase**: Phase 8: Two-Stage Architecture + Slide Planning Engine
-- **Status**: 8.0 groundwork completed (2026-06-11); 8.1 blocked on client donor files + carcass approval
+- **Status**: 8.0 groundwork completed (2026-06-11); 8.1 blocked on client donor files + carcass approval; 8.7a Postacne collection BLOCKED on judge API key (leaked)
 
 ## Project Status Snapshot
 - **Phase 0 (Foundation)**: Completed. Core files, ontology, naming conventions, and data schemas initialized.
@@ -30,6 +30,7 @@
 - **Integrity Rollback (ground truth)**: Completed (backfilled from git 5971843; walkthrough in `ops/logs/walkthrough_integrity_rollback_groundtruth.md`). Semantic gate, 8 facts restored, fact_0002 + fact_0055 quarantined.
 - **Gate Generalization**: Completed (backfilled from git af74e4a). Claim-support gatekeeper generalized with grounded LLM-as-judge, local caching layer, rate-limit safety; all 5 decks QA PASS.
 - **Brand Chrome Layer**: Completed (backfilled from git c883e87). Logos + Arimo + palette applied to all 5 content decks.
+- **Phase 8.7a (Postacne Knowledge Collection)**: PARTIAL / BLOCKED 2026-06-11. Discovery done (live PubMed, 10 clinical queries, 67 abstracts gathered via hardened fetch). 12 candidates authored (fact_0063–0074) + 12 tier-A sources (SRC-A054–A065) registered. Live gate hit a hard blocker: the Gemini judge key returned 403 "reported as leaked" (it was the key hardcoded in evidence.py). Of 3 candidates the judge actually evaluated: 1 passed grounded (fact_0070, fractional picosecond laser ↓ PIH), 2 rejected by the verbatim-quote grounding guard (fact_0068/0069); 9 left unjudged. Cleanup: removed the 9 unjudged facts from the active graph (staged for re-judge), kept fact_0070 + new entity atrophic_acne_scars, removed the leaked hardcoded key from evidence.py. Graph: 26 entities / 38 facts / 49 rels, validate PASS. Postacne = 1 verified fact → NOT deck-ready (P011 needs ≥8). Unblock requires a valid GEMINI_API_KEY, then re-run the 9 staged candidates. Log: ops/logs/postacne_collection.md.
 - **Phase 8.0 (Two-Stage Architecture — Groundwork)**: Completed 2026-06-11. Consolidated Gemini×Grok+GPT cross-review integrated and corrected against repo facts: layouts.json audited (10 descriptive layouts, NO geometry — Template Library v1 refuted, DEC-018); donor files (`hd_1`, design concept) confirmed absent (blocked input); `[Placeholder]` literal reclassified as convention, footer-overlap not reproduced. Adopted two-stage architecture with placeholder routing (DEC-017/P021: logo→SVG registry, illustration/graph→deterministic engine, img→generation/stock), deterministic slot-filling (DEC-019/P022), deck scope gate 13–20 (P023), anti-overengineering scope (DEC-020). Created `placeholder_contract.json` schema, composite placeholder ID + layout_id naming rules (naming.md §1.6/1.7), `slide-plan` skill (A09), updated A09 architect prompt, fixed Phase 8 roadmap in TZ `YM_PROSKIN_TZ_Phase8_TwoStage_SlidePlanning.md` and next_steps.md. Implementation (8.1+) blocked on client donors + carcass approval.
 
 

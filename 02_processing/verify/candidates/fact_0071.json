@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0071",
+  "statement": "Long-term treatment with adapalene 0.3 percent and benzoyl peroxide 2.5 percent gel reduces atrophic acne scar count, supporting early effective acne treatment to prevent and reduce scarring",
+  "entity_id": "adapalene",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A062"
+  ],
+  "contradictions": []
+}

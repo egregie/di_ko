@@ -56,6 +56,22 @@
       "evidence_level": "A",
       "path": "entities/ascorbyl_glucoside.json"
     },
+    "atrophic_acne_scars": {
+      "entity_id": "atrophic_acne_scars",
+      "entity_type": "Condition",
+      "title": "Atrophic Acne Scars",
+      "aliases": [
+        "postacne atrophic scars",
+        "acne scarring"
+      ],
+      "tags": [
+        "postacne",
+        "icepick_boxcar_rolling",
+        "dermal_remodeling"
+      ],
+      "evidence_level": "A",
+      "path": "entities/atrophic_acne_scars.json"
+    },
     "copper_tripeptide_1": {
       "entity_id": "copper_tripeptide_1",
       "entity_type": "Ingredient",
@@ -621,6 +637,13 @@
       "entity_id": "acetyl_tetrapeptide_5",
       "evidence_level": "A",
       "path": "facts/fact_0058.json"
+    },
+    "fact_0070": {
+      "fact_id": "fact_0070",
+      "statement": "Meta-analysis found fractional picosecond laser achieves clinical improvement of atrophic acne scars similar to other fractional lasers but with lower risk of post-inflammatory hyperpigmentation and lower pain",
+      "entity_id": "atrophic_acne_scars",
+      "evidence_level": "A",
+      "path": "facts/fact_0070.json"
     }
   },
   "relationships": {

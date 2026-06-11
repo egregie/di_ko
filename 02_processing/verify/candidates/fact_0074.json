@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0074",
+  "statement": "Azelaic acid acts as a tyrosinase inhibitor with antimelanogenic activity and is used to treat hyperpigmentation disorders such as melasma and post-inflammatory hyperpigmentation",
+  "entity_id": "azelaic_acid",
+  "confidence": 0.9,
+  "evidence_level": "B",
+  "sources": [
+    "SRC-A065"
+  ],
+  "contradictions": []
+}

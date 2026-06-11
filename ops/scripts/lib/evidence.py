@@ -38,9 +38,8 @@ def get_gemini_api_keys() -> list[str]:
                             keys.append(val)
         except Exception:
             pass
-    # default fallback keys if empty
-    if not keys:
-        keys = ["AIzaSyBgGJqlRJORAnuxjPfR6u2ljsMO_zeqNHg"]
+    # No hardcoded fallback: a committed key gets flagged as leaked and blocked.
+    # If no key is configured, the judge is unavailable (handled by caller -> NEEDS_MANUAL).
     return keys
 
 
@@ -337,6 +336,9 @@ def assess_claim(statement: str, abstract: str) -> str:
 
     # Retrieve API keys
     keys = get_gemini_api_keys()
+    if not keys:
+        print("  Judge unavailable: no GEMINI_API_KEY configured. Returning NEEDS_MANUAL.")
+        return "NEEDS_MANUAL"
     key_index = 0
     api_key = keys[key_index]
 
