@@ -12,14 +12,15 @@ All 12 clean facts in the active knowledge graph must pass the gate successfully
 | fact_0007 | Adapalene selectively binds to retinoic ... | SUPPORTED | True | write | PASS |
 | fact_0009 | Tazarotene selectively binds to nuclear ... | SUPPORTED | True | write | PASS |
 | fact_0010 | Tazarotene 0.1% cream is effective for t... | NEEDS_MANUAL | True | write | PASS |
+| fact_0011 | Retinaldehyde requires only a single met... | WEAK | True | write | PASS |
 | fact_0014 | Retinyl palmitate nano-formulation reduc... | NEEDS_MANUAL | True | write | PASS |
+| fact_0015 | Topical retinoids are contraindicated du... | WEAK | True | write | PASS |
 | fact_0018 | salicylic-mandelic acid peels are effect... | NEEDS_MANUAL | True | write | PASS |
 | fact_0019 | topical 30% salicylic acid peels reduce ... | NEEDS_MANUAL | True | write | PASS |
 | fact_0020 | glycolic acid peels clinical application... | NEEDS_MANUAL | True | write | PASS |
 | fact_0021 | topical l-ascorbic acid promotes collage... | NEEDS_MANUAL | True | write | PASS |
 | fact_0022 | topical 5% sodium ascorbyl phosphate lot... | NEEDS_MANUAL | True | write | PASS |
 | fact_0024 | topical niacinamide enhances ceramide sy... | NEEDS_MANUAL | True | write | PASS |
-| fact_0025 | topical niacinamide reduces inflammatory... | NEEDS_MANUAL | True | write | PASS |
 | fact_0028 | topical L-ascorbic acid formulation requ... | NEEDS_MANUAL | True | write | PASS |
 | fact_0029 | maximal percutaneous absorption of topic... | NEEDS_MANUAL | True | write | PASS |
 | fact_0030 | topical L-ascorbic acid increases mRNA l... | NEEDS_MANUAL | True | write | PASS |
@@ -42,6 +43,16 @@ All 12 clean facts in the active knowledge graph must pass the gate successfully
 | fact_0054 | topical acetyl hexapeptide-8 (Argireline... | NEEDS_MANUAL | True | write | PASS |
 | fact_0057 | topical palmitoyl tripeptide-38 formulat... | NEEDS_MANUAL | True | write | PASS |
 | fact_0058 | topical acetyl tetrapeptide-5 has protec... | NEEDS_MANUAL | True | write | PASS |
+| fact_0063 | 15% azelaic acid gel effectively improve... | SUPPORTED | True | write | PASS |
+| fact_0064 | Azelaic acid is more effective than vehi... | SUPPORTED | True | write | PASS |
+| fact_0065 | In a systematic review of topical treatm... | SUPPORTED | True | write | PASS |
+| fact_0066 | Niacinamide is an effective skin lighten... | SUPPORTED | True | write | PASS |
+| fact_0067 | A systematic review of randomized contro... | SUPPORTED | True | write | PASS |
+| fact_0068 | Combined microneedling and chemical peel... | WEAK | True | write | PASS |
+| fact_0070 | Meta-analysis found fractional picosecon... | SUPPORTED | True | write | PASS |
+| fact_0071 | Long-term treatment with adapalene 0.3 p... | SUPPORTED | True | write | PASS |
+| fact_0072 | A 70% glycolic acid peel is an effective... | SUPPORTED | True | write | PASS |
+| fact_0073 | The chemical reconstruction of skin scar... | SUPPORTED | True | write | PASS |
 
 **Case 1 Result**: SUCCESS
 

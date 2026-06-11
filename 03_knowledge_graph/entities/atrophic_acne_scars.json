@@ -16,7 +16,10 @@
   ],
   "evidence_level": "A",
   "fact_ids": [
-    "fact_0070"
+    "fact_0067",
+    "fact_0068",
+    "fact_0070",
+    "fact_0073"
   ],
   "updated": "2026-06-11"
 }

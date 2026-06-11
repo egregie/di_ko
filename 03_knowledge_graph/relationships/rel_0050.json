@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0050",
+  "from": "azelaic_acid",
+  "type": "treats",
+  "to": "post_inflammatory_hyperpigmentation",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A054"
+  ]
+}

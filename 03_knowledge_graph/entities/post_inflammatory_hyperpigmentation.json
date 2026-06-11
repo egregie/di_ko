@@ -1,0 +1,23 @@
+{
+  "entity_id": "post_inflammatory_hyperpigmentation",
+  "entity_type": "Condition",
+  "title": "Post-Inflammatory Hyperpigmentation",
+  "aliases": [
+    "PIH",
+    "acne-induced macular hyperpigmentation",
+    "postacne hyperpigmentation"
+  ],
+  "belongs_to": [],
+  "used_for": [],
+  "contraindications": [],
+  "tags": [
+    "postacne",
+    "dyschromia",
+    "tyrosinase"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0065"
+  ],
+  "updated": "2026-06-11"
+}

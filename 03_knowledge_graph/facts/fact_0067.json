@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0067",
+  "statement": "A systematic review of randomized controlled trials found microneedling is an effective and well-tolerated treatment for atrophic acne scars with no serious adverse effects reported",
+  "entity_id": "atrophic_acne_scars",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A058"
+  ],
+  "contradictions": [],
+  "verified_via": "cache",
+  "verified_at": "2026-06-11T16:28:47.981899Z",
+  "verified_by": "verifier",
+  "date": "2026-06-11",
+  "source_title": "Microneedling in the treatment of atrophic scars: A systematic review of randomised controlled trials.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

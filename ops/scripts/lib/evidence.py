@@ -12,34 +12,50 @@ from google import genai
 from google.genai import types
 from pydantic import BaseModel, Field
 
-def get_gemini_api_keys() -> list[str]:
-    """
-    Retrieve list of Gemini API keys from environment variables and C:/pharma_v2/.env
-    """
-    keys = []
-    # Check env first
-    k = os.environ.get("GEMINI_API_KEY")
-    if k:
-        keys.append(k)
-    # Check .env
-    env_path = "C:/pharma_v2/.env"
-    if os.path.exists(env_path):
+# Keys known to be leaked/blocked (e.g. previously committed to source). Dropped
+# from the candidate list so a stale machine-level env var can't shadow a good key.
+LEAKED_GEMINI_KEYS = {"AIzaSyBgGJqlRJORAnuxjPfR6u2ljsMO_zeqNHg"}
+
+
+def _read_gemini_keys_from_env_file(path: str) -> list[str]:
+    found = []
+    if os.path.exists(path):
         try:
-            with open(env_path, "r", encoding="utf-8") as f:
+            with open(path, "r", encoding="utf-8") as f:
                 for line in f:
                     line = line.strip()
-                    if line.startswith("GEMINI_API_KEY="):
-                        val = line.split("=", 1)[1].strip()
-                        if val and val not in keys:
-                            keys.append(val)
-                    elif line.startswith("GEMINI_API_KEY_OLD="):
-                        val = line.split("=", 1)[1].strip()
-                        if val and val not in keys:
-                            keys.append(val)
+                    if line.startswith(("GEMINI_API_KEY=", "GEMINI_API_KEY_OLD=")):
+                        val = line.split("=", 1)[1].strip().strip('"').strip("'")
+                        if val:
+                            found.append(val)
         except Exception:
             pass
-    # No hardcoded fallback: a committed key gets flagged as leaked and blocked.
-    # If no key is configured, the judge is unavailable (handled by caller -> NEEDS_MANUAL).
+    return found
+
+
+def get_gemini_api_keys() -> list[str]:
+    """
+    Retrieve Gemini API keys, in preference order:
+      1) project-local .env (gitignored)   2) process env   3) C:/pharma_v2/.env
+    Known-leaked keys are filtered out; project .env wins so a stale machine-level
+    env var cannot shadow a freshly provided key. No hardcoded fallback (a committed
+    key gets flagged as leaked); if none configured, caller -> NEEDS_MANUAL.
+    """
+    candidates = []
+    # 1) project-local .env (preferred)
+    candidates += _read_gemini_keys_from_env_file(os.path.join(PROJECT_ROOT, ".env"))
+    # 2) process environment
+    env_k = os.environ.get("GEMINI_API_KEY")
+    if env_k:
+        candidates.append(env_k)
+    # 3) external fallback
+    candidates += _read_gemini_keys_from_env_file("C:/pharma_v2/.env")
+
+    keys, seen = [], set()
+    for c in candidates:
+        if c and c not in seen and c not in LEAKED_GEMINI_KEYS:
+            seen.add(c)
+            keys.append(c)
     return keys
 
 

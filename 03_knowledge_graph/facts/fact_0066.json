@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0066",
+  "statement": "Niacinamide is an effective skin lightening compound that works by inhibiting melanosome transfer from melanocytes to keratinocytes",
+  "entity_id": "niacinamide",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A057"
+  ],
+  "contradictions": [],
+  "verified_via": "cache",
+  "verified_at": "2026-06-11T16:28:45.450161Z",
+  "verified_by": "verifier",
+  "date": "2026-06-11",
+  "source_title": "The effect of niacinamide on reducing cutaneous pigmentation and suppression of melanosome transfer.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

@@ -7,5 +7,12 @@
   "sources": [
     "SRC-A063"
   ],
-  "contradictions": []
+  "contradictions": [],
+  "verified_via": "cache",
+  "verified_at": "2026-06-11T16:28:57.991849Z",
+  "verified_by": "verifier",
+  "date": "2026-06-11",
+  "source_title": "A comparative study of 70% glycolic acid and 30% trichloroacetic acid peel in the treatment...",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
 }

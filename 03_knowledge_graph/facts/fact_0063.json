@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0063",
+  "statement": "15% azelaic acid gel effectively improved acne-induced post-inflammatory erythema and post-inflammatory hyperpigmentation with minimal adverse reactions",
+  "entity_id": "azelaic_acid",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A054"
+  ],
+  "contradictions": [],
+  "verified_via": "cache",
+  "verified_at": "2026-06-11T16:28:38.043652Z",
+  "verified_by": "verifier",
+  "date": "2026-06-11",
+  "source_title": "Effects of 15% Azelaic Acid Gel in the Management of Post-Inflammatory Erythema and Post-Inflammatory Hyperpigmentation...",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

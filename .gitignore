@@ -2,3 +2,4 @@ node_modules/
 ops/cache/
 06_render/out/temp_logos/
 .tmp/
+.env

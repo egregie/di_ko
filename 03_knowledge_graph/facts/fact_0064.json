@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0064",
+  "statement": "Azelaic acid is more effective than vehicle for rosacea, acne and melasma",
+  "entity_id": "azelaic_acid",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A055"
+  ],
+  "contradictions": [],
+  "verified_via": "cache",
+  "verified_at": "2026-06-11T16:28:40.508378Z",
+  "verified_by": "verifier",
+  "date": "2026-06-11",
+  "source_title": "A systematic review to evaluate the efficacy of azelaic acid in the management of acne,...",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

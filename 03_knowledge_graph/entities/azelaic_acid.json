@@ -1,0 +1,27 @@
+{
+  "entity_id": "azelaic_acid",
+  "entity_type": "Active",
+  "title": "Azelaic Acid",
+  "aliases": [
+    "AzA",
+    "azelaic acid gel"
+  ],
+  "belongs_to": [],
+  "used_for": [
+    "acne",
+    "post_inflammatory_hyperpigmentation",
+    "rosacea"
+  ],
+  "contraindications": [],
+  "tags": [
+    "tyrosinase_inhibitor",
+    "anti_inflammatory",
+    "dicarboxylic_acid"
+  ],
+  "evidence_level": "A",
+  "fact_ids": [
+    "fact_0063",
+    "fact_0064"
+  ],
+  "updated": "2026-06-11"
+}

@@ -72,6 +72,22 @@
       "evidence_level": "A",
       "path": "entities/atrophic_acne_scars.json"
     },
+    "azelaic_acid": {
+      "entity_id": "azelaic_acid",
+      "entity_type": "Active",
+      "title": "Azelaic Acid",
+      "aliases": [
+        "AzA",
+        "azelaic acid gel"
+      ],
+      "tags": [
+        "tyrosinase_inhibitor",
+        "anti_inflammatory",
+        "dicarboxylic_acid"
+      ],
+      "evidence_level": "A",
+      "path": "entities/azelaic_acid.json"
+    },
     "copper_tripeptide_1": {
       "entity_id": "copper_tripeptide_1",
       "entity_type": "Ingredient",
@@ -250,6 +266,23 @@
       ],
       "evidence_level": "A",
       "path": "entities/peptides.json"
+    },
+    "post_inflammatory_hyperpigmentation": {
+      "entity_id": "post_inflammatory_hyperpigmentation",
+      "entity_type": "Condition",
+      "title": "Post-Inflammatory Hyperpigmentation",
+      "aliases": [
+        "PIH",
+        "acne-induced macular hyperpigmentation",
+        "postacne hyperpigmentation"
+      ],
+      "tags": [
+        "postacne",
+        "dyschromia",
+        "tyrosinase"
+      ],
+      "evidence_level": "A",
+      "path": "entities/post_inflammatory_hyperpigmentation.json"
     },
     "retinaldehyde": {
       "entity_id": "retinaldehyde",
@@ -638,12 +671,75 @@
       "evidence_level": "A",
       "path": "facts/fact_0058.json"
     },
+    "fact_0063": {
+      "fact_id": "fact_0063",
+      "statement": "15% azelaic acid gel effectively improved acne-induced post-inflammatory erythema and post-inflammatory hyperpigmentation with minimal adverse reactions",
+      "entity_id": "azelaic_acid",
+      "evidence_level": "A",
+      "path": "facts/fact_0063.json"
+    },
+    "fact_0064": {
+      "fact_id": "fact_0064",
+      "statement": "Azelaic acid is more effective than vehicle for rosacea, acne and melasma",
+      "entity_id": "azelaic_acid",
+      "evidence_level": "A",
+      "path": "facts/fact_0064.json"
+    },
+    "fact_0065": {
+      "fact_id": "fact_0065",
+      "statement": "In a systematic review of topical treatments for post-inflammatory hyperpigmentation, retinoids and hydroxy acids were supported by the greatest number of high-quality studies, with broad-spectrum sunscreen recommended",
+      "entity_id": "post_inflammatory_hyperpigmentation",
+      "evidence_level": "A",
+      "path": "facts/fact_0065.json"
+    },
+    "fact_0066": {
+      "fact_id": "fact_0066",
+      "statement": "Niacinamide is an effective skin lightening compound that works by inhibiting melanosome transfer from melanocytes to keratinocytes",
+      "entity_id": "niacinamide",
+      "evidence_level": "A",
+      "path": "facts/fact_0066.json"
+    },
+    "fact_0067": {
+      "fact_id": "fact_0067",
+      "statement": "A systematic review of randomized controlled trials found microneedling is an effective and well-tolerated treatment for atrophic acne scars with no serious adverse effects reported",
+      "entity_id": "atrophic_acne_scars",
+      "evidence_level": "A",
+      "path": "facts/fact_0067.json"
+    },
+    "fact_0068": {
+      "fact_id": "fact_0068",
+      "statement": "Combined microneedling and chemical peeling is superior to either treatment alone for atrophic acne scars, with favourable safety and patient-reported outcomes",
+      "entity_id": "atrophic_acne_scars",
+      "evidence_level": "A",
+      "path": "facts/fact_0068.json"
+    },
     "fact_0070": {
       "fact_id": "fact_0070",
       "statement": "Meta-analysis found fractional picosecond laser achieves clinical improvement of atrophic acne scars similar to other fractional lasers but with lower risk of post-inflammatory hyperpigmentation and lower pain",
       "entity_id": "atrophic_acne_scars",
       "evidence_level": "A",
       "path": "facts/fact_0070.json"
+    },
+    "fact_0071": {
+      "fact_id": "fact_0071",
+      "statement": "Long-term treatment with adapalene 0.3 percent and benzoyl peroxide 2.5 percent gel reduces atrophic acne scar count, supporting early effective acne treatment to prevent and reduce scarring",
+      "entity_id": "adapalene",
+      "evidence_level": "A",
+      "path": "facts/fact_0071.json"
+    },
+    "fact_0072": {
+      "fact_id": "fact_0072",
+      "statement": "A 70% glycolic acid peel is an effective alternative to trichloroacetic acid peel for treating facial atrophic acne scars, especially for patients not tolerating TCA or requiring lesser downtime",
+      "entity_id": "glycolic_acid",
+      "evidence_level": "B",
+      "path": "facts/fact_0072.json"
+    },
+    "fact_0073": {
+      "fact_id": "fact_0073",
+      "statement": "The chemical reconstruction of skin scars (CROSS) technique using trichloroacetic acid is well-tolerated and effective for treating ice pick atrophic acne scars",
+      "entity_id": "atrophic_acne_scars",
+      "evidence_level": "B",
+      "path": "facts/fact_0073.json"
     }
   },
   "relationships": {
@@ -1038,6 +1134,38 @@
       "to": "peptides",
       "evidence_level": "A",
       "path": "relationships/rel_0049.json"
+    },
+    "rel_0050": {
+      "rel_id": "rel_0050",
+      "from": "azelaic_acid",
+      "type": "treats",
+      "to": "post_inflammatory_hyperpigmentation",
+      "evidence_level": "A",
+      "path": "relationships/rel_0050.json"
+    },
+    "rel_0051": {
+      "rel_id": "rel_0051",
+      "from": "niacinamide",
+      "type": "treats",
+      "to": "post_inflammatory_hyperpigmentation",
+      "evidence_level": "A",
+      "path": "relationships/rel_0051.json"
+    },
+    "rel_0052": {
+      "rel_id": "rel_0052",
+      "from": "adapalene",
+      "type": "treats",
+      "to": "atrophic_acne_scars",
+      "evidence_level": "A",
+      "path": "relationships/rel_0052.json"
+    },
+    "rel_0053": {
+      "rel_id": "rel_0053",
+      "from": "glycolic_acid",
+      "type": "treats",
+      "to": "atrophic_acne_scars",
+      "evidence_level": "B",
+      "path": "relationships/rel_0053.json"
     }
   }
 }
