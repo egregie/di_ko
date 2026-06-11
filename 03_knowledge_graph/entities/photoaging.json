@@ -1,0 +1,20 @@
+{
+  "entity_id": "photoaging",
+  "entity_type": "clinical_condition",
+  "title": "Photoaging",
+  "aliases": [
+    "photodamage",
+    "actinic skin damage"
+  ],
+  "belongs_to": [],
+  "used_for": [],
+  "contraindications": [],
+  "tags": [
+    "uv_damage",
+    "wrinkles",
+    "antecedent_condition"
+  ],
+  "evidence_level": "n/a",
+  "fact_ids": [],
+  "updated": "2026-06-11"
+}

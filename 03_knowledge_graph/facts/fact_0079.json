@@ -1,0 +1,19 @@
+{
+  "fact_id": "fact_0079",
+  "statement": "Fractional radiofrequency produces a significantly lower incidence of post-inflammatory hyperpigmentation than laser treatment for atrophic acne scars.",
+  "entity_id": "radiofrequency_microneedling",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A070"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-11T20:45:57.185540Z",
+  "verified_by": "verifier",
+  "date": "2026-06-11",
+  "source_title": "Meta-analysis of fractional radiofrequency treatment for acne and/or acne scars.",
+  "status": "needs_manual",
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true
+}

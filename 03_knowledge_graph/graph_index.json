@@ -30,6 +30,21 @@
       "evidence_level": "A",
       "path": "entities/acetyl_tetrapeptide_5.json"
     },
+    "acne": {
+      "entity_id": "acne",
+      "entity_type": "clinical_condition",
+      "title": "Acne Vulgaris",
+      "aliases": [
+        "acne vulgaris"
+      ],
+      "tags": [
+        "pilosebaceous",
+        "inflammatory",
+        "antecedent_condition"
+      ],
+      "evidence_level": "n/a",
+      "path": "entities/acne.json"
+    },
     "adapalene": {
       "entity_id": "adapalene",
       "entity_type": "Ingredient",
@@ -133,6 +148,19 @@
       ],
       "evidence_level": "A",
       "path": "entities/glycolic_acid.json"
+    },
+    "lactation": {
+      "entity_id": "lactation",
+      "entity_type": "contraindication_context",
+      "title": "Lactation",
+      "aliases": [
+        "breastfeeding"
+      ],
+      "tags": [
+        "retinoid_contraindication"
+      ],
+      "evidence_level": "n/a",
+      "path": "entities/lactation.json"
     },
     "lactic_acid": {
       "entity_id": "lactic_acid",
@@ -267,6 +295,22 @@
       "evidence_level": "A",
       "path": "entities/peptides.json"
     },
+    "photoaging": {
+      "entity_id": "photoaging",
+      "entity_type": "clinical_condition",
+      "title": "Photoaging",
+      "aliases": [
+        "photodamage",
+        "actinic skin damage"
+      ],
+      "tags": [
+        "uv_damage",
+        "wrinkles",
+        "antecedent_condition"
+      ],
+      "evidence_level": "n/a",
+      "path": "entities/photoaging.json"
+    },
     "post_inflammatory_hyperpigmentation": {
       "entity_id": "post_inflammatory_hyperpigmentation",
       "entity_type": "Condition",
@@ -283,6 +327,20 @@
       ],
       "evidence_level": "A",
       "path": "entities/post_inflammatory_hyperpigmentation.json"
+    },
+    "pregnancy": {
+      "entity_id": "pregnancy",
+      "entity_type": "contraindication_context",
+      "title": "Pregnancy",
+      "aliases": [
+        "gestation"
+      ],
+      "tags": [
+        "retinoid_contraindication",
+        "teratogenicity_risk"
+      ],
+      "evidence_level": "n/a",
+      "path": "entities/pregnancy.json"
     },
     "retinaldehyde": {
       "entity_id": "retinaldehyde",
@@ -1070,14 +1128,6 @@
       "to": "acne",
       "evidence_level": "A",
       "path": "relationships/rel_0041.json"
-    },
-    "rel_0042": {
-      "rel_id": "rel_0042",
-      "from": "niacinamide",
-      "type": "used_for",
-      "to": "barrier",
-      "evidence_level": "A",
-      "path": "relationships/rel_0042.json"
     },
     "rel_0043": {
       "rel_id": "rel_0043",

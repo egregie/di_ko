@@ -379,7 +379,7 @@ Rules:
 5. If the abstract does not contain a sentence that can be quoted verbatim as support, the verdict MUST be "UNSUPPORTED".
 """
 
-    retries = 5
+    retries = 6
     delay = 1.0
     for attempt in range(retries):
         try:
@@ -443,31 +443,38 @@ Rules:
             err_msg = str(e)
             is_quota = "429" in err_msg or "RESOURCE_EXHAUSTED" in err_msg or "quota" in err_msg.lower()
             is_transient = is_quota or any(x in err_msg for x in ["503", "UNAVAILABLE", "high demand", "Service Unavailable"])
-            
-            is_daily_quota = "PerDay" in err_msg or "limit: 20" in err_msg.lower() or "daily" in err_msg.lower()
-            
-            if attempt < retries - 1 and is_transient and not is_daily_quota:
-                if is_quota and key_index < len(keys) - 1:
-                    key_index += 1
-                    api_key = keys[key_index]
-                    print(f"  Rate limit hit. Rotating to API key index {key_index}...")
-                else:
-                    sleep_time = delay
-                    match = re.search(r'retry in (\d+(?:\.\d+)?)s', err_msg, re.IGNORECASE)
-                    if match:
-                        sleep_time = float(match.group(1)) + 1.5
-                        print(f"  Parsed retry delay of {sleep_time}s from error message.")
-                    elif is_quota:
-                        sleep_time = 15.0
-                    print(f"  Transient API error: {e}. Retrying in {sleep_time}s...")
-                    time.sleep(sleep_time)
-                    delay *= 2.0
+
+            # Rotate to an alternate key first if one is available.
+            if is_quota and key_index < len(keys) - 1:
+                key_index += 1
+                api_key = keys[key_index]
+                print(f"  Quota hit. Rotating to API key index {key_index}...")
+                continue
+
+            # Free-tier 429s report a short per-minute retryDelay even though the
+            # message also lists PerDay metrics; honour that delay instead of bailing.
+            sleep_time = None
+            for pat in (r'retry in (\d+(?:\.\d+)?)\s*s',
+                        r'retryDelay["\']?\s*[:=]\s*["\']?(\d+(?:\.\d+)?)',
+                        r'seconds:\s*(\d+)'):
+                m = re.search(pat, err_msg, re.IGNORECASE)
+                if m:
+                    sleep_time = float(m.group(1)) + 2.0
+                    break
+            if sleep_time is None and is_quota:
+                sleep_time = 30.0
+
+            BACKOFF_CAP = 65.0
+            if is_transient and attempt < retries - 1 and sleep_time is not None and sleep_time <= BACKOFF_CAP:
+                print(f"  Rate-limited (429/transient). Backing off {sleep_time:.0f}s (attempt {attempt + 1}/{retries})...")
+                time.sleep(sleep_time)
+                continue
+
+            if is_quota and (sleep_time is None or sleep_time > BACKOFF_CAP):
+                print(f"  Quota exhausted with no short retry window: {err_msg[:120]}... -> NEEDS_MANUAL.")
             else:
-                if is_daily_quota:
-                    print(f"Daily API key quota exhausted. Skipping retries: {err_msg[:100]}...")
-                else:
-                    print(f"Error calling Gemini Client: {e}. Falling back to NEEDS_MANUAL.")
-                return "NEEDS_MANUAL"
+                print(f"  Error calling Gemini Client: {e}. Falling back to NEEDS_MANUAL.")
+            return "NEEDS_MANUAL"
 
 def evidence_ok(level: str, pubtype: list) -> bool:
     """

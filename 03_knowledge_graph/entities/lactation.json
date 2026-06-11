@@ -1,0 +1,17 @@
+{
+  "entity_id": "lactation",
+  "entity_type": "contraindication_context",
+  "title": "Lactation",
+  "aliases": [
+    "breastfeeding"
+  ],
+  "belongs_to": [],
+  "used_for": [],
+  "contraindications": [],
+  "tags": [
+    "retinoid_contraindication"
+  ],
+  "evidence_level": "n/a",
+  "fact_ids": [],
+  "updated": "2026-06-11"
+}

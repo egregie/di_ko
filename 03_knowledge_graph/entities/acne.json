@@ -1,0 +1,19 @@
+{
+  "entity_id": "acne",
+  "entity_type": "clinical_condition",
+  "title": "Acne Vulgaris",
+  "aliases": [
+    "acne vulgaris"
+  ],
+  "belongs_to": [],
+  "used_for": [],
+  "contraindications": [],
+  "tags": [
+    "pilosebaceous",
+    "inflammatory",
+    "antecedent_condition"
+  ],
+  "evidence_level": "n/a",
+  "fact_ids": [],
+  "updated": "2026-06-11"
+}

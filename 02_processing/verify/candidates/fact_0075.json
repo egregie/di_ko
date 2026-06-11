@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0075",
+  "statement": "Subcision is a surgical technique for managing atrophic acne scars.",
+  "entity_id": "subcision",
+  "confidence": 0.9,
+  "evidence_level": "B",
+  "sources": [
+    "SRC-A066"
+  ],
+  "contradictions": []
+}

@@ -1,0 +1,18 @@
+{
+  "entity_id": "pregnancy",
+  "entity_type": "contraindication_context",
+  "title": "Pregnancy",
+  "aliases": [
+    "gestation"
+  ],
+  "belongs_to": [],
+  "used_for": [],
+  "contraindications": [],
+  "tags": [
+    "retinoid_contraindication",
+    "teratogenicity_risk"
+  ],
+  "evidence_level": "n/a",
+  "fact_ids": [],
+  "updated": "2026-06-11"
+}

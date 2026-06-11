@@ -1,0 +1,11 @@
+{
+  "fact_id": "fact_0077",
+  "statement": "Subcision is the most commonly used treatment technique for rolling atrophic acne scars.",
+  "entity_id": "subcision",
+  "confidence": 0.9,
+  "evidence_level": "B",
+  "sources": [
+    "SRC-A068"
+  ],
+  "contradictions": []
+}

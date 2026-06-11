@@ -9,12 +9,12 @@
   ],
   "contradictions": [],
   "verified_by": "verifier",
-  "date": "2026-06-10",
+  "date": "2026-06-11",
   "audit_flag": "weak",
   "audit_verdict": "UNSUPPORTED",
   "evidence_ok": true,
-  "verified_via": "cache",
-  "verified_at": "2026-06-10T15:39:34.175008Z",
+  "verified_via": "live",
+  "verified_at": "2026-06-11T19:28:57.895652Z",
   "source_title": "The mechanism of action of topical retinoids.",
   "status": "needs_manual"
 }

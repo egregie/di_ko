@@ -161,7 +161,47 @@ def main():
                     errors.append(f"sources.json item at index {idx} validation failed: {e}")
         except Exception as e:
             errors.append(f"sources.json validation failed: {e}")
-            
+
+    # 5. Cross-reference integrity (Phase 8.7b)
+    rejected_dir = os.path.join(project_root, "02_processing", "verify", "rejected")
+    rejected_ids = set()
+    if os.path.exists(rejected_dir):
+        for fn in os.listdir(rejected_dir):
+            if fn.endswith(".json"):
+                rejected_ids.add(fn[:-5])
+    entity_ids = set()
+    if os.path.exists(entities_path):
+        for fn in os.listdir(entities_path):
+            if fn.endswith(".json"):
+                entity_ids.add(fn[:-5])
+
+    # 5a. Broken fact-link: entity fact_ids must not point to a quarantined (rejected) fact
+    if os.path.exists(entities_path):
+        for filename in os.listdir(entities_path):
+            if filename.endswith(".json"):
+                try:
+                    with open(os.path.join(entities_path, filename), "r", encoding="utf-8") as f:
+                        edata = json.load(f)
+                    for fid in edata.get("fact_ids", []):
+                        if fid in rejected_ids:
+                            errors.append(f"Entity '{filename}' references quarantined fact '{fid}' (present in 02_processing/verify/rejected/). Restore via gate or unlink.")
+                except Exception:
+                    pass
+
+    # 5b. Dangling relationship: from/to must reference an existing entity file
+    if os.path.exists(relationships_path):
+        for filename in os.listdir(relationships_path):
+            if filename.endswith(".json"):
+                try:
+                    with open(os.path.join(relationships_path, filename), "r", encoding="utf-8") as f:
+                        rdata = json.load(f)
+                    for key in ("from", "to"):
+                        ref = rdata.get(key)
+                        if ref and ref not in entity_ids:
+                            errors.append(f"Relationship '{filename}' {key}='{ref}' references a missing entity (no file in entities/). Create the entity or remove the relationship.")
+                except Exception:
+                    pass
+
     if errors:
         print("Graph validation FAILED with the following errors:", file=sys.stderr)
         for err in errors:

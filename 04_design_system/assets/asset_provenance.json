@@ -238,5 +238,15 @@
     "attribution": "",
     "generated_by": "gen_diagrams.py",
     "fetched_at": "2026-06-09T23:41:09.230638Z"
+  },
+  "procedure_depth_skin_layers": {
+    "id": "procedure_depth_skin_layers",
+    "type": "diagram",
+    "path": "04_design_system/assets/mechanisms/procedure_depth_skin_layers.svg",
+    "source_of_truth": "Anatomical skin-strata schema (epidermis/dermis/subcutis) with procedure target-depth; source-grounded layered_anatomy template, not prompt-generated",
+    "license": "generated/own",
+    "attribution": "",
+    "generated_by": "ops/scripts/one_time/gen_procedure_diagram.py (engine: gen_diagrams.make_layered_anatomy)",
+    "fetched_at": "2026-06-11T00:00:00Z"
   }
 }

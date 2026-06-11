@@ -719,6 +719,56 @@
       "pmid": "38282869",
       "doi": "10.5114/ada.2023.133955",
       "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A066",
+      "name": "Surgical Subcision for Acne Scars: A Review of Instrumentation",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36943759/",
+      "tier": "A",
+      "pmid": "36943759",
+      "doi": "10.1097/DSS.0000000000003706",
+      "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A067",
+      "name": "Subcision in acne scarring: A review of clinical trials",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36315903/",
+      "tier": "A",
+      "pmid": "36315903",
+      "doi": "10.1111/jocd.15480",
+      "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A068",
+      "name": "Subdermal Laser-Assisted Scar Subcision (SLASS) Combined With Fractional CO2 Laser for Acne Scars",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40296542/",
+      "tier": "A",
+      "pmid": "40296542",
+      "doi": "10.1111/jocd.70219",
+      "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A069",
+      "name": "Ablative Fractional CO2 Laser for Facial Atrophic Acne Scars",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29304516/",
+      "tier": "A",
+      "pmid": "29304516",
+      "doi": "10.1055/s-0037-1606096",
+      "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A070",
+      "name": "Meta-analysis of fractional radiofrequency treatment for acne and/or acne scars",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36062400/",
+      "tier": "A",
+      "pmid": "36062400",
+      "doi": "10.1111/jocd.15348",
+      "accessed": "2026-06-11"
     }
   ]
 }
