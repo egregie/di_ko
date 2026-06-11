@@ -1,0 +1,49 @@
+[
+  {
+    "id": "mark",
+    "file": "ym_proskin_mark.svg",
+    "context": "footer chrome on all content slides",
+    "viewBox": "0 0 96 96",
+    "min_h_px": 18,
+    "color_on_warm_white": "#6D8470",
+    "color_on_dark": "#F8F6F4",
+    "color_on_beige_sage": "#2C3440"
+  },
+  {
+    "id": "horizontal",
+    "file": "ym_proskin_horizontal.svg",
+    "context": "section divider (Big Quote / Thesis) — upper-left inside field",
+    "viewBox": "0 0 500 120",
+    "width_fraction": 0.22,
+    "example_px_1280x720": 280,
+    "min_h_px": 30,
+    "color_on_warm_white": "#2C3440",
+    "color_on_dark": "#F8F6F4",
+    "color_on_beige_sage": "#2C3440"
+  },
+  {
+    "id": "descriptor",
+    "file": "ym_proskin_descriptor.svg",
+    "context": "cover / title slide — by title template grid",
+    "viewBox": "0 0 520 130",
+    "width_fraction": 0.34,
+    "example_px_1280x720": 435,
+    "min_h_px": 40,
+    "color_on_warm_white": "#2C3440",
+    "color_on_dark": "#F8F6F4",
+    "color_on_beige_sage": "#2C3440"
+  },
+  {
+    "id": "badge",
+    "file": "ym_proskin_badge.svg",
+    "context": "closing slide — center",
+    "viewBox": "0 0 200 200",
+    "width_fraction": 0.18,
+    "example_px_1280x720": 230,
+    "min_h_px": 80,
+    "note_side_right": "textPath side=right — verify rasterizer support; fall back to paths for PPTX PNG if needed",
+    "color_on_warm_white": "#2C3440",
+    "color_on_dark": "#F8F6F4",
+    "color_on_beige_sage": "#2C3440"
+  }
+]

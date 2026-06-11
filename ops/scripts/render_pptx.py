@@ -119,6 +119,76 @@ def resolve_and_convert_media(media, registry, project_root):
         return png_path, attribution
     return None, attribution
 
+def rasterize_logo(variant, color_hex, design_w, design_h, project_root):
+    svg_filename = f"ym_proskin_{variant}.svg"
+    svg_path = os.path.join(project_root, "04_design_system", "assets", "logo", svg_filename)
+    if not os.path.exists(svg_path):
+        print(f"Warning: logo SVG not found at {svg_path}")
+        return None
+        
+    with open(svg_path, "r", encoding="utf-8") as f:
+        svg_content = f.read()
+        
+    # Inject color attribute on root <svg>
+    import re
+    if 'color=' in svg_content:
+        svg_content = re.sub(r'color="[^"]*"', f'color="{color_hex}"', svg_content)
+    else:
+        svg_content = svg_content.replace('<svg', f'<svg color="{color_hex}"')
+        
+    # Inject @font-face style pointing to absolute local Arimo font file URL
+    font_path_abs = os.path.join(project_root, "04_design_system", "fonts", "Arimo[wght].ttf")
+    font_url = f"file:///{font_path_abs.replace(os.sep, '/')}"
+    
+    font_style = f"""
+    <defs>
+      <style>
+        @font-face {{
+          font-family: 'Arimo';
+          src: url('{font_url}') format('truetype');
+          font-weight: normal;
+          font-style: normal;
+        }}
+        text {{
+          font-family: 'Arimo', sans-serif !important;
+        }}
+      </style>
+    </defs>
+    """
+    
+    match = re.search(r'<svg[^>]*>', svg_content)
+    if match:
+        svg_content = svg_content[:match.end()] + font_style + svg_content[match.end():]
+        
+    temp_dir = os.path.join(project_root, "06_render", "out", "temp_logos")
+    os.makedirs(temp_dir, exist_ok=True)
+    
+    temp_svg_path = os.path.join(temp_dir, f"{variant}_{color_hex.replace('#', '')}.svg")
+    temp_png_path = os.path.join(temp_dir, f"{variant}_{color_hex.replace('#', '')}.png")
+    
+    scale = 3
+    render_w = int(design_w * scale)
+    render_h = int(design_h * scale)
+    
+    if not os.path.exists(temp_png_path):
+        with open(temp_svg_path, "w", encoding="utf-8") as f:
+            f.write(svg_content)
+            
+        script_path = os.path.join(project_root, "ops", "scripts", "convert_svg_to_png.js")
+        import subprocess
+        try:
+            subprocess.run(
+                ["node", script_path, temp_svg_path, temp_png_path, str(render_w), str(render_h)],
+                check=True,
+                capture_output=True,
+                text=True
+            )
+        except Exception as e:
+            print(f"Error converting logo SVG to PNG: {e}")
+            return None
+            
+    return temp_png_path
+
 def main():
     import argparse
     parser = argparse.ArgumentParser(description="Render PPTX deck from json specs")
@@ -164,11 +234,15 @@ def main():
 
     # Read specs
     spec_files = sorted(glob.glob(os.path.join(specs_dir, f"{deck_name}-s*.json")))
+    total_slides = len(spec_files)
     
-    for sf in spec_files:
+    for slide_idx, sf in enumerate(spec_files):
         with open(sf, "r", encoding="utf-8") as f:
             slide_spec = json.load(f)
             
+        slide_num = slide_idx + 1
+        is_cover = (slide_idx == 0)
+        is_closing = (slide_idx == total_slides - 1)
         layout = slide_spec.get("layout", "summary")
         title = slide_spec.get("title", "")
         subtitle = slide_spec.get("subtitle", "")
@@ -195,13 +269,16 @@ def main():
         bg_color = color["bgAlt"] if layout in ("cover", "section_divider") else color["bg"]
         fill.fore_color.rgb = hex_to_rgb(bg_color)
         
+        # Position disclaimers/sources above footer if content slide
+        footer_offset_y = 500 if layout not in ("cover", "section_divider") else 520
+
         # Bottom disclaimers
         if slide_disclaimers:
             disc_text = " | ".join(slide_disclaimers)
             add_text_box(
                 slide=slide,
                 left=Inches(40 / 102.4),
-                top=Inches(520 / 102.4),
+                top=Inches(footer_offset_y / 102.4),
                 width=Inches(5.0),
                 height=Inches(0.3),
                 text=disc_text.upper(),
@@ -217,7 +294,7 @@ def main():
             add_text_box(
                 slide=slide,
                 left=Inches(5.5),
-                top=Inches(520 / 102.4),
+                top=Inches(footer_offset_y / 102.4),
                 width=Inches(4.1),
                 height=Inches(0.3),
                 text=src_text,
@@ -227,9 +304,67 @@ def main():
                 bold=False,
                 align=PP_ALIGN.RIGHT
             )
+
+        # Draw footer chrome on all content slides
+        if layout not in ("cover", "section_divider"):
+            # Hairline above footer
+            hairline = slide.shapes.add_shape(
+                MSO_SHAPE.RECTANGLE,
+                Inches(40 / 102.4), Inches(530 / 102.4),
+                Inches((1024 - 80) / 102.4), Inches(1 / 102.4)
+            )
+            set_shape_color(hairline, color["sage"])
+            
+            # Mark logo
+            mark_png = rasterize_logo("mark", color["herbal"], 20, 20, project_root)
+            if mark_png:
+                slide.shapes.add_picture(
+                    mark_png,
+                    Inches(40 / 102.4), Inches(543 / 102.4),
+                    Inches(20 / 102.4), Inches(20 / 102.4)
+                )
+                
+            # Footer Wordmark
+            add_text_box(
+                slide=slide,
+                left=Inches(68 / 102.4),
+                top=Inches(541 / 102.4),
+                width=Inches(200 / 102.4),
+                height=Inches(20 / 102.4),
+                text="YM PROSKIN",
+                font_name=font_family,
+                font_size_pt=11,
+                font_color_hex=color["text"],
+                bold=True
+            )
+            
+            # Slide Number
+            add_text_box(
+                slide=slide,
+                left=Inches((1024 - 100) / 102.4),
+                top=Inches(541 / 102.4),
+                width=Inches(60 / 102.4),
+                height=Inches(20 / 102.4),
+                text=str(slide_num),
+                font_name=font_family,
+                font_size_pt=11,
+                font_color_hex=color["herbal"],
+                bold=False,
+                align=PP_ALIGN.RIGHT
+            )
             
         # Layouts Rendering
         if layout == "cover":
+            # Add cover logo (descriptor)
+            desc_png = rasterize_logo("descriptor", color["dark"], 348, 87, project_root)
+            if desc_png:
+                slide.shapes.add_picture(
+                    desc_png,
+                    Inches(40 / 102.4),
+                    Inches(410 / 102.4),
+                    Inches(348 / 102.4),
+                    Inches(87 / 102.4)
+                )
             # Tag
             add_text_box(
                 slide=slide,
@@ -300,6 +435,16 @@ def main():
                     run.font.bold = True
             
         elif layout == "section_divider":
+            # Add section divider logo (horizontal)
+            horiz_png = rasterize_logo("horizontal", color["dark"], 225, 54, project_root)
+            if horiz_png:
+                slide.shapes.add_picture(
+                    horiz_png,
+                    Inches(40 / 102.4),
+                    Inches(110 / 102.4),
+                    Inches(225 / 102.4),
+                    Inches(54 / 102.4)
+                )
             # Tag
             add_text_box(
                 slide=slide,
@@ -764,6 +909,18 @@ def main():
                 font_color_hex=color["text"],
                 bold=False
             )
+            
+            # Add closing badge if this summary layout is the last slide
+            if is_closing:
+                badge_png = rasterize_logo("badge", color["dark"], 184, 184, project_root)
+                if badge_png:
+                    slide.shapes.add_picture(
+                        badge_png,
+                        Inches(420 / 102.4),
+                        Inches(196 / 102.4),
+                        Inches(184 / 102.4),
+                        Inches(184 / 102.4)
+                    )
             
     out_pptx_path = os.path.join(out_dir, f"{deck_name}.pptx")
     prs.save(out_pptx_path)

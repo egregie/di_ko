@@ -37,13 +37,47 @@ def main():
         except Exception as e:
             print(f"Warning: Failed to load asset registry: {e}")
 
+    # ── Brand-layer: load logo SVG assets inline ───────────────────────────────
+    logo_dir = os.path.join(project_root, "04_design_system", "assets", "logo")
+
+    def load_svg(variant):
+        """Return SVG file content as string, or empty string on failure."""
+        svg_path = os.path.join(logo_dir, f"ym_proskin_{variant}.svg")
+        try:
+            with open(svg_path, "r", encoding="utf-8") as _f:
+                return _f.read().strip()
+        except Exception as _e:
+            print(f"Warning: Could not load logo SVG '{variant}': {_e}")
+            return ""
+
+    svg_mark       = load_svg("mark")
+    svg_horizontal = load_svg("horizontal")
+    svg_descriptor = load_svg("descriptor")
+    svg_badge      = load_svg("badge")
+
+    def set_svg_color(svg_str, color):
+        """Inject color attribute on the root <svg> element (used by currentColor)."""
+        import re as _re
+        return _re.sub(r'(<svg[^>]*?)\s*color="[^"]*"', rf'\1 color="{color}"', svg_str, count=1)
+
+    # Slide canvas: 1024 x 576 px
+    # Footer zone: bottom 46 px (0.08 * 576 ≈ 46)
+    CANVAS_W, CANVAS_H = 1024, 576
+    FOOTER_H = 46  # reserved brand-chrome strip
+    # ──────────────────────────────────────────────────────────────────────────
+
     spec_files = sorted(glob.glob(os.path.join(specs_dir, f"{deck_name}-s*.json")))
+    total_slides = len(spec_files)
     slides_html = []
     
-    for sf in spec_files:
+    for slide_idx, sf in enumerate(spec_files):
         with open(sf, "r", encoding="utf-8") as f:
             slide = json.load(f)
-            
+
+        slide_num   = slide_idx + 1
+        is_closing  = (slide_idx == total_slides - 1)
+        is_cover    = (slide_idx == 0)
+
         layout = slide.get("layout", "summary")
         title = slide.get("title", "")
         subtitle = slide.get("subtitle", "")
@@ -86,11 +120,46 @@ def main():
         disc_html = ""
         if disclaimers:
             disc_html = f'<div class="disclaimers">{" | ".join(disclaimers)}</div>'
-            
+
         # Build source refs section
         sources_html = ""
         if source_refs:
             sources_html = f'<div class="sources-ref">Источники: {", ".join(source_refs)}</div>'
+
+        # ── Brand-layer footer chrome (all slides except cover and section_divider) ──
+        if layout in ("cover", "section_divider"):
+            brand_footer_html = ""
+        else:
+            _mark_color = "#6D8470" # herbal for Warm White background
+            _mark_svg   = set_svg_color(svg_mark, _mark_color)
+            import re as _re
+            _mark_svg_clean = _re.sub(r'\s*(width|height)="[^"]*"', '', _mark_svg)
+            brand_footer_html = f'''
+            <div class="slide-footer" data-brand-footer="1">
+                <div class="footer-logo" style="color:{_mark_color}">{_mark_svg_clean}</div>
+                <span class="footer-wordmark">YM PROSKIN</span>
+                <span class="footer-slide-num">{slide_num}</span>
+            </div>
+            '''
+
+        # ── Cover: descriptor lockup (0.34 W = ~348px @ 1024) ──────────────────
+        _desc_svg = set_svg_color(svg_descriptor, "#2C3440")  # bg-alt (#E6D2CA) → dark
+        cover_logo_html = f'''
+        <div class="cover-logo" style="color:#2C3440">{_desc_svg}</div>
+        '''
+
+        # ── Section divider: horizontal lockup (0.22 W = ~225px @ 1024) ────────
+        _horiz_svg = set_svg_color(svg_horizontal, "#2C3440")  # Soft Beige bg → dark
+        section_logo_html = f'''
+        <div class="section-logo" style="color:#2C3440">{_horiz_svg}</div>
+        '''
+
+        # ── Closing slide: badge (0.18 W = ~184px @ 1024, centred) ─────────────
+        _badge_svg = set_svg_color(svg_badge, "#2C3440")  # warm white bg → dark
+        closing_logo_html = f'''
+        <div class="closing-badge" style="color:#2C3440">{_badge_svg}</div>
+        ''' if is_closing else ""
+        # ───────────────────────────────────────────────────────────────────────
             
         # Build media block HTML
         media_html = ""
@@ -120,6 +189,7 @@ def main():
                     <span class="category-tag">{slide.get('section', '')}</span>
                     <h1 class="display-title">{title}</h1>
                     <p class="subtitle-text">{subtitle}</p>
+                    {cover_logo_html}
                 </div>
                 <div class="cover-media">
                     {media_html}
@@ -127,10 +197,11 @@ def main():
                 {disc_html}
             </div>
             """
-            
+
         elif layout == "section_divider":
             slide_content = f"""
             <div class="slide section-divider-layout">
+                {section_logo_html}
                 <span class="category-tag">{slide.get('section', '')}</span>
                 <h1 class="divider-title">{title}</h1>
                 <p class="divider-subtitle">{subtitle}</p>
@@ -155,6 +226,7 @@ def main():
                 </div>
                 {sources_html}
                 {disc_html}
+                {brand_footer_html}
             </div>
             """
             
@@ -181,6 +253,7 @@ def main():
                 </div>
                 {sources_html}
                 {disc_html}
+                {brand_footer_html}
             </div>
             """
             
@@ -205,6 +278,7 @@ def main():
                 </div>
                 {sources_html}
                 {disc_html}
+                {brand_footer_html}
             </div>
             """
             
@@ -232,6 +306,7 @@ def main():
                 </div>
                 {sources_html}
                 {disc_html}
+                {brand_footer_html}
             </div>
             """
             
@@ -263,6 +338,7 @@ def main():
                 </div>
                 {sources_html}
                 {disc_html}
+                {brand_footer_html}
             </div>
             """
             
@@ -288,6 +364,7 @@ def main():
                 </div>
                 {sources_html}
                 {disc_html}
+                {brand_footer_html}
             </div>
             """
             
@@ -310,6 +387,7 @@ def main():
                 </div>
                 {sources_html}
                 {disc_html}
+                {brand_footer_html}
             </div>
             """
             
@@ -329,8 +407,10 @@ def main():
                         {bullets}
                     </ul>
                 </div>
+                {closing_logo_html}
                 {sources_html}
                 {disc_html}
+                {brand_footer_html}
             </div>
             """
             
@@ -445,10 +525,87 @@ def main():
             color: var(--text);
         }}
         
-        /* Footer Metadata */
+        /* ── Brand-layer footer chrome ─────────────────────────────────────── */
+        .slide-footer {{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 46px;          /* 0.08 × 576 reserved band */
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            border-top: 1px solid var(--sage);
+            background-color: transparent;
+            box-sizing: border-box;
+            z-index: 10;
+        }}
+        .footer-logo {{
+            display: flex;
+            align-items: center;
+            height: 24px;          /* ≈ 0.034 × 576 × 1.2 — mark height */
+            width: 24px;
+            flex-shrink: 0;
+        }}
+        .footer-logo svg {{
+            height: 100%;
+            width: auto;
+        }}
+        .footer-wordmark {{
+            font-family: var(--font-family);
+            font-size: var(--fs-caption);
+            font-weight: 700;
+            color: {color["text"]};
+            letter-spacing: {font["labelTrackEm"]}em;
+            text-transform: uppercase;
+            margin-left: 8px;
+            flex: 1;
+        }}
+        .footer-slide-num {{
+            font-family: var(--font-family);
+            font-size: var(--fs-caption);
+            color: {color["herbal"]};
+            font-weight: 500;
+        }}
+
+        /* ── Cover logo (descriptor) ──────────────────────────────────────── */
+        .cover-logo {{
+            width: 348px;          /* 0.34 × 1024 */
+            max-width: 100%;
+            margin-top: 16px;
+        }}
+        .cover-logo svg {{
+            width: 100%;
+            height: auto;
+        }}
+
+        /* ── Section divider logo (horizontal) ───────────────────────────── */
+        .section-logo {{
+            width: 225px;          /* 0.22 × 1024 */
+            margin-bottom: 12px;
+        }}
+        .section-logo svg {{
+            width: 100%;
+            height: auto;
+        }}
+
+        /* ── Closing slide badge ──────────────────────────────────────────── */
+        .closing-badge {{
+            width: 184px;          /* 0.18 × 1024 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -58%);
+        }}
+        .closing-badge svg {{
+            width: 100%;
+            height: auto;
+        }}
+
+        /* Footer Metadata — live inside footer or just above it */
         .disclaimers {{
             position: absolute;
-            bottom: 20px;
+            bottom: 50px;          /* above footer strip */
             left: 40px;
             font-size: var(--fs-caption);
             color: var(--herbal);
@@ -456,10 +613,10 @@ def main():
             letter-spacing: {font["labelTrackEm"]}em;
             font-weight: 700;
         }}
-        
+
         .sources-ref {{
             position: absolute;
-            bottom: 20px;
+            bottom: 50px;          /* above footer strip */
             right: 40px;
             font-size: var(--fs-caption);
             color: var(--text);

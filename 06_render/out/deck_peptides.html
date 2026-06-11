@@ -106,10 +106,87 @@
             color: var(--text);
         }
         
-        /* Footer Metadata */
+        /* ── Brand-layer footer chrome ─────────────────────────────────────── */
+        .slide-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 46px;          /* 0.08 × 576 reserved band */
+            display: flex;
+            align-items: center;
+            padding: 0 24px;
+            border-top: 1px solid var(--sage);
+            background-color: transparent;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            height: 24px;          /* ≈ 0.034 × 576 × 1.2 — mark height */
+            width: 24px;
+            flex-shrink: 0;
+        }
+        .footer-logo svg {
+            height: 100%;
+            width: auto;
+        }
+        .footer-wordmark {
+            font-family: var(--font-family);
+            font-size: var(--fs-caption);
+            font-weight: 700;
+            color: #3D4A40;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-left: 8px;
+            flex: 1;
+        }
+        .footer-slide-num {
+            font-family: var(--font-family);
+            font-size: var(--fs-caption);
+            color: #6D8470;
+            font-weight: 500;
+        }
+
+        /* ── Cover logo (descriptor) ──────────────────────────────────────── */
+        .cover-logo {
+            width: 348px;          /* 0.34 × 1024 */
+            max-width: 100%;
+            margin-top: 16px;
+        }
+        .cover-logo svg {
+            width: 100%;
+            height: auto;
+        }
+
+        /* ── Section divider logo (horizontal) ───────────────────────────── */
+        .section-logo {
+            width: 225px;          /* 0.22 × 1024 */
+            margin-bottom: 12px;
+        }
+        .section-logo svg {
+            width: 100%;
+            height: auto;
+        }
+
+        /* ── Closing slide badge ──────────────────────────────────────────── */
+        .closing-badge {
+            width: 184px;          /* 0.18 × 1024 */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -58%);
+        }
+        .closing-badge svg {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Footer Metadata — live inside footer or just above it */
         .disclaimers {
             position: absolute;
-            bottom: 20px;
+            bottom: 50px;          /* above footer strip */
             left: 40px;
             font-size: var(--fs-caption);
             color: var(--herbal);
@@ -117,10 +194,10 @@
             letter-spacing: 0.2em;
             font-weight: 700;
         }
-        
+
         .sources-ref {
             position: absolute;
-            bottom: 20px;
+            bottom: 50px;          /* above footer strip */
             right: 40px;
             font-size: var(--fs-caption);
             color: var(--text);
@@ -443,6 +520,19 @@
                     <span class="category-tag">Пептиды</span>
                     <h1 class="display-title">YM PROSKIN · Пептиды</h1>
                     <p class="subtitle-text">Классификация и клиническое применение биомиметических пептидов</p>
+                    
+        <div class="cover-logo" style="color:#2C3440"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 130" role="img" aria-label="YM PROSKIN — Skin Education and Care" color="#2C3440">
+  <g transform="translate(8,22) scale(0.9)">
+    <circle cx="48" cy="48" r="24" fill="none" stroke="currentColor" stroke-width="7"/>
+    <line x1="65" y1="31" x2="73" y2="23" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="76" cy="20" r="7" fill="currentColor"/>
+    <line x1="31" y1="65" x2="24" y2="72" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="21" cy="75" r="6" fill="currentColor"/>
+  </g>
+  <text x="122" y="62" font-family="Arimo, Helvetica, Arial, sans-serif" font-size="34" font-weight="500" letter-spacing="5" fill="currentColor">YM PROSKIN</text>
+  <text x="124" y="90" font-family="Arimo, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="4" fill="currentColor">SKIN EDUCATION &amp; CARE</text>
+</svg></div>
+        
                 </div>
                 <div class="cover-media">
                     
@@ -477,6 +567,19 @@
                 </div>
                 <div class="sources-ref">Источники: fact_0051, fact_0052, fact_0054</div>
                 <div class="disclaimers">Только для практикующих специалистов</div>
+                
+            <div class="slide-footer" data-brand-footer="1">
+                <div class="footer-logo" style="color:#6D8470"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="YM PROSKIN mark" color="#6D8470">
+  <circle cx="48" cy="48" r="24" fill="none" stroke="currentColor" stroke-/>
+  <line x1="65" y1="31" x2="73" y2="23" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="76" cy="20" r="7" fill="currentColor"/>
+  <line x1="31" y1="65" x2="24" y2="72" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="21" cy="75" r="6" fill="currentColor"/>
+</svg></div>
+                <span class="footer-wordmark">YM PROSKIN</span>
+                <span class="footer-slide-num">2</span>
+            </div>
+            
             </div><div class="slide two-columns-layout">
                 <div class="slide-header">
                     <h2 class="slide-title">Сигнальные пептиды (Signal Peptides)</h2>
@@ -498,6 +601,19 @@
                 </div>
                 <div class="sources-ref">Источники: fact_0051, fact_0052, SRC-A044, SRC-A045</div>
                 <div class="disclaimers">Только для практикующих специалистов</div>
+                
+            <div class="slide-footer" data-brand-footer="1">
+                <div class="footer-logo" style="color:#6D8470"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="YM PROSKIN mark" color="#6D8470">
+  <circle cx="48" cy="48" r="24" fill="none" stroke="currentColor" stroke-/>
+  <line x1="65" y1="31" x2="73" y2="23" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="76" cy="20" r="7" fill="currentColor"/>
+  <line x1="31" y1="65" x2="24" y2="72" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="21" cy="75" r="6" fill="currentColor"/>
+</svg></div>
+                <span class="footer-wordmark">YM PROSKIN</span>
+                <span class="footer-slide-num">3</span>
+            </div>
+            
             </div><div class="slide two-columns-layout">
                 <div class="slide-header">
                     <h2 class="slide-title">Пептиды-носители (Carrier Peptides)</h2>
@@ -519,6 +635,19 @@
                 </div>
                 <div class="sources-ref">Источники: fact_0052, fact_0053, SRC-A045, SRC-A046</div>
                 <div class="disclaimers">Только для практикующих специалистов</div>
+                
+            <div class="slide-footer" data-brand-footer="1">
+                <div class="footer-logo" style="color:#6D8470"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="YM PROSKIN mark" color="#6D8470">
+  <circle cx="48" cy="48" r="24" fill="none" stroke="currentColor" stroke-/>
+  <line x1="65" y1="31" x2="73" y2="23" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="76" cy="20" r="7" fill="currentColor"/>
+  <line x1="31" y1="65" x2="24" y2="72" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="21" cy="75" r="6" fill="currentColor"/>
+</svg></div>
+                <span class="footer-wordmark">YM PROSKIN</span>
+                <span class="footer-slide-num">4</span>
+            </div>
+            
             </div><div class="slide two-columns-layout">
                 <div class="slide-header">
                     <h2 class="slide-title">Ингибиторы нейротрансмиттеров</h2>
@@ -540,6 +669,19 @@
                 </div>
                 <div class="sources-ref">Источники: fact_0054, SRC-A047</div>
                 <div class="disclaimers">Только для практикующих специалистов</div>
+                
+            <div class="slide-footer" data-brand-footer="1">
+                <div class="footer-logo" style="color:#6D8470"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="YM PROSKIN mark" color="#6D8470">
+  <circle cx="48" cy="48" r="24" fill="none" stroke="currentColor" stroke-/>
+  <line x1="65" y1="31" x2="73" y2="23" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="76" cy="20" r="7" fill="currentColor"/>
+  <line x1="31" y1="65" x2="24" y2="72" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="21" cy="75" r="6" fill="currentColor"/>
+</svg></div>
+                <span class="footer-wordmark">YM PROSKIN</span>
+                <span class="footer-slide-num">5</span>
+            </div>
+            
             </div><div class="slide three-cards-layout">
                 <div class="slide-header">
                     <h2 class="slide-title">Специализированные пептиды</h2>
@@ -565,6 +707,19 @@
                 </div>
                 <div class="sources-ref">Источники: fact_0052, fact_0057, fact_0058, SRC-A045, SRC-A050, SRC-A051</div>
                 <div class="disclaimers">Только для практикующих специалистов</div>
+                
+            <div class="slide-footer" data-brand-footer="1">
+                <div class="footer-logo" style="color:#6D8470"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="YM PROSKIN mark" color="#6D8470">
+  <circle cx="48" cy="48" r="24" fill="none" stroke="currentColor" stroke-/>
+  <line x1="65" y1="31" x2="73" y2="23" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="76" cy="20" r="7" fill="currentColor"/>
+  <line x1="31" y1="65" x2="24" y2="72" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="21" cy="75" r="6" fill="currentColor"/>
+</svg></div>
+                <span class="footer-wordmark">YM PROSKIN</span>
+                <span class="footer-slide-num">6</span>
+            </div>
+            
             </div><div class="slide alert-layout">
                 <div class="slide-header">
                     <h2 class="slide-title">Клиническая безопасность и переносимость</h2>
@@ -579,6 +734,19 @@
                 </div>
                 <div class="sources-ref">Источники: fact_0051, fact_0058, SRC-A044, SRC-A051</div>
                 <div class="disclaimers">Только для практикующих специалистов</div>
+                
+            <div class="slide-footer" data-brand-footer="1">
+                <div class="footer-logo" style="color:#6D8470"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="YM PROSKIN mark" color="#6D8470">
+  <circle cx="48" cy="48" r="24" fill="none" stroke="currentColor" stroke-/>
+  <line x1="65" y1="31" x2="73" y2="23" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="76" cy="20" r="7" fill="currentColor"/>
+  <line x1="31" y1="65" x2="24" y2="72" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="21" cy="75" r="6" fill="currentColor"/>
+</svg></div>
+                <span class="footer-wordmark">YM PROSKIN</span>
+                <span class="footer-slide-num">7</span>
+            </div>
+            
             </div><div class="slide summary-layout">
                 <div class="slide-header">
                     <h2 class="slide-title">Терапевтические выводы</h2>
@@ -589,8 +757,43 @@
                         <li>Пептиды делятся на сигнальные пептиды (стимуляция коллагена), пептиды-носители (GHK-Cu для регенерации) и ингибиторы нейротрансмиттеров (SNAP-25 имитаторы).</li><li>Клинические данные подтверждают уменьшение выраженности морщин, повышение плотности кожи и улучшение ее рельефа.</li><li>Все исследованные молекулы демонстрируют высокий профиль безопасности, хорошую тканевую переносимость и отсутствие побочных эффектов.</li>
                     </ul>
                 </div>
+                
+        <div class="closing-badge" style="color:#2C3440"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="YM PROSKIN seal — Skin Education and Care" color="#2C3440">
+  <defs>
+    <path id="arcTop" d="M 26 100 A 74 74 0 0 1 174 100" fill="none"/>
+    <path id="arcBot" d="M 26 100 A 74 74 0 0 0 174 100" fill="none"/>
+  </defs>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <text font-family="Arimo, Helvetica, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="3" fill="currentColor">
+    <textPath href="#arcTop" startOffset="50%" text-anchor="middle">| YM PROSKIN |</textPath>
+  </text>
+  <text font-family="Arimo, Helvetica, Arial, sans-serif" font-size="10.5" font-weight="700" letter-spacing="2.5" fill="currentColor">
+    <textPath href="#arcBot" startOffset="50%" text-anchor="middle" side="right">SKIN EDUCATION &amp; CARE</textPath>
+  </text>
+  <g transform="translate(67.8,67.8) scale(0.67)">
+    <circle cx="48" cy="48" r="24" fill="none" stroke="currentColor" stroke-width="7"/>
+    <line x1="65" y1="31" x2="73" y2="23" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="76" cy="20" r="7" fill="currentColor"/>
+    <line x1="31" y1="65" x2="24" y2="72" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="21" cy="75" r="6" fill="currentColor"/>
+  </g>
+</svg></div>
+        
                 <div class="sources-ref">Источники: fact_0051, fact_0052, fact_0054, fact_0058</div>
                 <div class="disclaimers">Только для практикующих специалистов</div>
+                
+            <div class="slide-footer" data-brand-footer="1">
+                <div class="footer-logo" style="color:#6D8470"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="YM PROSKIN mark" color="#6D8470">
+  <circle cx="48" cy="48" r="24" fill="none" stroke="currentColor" stroke-/>
+  <line x1="65" y1="31" x2="73" y2="23" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="76" cy="20" r="7" fill="currentColor"/>
+  <line x1="31" y1="65" x2="24" y2="72" stroke="currentColor" stroke- stroke-linecap="round"/>
+  <circle cx="21" cy="75" r="6" fill="currentColor"/>
+</svg></div>
+                <span class="footer-wordmark">YM PROSKIN</span>
+                <span class="footer-slide-num">8</span>
+            </div>
+            
             </div>
 </body>
 </html>

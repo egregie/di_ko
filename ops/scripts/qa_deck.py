@@ -392,6 +392,31 @@ def main():
     if not font_check_offline_passed:
         warnings.append("Offline check: Arimo font could not be loaded in offline mode. Ensure local @font-face is active.")
         
+    # 4.5 Run Playwright Layout Bounds Check for PDF/HTML output
+    layout_bounds_script = os.path.join(script_dir, "qa_layout_bounds.js")
+    try:
+        res_bounds = subprocess.run(
+            ["node", layout_bounds_script, f"{deck_name}.html"],
+            cwd=project_root,
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+        print("Playwright layout bounds stdout:\n", res_bounds.stdout)
+        if res_bounds.stderr:
+            print("Playwright layout bounds stderr:\n", res_bounds.stderr)
+            
+        if res_bounds.returncode != 0:
+            pdf_errors.append("Playwright layout/brand bounds audit failed or returned non-zero exit code.")
+            try:
+                errs = json.loads(res_bounds.stderr or res_bounds.stdout)
+                for e in errs:
+                    pdf_errors.append(f"HTML Slide {e.get('slide', 'N/A')}: {e.get('check')} - {e.get('details')}")
+            except Exception:
+                pass
+    except Exception as e:
+        pdf_errors.append(f"Failed to run Playwright layout bounds check: {e}")
+        
     # 5. PPTX Specific Audits (Zero Black, Arimo, Structure)
     pptx_path = os.path.join(project_root, "06_render", "out", f"{deck_name}.pptx")
     if not os.path.exists(pptx_path):
@@ -417,7 +442,38 @@ def main():
                         attribution = asset_data.get("attribution", "")
 
                 slide_text = ""
+                # Brand Logo presence checks in PPTX
+                slide_layout = spec_data.get("layout", "summary")
+                is_cover = (idx == 0)
+                is_closing = (idx == total_slides - 1)
+                
+                has_cover_logo = False
+                has_section_logo = False
+                has_footer_logo = False
+                has_closing_badge = False
+                
                 for shape in slide.shapes:
+                    # shape.shape_type == 13 is PICTURE
+                    if shape.shape_type == 13:
+                        left_in = shape.left.inches
+                        top_in = shape.top.inches
+                        
+                        if is_cover:
+                            if abs(left_in - 40/102.4) < 0.05 and abs(top_in - 410/102.4) < 0.05:
+                                has_cover_logo = True
+                        elif slide_layout == "section_divider":
+                            if abs(left_in - 40/102.4) < 0.05 and abs(top_in - 110/102.4) < 0.05:
+                                has_section_logo = True
+                        else:
+                            # content footer logo (mark)
+                            if abs(left_in - 40/102.4) < 0.05 and abs(top_in - 543/102.4) < 0.05:
+                                has_footer_logo = True
+                                
+                        if is_closing and slide_layout == "summary":
+                            # badge centered
+                            if abs(left_in - 420/102.4) < 0.1 and abs(top_in - 196/102.4) < 0.1:
+                                has_closing_badge = True
+
                     # Check shapes solid fills
                     if hasattr(shape, 'fill') and shape.fill.type == 1:  # solid fill
                         rgb = shape.fill.fore_color.rgb
@@ -436,6 +492,15 @@ def main():
                                     if rgb == RGBColor(0, 0, 0) or rgb == RGBColor(255, 255, 255):
                                         pptx_errors.append(f"Slide {idx + 1}: PPTX Zero Black violation (text run color is {rgb})")
                                         
+                if is_cover and not has_cover_logo:
+                    pptx_errors.append(f"Slide {idx + 1}: Cover slide is missing descriptor logo shape in PPTX")
+                if slide_layout == "section_divider" and not has_section_logo:
+                    pptx_errors.append(f"Slide {idx + 1}: Section divider slide is missing horizontal logo shape in PPTX")
+                if slide_layout not in ("cover", "section_divider") and not has_footer_logo:
+                    pptx_errors.append(f"Slide {idx + 1}: Content slide is missing footer mark logo shape in PPTX")
+                if is_closing and slide_layout == "summary" and not has_closing_badge:
+                    pptx_errors.append(f"Slide {idx + 1}: Closing summary slide is missing badge logo shape in PPTX")
+                    
                 if attribution and attribution.strip().lower() not in slide_text.strip().lower():
                     pptx_errors.append(f"Slide {idx + 1}: GATE BLOCK: CC-BY attribution '{attribution}' is missing from PPTX slide.")
         except Exception as e:

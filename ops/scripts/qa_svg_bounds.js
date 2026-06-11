@@ -322,6 +322,26 @@ async function main() {
                 });
             }
         }
+
+        // ── 5. Slide Canvas Brand Chrome checks (P020: reserved footer band y >= 530) ──
+        if (Math.abs(W - 1024) < 5 && Math.abs(H - 576) < 5) {
+            for (const el of allDrawable) {
+                if (inDefsOrMarker(el)) continue;
+                if (isBackground(el)) continue;
+                if (el.closest('.slide-footer') || el.closest('.disclaimers') || el.closest('.sources-ref')) {
+                    continue;
+                }
+                const vb = toViewBox(el.getBoundingClientRect());
+                if (vb.bottom > 530 && vb.height > 0) {
+                    errors.push({
+                        check: 'footer_zone_reserved',
+                        element: el.tagName.toLowerCase(),
+                        details: `overlaps footer zone: bottom ${vb.bottom.toFixed(1)} > 530`
+                    });
+                }
+            }
+        }
+
         return { success: errors.length === 0, viewBox: { width: W, height: H }, errors };
     }, { content: svgContent, marginThreshold: margin });
 
