@@ -1,0 +1,29 @@
+{
+  "entity_id": "subcision",
+  "entity_type": "procedure",
+  "title": "Subcision",
+  "aliases": [
+    "subcutaneous incisionless surgery"
+  ],
+  "belongs_to": [],
+  "used_for": [
+    "atrophic_acne_scars",
+    "rolling_scars"
+  ],
+  "contraindications": [],
+  "tags": [
+    "surgical",
+    "rolling_scars",
+    "fibrous_band_release"
+  ],
+  "evidence_level": "moderate",
+  "fact_ids": [
+    "fact_0075"
+  ],
+  "updated": "2026-06-11",
+  "mechanism": "A needle or blunt cannula is inserted under the scar and moved to cut the fibrotic strands tethering it, releasing the atrophic scar and inducing new connective tissue.",
+  "indication": [
+    "rolling_scars",
+    "atrophic_scars"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0054",
+  "from": "fractional_laser",
+  "type": "treats",
+  "to": "atrophic_acne_scars",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A069"
+  ]
+}

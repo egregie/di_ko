@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0055",
+  "from": "subcision",
+  "type": "treats",
+  "to": "atrophic_acne_scars",
+  "evidence_level": "B",
+  "sources": [
+    "SRC-A066"
+  ]
+}

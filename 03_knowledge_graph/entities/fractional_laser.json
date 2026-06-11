@@ -1,0 +1,31 @@
+{
+  "entity_id": "fractional_laser",
+  "entity_type": "procedure",
+  "title": "Fractional Laser Resurfacing",
+  "aliases": [
+    "fractional photothermolysis",
+    "ablative fractional CO2 laser",
+    "non-ablative fractional laser"
+  ],
+  "belongs_to": [],
+  "used_for": [
+    "atrophic_acne_scars"
+  ],
+  "contraindications": [],
+  "tags": [
+    "resurfacing",
+    "ablative_co2",
+    "dermal_remodeling"
+  ],
+  "evidence_level": "strong",
+  "fact_ids": [
+    "fact_0078"
+  ],
+  "updated": "2026-06-11",
+  "mechanism": "Fractional delivery of laser energy creates microthermal treatment zones that drive dermal remodeling and neocollagenesis, improving atrophic acne scar texture.",
+  "indication": [
+    "atrophic_scars",
+    "boxcar_scars",
+    "ice_pick_scars"
+  ]
+}

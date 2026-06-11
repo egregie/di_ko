@@ -957,3 +957,7 @@
 2026-06-11T20:46:57Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=36315903&rettype=abstract&retmode=text&tool=ym_proskin&email=admin@ym-proskin.local | 200
 2026-06-11T20:49:13Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=36315903&retmode=json&tool=ym_proskin&email=admin@ym-proskin.local | 200
 2026-06-11T20:49:13Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=36315903&rettype=abstract&retmode=text&tool=ym_proskin&email=admin@ym-proskin.local | 200
+2026-06-11T20:54:05Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=40296542&retmode=json&tool=ym_proskin&email=admin@ym-proskin.local | 200
+2026-06-11T20:54:05Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=40296542&rettype=abstract&retmode=text&tool=ym_proskin&email=admin@ym-proskin.local | 200
+2026-06-11T20:59:05Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=36062400&retmode=json&tool=ym_proskin&email=admin@ym-proskin.local | 200
+2026-06-11T20:59:05Z | GET | https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=36062400&rettype=abstract&retmode=text&tool=ym_proskin&email=admin@ym-proskin.local | 200

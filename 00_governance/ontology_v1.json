@@ -27,7 +27,7 @@
   "entity_type_schemas": {
     "procedure": {
       "comment": "In-office/clinical procedure (Phase 8.7b). Not a molecule: has no PubChem CID or RDKit SVG; its visual route is anatomical/mechanism diagrams (Servier CC-BY-4.0 or source-grounded SVG), never prompt-generated.",
-      "required": ["entity_id", "entity_type", "name", "mechanism", "indication", "evidence_level"],
+      "required": ["entity_id", "entity_type", "title", "mechanism", "indication", "evidence_level"],
       "forbidden": ["pubchem_cid", "molecule_svg"],
       "evidence_level_enum": ["strong", "moderate", "limited"],
       "indication_values": ["atrophic_scars", "rolling_scars", "boxcar_scars", "ice_pick_scars", "PIE", "PIH"]

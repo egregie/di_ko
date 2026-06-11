@@ -134,6 +134,23 @@
       "evidence_level": "A",
       "path": "entities/exfoliants.json"
     },
+    "fractional_laser": {
+      "entity_id": "fractional_laser",
+      "entity_type": "procedure",
+      "title": "Fractional Laser Resurfacing",
+      "aliases": [
+        "fractional photothermolysis",
+        "ablative fractional CO2 laser",
+        "non-ablative fractional laser"
+      ],
+      "tags": [
+        "resurfacing",
+        "ablative_co2",
+        "dermal_remodeling"
+      ],
+      "evidence_level": "strong",
+      "path": "entities/fractional_laser.json"
+    },
     "glycolic_acid": {
       "entity_id": "glycolic_acid",
       "entity_type": "Ingredient",
@@ -424,6 +441,21 @@
       ],
       "evidence_level": "A",
       "path": "entities/sodium_ascorbyl_phosphate.json"
+    },
+    "subcision": {
+      "entity_id": "subcision",
+      "entity_type": "procedure",
+      "title": "Subcision",
+      "aliases": [
+        "subcutaneous incisionless surgery"
+      ],
+      "tags": [
+        "surgical",
+        "rolling_scars",
+        "fibrous_band_release"
+      ],
+      "evidence_level": "moderate",
+      "path": "entities/subcision.json"
     },
     "tazarotene": {
       "entity_id": "tazarotene",
@@ -798,6 +830,20 @@
       "entity_id": "atrophic_acne_scars",
       "evidence_level": "B",
       "path": "facts/fact_0073.json"
+    },
+    "fact_0075": {
+      "fact_id": "fact_0075",
+      "statement": "Subcision is a surgical technique for managing atrophic acne scars.",
+      "entity_id": "subcision",
+      "evidence_level": "B",
+      "path": "facts/fact_0075.json"
+    },
+    "fact_0078": {
+      "fact_id": "fact_0078",
+      "statement": "Ablative fractional carbon dioxide laser is an effective therapy for the treatment of atrophic acne scars.",
+      "entity_id": "fractional_laser",
+      "evidence_level": "A",
+      "path": "facts/fact_0078.json"
     }
   },
   "relationships": {
@@ -1216,6 +1262,22 @@
       "to": "atrophic_acne_scars",
       "evidence_level": "B",
       "path": "relationships/rel_0053.json"
+    },
+    "rel_0054": {
+      "rel_id": "rel_0054",
+      "from": "fractional_laser",
+      "type": "treats",
+      "to": "atrophic_acne_scars",
+      "evidence_level": "A",
+      "path": "relationships/rel_0054.json"
+    },
+    "rel_0055": {
+      "rel_id": "rel_0055",
+      "from": "subcision",
+      "type": "treats",
+      "to": "atrophic_acne_scars",
+      "evidence_level": "B",
+      "path": "relationships/rel_0055.json"
     }
   }
 }
