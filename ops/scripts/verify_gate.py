@@ -4,6 +4,16 @@ import json
 import datetime
 import argparse
 
+# Windows consoles default to a legacy code page; the grounded-judge prints
+# verbatim abstract quotes that often contain Unicode (≤, ∼, ×). Without this,
+# print() raises UnicodeEncodeError mid-verify and the gate falsely degrades a
+# real verdict to NEEDS_MANUAL. Force UTF-8 stdout/stderr so verdicts are honest.
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
+
 # Configure python path to find the lib module
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 LIB_DIR = os.path.join(SCRIPT_DIR, "lib")

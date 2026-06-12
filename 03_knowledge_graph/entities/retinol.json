@@ -21,6 +21,8 @@
     "cell_turnover"
   ],
   "evidence_level": "A",
-  "fact_ids": [],
+  "fact_ids": [
+    "fact_0004"
+  ],
   "updated": "2026-06-07"
 }

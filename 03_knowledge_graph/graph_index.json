@@ -359,6 +359,23 @@
       "evidence_level": "n/a",
       "path": "entities/pregnancy.json"
     },
+    "radiofrequency_microneedling": {
+      "entity_id": "radiofrequency_microneedling",
+      "entity_type": "procedure",
+      "title": "Fractional Radiofrequency Microneedling",
+      "aliases": [
+        "fractional radiofrequency",
+        "FRF",
+        "microneedle radiofrequency"
+      ],
+      "tags": [
+        "radiofrequency",
+        "dermal_remodeling",
+        "low_pih_risk"
+      ],
+      "evidence_level": "moderate",
+      "path": "entities/radiofrequency_microneedling.json"
+    },
     "retinaldehyde": {
       "entity_id": "retinaldehyde",
       "entity_type": "Ingredient",
@@ -509,6 +526,13 @@
       "evidence_level": "A",
       "path": "facts/fact_0001.json"
     },
+    "fact_0004": {
+      "fact_id": "fact_0004",
+      "statement": "Topical retinoids increase procollagen production to augment collagen formation in the dermis.",
+      "entity_id": "retinol",
+      "evidence_level": "A",
+      "path": "facts/fact_0004.json"
+    },
     "fact_0005": {
       "fact_id": "fact_0005",
       "statement": "Tretinoin is the gold standard for clinical improvement of photoaged skin.",
@@ -557,6 +581,13 @@
       "entity_id": "retinoids",
       "evidence_level": "B",
       "path": "facts/fact_0015.json"
+    },
+    "fact_0017": {
+      "fact_id": "fact_0017",
+      "statement": "A serum combining glycolic acid and salicylic acid produced significant overall improvement in acne in over 90 percent of patients.",
+      "entity_id": "glycolic_acid",
+      "evidence_level": "A",
+      "path": "facts/fact_0017.json"
     },
     "fact_0018": {
       "fact_id": "fact_0018",
@@ -831,6 +862,13 @@
       "evidence_level": "B",
       "path": "facts/fact_0073.json"
     },
+    "fact_0074": {
+      "fact_id": "fact_0074",
+      "statement": "Azelaic acid's inhibitory effect on melanocytes makes it widely used in the treatment of hyperpigmentation disorders such as melasma and post-inflammatory hyperpigmentation",
+      "entity_id": "azelaic_acid",
+      "evidence_level": "B",
+      "path": "facts/fact_0074.json"
+    },
     "fact_0075": {
       "fact_id": "fact_0075",
       "statement": "Subcision is a surgical technique for managing atrophic acne scars.",
@@ -838,12 +876,33 @@
       "evidence_level": "B",
       "path": "facts/fact_0075.json"
     },
+    "fact_0076": {
+      "fact_id": "fact_0076",
+      "statement": "Subcision is a safe and effective method for treating atrophic acne scars.",
+      "entity_id": "subcision",
+      "evidence_level": "B",
+      "path": "facts/fact_0076.json"
+    },
+    "fact_0077": {
+      "fact_id": "fact_0077",
+      "statement": "Subcision is the most commonly used treatment technique for rolling atrophic acne scars.",
+      "entity_id": "subcision",
+      "evidence_level": "B",
+      "path": "facts/fact_0077.json"
+    },
     "fact_0078": {
       "fact_id": "fact_0078",
       "statement": "Ablative fractional carbon dioxide laser is an effective therapy for the treatment of atrophic acne scars.",
       "entity_id": "fractional_laser",
       "evidence_level": "A",
       "path": "facts/fact_0078.json"
+    },
+    "fact_0079": {
+      "fact_id": "fact_0079",
+      "statement": "Fractional radiofrequency is superior for treating atrophic acne scar patients prone to pigmentation.",
+      "entity_id": "radiofrequency_microneedling",
+      "evidence_level": "A",
+      "path": "facts/fact_0079.json"
     }
   },
   "relationships": {
@@ -1278,6 +1337,14 @@
       "to": "atrophic_acne_scars",
       "evidence_level": "B",
       "path": "relationships/rel_0055.json"
+    },
+    "rel_0056": {
+      "rel_id": "rel_0056",
+      "from": "radiofrequency_microneedling",
+      "type": "treats",
+      "to": "atrophic_acne_scars",
+      "evidence_level": "A",
+      "path": "relationships/rel_0056.json"
     }
   }
 }

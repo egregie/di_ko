@@ -1,0 +1,30 @@
+{
+  "entity_id": "radiofrequency_microneedling",
+  "entity_type": "procedure",
+  "title": "Fractional Radiofrequency Microneedling",
+  "aliases": [
+    "fractional radiofrequency",
+    "FRF",
+    "microneedle radiofrequency"
+  ],
+  "belongs_to": [],
+  "used_for": [
+    "atrophic_acne_scars"
+  ],
+  "contraindications": [],
+  "tags": [
+    "radiofrequency",
+    "dermal_remodeling",
+    "low_pih_risk"
+  ],
+  "evidence_level": "moderate",
+  "fact_ids": [
+    "fact_0079"
+  ],
+  "updated": "2026-06-12",
+  "mechanism": "Insulated microneedles deliver radiofrequency thermal energy into the dermis, inducing collagen remodeling while largely sparing the epidermis, which lowers the post-inflammatory hyperpigmentation risk relative to laser resurfacing.",
+  "indication": [
+    "atrophic_scars",
+    "PIH"
+  ]
+}

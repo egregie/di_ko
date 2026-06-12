@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0056",
+  "from": "radiofrequency_microneedling",
+  "type": "treats",
+  "to": "atrophic_acne_scars",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A070"
+  ]
+}

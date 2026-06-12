@@ -53,7 +53,7 @@ phase: Phase 8.7b (Graph Integrity + Procedure Ontology) — done
 completed: [A1 unlinks, A2 condition/contraindication nodes + barrier removed, A3 validator hardened (FAIL→PASS), B1 procedure type, B2 diagram route+engine, B3 P011 scope, C scarring deficit closed (2 procedure facts + entities + rels), C4 honest resolution, evidence.py backoff fix; graph 34/49/54 validate PASS]
 in_progress: []
 blocked: []
-open_questions: [re-judge surplus fact_0076/0077/0079 + fact_0074 + C4 re-verify fact_0015 when Gemini quota resets / paid key; backlog restore fact_0004(procollagen)/0017 via single-sentence reformulation]
+open_questions: [RESOLVED 2026-06-12 — quota reset, backlog cleared: 0076/0077/0079/0074 verified, radiofrequency_microneedling entity added, fact_0004/0017 restored via reformulation, fact_0015 re-verified WEAK, gate UTF-8 fixed (DEC-024); graph 35/55/55 validate PASS]
 
 ## decisions_logged
 - DEC-021: validator hardening (broken fact-link + dangling relationship checks).

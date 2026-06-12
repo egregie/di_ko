@@ -95,6 +95,10 @@
 - [x] Procedural scarring: verify 2 facts (subcision, fractional CO2 laser) → scarring 7→9 ≥8; entities + treats rels [Phase 8.7b C]
 - [x] C4: fact_0015 kept honest WEAK; fact_0002 kept quarantined [Phase 8.7b C4]
 - [x] Fix evidence.py judge backoff (honor 429 retryDelay vs daily-bail) [Phase 8.7b]
-- [ ] When Gemini quota resets: re-judge staged surplus 0076/0077/0079 (+ RF entity if 0079 passes); re-verify fact_0015 [Phase 8.7b backlog]
+- [x] Re-judge surplus 0076(WEAK)/0077(SUPPORTED)/0079(SUPPORTED reformulated); created radiofrequency_microneedling entity + rel_0056 [Phase 8.7b backlog]
+- [x] Verify fact_0074 (azelaic tyrosinase, SUPPORTED); backlink azelaic_acid [Phase 8.7b backlog]
+- [x] Restore fact_0004 (retinoid procollagen, WEAK) + fact_0017 (glycolic/salicylic acne, SUPPORTED) via single-sentence reformulation; re-link entities [Phase 8.7b backlog]
+- [x] Re-verify fact_0015 live → WEAK grounded (C4 closed); fact_0002 kept quarantined [Phase 8.7b backlog]
+- [x] Fix Windows console UTF-8 crash in verify_gate masking verdicts as NEEDS_MANUAL (DEC-024) [Phase 8.7b backlog]
 - [ ] Claude Design Integration (Stage 2): id_img fill with provenance; binary replacement protocol [Phase 8.7]
 

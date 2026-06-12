@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0077",
+  "statement": "Subcision is the most commonly used treatment technique for rolling atrophic acne scars.",
+  "entity_id": "subcision",
+  "confidence": 0.9,
+  "evidence_level": "B",
+  "sources": [
+    "SRC-A068"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-12T08:47:51.853766Z",
+  "verified_by": "verifier",
+  "date": "2026-06-12",
+  "source_title": "Subdermal Laser-Assisted Scar Subcision (SLASS) Combined With Fractional CO(2) Laser for Acne Scars: Efficacy Evaluation.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

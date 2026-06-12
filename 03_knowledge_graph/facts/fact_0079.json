@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0079",
+  "statement": "Fractional radiofrequency is superior for treating atrophic acne scar patients prone to pigmentation.",
+  "entity_id": "radiofrequency_microneedling",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A070"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-12T08:51:18.238116Z",
+  "verified_by": "verifier",
+  "date": "2026-06-12",
+  "source_title": "Meta-analysis of fractional radiofrequency treatment for acne and/or acne scars.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

@@ -18,7 +18,9 @@
   ],
   "evidence_level": "moderate",
   "fact_ids": [
-    "fact_0075"
+    "fact_0075",
+    "fact_0076",
+    "fact_0077"
   ],
   "updated": "2026-06-11",
   "mechanism": "A needle or blunt cannula is inserted under the scar and moved to cut the fibrotic strands tethering it, releasing the atrophic scar and inducing new connective tissue.",

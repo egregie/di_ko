@@ -1,6 +1,6 @@
 {
   "fact_id": "fact_0004",
-  "statement": "Retinol stimulates collagen synthesis and inhibits matrix metalloproteinases (MMPs) to reduce dermal degradation.",
+  "statement": "Topical retinoids increase procollagen production to augment collagen formation in the dermis.",
   "entity_id": "retinol",
   "confidence": 0.8,
   "evidence_level": "A",
@@ -9,12 +9,12 @@
   ],
   "contradictions": [],
   "verified_by": "verifier",
-  "date": "2026-06-11",
+  "date": "2026-06-12",
   "audit_flag": "weak",
-  "audit_verdict": "UNSUPPORTED",
+  "audit_verdict": "WEAK",
   "evidence_ok": true,
   "verified_via": "live",
-  "verified_at": "2026-06-11T19:28:57.895652Z",
+  "verified_at": "2026-06-12T08:52:33.730782Z",
   "source_title": "The mechanism of action of topical retinoids.",
   "status": "needs_manual"
 }

@@ -1,0 +1,19 @@
+{
+  "fact_id": "fact_0076",
+  "statement": "Subcision is a safe and effective method for treating atrophic acne scars.",
+  "entity_id": "subcision",
+  "confidence": 0.8,
+  "evidence_level": "B",
+  "sources": [
+    "SRC-A067"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-12T08:47:44.555481Z",
+  "verified_by": "verifier",
+  "date": "2026-06-12",
+  "source_title": "Subcision in acne scarring: A review of clinical trials.",
+  "audit_flag": "weak",
+  "audit_verdict": "WEAK",
+  "evidence_ok": true
+}

@@ -1,6 +1,6 @@
 {
   "fact_id": "fact_0017",
-  "statement": "glycolic acid and salicylic acid combination improves mild to moderate acne",
+  "statement": "A serum combining glycolic acid and salicylic acid produced significant overall improvement in acne in over 90 percent of patients.",
   "entity_id": "glycolic_acid",
   "confidence": 0.95,
   "evidence_level": "A",
@@ -9,10 +9,10 @@
   ],
   "contradictions": [],
   "verified_by": "verifier",
-  "date": "2026-06-11",
-  "audit_verdict": "UNSUPPORTED",
+  "date": "2026-06-12",
+  "audit_verdict": "SUPPORTED",
   "evidence_ok": true,
   "verified_via": "live",
-  "verified_at": "2026-06-11T19:29:40.236300Z",
+  "verified_at": "2026-06-12T08:52:40.269753Z",
   "source_title": "Two is better than one: The combined effects of glycolic acid and salicylic acid on..."
 }
