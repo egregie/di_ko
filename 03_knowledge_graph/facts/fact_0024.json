@@ -3,7 +3,7 @@
   "statement": "topical niacinamide enhances ceramide synthesis and improves skin barrier function",
   "entity_id": "niacinamide",
   "confidence": 0.95,
-  "evidence_level": "A",
+  "evidence_level": "C",
   "sources": [
     "SRC-A026"
   ],
@@ -15,5 +15,12 @@
   "verified_via": "cache",
   "verified_at": "2026-06-10T17:47:25.314787Z",
   "source_title": "Nicotinic acid/niacinamide and the skin.",
-  "status": "needs_manual"
+  "status": "needs_manual",
+  "audit_flag": "grade_corrected",
+  "grade_audit": {
+    "prev": "A",
+    "derived": "C",
+    "signal": "conservative-default(no-clear-A/B-design)",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

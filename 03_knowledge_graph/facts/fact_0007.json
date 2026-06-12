@@ -3,7 +3,7 @@
   "statement": "Adapalene selectively binds to retinoic acid receptors RAR-beta and RAR-gamma.",
   "entity_id": "adapalene",
   "confidence": 0.97,
-  "evidence_level": "A",
+  "evidence_level": "C",
   "sources": [
     "SRC-A011"
   ],
@@ -14,5 +14,12 @@
   "evidence_ok": true,
   "verified_via": "cache",
   "verified_at": "2026-06-10T17:47:01.857709Z",
-  "source_title": "Pharmacology of adapalene."
+  "source_title": "Pharmacology of adapalene.",
+  "audit_flag": "grade_corrected",
+  "grade_audit": {
+    "prev": "A",
+    "derived": "C",
+    "signal": "conservative-default(no-clear-A/B-design)",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

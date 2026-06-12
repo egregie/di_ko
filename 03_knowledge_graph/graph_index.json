@@ -523,35 +523,35 @@
       "fact_id": "fact_0001",
       "statement": "Retinoids regulate gene transcription by binding to RAR and RXR nuclear receptors.",
       "entity_id": "retinoids",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0001.json"
     },
     "fact_0004": {
       "fact_id": "fact_0004",
       "statement": "Topical retinoids increase procollagen production to augment collagen formation in the dermis.",
       "entity_id": "retinol",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0004.json"
     },
     "fact_0005": {
       "fact_id": "fact_0005",
       "statement": "Tretinoin is the gold standard for clinical improvement of photoaged skin.",
       "entity_id": "tretinoin",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0005.json"
     },
     "fact_0007": {
       "fact_id": "fact_0007",
       "statement": "Adapalene selectively binds to retinoic acid receptors RAR-beta and RAR-gamma.",
       "entity_id": "adapalene",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0007.json"
     },
     "fact_0009": {
       "fact_id": "fact_0009",
       "statement": "Tazarotene selectively binds to nuclear retinoic acid receptors RAR-beta and RAR-gamma.",
       "entity_id": "tazarotene",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0009.json"
     },
     "fact_0010": {
@@ -565,14 +565,14 @@
       "fact_id": "fact_0011",
       "statement": "Retinaldehyde requires only a single metabolic conversion step to active retinoic acid in keratinocytes.",
       "entity_id": "retinaldehyde",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0011.json"
     },
     "fact_0014": {
       "fact_id": "fact_0014",
       "statement": "Retinyl palmitate nano-formulation reduces inflammatory and non-inflammatory lesions in mild acne.",
       "entity_id": "retinyl_palmitate",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0014.json"
     },
     "fact_0015": {
@@ -584,37 +584,37 @@
     },
     "fact_0017": {
       "fact_id": "fact_0017",
-      "statement": "A serum combining glycolic acid and salicylic acid produced significant overall improvement in acne in over 90 percent of patients.",
+      "statement": "Patient-reported significant improvement in acne in over 90% of patients using a glycolic+salicylic serum (uncontrolled questionnaire study, n=66).",
       "entity_id": "glycolic_acid",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0017.json"
     },
     "fact_0018": {
       "fact_id": "fact_0018",
       "statement": "salicylic-mandelic acid peels are effective for active acne lesions and post-acne hyperpigmentation",
       "entity_id": "salicylic_acid",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0018.json"
     },
     "fact_0019": {
       "fact_id": "fact_0019",
       "statement": "topical 30% salicylic acid peels reduce fine lines, hyperpigmentation, and skin roughness in photoaged skin",
       "entity_id": "salicylic_acid",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0019.json"
     },
     "fact_0020": {
       "fact_id": "fact_0020",
       "statement": "glycolic acid peels clinical application improves mild facial photoaging",
       "entity_id": "glycolic_acid",
-      "evidence_level": "A",
+      "evidence_level": "B",
       "path": "facts/fact_0020.json"
     },
     "fact_0021": {
       "fact_id": "fact_0021",
       "statement": "topical l-ascorbic acid promotes collagen synthesis and protects against ultraviolet-induced photodamage",
       "entity_id": "vitamin_c",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0021.json"
     },
     "fact_0022": {
@@ -628,28 +628,28 @@
       "fact_id": "fact_0024",
       "statement": "topical niacinamide enhances ceramide synthesis and improves skin barrier function",
       "entity_id": "niacinamide",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0024.json"
     },
     "fact_0025": {
       "fact_id": "fact_0025",
       "statement": "topical niacinamide reduces inflammatory lesions and regulates sebum excretion in acne vulgaris",
       "entity_id": "niacinamide",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0025.json"
     },
     "fact_0028": {
       "fact_id": "fact_0028",
       "statement": "topical L-ascorbic acid formulation requires a pH of less than 3.5 to achieve percutaneous absorption",
       "entity_id": "vitamin_c",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0028.json"
     },
     "fact_0029": {
       "fact_id": "fact_0029",
       "statement": "maximal percutaneous absorption of topical L-ascorbic acid occurs at a concentration of 20%",
       "entity_id": "vitamin_c",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0029.json"
     },
     "fact_0030": {
@@ -691,7 +691,7 @@
       "fact_id": "fact_0039",
       "statement": "topical niacinamide reduces transepidermal water loss and increases epidermal stratum corneum hydration",
       "entity_id": "niacinamide",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0039.json"
     },
     "fact_0041": {
@@ -705,14 +705,14 @@
       "fact_id": "fact_0044",
       "statement": "topical L-ascorbic acid formulation requires a pH of less than 3.5 to achieve percutaneous absorption",
       "entity_id": "vitamin_c",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0044.json"
     },
     "fact_0045": {
       "fact_id": "fact_0045",
       "statement": "maximal percutaneous absorption of topical L-ascorbic acid occurs at a concentration of 20%",
       "entity_id": "vitamin_c",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0045.json"
     },
     "fact_0046": {
@@ -740,14 +740,14 @@
       "fact_id": "fact_0049",
       "statement": "salicylic acid acts as a desmolytic agent by disrupting cellular junctions to exfoliate the stratum corneum and possesses comedolytic properties useful for acne",
       "entity_id": "exfoliants",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0049.json"
     },
     "fact_0050": {
       "fact_id": "fact_0050",
       "statement": "topical 20% salicylic-10% mandelic acid combination peel is effective for the treatment of active acne and postacne hyperpigmentation in Asian skin",
       "entity_id": "exfoliants",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0050.json"
     },
     "fact_0051": {
@@ -761,35 +761,35 @@
       "fact_id": "fact_0052",
       "statement": "topical copper tripeptide-1 (GHK-Cu) stimulates collagen and glycosaminoglycan synthesis during tissue remodeling",
       "entity_id": "copper_tripeptide_1",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0052.json"
     },
     "fact_0053": {
       "fact_id": "fact_0053",
       "statement": "topical GHK-Cu peptide regulates gene expression related to skin regeneration, collagen synthesis, and antioxidant protection",
       "entity_id": "copper_tripeptide_1",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0053.json"
     },
     "fact_0054": {
       "fact_id": "fact_0054",
       "statement": "topical acetyl hexapeptide-8 (Argireline) mimics SNAP-25 and destabilizes the SNARE complex to inhibit neurotransmitter release and reduce wrinkle depth",
       "entity_id": "acetyl_hexapeptide_8",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0054.json"
     },
     "fact_0057": {
       "fact_id": "fact_0057",
       "statement": "topical palmitoyl tripeptide-38 formulation improves skin roughness, tone, and reduces wrinkles in aged facial skin",
       "entity_id": "palmitoyl_tripeptide_38",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0057.json"
     },
     "fact_0058": {
       "fact_id": "fact_0058",
       "statement": "topical acetyl tetrapeptide-5 has protective anti-aging effects on skin fibroblasts, acts as an angiotensin-converting enzyme inhibitor, and is safe and well-tolerated",
       "entity_id": "acetyl_tetrapeptide_5",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0058.json"
     },
     "fact_0063": {
@@ -831,7 +831,7 @@
       "fact_id": "fact_0068",
       "statement": "Combined microneedling and chemical peeling is superior to either treatment alone for atrophic acne scars, with favourable safety and patient-reported outcomes",
       "entity_id": "atrophic_acne_scars",
-      "evidence_level": "A",
+      "evidence_level": "C",
       "path": "facts/fact_0068.json"
     },
     "fact_0070": {
@@ -852,7 +852,7 @@
       "fact_id": "fact_0072",
       "statement": "A 70% glycolic acid peel is an effective alternative to trichloroacetic acid peel for treating facial atrophic acne scars, especially for patients not tolerating TCA or requiring lesser downtime",
       "entity_id": "glycolic_acid",
-      "evidence_level": "B",
+      "evidence_level": "C",
       "path": "facts/fact_0072.json"
     },
     "fact_0073": {
@@ -866,28 +866,28 @@
       "fact_id": "fact_0074",
       "statement": "Azelaic acid's inhibitory effect on melanocytes makes it widely used in the treatment of hyperpigmentation disorders such as melasma and post-inflammatory hyperpigmentation",
       "entity_id": "azelaic_acid",
-      "evidence_level": "B",
+      "evidence_level": "C",
       "path": "facts/fact_0074.json"
     },
     "fact_0075": {
       "fact_id": "fact_0075",
       "statement": "Subcision is a surgical technique for managing atrophic acne scars.",
       "entity_id": "subcision",
-      "evidence_level": "B",
+      "evidence_level": "C",
       "path": "facts/fact_0075.json"
     },
     "fact_0076": {
       "fact_id": "fact_0076",
       "statement": "Subcision is a safe and effective method for treating atrophic acne scars.",
       "entity_id": "subcision",
-      "evidence_level": "B",
+      "evidence_level": "C",
       "path": "facts/fact_0076.json"
     },
     "fact_0077": {
       "fact_id": "fact_0077",
       "statement": "Subcision is the most commonly used treatment technique for rolling atrophic acne scars.",
       "entity_id": "subcision",
-      "evidence_level": "B",
+      "evidence_level": "C",
       "path": "facts/fact_0077.json"
     },
     "fact_0078": {

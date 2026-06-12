@@ -476,45 +476,71 @@ Rules:
                 print(f"  Error calling Gemini Client: {e}. Falling back to NEEDS_MANUAL.")
             return "NEEDS_MANUAL"
 
-def evidence_ok(level: str, pubtype: list) -> bool:
+_GRADE_RANK = {"A": 3, "B": 2, "C": 1, "D": 0}
+
+
+def derive_grade(pubtype, abstract=""):
     """
-    Check if publication types support the required EBM level.
+    Derive the HIGHEST defensible EBM grade a source supports, from its
+    PubMed publication types plus the study design described in its abstract.
+    Conservative by construction: when the design is not clearly A/B, it
+    returns C (DEC-025). Returns (grade, signal) where signal explains why.
+
+    A  = RCT / meta-analysis / systematic review
+    B  = controlled (non-randomized) clinical trial / cohort / guideline
+    C  = narrative review / case series / questionnaire / uncontrolled
+         prospective / comparative-only / in-vitro / unclear design
+    Note: a plain "Journal Article" or a narrative "Review" pub-type carries
+    NO grade-A signal on its own (that was the old hole).
+    """
+    if isinstance(pubtype, str):
+        pubtype = [pubtype]
+    pts = " | ".join(p.lower() for p in (pubtype or []))
+    ab = (abstract or "").lower()
+
+    # 1) Top-tier pub-type tags are authoritative.
+    if "systematic review" in pts or "meta-analysis" in pts:
+        return "A", "pubtype:systematic-review/meta-analysis"
+    # 2) A NARRATIVE review (Review w/o systematic) is secondary synthesis -> C,
+    #    regardless of any RCTs it cites. Check before the RCT tag.
+    if "review" in pts:
+        return "C", "pubtype:narrative-review"
+    # 3) RCT pub-type tag.
+    if "randomized controlled trial" in pts:
+        return "A", "pubtype:RCT"
+    # 4) Controlled (non-random) clinical trial.
+    if "controlled clinical trial" in pts:
+        return "B", "pubtype:controlled-clinical-trial"
+
+    # 5) No decisive pub-type (e.g. bare "Journal Article", "Comparative Study",
+    #    "Clinical Trial", "Clinical Study") -> read the abstract for design.
+    has_rand = "randomized" in ab or "randomised" in ab or "randomization" in ab
+    controlled = any(k in ab for k in (
+        "double-blind", "double blind", "placebo-controlled", "placebo controlled",
+        "vehicle-controlled", "vehicle controlled", "split-face", "split face",
+        "split-faced", "controlled trial"))
+    if "systematic review" in ab or "meta-analysis" in ab:
+        return "A", "abstract:systematic-review/meta-analysis"
+    if has_rand and controlled:
+        return "A", "abstract:randomized-controlled"
+    if "cohort" in ab:
+        return "B", "abstract:cohort"
+    if "controlled clinical trial" in ab or ("controlled" in ab and "trial" in ab):
+        return "B", "abstract:controlled-trial"
+    if "clinical trial" in pts:
+        return "B", "pubtype:clinical-trial(uncertain-randomization)"
+    # questionnaire / case / uncontrolled prospective / comparative-only / in vitro / unclear
+    return "C", "conservative-default(no-clear-A/B-design)"
+
+
+def evidence_ok(level: str, pubtype: list, abstract: str = "") -> bool:
+    """
+    Does the source actually support the CLAIMED EBM level? True iff the
+    design-derived grade is at least as strong as the claimed level. Uses
+    derive_grade so a bare "Journal Article"/narrative "Review" can no longer
+    satisfy level A (the old a_keywords hole, DEC-025).
     """
     if not pubtype:
         return False
-        
-    if isinstance(pubtype, str):
-        pubtype = [pubtype]
-
-    pubtype_lower = [pt.lower() for pt in pubtype]
-    
-    # Levels support mapping:
-    # A: Systematic review / meta-analysis / RCT / clinical trial
-    a_keywords = {
-        "systematic review", "meta-analysis", "randomized controlled trial", 
-        "clinical trial", "controlled clinical trial", "multicenter study", 
-        "comparative study", "review", "journal article", "study guide"
-    }
-    # B: Cohort / clinical guideline
-    b_keywords = {
-        "cohort", "guideline", "practice guideline", "observational study", 
-        "epidemiological study"
-    }
-    # C: Expert consensus / case reports
-    c_keywords = {
-        "consensus", "case reports", "case study", "case series", "editorial", "letter", "news"
-    }
-
-    has_a = any(any(ak in pt for ak in a_keywords) for pt in pubtype_lower)
-    has_b = any(any(bk in pt for bk in b_keywords) for pt in pubtype_lower)
-    has_c = any(any(ck in pt for ck in c_keywords) for pt in pubtype_lower)
-
-    if level == "A":
-        return has_a
-    elif level == "B":
-        return has_a or has_b
-    elif level == "C":
-        return has_a or has_b or has_c
-    elif level == "D":
-        return True
-    return False
+    derived, _ = derive_grade(pubtype, abstract)
+    return _GRADE_RANK.get(derived, 0) >= _GRADE_RANK.get(level, 99)

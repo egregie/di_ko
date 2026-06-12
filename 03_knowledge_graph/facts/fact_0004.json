@@ -3,18 +3,24 @@
   "statement": "Topical retinoids increase procollagen production to augment collagen formation in the dermis.",
   "entity_id": "retinol",
   "confidence": 0.8,
-  "evidence_level": "A",
+  "evidence_level": "C",
   "sources": [
     "SRC-A009"
   ],
   "contradictions": [],
   "verified_by": "verifier",
   "date": "2026-06-12",
-  "audit_flag": "weak",
+  "audit_flag": "grade_corrected",
   "audit_verdict": "WEAK",
   "evidence_ok": true,
   "verified_via": "live",
   "verified_at": "2026-06-12T08:52:33.730782Z",
   "source_title": "The mechanism of action of topical retinoids.",
-  "status": "needs_manual"
+  "status": "needs_manual",
+  "grade_audit": {
+    "prev": "A",
+    "derived": "C",
+    "signal": "pubtype:narrative-review",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

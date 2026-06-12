@@ -100,5 +100,10 @@
 - [x] Restore fact_0004 (retinoid procollagen, WEAK) + fact_0017 (glycolic/salicylic acne, SUPPORTED) via single-sentence reformulation; re-link entities [Phase 8.7b backlog]
 - [x] Re-verify fact_0015 live → WEAK grounded (C4 closed); fact_0002 kept quarantined [Phase 8.7b backlog]
 - [x] Fix Windows console UTF-8 crash in verify_gate masking verdicts as NEEDS_MANUAL (DEC-024) [Phase 8.7b backlog]
+- [x] Close grade-gate hole: derive_grade by design, fix evidence_ok, verify_gate passes abstract (DEC-025) [Phase 8.7b grade-fix]
+- [x] Audit all 55 active facts for inflated grade → 32 corrected downgrade-only (A:22/B:2/C:31) [Phase 8.7b grade-fix]
+- [x] fact_0017 A→C + reframe patient-reported/uncontrolled/n=66 (no judge re-run) [Phase 8.7b grade-fix]
+- [x] validate_graph grade-consistency check (FAIL on inflation), negative-control proven [Phase 8.7b grade-fix]
+- [ ] Optional: re-run rejected/ pool through UTF-8 gate for facts false-dropped by the encoding crash (DEC-024) [backlog]
 - [ ] Claude Design Integration (Stage 2): id_img fill with provenance; binary replacement protocol [Phase 8.7]
 

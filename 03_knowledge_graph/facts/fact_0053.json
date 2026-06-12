@@ -3,7 +3,7 @@
   "statement": "topical GHK-Cu peptide regulates gene expression related to skin regeneration, collagen synthesis, and antioxidant protection",
   "entity_id": "copper_tripeptide_1",
   "confidence": 0.9,
-  "evidence_level": "A",
+  "evidence_level": "C",
   "sources": [
     "SRC-A046"
   ],
@@ -15,5 +15,12 @@
   "source_title": "Regenerative and Protective Actions of the GHK-Cu Peptide in the Light of the New Gene...",
   "audit_verdict": "NEEDS_MANUAL",
   "evidence_ok": true,
-  "status": "needs_manual"
+  "status": "needs_manual",
+  "audit_flag": "grade_corrected",
+  "grade_audit": {
+    "prev": "A",
+    "derived": "C",
+    "signal": "pubtype:narrative-review",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

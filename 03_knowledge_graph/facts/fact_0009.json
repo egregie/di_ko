@@ -3,7 +3,7 @@
   "statement": "Tazarotene selectively binds to nuclear retinoic acid receptors RAR-beta and RAR-gamma.",
   "entity_id": "tazarotene",
   "confidence": 0.8,
-  "evidence_level": "A",
+  "evidence_level": "C",
   "sources": [
     "SRC-A053"
   ],
@@ -15,5 +15,11 @@
   "verified_via": "cache",
   "verified_at": "2026-06-10T17:47:03.927721Z",
   "source_title": "Tazarotene: the first receptor-selective topical retinoid for the treatment of psoriasis.",
-  "audit_flag": "weak"
+  "audit_flag": "grade_corrected",
+  "grade_audit": {
+    "prev": "A",
+    "derived": "C",
+    "signal": "pubtype:narrative-review",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

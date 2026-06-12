@@ -3,7 +3,7 @@
   "statement": "topical l-ascorbic acid promotes collagen synthesis and protects against ultraviolet-induced photodamage",
   "entity_id": "vitamin_c",
   "confidence": 0.95,
-  "evidence_level": "A",
+  "evidence_level": "C",
   "sources": [
     "SRC-A023"
   ],
@@ -15,5 +15,12 @@
   "verified_via": "cache",
   "verified_at": "2026-06-10T17:47:20.882150Z",
   "source_title": "Topical Vitamin C and the Skin: Mechanisms of Action and Clinical Applications.",
-  "status": "needs_manual"
+  "status": "needs_manual",
+  "audit_flag": "grade_corrected",
+  "grade_audit": {
+    "prev": "A",
+    "derived": "C",
+    "signal": "pubtype:narrative-review",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

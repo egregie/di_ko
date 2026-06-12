@@ -3,7 +3,7 @@
   "statement": "topical niacinamide reduces inflammatory lesions and regulates sebum excretion in acne vulgaris",
   "entity_id": "niacinamide",
   "confidence": 0.95,
-  "evidence_level": "A",
+  "evidence_level": "C",
   "sources": [
     "SRC-A027"
   ],
@@ -15,5 +15,12 @@
   "verified_via": "cache",
   "verified_at": "2026-06-10T17:47:27.434742Z",
   "source_title": "The role of nicotinamide in acne treatment.",
-  "status": "needs_manual"
+  "status": "needs_manual",
+  "audit_flag": "grade_corrected",
+  "grade_audit": {
+    "prev": "A",
+    "derived": "C",
+    "signal": "pubtype:narrative-review",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

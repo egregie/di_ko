@@ -3,7 +3,7 @@
   "statement": "topical 30% salicylic acid peels reduce fine lines, hyperpigmentation, and skin roughness in photoaged skin",
   "entity_id": "salicylic_acid",
   "confidence": 0.95,
-  "evidence_level": "A",
+  "evidence_level": "C",
   "sources": [
     "SRC-A021"
   ],
@@ -15,5 +15,12 @@
   "verified_via": "cache",
   "verified_at": "2026-06-10T17:47:16.598760Z",
   "source_title": "Salicylic acid peels for the treatment of photoaging.",
-  "status": "needs_manual"
+  "status": "needs_manual",
+  "audit_flag": "grade_corrected",
+  "grade_audit": {
+    "prev": "A",
+    "derived": "C",
+    "signal": "conservative-default(no-clear-A/B-design)",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

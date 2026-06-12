@@ -3,7 +3,7 @@
   "statement": "Tretinoin is the gold standard for clinical improvement of photoaged skin.",
   "entity_id": "tretinoin",
   "confidence": 0.8,
-  "evidence_level": "A",
+  "evidence_level": "C",
   "sources": [
     "SRC-A010"
   ],
@@ -15,6 +15,12 @@
   "verified_via": "cache",
   "verified_at": "2026-06-10T17:46:59.855795Z",
   "source_title": "An Updated Review of Topical Tretinoin in Dermatology: From Acne and Photoaging to Skin Cancer.",
-  "audit_flag": "weak",
-  "status": "needs_manual"
+  "audit_flag": "grade_corrected",
+  "status": "needs_manual",
+  "grade_audit": {
+    "prev": "A",
+    "derived": "C",
+    "signal": "pubtype:narrative-review",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

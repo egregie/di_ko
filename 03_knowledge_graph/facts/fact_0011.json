@@ -3,7 +3,7 @@
   "statement": "Retinaldehyde requires only a single metabolic conversion step to active retinoic acid in keratinocytes.",
   "entity_id": "retinaldehyde",
   "confidence": 0.8,
-  "evidence_level": "A",
+  "evidence_level": "C",
   "sources": [
     "SRC-A052"
   ],
@@ -15,5 +15,11 @@
   "verified_via": "cache",
   "verified_at": "2026-06-10T17:52:45.365124Z",
   "source_title": "Retinol and retinal metabolism. Relationship to the state of differentiation of cultured human keratinocytes.",
-  "audit_flag": "weak"
+  "audit_flag": "grade_corrected",
+  "grade_audit": {
+    "prev": "A",
+    "derived": "C",
+    "signal": "conservative-default(no-clear-A/B-design)",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

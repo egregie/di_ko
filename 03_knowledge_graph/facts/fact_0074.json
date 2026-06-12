@@ -3,7 +3,7 @@
   "statement": "Azelaic acid's inhibitory effect on melanocytes makes it widely used in the treatment of hyperpigmentation disorders such as melasma and post-inflammatory hyperpigmentation",
   "entity_id": "azelaic_acid",
   "confidence": 0.9,
-  "evidence_level": "B",
+  "evidence_level": "C",
   "sources": [
     "SRC-A065"
   ],
@@ -14,5 +14,12 @@
   "date": "2026-06-12",
   "source_title": "The multiple uses of azelaic acid in dermatology: mechanism of action, preparations, and potential therapeutic...",
   "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "evidence_ok": true,
+  "audit_flag": "grade_corrected",
+  "grade_audit": {
+    "prev": "B",
+    "derived": "C",
+    "signal": "pubtype:narrative-review",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

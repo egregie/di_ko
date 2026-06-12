@@ -3,7 +3,7 @@
   "statement": "A 70% glycolic acid peel is an effective alternative to trichloroacetic acid peel for treating facial atrophic acne scars, especially for patients not tolerating TCA or requiring lesser downtime",
   "entity_id": "glycolic_acid",
   "confidence": 0.9,
-  "evidence_level": "B",
+  "evidence_level": "C",
   "sources": [
     "SRC-A063"
   ],
@@ -14,5 +14,12 @@
   "date": "2026-06-11",
   "source_title": "A comparative study of 70% glycolic acid and 30% trichloroacetic acid peel in the treatment...",
   "audit_verdict": "SUPPORTED",
-  "evidence_ok": true
+  "evidence_ok": true,
+  "audit_flag": "grade_corrected",
+  "grade_audit": {
+    "prev": "B",
+    "derived": "C",
+    "signal": "conservative-default(no-clear-A/B-design)",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

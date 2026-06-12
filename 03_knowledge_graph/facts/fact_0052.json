@@ -3,7 +3,7 @@
   "statement": "topical copper tripeptide-1 (GHK-Cu) stimulates collagen and glycosaminoglycan synthesis during tissue remodeling",
   "entity_id": "copper_tripeptide_1",
   "confidence": 0.8,
-  "evidence_level": "A",
+  "evidence_level": "C",
   "sources": [
     "SRC-A045"
   ],
@@ -15,6 +15,12 @@
   "source_title": "The human tri-peptide GHK and tissue remodeling.",
   "audit_verdict": "NEEDS_MANUAL",
   "evidence_ok": true,
-  "audit_flag": "weak",
-  "status": "needs_manual"
+  "audit_flag": "grade_corrected",
+  "status": "needs_manual",
+  "grade_audit": {
+    "prev": "A",
+    "derived": "C",
+    "signal": "pubtype:narrative-review",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

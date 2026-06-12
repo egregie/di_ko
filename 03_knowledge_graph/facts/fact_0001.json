@@ -3,7 +3,7 @@
   "statement": "Retinoids regulate gene transcription by binding to RAR and RXR nuclear receptors.",
   "entity_id": "retinoids",
   "confidence": 0.8,
-  "evidence_level": "A",
+  "evidence_level": "C",
   "sources": [
     "SRC-A009"
   ],
@@ -15,5 +15,11 @@
   "verified_via": "cache",
   "verified_at": "2026-06-10T17:46:56.895291Z",
   "source_title": "The mechanism of action of topical retinoids.",
-  "audit_flag": "weak"
+  "audit_flag": "grade_corrected",
+  "grade_audit": {
+    "prev": "A",
+    "derived": "C",
+    "signal": "pubtype:narrative-review",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

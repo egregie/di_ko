@@ -130,7 +130,7 @@ def main():
         pubtype = check_res.get("pubtype", [])
         
         verdict = evidence.assess_claim(statement, abstract)
-        ev_ok = evidence.evidence_ok(evidence_level, pubtype)
+        ev_ok = evidence.evidence_ok(evidence_level, pubtype, abstract)
         
         source_results.append({
             "source_id": src_id,

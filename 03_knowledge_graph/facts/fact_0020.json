@@ -3,7 +3,7 @@
   "statement": "glycolic acid peels clinical application improves mild facial photoaging",
   "entity_id": "glycolic_acid",
   "confidence": 0.95,
-  "evidence_level": "A",
+  "evidence_level": "B",
   "sources": [
     "SRC-A022"
   ],
@@ -15,5 +15,12 @@
   "verified_via": "cache",
   "verified_at": "2026-06-10T17:47:18.745450Z",
   "source_title": "Clinical improvement of photoaged skin with 50% glycolic acid. A double-blind vehicle-controlled study.",
-  "status": "needs_manual"
+  "status": "needs_manual",
+  "audit_flag": "grade_corrected",
+  "grade_audit": {
+    "prev": "A",
+    "derived": "B",
+    "signal": "pubtype:controlled-clinical-trial",
+    "by": "grade_audit.py (DEC-025)"
+  }
 }

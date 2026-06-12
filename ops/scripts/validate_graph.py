@@ -202,6 +202,40 @@ def main():
                 except Exception:
                     pass
 
+    # 6. Grade-consistency (Phase 8.7b grade-fix, DEC-025): a fact's evidence_level
+    #    must not exceed the grade its source design actually supports (no inflation).
+    try:
+        sys.path.append(os.path.join(script_dir, "lib"))
+        import evidence as _ev
+        _rank = {"A": 3, "B": 2, "C": 1, "D": 0}
+        cache_eutils = os.path.join(project_root, "ops", "cache", "eutils")
+        for filename in os.listdir(facts_path):
+            if not filename.endswith(".json"):
+                continue
+            try:
+                with open(os.path.join(facts_path, filename), "r", encoding="utf-8") as f:
+                    fdata = json.load(f)
+                lvl = fdata.get("evidence_level")
+                if lvl not in _rank:
+                    continue
+                fsrcs = fdata.get("sources", [])
+                if not fsrcs:
+                    continue
+                src_entry = sources_map.get(fsrcs[0], {})
+                pmid = src_entry.get("pmid", "")
+                cfile = os.path.join(cache_eutils, f"{pmid}.json")
+                if not pmid or not os.path.exists(cfile):
+                    continue  # cannot verify design -> skip (don't false-FAIL)
+                with open(cfile, "r", encoding="utf-8") as cf:
+                    cdata = json.load(cf)
+                derived, signal = _ev.derive_grade(cdata.get("pubtype", []), cdata.get("abstract", ""))
+                if _rank[lvl] > _rank.get(derived, 0):
+                    errors.append(f"Fact '{filename}' evidence_level '{lvl}' exceeds source-supported grade '{derived}' ({signal}). Downgrade to '{derived}' (grade-fix DEC-025).")
+            except Exception:
+                pass
+    except Exception:
+        pass
+
     if errors:
         print("Graph validation FAILED with the following errors:", file=sys.stderr)
         for err in errors:
