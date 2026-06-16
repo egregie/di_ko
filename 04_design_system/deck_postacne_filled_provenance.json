@@ -1,0 +1,615 @@
+{
+ "deck_id": "deck_postacne_filled",
+ "blocks": [
+  {
+   "slide": 1,
+   "slot": "deck_title",
+   "block": "author_frame",
+   "text": "Постакне"
+  },
+  {
+   "slide": 1,
+   "slot": "subtitle",
+   "block": "author_frame",
+   "text": "Доказательные протоколы коррекции · для специалистов"
+  },
+  {
+   "slide": 2,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Постакне — это не один дефект, а четыре разных задачи"
+  },
+  {
+   "slide": 2,
+   "slot": "category_1",
+   "block": "author_frame",
+   "text": "ПИГ — стойкие пятна после воспаления (PIH/PIE)"
+  },
+  {
+   "slide": 2,
+   "slot": "category_2",
+   "block": "author_frame",
+   "text": "Стойкая эритема — расширенные сосуды (PIE)"
+  },
+  {
+   "slide": 2,
+   "slot": "category_3",
+   "block": "author_frame",
+   "text": "Атрофические рубцы — потеря дермального каркаса"
+  },
+  {
+   "slide": 2,
+   "slot": "category_4",
+   "block": "author_frame",
+   "text": "Неровность рельефа, поры, шероховатость"
+  },
+  {
+   "slide": 3,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Как оценивать постакне: четыре оси разбора"
+  },
+  {
+   "slide": 3,
+   "slot": "param_1",
+   "block": "author_frame",
+   "text": "Пигмент / сосуд / рубец / текстура — разные мишени"
+  },
+  {
+   "slide": 3,
+   "slot": "param_2",
+   "block": "author_frame",
+   "text": "Эпидермис или дерма — определяет выбор метода"
+  },
+  {
+   "slide": 3,
+   "slot": "param_3",
+   "block": "author_frame",
+   "text": "Уровень данных под каждый метод (A/B/C)"
+  },
+  {
+   "slide": 3,
+   "slot": "param_4",
+   "block": "author_frame",
+   "text": "Фототип, риск ПВГ, переносимость"
+  },
+  {
+   "slide": 4,
+   "slot": "part_label",
+   "block": "author_frame",
+   "text": "Часть 1"
+  },
+  {
+   "slide": 4,
+   "slot": "section_title",
+   "block": "author_frame",
+   "text": "Пигментация"
+  },
+  {
+   "slide": 4,
+   "slot": "section_subtitle",
+   "block": "author_frame",
+   "text": "PIH и PIE: природа, активы, доказательная база"
+  },
+  {
+   "slide": 5,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "PIH и PIE — разная природа, разная тактика"
+  },
+  {
+   "slide": 5,
+   "slot": "label_1",
+   "block": "author_frame",
+   "text": "PIH — избыток меланина после воспаления"
+  },
+  {
+   "slide": 5,
+   "slot": "label_2",
+   "block": "author_frame",
+   "text": "PIE — стойкое расширение сосудов, эритема"
+  },
+  {
+   "slide": 5,
+   "slot": "label_3",
+   "block": "fact",
+   "fact_id": "fact_0065",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Обзор: при PIH сильнее всего доказаны ретиноиды и гидроксикислоты; обязателен SPF"
+  },
+  {
+   "slide": 6,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Активы для пигментации × механизм"
+  },
+  {
+   "slide": 6,
+   "slot": "col_header",
+   "block": "author_frame",
+   "text": "Актив → механизм действия (с уровнем доказательности)"
+  },
+  {
+   "slide": 6,
+   "slot": "row_1",
+   "block": "fact",
+   "fact_id": "fact_0034",
+   "grade": "A",
+   "verdict": "NEEDS_MANUAL",
+   "quarantined": false,
+   "text": "Ниацинамид снижает гиперпигментацию, подавляя перенос меланосом в кератиноциты"
+  },
+  {
+   "slide": 6,
+   "slot": "row_2",
+   "block": "fact",
+   "fact_id": "fact_0063",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Азелаиновая к-та 15%: улучшает поствоспалительную эритему и ПВГ при минимуме реакций"
+  },
+  {
+   "slide": 6,
+   "slot": "row_3",
+   "block": "fact",
+   "fact_id": "fact_0035",
+   "grade": "A",
+   "verdict": "NEEDS_MANUAL",
+   "quarantined": false,
+   "text": "Ниацинамид 4% ≈ гидрохинон 4% при мелазме, но с меньшим числом побочных"
+  },
+  {
+   "slide": 7,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Ниацинамид · азелаиновая кислота · витамин C"
+  },
+  {
+   "slide": 7,
+   "slot": "interp",
+   "block": "author_frame",
+   "text": "Сравнение по силе доказательств и переносимости:"
+  },
+  {
+   "slide": 7,
+   "slot": "interp",
+   "block": "fact",
+   "fact_id": "fact_0066",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Ниацинамид: осветление за счёт блокады переноса меланосом"
+  },
+  {
+   "slide": 7,
+   "slot": "interp",
+   "block": "fact",
+   "fact_id": "fact_0064",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Азелаиновая к-та эффективнее плацебо при акне, розацеа, мелазме"
+  },
+  {
+   "slide": 7,
+   "slot": "interp",
+   "block": "fact",
+   "fact_id": "fact_0021",
+   "grade": "C",
+   "verdict": "NEEDS_MANUAL",
+   "quarantined": false,
+   "text": "Витамин C (L-аскорб.): синтез коллагена + защита от UV-фотоповреждения"
+  },
+  {
+   "slide": 7,
+   "slot": "grade_caption",
+   "block": "author_frame",
+   "text": "Уровни: см. маркер A/B/C у каждого пункта"
+  },
+  {
+   "slide": 8,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Эффективность по пигментации: что показывают данные"
+  },
+  {
+   "slide": 8,
+   "slot": "interp",
+   "block": "author_frame",
+   "text": "Ключевые результаты:"
+  },
+  {
+   "slide": 8,
+   "slot": "interp",
+   "block": "fact",
+   "fact_id": "fact_0035",
+   "grade": "A",
+   "verdict": "NEEDS_MANUAL",
+   "quarantined": false,
+   "text": "Ниацинамид 4% сопоставим с гидрохиноном 4% при мелазме (меньше побочных)"
+  },
+  {
+   "slide": 8,
+   "slot": "interp",
+   "block": "fact",
+   "fact_id": "fact_0036",
+   "grade": "A",
+   "verdict": "NEEDS_MANUAL",
+   "quarantined": false,
+   "text": "Ниацинамид 2% и 5% достоверно снижают гиперпигментацию, повышают светлоту"
+  },
+  {
+   "slide": 8,
+   "slot": "source_caption",
+   "block": "author_frame",
+   "text": "Маркер уровня доказательности — у каждого пункта"
+  },
+  {
+   "slide": 9,
+   "slot": "part_label",
+   "block": "author_frame",
+   "text": "Часть 2"
+  },
+  {
+   "slide": 9,
+   "slot": "section_title",
+   "block": "author_frame",
+   "text": "Рубцы"
+  },
+  {
+   "slide": 9,
+   "slot": "section_subtitle",
+   "block": "author_frame",
+   "text": "Атрофические рубцы: типы и выбор процедуры"
+  },
+  {
+   "slide": 10,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Три типа атрофических рубцов"
+  },
+  {
+   "slide": 10,
+   "slot": "category_1",
+   "block": "author_frame",
+   "text": "Узкие, глубокие — точечное воздействие"
+  },
+  {
+   "slide": 10,
+   "slot": "category_2",
+   "block": "author_frame",
+   "text": "Широкие, с чёткими краями"
+  },
+  {
+   "slide": 10,
+   "slot": "category_3",
+   "block": "author_frame",
+   "text": "Волнообразные, фиброзные тяжи в дерме"
+  },
+  {
+   "slide": 11,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Карта выбора процедуры по типу рубца"
+  },
+  {
+   "slide": 11,
+   "slot": "root",
+   "block": "author_frame",
+   "text": "Тип рубца определяет метод первой линии"
+  },
+  {
+   "slide": 11,
+   "slot": "branch_1",
+   "block": "author_frame",
+   "text": "Ice-pick →"
+  },
+  {
+   "slide": 11,
+   "slot": "branch_1",
+   "block": "fact",
+   "fact_id": "fact_0073",
+   "grade": "B",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "CROSS с трихлоруксусной к-той: эффективен и хорошо переносится при ice-pick"
+  },
+  {
+   "slide": 11,
+   "slot": "branch_2",
+   "block": "author_frame",
+   "text": "Boxcar / общие →"
+  },
+  {
+   "slide": 11,
+   "slot": "branch_2",
+   "block": "fact",
+   "fact_id": "fact_0067",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Микронидлинг (систем. обзор РКИ): эффективен и безопасен при атроф. рубцах"
+  },
+  {
+   "slide": 11,
+   "slot": "branch_2",
+   "block": "fact",
+   "fact_id": "fact_0070",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Фракц. пикосекундный лазер: эффект сопоставим, ниже риск ПВГ и боли"
+  },
+  {
+   "slide": 11,
+   "slot": "branch_3",
+   "block": "author_frame",
+   "text": "Rolling →"
+  },
+  {
+   "slide": 11,
+   "slot": "branch_3",
+   "block": "fact",
+   "fact_id": "fact_0077",
+   "grade": "C",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Субцизия — самый частый метод при rolling-рубцах"
+  },
+  {
+   "slide": 11,
+   "slot": "branch_3",
+   "block": "fact",
+   "fact_id": "fact_0079",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Фракц. радиочастота предпочтительна у склонных к пигментации"
+  },
+  {
+   "slide": 12,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Глубина воздействия процедур по слоям кожи"
+  },
+  {
+   "slide": 12,
+   "slot": "label_1",
+   "block": "fact",
+   "fact_id": "fact_0075",
+   "grade": "C",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Субцизия — хирургическое рассечение тяжей в дерме"
+  },
+  {
+   "slide": 12,
+   "slot": "label_2",
+   "block": "fact",
+   "fact_id": "fact_0078",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Абляционный фракц. CO₂-лазер — эффективен при атрофических рубцах"
+  },
+  {
+   "slide": 12,
+   "slot": "label_3",
+   "block": "fact",
+   "fact_id": "fact_0079",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Фракц. RF — воздействие в дерме, выгоден при риске пигментации"
+  },
+  {
+   "slide": 13,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Субцизия · лазер · RF-микронидлинг"
+  },
+  {
+   "slide": 13,
+   "slot": "interp",
+   "block": "author_frame",
+   "text": "Сильные стороны и доказательная база:"
+  },
+  {
+   "slide": 13,
+   "slot": "interp",
+   "block": "fact",
+   "fact_id": "fact_0078",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "CO₂-лазер: выраженный эффект при атрофических рубцах"
+  },
+  {
+   "slide": 13,
+   "slot": "interp",
+   "block": "fact",
+   "fact_id": "fact_0067",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Микронидлинг: безопасен, хорошо переносится (обзор РКИ)"
+  },
+  {
+   "slide": 13,
+   "slot": "interp",
+   "block": "fact",
+   "fact_id": "fact_0076",
+   "grade": "C",
+   "verdict": "WEAK",
+   "quarantined": false,
+   "text": "Субцизия: безопасный и эффективный метод при атроф. рубцах"
+  },
+  {
+   "slide": 13,
+   "slot": "grade_caption",
+   "block": "author_frame",
+   "text": "Маркер уровня — у каждого пункта"
+  },
+  {
+   "slide": 14,
+   "slot": "part_label",
+   "block": "author_frame",
+   "text": "Часть 3"
+  },
+  {
+   "slide": 14,
+   "slot": "section_title",
+   "block": "author_frame",
+   "text": "Текстура и протокол"
+  },
+  {
+   "slide": 14,
+   "slot": "section_subtitle",
+   "block": "author_frame",
+   "text": "Кислоты, комбинации и порядок ведения"
+  },
+  {
+   "slide": 15,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Система кислот для текстуры"
+  },
+  {
+   "slide": 15,
+   "slot": "param_1",
+   "block": "fact",
+   "fact_id": "fact_0072",
+   "grade": "C",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Пилинг гликолевой 70% — альтернатива TCA при атроф. рубцах, меньше downtime"
+  },
+  {
+   "slide": 15,
+   "slot": "param_2",
+   "block": "fact",
+   "fact_id": "fact_0050",
+   "grade": "C",
+   "verdict": "NEEDS_MANUAL",
+   "quarantined": false,
+   "text": "Пилинг 20% салицил.+10% мандел. — при акне и постакне-гиперпигментации"
+  },
+  {
+   "slide": 15,
+   "slot": "param_3",
+   "block": "fact",
+   "fact_id": "fact_0041",
+   "grade": "A",
+   "verdict": "NEEDS_MANUAL",
+   "quarantined": false,
+   "text": "45% мандел. ≈ 30% салицил. при акне, но с лучшим профилем безопасности"
+  },
+  {
+   "slide": 15,
+   "slot": "param_4",
+   "block": "author_frame",
+   "text": "Кислоты — поддержка текстуры и пигмента, не первая линия по рубцам"
+  },
+  {
+   "slide": 16,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Комбинированный протокол постакне"
+  },
+  {
+   "slide": 16,
+   "slot": "step_1",
+   "block": "author_frame",
+   "text": "Стабилизация акне"
+  },
+  {
+   "slide": 16,
+   "slot": "step_2",
+   "block": "fact",
+   "fact_id": "fact_0071",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Адапален 0.3%+БПО 2.5%: раннее лечение снижает число атрофических рубцов"
+  },
+  {
+   "slide": 16,
+   "slot": "step_3",
+   "block": "author_frame",
+   "text": "Пигмент: активы + SPF"
+  },
+  {
+   "slide": 16,
+   "slot": "step_4",
+   "block": "fact",
+   "fact_id": "fact_0068",
+   "grade": "C",
+   "verdict": "WEAK",
+   "quarantined": false,
+   "text": "Комбинация микронидлинг+пилинг превосходит каждый метод по отдельности"
+  },
+  {
+   "slide": 17,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Сводка доказательной базы постакне"
+  },
+  {
+   "slide": 17,
+   "slot": "facts",
+   "block": "author_frame",
+   "text": "Распределение уровней по графу постакне:"
+  },
+  {
+   "slide": 17,
+   "slot": "facts",
+   "block": "author_frame",
+   "text": "A (РКИ/мета-анализ): пигментация — ниацинамид, азелаин, обзор PIH; рубцы — микронидлинг, CO₂-лазер, пикосекунд, RF, адапален+БПО"
+  },
+  {
+   "slide": 17,
+   "slot": "facts",
+   "block": "author_frame",
+   "text": "B (контролируемые): CROSS-TCA при ice-pick"
+  },
+  {
+   "slide": 17,
+   "slot": "facts",
+   "block": "author_frame",
+   "text": "C (обзоры/огранич.): субцизия, ряд кислотных пилингов, отд. механизмы — подаются как ограниченные данные"
+  },
+  {
+   "slide": 17,
+   "slot": "grade_legend",
+   "block": "author_frame",
+   "text": "Честная подача: C-уровень = обзор/неконтролируемое, не аксиома"
+  },
+  {
+   "slide": 18,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Итоговая карта решений"
+  },
+  {
+   "slide": 18,
+   "slot": "summary_1",
+   "block": "author_frame",
+   "text": "Пигментация → ниацинамид / азелаин + обязательный SPF (есть A-данные)"
+  },
+  {
+   "slide": 18,
+   "slot": "summary_2",
+   "block": "author_frame",
+   "text": "Рубцы → метод по типу: CROSS (ice-pick), микронидлинг/лазер (boxcar), субцизия/RF (rolling)"
+  },
+  {
+   "slide": 18,
+   "slot": "summary_3",
+   "block": "author_frame",
+   "text": "Текстура → кислоты как поддержка; раннее лечение акне предотвращает рубцы"
+  }
+ ]
+}

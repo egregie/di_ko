@@ -1,0 +1,525 @@
+{
+ "deck_id": "deck_retinoids_filled",
+ "blocks": [
+  {
+   "slide": 1,
+   "slot": "deck_title",
+   "block": "author_frame",
+   "text": "Ретиноиды"
+  },
+  {
+   "slide": 1,
+   "slot": "subtitle",
+   "block": "author_frame",
+   "text": "Класс, механизм и выбор · для специалистов"
+  },
+  {
+   "slide": 2,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Какие бывают ретиноиды"
+  },
+  {
+   "slide": 2,
+   "slot": "category_1",
+   "block": "author_frame",
+   "text": "Активная кислота — прямое действие на рецептор"
+  },
+  {
+   "slide": 2,
+   "slot": "category_2",
+   "block": "author_frame",
+   "text": "Пердретиноиды — нужна конверсия в кислоту"
+  },
+  {
+   "slide": 2,
+   "slot": "category_3",
+   "block": "author_frame",
+   "text": "Синтетический, рецептор-селективный"
+  },
+  {
+   "slide": 2,
+   "slot": "category_4",
+   "block": "author_frame",
+   "text": "Синтетический, высокая активность"
+  },
+  {
+   "slide": 3,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Четыре оси оценки ретиноида"
+  },
+  {
+   "slide": 3,
+   "slot": "param_1",
+   "block": "author_frame",
+   "text": "Сила клинического эффекта по задаче"
+  },
+  {
+   "slide": 3,
+   "slot": "param_2",
+   "block": "author_frame",
+   "text": "Переносимость, риск ретиноидного дерматита"
+  },
+  {
+   "slide": 3,
+   "slot": "param_3",
+   "block": "author_frame",
+   "text": "Чувствительность к свету/окислению"
+  },
+  {
+   "slide": 3,
+   "slot": "param_4",
+   "block": "author_frame",
+   "text": "Уровень данных (A/B/C)"
+  },
+  {
+   "slide": 4,
+   "slot": "part_label",
+   "block": "author_frame",
+   "text": "Часть 1"
+  },
+  {
+   "slide": 4,
+   "slot": "section_title",
+   "block": "author_frame",
+   "text": "Механизм"
+  },
+  {
+   "slide": 4,
+   "slot": "section_subtitle",
+   "block": "author_frame",
+   "text": "Рецепторы, конверсия, эффект в дерме"
+  },
+  {
+   "slide": 5,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Рецепторный механизм: RAR / RXR"
+  },
+  {
+   "slide": 5,
+   "slot": "label_1",
+   "block": "fact",
+   "fact_id": "fact_0001",
+   "grade": "C",
+   "verdict": "WEAK",
+   "quarantined": false,
+   "text": "Ретиноиды регулируют транскрипцию генов через ядерные рецепторы RAR и RXR"
+  },
+  {
+   "slide": 5,
+   "slot": "label_2",
+   "block": "author_frame",
+   "text": "Через рецептор меняется дифференцировка кератиноцитов"
+  },
+  {
+   "slide": 5,
+   "slot": "label_3",
+   "block": "author_frame",
+   "text": "Эффект зависит от того, доходит ли молекула до кислоты"
+  },
+  {
+   "slide": 6,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Метаболическая конверсия пердретиноидов"
+  },
+  {
+   "slide": 6,
+   "slot": "step_1",
+   "block": "author_frame",
+   "text": "Пердретиноид (ретинол)"
+  },
+  {
+   "slide": 6,
+   "slot": "step_2",
+   "block": "fact",
+   "fact_id": "fact_0011",
+   "grade": "C",
+   "verdict": "WEAK",
+   "quarantined": false,
+   "text": "Ретинальдегид: всего один шаг конверсии до активной кислоты в кератиноцитах"
+  },
+  {
+   "slide": 6,
+   "slot": "step_3",
+   "block": "author_frame",
+   "text": "Ретиноевая кислота (активна)"
+  },
+  {
+   "slide": 6,
+   "slot": "step_4",
+   "block": "fact",
+   "fact_id": "fact_0004",
+   "grade": "C",
+   "verdict": "WEAK",
+   "quarantined": false,
+   "text": "Ретиноиды повышают синтез проколлагена → формирование коллагена в дерме"
+  },
+  {
+   "slide": 7,
+   "slot": "part_label",
+   "block": "author_frame",
+   "text": "Часть 2"
+  },
+  {
+   "slide": 7,
+   "slot": "section_title",
+   "block": "author_frame",
+   "text": "Сравнение активов"
+  },
+  {
+   "slide": 7,
+   "slot": "section_subtitle",
+   "block": "author_frame",
+   "text": "Рецепторный профиль и сила эффекта"
+  },
+  {
+   "slide": 8,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Активы × свойства"
+  },
+  {
+   "slide": 8,
+   "slot": "col_header",
+   "block": "author_frame",
+   "text": "Актив → рецептор / эффект (с уровнем доказательности)"
+  },
+  {
+   "slide": 8,
+   "slot": "row_1",
+   "block": "fact",
+   "fact_id": "fact_0009",
+   "grade": "C",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Тазаротен селективно связывает рецепторы RAR-β и RAR-γ"
+  },
+  {
+   "slide": 8,
+   "slot": "row_2",
+   "block": "fact",
+   "fact_id": "fact_0007",
+   "grade": "C",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Адапален селективно связывает рецепторы RAR-β и RAR-γ"
+  },
+  {
+   "slide": 8,
+   "slot": "row_3",
+   "block": "fact",
+   "fact_id": "fact_0010",
+   "grade": "A",
+   "verdict": "NEEDS_MANUAL",
+   "quarantined": false,
+   "text": "Тазаротен 0.1% эффективен при фотоповреждении: морщины, гиперпигментация"
+  },
+  {
+   "slide": 9,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Третиноин · адапален · тазаротен"
+  },
+  {
+   "slide": 9,
+   "slot": "interp",
+   "block": "author_frame",
+   "text": "Профиль каждого актива:"
+  },
+  {
+   "slide": 9,
+   "slot": "interp",
+   "block": "fact",
+   "fact_id": "fact_0005",
+   "grade": "C",
+   "verdict": "WEAK",
+   "quarantined": false,
+   "text": "Третиноин — золотой стандарт улучшения фотостарения кожи"
+  },
+  {
+   "slide": 9,
+   "slot": "interp",
+   "block": "fact",
+   "fact_id": "fact_0007",
+   "grade": "C",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Адапален — рецептор-селективный (RAR-β/γ)"
+  },
+  {
+   "slide": 9,
+   "slot": "interp",
+   "block": "fact",
+   "fact_id": "fact_0010",
+   "grade": "A",
+   "verdict": "NEEDS_MANUAL",
+   "quarantined": false,
+   "text": "Тазаротен 0.1% — эффект при фотоповреждении"
+  },
+  {
+   "slide": 9,
+   "slot": "grade_caption",
+   "block": "author_frame",
+   "text": "Маркер уровня — у каждого пункта"
+  },
+  {
+   "slide": 10,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Эффективность: что показывают данные"
+  },
+  {
+   "slide": 10,
+   "slot": "interp",
+   "block": "author_frame",
+   "text": "Клинические результаты:"
+  },
+  {
+   "slide": 10,
+   "slot": "interp",
+   "block": "fact",
+   "fact_id": "fact_0010",
+   "grade": "A",
+   "verdict": "NEEDS_MANUAL",
+   "quarantined": false,
+   "text": "Тазаротен 0.1% эффективен при фотоповреждении (морщины, пигментация)"
+  },
+  {
+   "slide": 10,
+   "slot": "interp",
+   "block": "fact",
+   "fact_id": "fact_0071",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Адапален 0.3%+БПО снижает число атрофических рубцов при раннем лечении"
+  },
+  {
+   "slide": 10,
+   "slot": "source_caption",
+   "block": "author_frame",
+   "text": "Маркер уровня доказательности — у каждого пункта"
+  },
+  {
+   "slide": 11,
+   "slot": "part_label",
+   "block": "author_frame",
+   "text": "Часть 3"
+  },
+  {
+   "slide": 11,
+   "slot": "section_title",
+   "block": "author_frame",
+   "text": "Решения и применение"
+  },
+  {
+   "slide": 11,
+   "slot": "section_subtitle",
+   "block": "author_frame",
+   "text": "Выбор по задаче, переносимость, безопасность"
+  },
+  {
+   "slide": 12,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Выбор ретиноида по задаче"
+  },
+  {
+   "slide": 12,
+   "slot": "root",
+   "block": "author_frame",
+   "text": "Задача определяет молекулу и силу"
+  },
+  {
+   "slide": 12,
+   "slot": "branch_1",
+   "block": "author_frame",
+   "text": "Фотостарение →"
+  },
+  {
+   "slide": 12,
+   "slot": "branch_1",
+   "block": "fact",
+   "fact_id": "fact_0005",
+   "grade": "C",
+   "verdict": "WEAK",
+   "quarantined": false,
+   "text": "Третиноин — золотой стандарт при фотостарении"
+  },
+  {
+   "slide": 12,
+   "slot": "branch_1",
+   "block": "fact",
+   "fact_id": "fact_0010",
+   "grade": "A",
+   "verdict": "NEEDS_MANUAL",
+   "quarantined": false,
+   "text": "Тазаротен 0.1% — при морщинах и пигментации"
+  },
+  {
+   "slide": 12,
+   "slot": "branch_2",
+   "block": "author_frame",
+   "text": "Акне / рубцы →"
+  },
+  {
+   "slide": 12,
+   "slot": "branch_2",
+   "block": "fact",
+   "fact_id": "fact_0007",
+   "grade": "C",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Адапален — рецептор-селективный, базовый при акне"
+  },
+  {
+   "slide": 12,
+   "slot": "branch_2",
+   "block": "fact",
+   "fact_id": "fact_0071",
+   "grade": "A",
+   "verdict": "SUPPORTED",
+   "quarantined": false,
+   "text": "Адапален+БПО — раннее лечение снижает рубцы"
+  },
+  {
+   "slide": 12,
+   "slot": "branch_3",
+   "block": "author_frame",
+   "text": "Переносимость →"
+  },
+  {
+   "slide": 12,
+   "slot": "branch_3",
+   "block": "author_frame",
+   "text": "Старт с пердретиноидов/низких концентраций, титрование частоты"
+  },
+  {
+   "slide": 13,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Раздражение и адаптация"
+  },
+  {
+   "slide": 13,
+   "slot": "text",
+   "block": "author_frame",
+   "text": "Тактика переносимости (организующая рамка, без претензии на клиническое доказательство):"
+  },
+  {
+   "slide": 13,
+   "slot": "text",
+   "block": "author_frame",
+   "text": "Старт 2–3×/неделю, наращивание по переносимости"
+  },
+  {
+   "slide": 13,
+   "slot": "text",
+   "block": "author_frame",
+   "text": "Буфер увлажняющим, избегать одновременных раздражающих кислот"
+  },
+  {
+   "slide": 13,
+   "slot": "text",
+   "block": "author_frame",
+   "text": "Обязательный SPF — ретиноид повышает фоточувствительность"
+  },
+  {
+   "slide": 14,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Противопоказания: категории"
+  },
+  {
+   "slide": 14,
+   "slot": "category_1",
+   "block": "fact",
+   "fact_id": "fact_0015",
+   "grade": "B",
+   "verdict": "WEAK",
+   "quarantined": false,
+   "text": "Топические ретиноиды противопоказаны при беременности (тератогенный риск)"
+  },
+  {
+   "slide": 14,
+   "slot": "category_2",
+   "block": "author_frame",
+   "text": "Активный дерматит, поврежденный барьер — отложить"
+  },
+  {
+   "slide": 14,
+   "slot": "category_3",
+   "block": "author_frame",
+   "text": "Период активного солнца, сразу после агрессивных процедур"
+  },
+  {
+   "slide": 14,
+   "slot": "category_4",
+   "block": "author_frame",
+   "text": "Осторожно с другими раздражающими активами"
+  },
+  {
+   "slide": 15,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Сводка доказательной базы ретиноидов"
+  },
+  {
+   "slide": 15,
+   "slot": "facts",
+   "block": "author_frame",
+   "text": "Распределение уровней по графу ретиноидов:"
+  },
+  {
+   "slide": 15,
+   "slot": "facts",
+   "block": "author_frame",
+   "text": "A (РКИ/др. сильные): тазаротен при фотоповреждении; адапален+БПО против рубцов"
+  },
+  {
+   "slide": 15,
+   "slot": "facts",
+   "block": "author_frame",
+   "text": "B (контролируемое): противопоказание при беременности"
+  },
+  {
+   "slide": 15,
+   "slot": "facts",
+   "block": "author_frame",
+   "text": "C (обзоры/механизм): RAR/RXR, конверсия, «золотой стандарт» — как механизм/обзор, не как РКИ-превосходство"
+  },
+  {
+   "slide": 15,
+   "slot": "grade_legend",
+   "block": "author_frame",
+   "text": "Честная подача: механизм и «золотой стандарт» — C-уровень, не доказательство превосходства"
+  },
+  {
+   "slide": 16,
+   "slot": "title",
+   "block": "author_frame",
+   "text": "Итоговая карта решений"
+  },
+  {
+   "slide": 16,
+   "slot": "summary_1",
+   "block": "author_frame",
+   "text": "Механизм → эффект через RAR/RXR; пердретиноидам нужна конверсия"
+  },
+  {
+   "slide": 16,
+   "slot": "summary_2",
+   "block": "author_frame",
+   "text": "Выбор → фотостарение: третиноин/тазаротен; акне/рубцы: адапален(+БПО)"
+  },
+  {
+   "slide": 16,
+   "slot": "summary_3",
+   "block": "author_frame",
+   "text": "Безопасность → титрование, SPF, противопоказание при беременности"
+  }
+ ]
+}
