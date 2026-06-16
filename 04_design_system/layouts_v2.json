@@ -166,7 +166,7 @@
     },
     {
       "layout_id": "A2_framework",
-      "name": "Framework (axes assessment)",
+      "name": "Framework (parameter grid)",
       "class": "authority",
       "canvas": {
         "w": 1280,
@@ -216,80 +216,80 @@
           }
         },
         {
-          "slot_id": "axis_1",
+          "slot_id": "param_1",
           "kind": "content",
           "block_type": "body",
           "bounds": {
             "x": 64,
             "y": 168,
-            "w": 1152,
-            "h": 109
+            "w": 564,
+            "h": 232
           },
           "relative_bounds": {
             "x": 0.05,
             "y": 0.2333,
-            "w": 0.9,
-            "h": 0.1514
+            "w": 0.4406,
+            "h": 0.3222
           },
           "constraints": {
             "max_chars": 240
           }
         },
         {
-          "slot_id": "axis_2",
+          "slot_id": "param_2",
           "kind": "content",
           "block_type": "body",
           "bounds": {
-            "x": 64,
-            "y": 293,
-            "w": 1152,
-            "h": 109
+            "x": 652,
+            "y": 168,
+            "w": 564,
+            "h": 232
           },
           "relative_bounds": {
-            "x": 0.05,
-            "y": 0.4069,
-            "w": 0.9,
-            "h": 0.1514
+            "x": 0.5094,
+            "y": 0.2333,
+            "w": 0.4406,
+            "h": 0.3222
           },
           "constraints": {
             "max_chars": 240
           }
         },
         {
-          "slot_id": "axis_3",
+          "slot_id": "param_3",
           "kind": "content",
           "block_type": "body",
           "bounds": {
             "x": 64,
-            "y": 418,
-            "w": 1152,
-            "h": 109
+            "y": 422,
+            "w": 564,
+            "h": 232
           },
           "relative_bounds": {
             "x": 0.05,
-            "y": 0.5806,
-            "w": 0.9,
-            "h": 0.1514
+            "y": 0.5861,
+            "w": 0.4406,
+            "h": 0.3222
           },
           "constraints": {
             "max_chars": 240
           }
         },
         {
-          "slot_id": "axis_4",
+          "slot_id": "param_4",
           "kind": "content",
           "block_type": "body",
           "bounds": {
-            "x": 64,
-            "y": 543,
-            "w": 1152,
-            "h": 109
+            "x": 652,
+            "y": 422,
+            "w": 564,
+            "h": 232
           },
           "relative_bounds": {
-            "x": 0.05,
-            "y": 0.7542,
-            "w": 0.9,
-            "h": 0.1514
+            "x": 0.5094,
+            "y": 0.5861,
+            "w": 0.4406,
+            "h": 0.3222
           },
           "constraints": {
             "max_chars": 240
@@ -997,64 +997,64 @@
           }
         },
         {
-          "slot_id": "col_a",
-          "kind": "content",
-          "block_type": "caption",
-          "bounds": {
-            "x": 64,
-            "y": 168,
-            "w": 560,
-            "h": 24
-          },
-          "relative_bounds": {
-            "x": 0.05,
-            "y": 0.2333,
-            "w": 0.4375,
-            "h": 0.0333
-          },
-          "constraints": {
-            "max_chars": 90
-          }
-        },
-        {
-          "slot_id": "col_b",
-          "kind": "content",
-          "block_type": "caption",
-          "bounds": {
-            "x": 656,
-            "y": 168,
-            "w": 560,
-            "h": 24
-          },
-          "relative_bounds": {
-            "x": 0.5125,
-            "y": 0.2333,
-            "w": 0.4375,
-            "h": 0.0333
-          },
-          "constraints": {
-            "max_chars": 90
-          }
-        },
-        {
           "slot_id": "table",
           "kind": "placeholder",
           "block_type": "id_graph",
           "bounds": {
             "x": 64,
-            "y": 204,
-            "w": 1152,
-            "h": 450
+            "y": 168,
+            "w": 700,
+            "h": 486
           },
           "relative_bounds": {
             "x": 0.05,
-            "y": 0.2833,
-            "w": 0.9,
-            "h": 0.625
+            "y": 0.2333,
+            "w": 0.5469,
+            "h": 0.675
           },
           "route": "diagram_engine",
           "constraints": {
             "min_size": 24
+          }
+        },
+        {
+          "slot_id": "interp",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 792,
+            "y": 168,
+            "w": 424,
+            "h": 420
+          },
+          "relative_bounds": {
+            "x": 0.6188,
+            "y": 0.2333,
+            "w": 0.3312,
+            "h": 0.5833
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "grade_caption",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 792,
+            "y": 600,
+            "w": 424,
+            "h": 40
+          },
+          "relative_bounds": {
+            "x": 0.6188,
+            "y": 0.8333,
+            "w": 0.3312,
+            "h": 0.0556
+          },
+          "constraints": {
+            "max_chars": 90
           }
         }
       ]
@@ -1211,14 +1211,14 @@
           "bounds": {
             "x": 64,
             "y": 168,
-            "w": 1152,
-            "h": 454
+            "w": 680,
+            "h": 486
           },
           "relative_bounds": {
             "x": 0.05,
             "y": 0.2333,
-            "w": 0.9,
-            "h": 0.6306
+            "w": 0.5312,
+            "h": 0.675
           },
           "route": "diagram_engine",
           "constraints": {
@@ -1226,20 +1226,40 @@
           }
         },
         {
+          "slot_id": "interp",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 772,
+            "y": 168,
+            "w": 444,
+            "h": 380
+          },
+          "relative_bounds": {
+            "x": 0.6031,
+            "y": 0.2333,
+            "w": 0.3469,
+            "h": 0.5278
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
           "slot_id": "source_caption",
           "kind": "content",
           "block_type": "caption",
           "bounds": {
-            "x": 64,
-            "y": 628,
-            "w": 1152,
-            "h": 24
+            "x": 772,
+            "y": 560,
+            "w": 444,
+            "h": 80
           },
           "relative_bounds": {
-            "x": 0.05,
-            "y": 0.8722,
-            "w": 0.9,
-            "h": 0.0333
+            "x": 0.6031,
+            "y": 0.7778,
+            "w": 0.3469,
+            "h": 0.1111
           },
           "constraints": {
             "max_chars": 90
@@ -1438,7 +1458,7 @@
     },
     {
       "layout_id": "D3_closing",
-      "name": "Closing (decision map + badge)",
+      "name": "Closing (decision summary + badge)",
       "class": "trust",
       "canvas": {
         "w": 1280,
@@ -1488,20 +1508,60 @@
           }
         },
         {
-          "slot_id": "summary",
+          "slot_id": "summary_1",
           "kind": "content",
           "block_type": "body",
           "bounds": {
             "x": 64,
             "y": 168,
             "w": 720,
-            "h": 486
+            "h": 151
           },
           "relative_bounds": {
             "x": 0.05,
             "y": 0.2333,
             "w": 0.5625,
-            "h": 0.675
+            "h": 0.2097
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "summary_2",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 64,
+            "y": 335,
+            "w": 720,
+            "h": 151
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.4653,
+            "w": 0.5625,
+            "h": 0.2097
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "summary_3",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 64,
+            "y": 502,
+            "w": 720,
+            "h": 151
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.6972,
+            "w": 0.5625,
+            "h": 0.2097
           },
           "constraints": {
             "max_chars": 240
@@ -1513,13 +1573,13 @@
           "block_type": "id_logo",
           "bounds": {
             "x": 832,
-            "y": 230,
+            "y": 250,
             "w": 360,
             "h": 300
           },
           "relative_bounds": {
             "x": 0.65,
-            "y": 0.3194,
+            "y": 0.3472,
             "w": 0.2812,
             "h": 0.4167
           },

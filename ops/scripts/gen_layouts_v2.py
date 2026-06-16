@@ -79,8 +79,19 @@ def L(layout_id, name, klass, footer_reserved, slots, lead=False):
 L("A1_classification", "Classification", "authority", True,
   [rubric(), title(), *card_row("category", 4, 168, FOOTER_SAFE - 168)])
 
-L("A2_framework", "Framework (axes assessment)", "authority", True,
-  [rubric(), title(), *stack("axis", 4, 168, FOOTER_SAFE)])
+# A2 Framework — REWORK (8.3): 2x2 parameter cards (icon+label+text), not a stack of identical bars.
+def _quad():
+    y0, y1, g = 168, FOOTER_SAFE, 22
+    ch = (y1 - y0 - g) // 2
+    cw = (CW - 24) // 2
+    xs = [LM, LM + cw + 24]; ys = [y0, y0 + ch + g]
+    out = []
+    for r in range(2):
+        for c in range(2):
+            out.append(slot(f"param_{r*2+c+1}", "body", xs[c], ys[r], cw, ch))
+    return out
+L("A2_framework", "Framework (parameter grid)", "authority", True,
+  [rubric(), title(), *_quad()])
 
 # Decision Map: root node + 3 branch columns (no id_ placeholder per §3 deck tables)
 L("A3_decision_map", "Decision Map", "authority", True,
@@ -114,11 +125,12 @@ L("B3_anatomy", "Anatomy (layered)", "knowledge", True,
 
 # ── Class C — EVIDENCE ──────────────────────────────────────────────────────
 # Comparison: A-vs-B table (id_graph) + 2 column-header captions
+# C1 Comparison — REWORK (8.3): smaller table plate + interpretation text + grade/source caption (not a full-width empty plate).
 L("C1_comparison", "Comparison (A vs B)", "evidence", True,
   [rubric(), title(),
-   slot("col_a", "caption", LM, 168, CW//2 - 16, 24),
-   slot("col_b", "caption", LM + CW//2 + 16, 168, CW//2 - 16, 24),
-   slot("table", "id_graph", LM, 204, CW, FOOTER_SAFE - 204)])
+   slot("table", "id_graph", LM, 168, 700, FOOTER_SAFE - 168),
+   slot("interp", "body", LM + 700 + 28, 168, CW - 700 - 28, 420),
+   slot("grade_caption", "caption", LM + 700 + 28, 600, CW - 700 - 28, 40)])
 
 # Evidence Summary: facts+grade chart (id_graph) + grade-legend caption
 L("C2_evidence_summary", "Evidence Summary (+grade)", "evidence", True,
@@ -127,10 +139,12 @@ L("C2_evidence_summary", "Evidence Summary (+grade)", "evidence", True,
    slot("grade_legend", "caption", LM, FOOTER_SAFE - 26, CW, 24)])
 
 # Research Chart: chart (id_graph) + source caption (max 1-2 per deck — GUARD doc-noted)
+# C3 Research Chart — REWORK (8.3): chart plate + interpretation text + source caption (not a full-width empty plate).
 L("C3_research_chart", "Research Chart", "evidence", True,
   [rubric(), title(),
-   slot("chart", "id_graph", LM, 168, CW, FOOTER_SAFE - 168 - 32),
-   slot("source_caption", "caption", LM, FOOTER_SAFE - 26, CW, 24)])
+   slot("chart", "id_graph", LM, 168, 680, FOOTER_SAFE - 168),
+   slot("interp", "body", LM + 680 + 28, 168, CW - 680 - 28, 380),
+   slot("source_caption", "caption", LM + 680 + 28, 560, CW - 680 - 28, 80)])
 
 # ── Class D — TRUST / FRAME ─────────────────────────────────────────────────
 # Title: horizontal lockup + display title + subtitle + cover illustration (no footer)
@@ -148,10 +162,13 @@ L("D2_section", "Section divider", "trust", False,
    slot("section_subtitle", "h3", LM, 460, 760, 40)])
 
 # Closing: title + summary region + centered badge (footer present)
-L("D3_closing", "Closing (decision map + badge)", "trust", True,
+# D3 Closing — REWORK (8.3): real decision-map summary (3 stacked points) + badge kept (client: badge=Yes, empty body=No).
+L("D3_closing", "Closing (decision summary + badge)", "trust", True,
   [rubric(), title(),
-   slot("summary", "body", LM, 168, 720, FOOTER_SAFE - 168),
-   slot("badge", "id_logo", 832, 230, 360, 300, min_size=80)])
+   slot("summary_1", "body", LM, 168, 720, 151),
+   slot("summary_2", "body", LM, 335, 720, 151),
+   slot("summary_3", "body", LM, 502, 720, 151),
+   slot("badge", "id_logo", 832, 250, 360, 300, min_size=80)])
 
 doc = {
     "library_version": "2.0",
