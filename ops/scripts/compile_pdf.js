@@ -13,16 +13,18 @@ async function main() {
     console.log(`Loading file URL: ${fileUrl}`);
     await page.goto(fileUrl, { waitUntil: 'load' });
     
-    // Set viewport to the 16:9 target size
-    await page.setViewportSize({ width: 1024, height: 576 });
-    
+    // Set viewport to the 16:9 target size (optional argv override, backward-compatible)
+    const W = parseInt(process.argv[3], 10) || 1024;
+    const Hh = parseInt(process.argv[4], 10) || 576;
+    await page.setViewportSize({ width: W, height: Hh });
+
     // Render PDF with custom width and height, zero margins
     const pdfPath = path.resolve(__dirname, '..', '..', '06_render', 'out', `${baseName}.pdf`);
-    console.log(`Saving PDF to: ${pdfPath}`);
+    console.log(`Saving PDF to: ${pdfPath} (${W}x${Hh})`);
     await page.pdf({
         path: pdfPath,
-        width: '1024px',
-        height: '576px',
+        width: `${W}px`,
+        height: `${Hh}px`,
         printBackground: true,
         margin: { top: 0, bottom: 0, left: 0, right: 0 }
     });

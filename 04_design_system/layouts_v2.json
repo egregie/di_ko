@@ -1,0 +1,1534 @@
+{
+  "library_version": "2.0",
+  "phase": "8.2-authority-layouts",
+  "canvas": {
+    "w": 1280,
+    "h": 720,
+    "aspect": "16:9"
+  },
+  "footer_band": {
+    "y": 662,
+    "h": 58,
+    "note": "reserved brand-chrome; no content slot may enter it on footer_reserved layouts"
+  },
+  "inherits": "00_governance/schemas/placeholder_contract.json (routing model, composite IDs, bounds+relative_bounds)",
+  "routing_rules": {
+    "id_logo": "logo_registry — fixed brand SVG (never generated)",
+    "id_illustration": "diagram_engine — source-grounded from active graph (P019/P020)",
+    "id_graph": "diagram_engine — data exclusively from verified facts (P018)",
+    "id_img": "stage2_claude_design — generation/stock; asset_provenance entry required (P019)"
+  },
+  "anti_fabrication": {
+    "rule": "Every Authority/Evidence cell making a factual assertion (number, effect, mechanism) MUST trace to a fact_id (P018) OR be explicitly flagged an authorial organizing frame (structure of thinking, not a proven fact).",
+    "visible_distinction": "Factual cells carry a grade marker (A/B/C) or source caption; framing cells are neutral, no claim of proof.",
+    "grade_honesty": "A framework may NOT turn a C-grade / self-reported item into an axiom-looking statement. Grade-honesty from Phase 8.7b extends to frameworks.",
+    "enforced_by": "cell_provenance_required flag per layout (authority+evidence=true); content-fill phase (8.4-8.6) must satisfy it; not gated here (carcasses carry no content)."
+  },
+  "classes": {
+    "authority": "lead slides — demonstrate the author's thinking (classification, framework, decision map, matrix)",
+    "knowledge": "explain mechanics (split, process, anatomy)",
+    "evidence": "support, do not lead (comparison, evidence summary, research chart)",
+    "trust": "frame (title, section, closing); D4 before/after excluded by default (ethical risk)"
+  },
+  "layouts": [
+    {
+      "layout_id": "A1_classification",
+      "name": "Classification",
+      "class": "authority",
+      "canvas": {
+        "w": 1280,
+        "h": 720
+      },
+      "footer_reserved": true,
+      "cell_provenance_required": true,
+      "slots": [
+        {
+          "slot_id": "rubric_label",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 40,
+            "w": 480,
+            "h": 22
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.0556,
+            "w": 0.375,
+            "h": 0.0306
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "title",
+          "kind": "content",
+          "block_type": "h2",
+          "bounds": {
+            "x": 64,
+            "y": 72,
+            "w": 1152,
+            "h": 58
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.1,
+            "w": 0.9,
+            "h": 0.0806
+          },
+          "constraints": {
+            "max_chars": 64
+          }
+        },
+        {
+          "slot_id": "category_1",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 64,
+            "y": 168,
+            "w": 270,
+            "h": 486
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.2333,
+            "w": 0.2109,
+            "h": 0.675
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "category_2",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 358,
+            "y": 168,
+            "w": 270,
+            "h": 486
+          },
+          "relative_bounds": {
+            "x": 0.2797,
+            "y": 0.2333,
+            "w": 0.2109,
+            "h": 0.675
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "category_3",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 652,
+            "y": 168,
+            "w": 270,
+            "h": 486
+          },
+          "relative_bounds": {
+            "x": 0.5094,
+            "y": 0.2333,
+            "w": 0.2109,
+            "h": 0.675
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "category_4",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 946,
+            "y": 168,
+            "w": 270,
+            "h": 486
+          },
+          "relative_bounds": {
+            "x": 0.7391,
+            "y": 0.2333,
+            "w": 0.2109,
+            "h": 0.675
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "A2_framework",
+      "name": "Framework (axes assessment)",
+      "class": "authority",
+      "canvas": {
+        "w": 1280,
+        "h": 720
+      },
+      "footer_reserved": true,
+      "cell_provenance_required": true,
+      "slots": [
+        {
+          "slot_id": "rubric_label",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 40,
+            "w": 480,
+            "h": 22
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.0556,
+            "w": 0.375,
+            "h": 0.0306
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "title",
+          "kind": "content",
+          "block_type": "h2",
+          "bounds": {
+            "x": 64,
+            "y": 72,
+            "w": 1152,
+            "h": 58
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.1,
+            "w": 0.9,
+            "h": 0.0806
+          },
+          "constraints": {
+            "max_chars": 64
+          }
+        },
+        {
+          "slot_id": "axis_1",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 64,
+            "y": 168,
+            "w": 1152,
+            "h": 109
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.2333,
+            "w": 0.9,
+            "h": 0.1514
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "axis_2",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 64,
+            "y": 293,
+            "w": 1152,
+            "h": 109
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.4069,
+            "w": 0.9,
+            "h": 0.1514
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "axis_3",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 64,
+            "y": 418,
+            "w": 1152,
+            "h": 109
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.5806,
+            "w": 0.9,
+            "h": 0.1514
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "axis_4",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 64,
+            "y": 543,
+            "w": 1152,
+            "h": 109
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.7542,
+            "w": 0.9,
+            "h": 0.1514
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "A3_decision_map",
+      "name": "Decision Map",
+      "class": "authority",
+      "canvas": {
+        "w": 1280,
+        "h": 720
+      },
+      "footer_reserved": true,
+      "cell_provenance_required": true,
+      "slots": [
+        {
+          "slot_id": "rubric_label",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 40,
+            "w": 480,
+            "h": 22
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.0556,
+            "w": 0.375,
+            "h": 0.0306
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "title",
+          "kind": "content",
+          "block_type": "h2",
+          "bounds": {
+            "x": 64,
+            "y": 72,
+            "w": 1152,
+            "h": 58
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.1,
+            "w": 0.9,
+            "h": 0.0806
+          },
+          "constraints": {
+            "max_chars": 64
+          }
+        },
+        {
+          "slot_id": "root",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 420,
+            "y": 168,
+            "w": 440,
+            "h": 90
+          },
+          "relative_bounds": {
+            "x": 0.3281,
+            "y": 0.2333,
+            "w": 0.3438,
+            "h": 0.125
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "branch_1",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 64,
+            "y": 296,
+            "w": 368,
+            "h": 358
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.4111,
+            "w": 0.2875,
+            "h": 0.4972
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "branch_2",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 456,
+            "y": 296,
+            "w": 368,
+            "h": 358
+          },
+          "relative_bounds": {
+            "x": 0.3563,
+            "y": 0.4111,
+            "w": 0.2875,
+            "h": 0.4972
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "branch_3",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 848,
+            "y": 296,
+            "w": 368,
+            "h": 358
+          },
+          "relative_bounds": {
+            "x": 0.6625,
+            "y": 0.4111,
+            "w": 0.2875,
+            "h": 0.4972
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "A4_matrix",
+      "name": "Matrix (assets x properties)",
+      "class": "authority",
+      "canvas": {
+        "w": 1280,
+        "h": 720
+      },
+      "footer_reserved": true,
+      "cell_provenance_required": true,
+      "slots": [
+        {
+          "slot_id": "rubric_label",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 40,
+            "w": 480,
+            "h": 22
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.0556,
+            "w": 0.375,
+            "h": 0.0306
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "title",
+          "kind": "content",
+          "block_type": "h2",
+          "bounds": {
+            "x": 64,
+            "y": 72,
+            "w": 1152,
+            "h": 58
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.1,
+            "w": 0.9,
+            "h": 0.0806
+          },
+          "constraints": {
+            "max_chars": 64
+          }
+        },
+        {
+          "slot_id": "col_header",
+          "kind": "content",
+          "block_type": "body_sm",
+          "bounds": {
+            "x": 64,
+            "y": 168,
+            "w": 1152,
+            "h": 56
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.2333,
+            "w": 0.9,
+            "h": 0.0778
+          },
+          "constraints": {
+            "max_chars": 160
+          }
+        },
+        {
+          "slot_id": "row_1",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 64,
+            "y": 236,
+            "w": 1152,
+            "h": 128
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.3278,
+            "w": 0.9,
+            "h": 0.1778
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "row_2",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 64,
+            "y": 380,
+            "w": 1152,
+            "h": 128
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.5278,
+            "w": 0.9,
+            "h": 0.1778
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "row_3",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 64,
+            "y": 524,
+            "w": 1152,
+            "h": 128
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.7278,
+            "w": 0.9,
+            "h": 0.1778
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "B1_split",
+      "name": "Split (visual + text)",
+      "class": "knowledge",
+      "canvas": {
+        "w": 1280,
+        "h": 720
+      },
+      "footer_reserved": true,
+      "cell_provenance_required": false,
+      "slots": [
+        {
+          "slot_id": "rubric_label",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 40,
+            "w": 480,
+            "h": 22
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.0556,
+            "w": 0.375,
+            "h": 0.0306
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "title",
+          "kind": "content",
+          "block_type": "h2",
+          "bounds": {
+            "x": 64,
+            "y": 72,
+            "w": 1152,
+            "h": 58
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.1,
+            "w": 0.9,
+            "h": 0.0806
+          },
+          "constraints": {
+            "max_chars": 64
+          }
+        },
+        {
+          "slot_id": "visual",
+          "kind": "placeholder",
+          "block_type": "id_illustration",
+          "bounds": {
+            "x": 64,
+            "y": 168,
+            "w": 552,
+            "h": 486
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.2333,
+            "w": 0.4313,
+            "h": 0.675
+          },
+          "route": "diagram_engine",
+          "constraints": {
+            "min_size": 24
+          }
+        },
+        {
+          "slot_id": "text",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 648,
+            "y": 168,
+            "w": 568,
+            "h": 486
+          },
+          "relative_bounds": {
+            "x": 0.5062,
+            "y": 0.2333,
+            "w": 0.4437,
+            "h": 0.675
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "B2_process",
+      "name": "Timeline / Process",
+      "class": "knowledge",
+      "canvas": {
+        "w": 1280,
+        "h": 720
+      },
+      "footer_reserved": true,
+      "cell_provenance_required": false,
+      "slots": [
+        {
+          "slot_id": "rubric_label",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 40,
+            "w": 480,
+            "h": 22
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.0556,
+            "w": 0.375,
+            "h": 0.0306
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "title",
+          "kind": "content",
+          "block_type": "h2",
+          "bounds": {
+            "x": 64,
+            "y": 72,
+            "w": 1152,
+            "h": 58
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.1,
+            "w": 0.9,
+            "h": 0.0806
+          },
+          "constraints": {
+            "max_chars": 64
+          }
+        },
+        {
+          "slot_id": "track",
+          "kind": "placeholder",
+          "block_type": "id_graph",
+          "bounds": {
+            "x": 64,
+            "y": 168,
+            "w": 1152,
+            "h": 120
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.2333,
+            "w": 0.9,
+            "h": 0.1667
+          },
+          "route": "diagram_engine",
+          "constraints": {
+            "min_size": 24
+          }
+        },
+        {
+          "slot_id": "step_1",
+          "kind": "content",
+          "block_type": "body_sm",
+          "bounds": {
+            "x": 64,
+            "y": 312,
+            "w": 270,
+            "h": 342
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.4333,
+            "w": 0.2109,
+            "h": 0.475
+          },
+          "constraints": {
+            "max_chars": 160
+          }
+        },
+        {
+          "slot_id": "step_2",
+          "kind": "content",
+          "block_type": "body_sm",
+          "bounds": {
+            "x": 358,
+            "y": 312,
+            "w": 270,
+            "h": 342
+          },
+          "relative_bounds": {
+            "x": 0.2797,
+            "y": 0.4333,
+            "w": 0.2109,
+            "h": 0.475
+          },
+          "constraints": {
+            "max_chars": 160
+          }
+        },
+        {
+          "slot_id": "step_3",
+          "kind": "content",
+          "block_type": "body_sm",
+          "bounds": {
+            "x": 652,
+            "y": 312,
+            "w": 270,
+            "h": 342
+          },
+          "relative_bounds": {
+            "x": 0.5094,
+            "y": 0.4333,
+            "w": 0.2109,
+            "h": 0.475
+          },
+          "constraints": {
+            "max_chars": 160
+          }
+        },
+        {
+          "slot_id": "step_4",
+          "kind": "content",
+          "block_type": "body_sm",
+          "bounds": {
+            "x": 946,
+            "y": 312,
+            "w": 270,
+            "h": 342
+          },
+          "relative_bounds": {
+            "x": 0.7391,
+            "y": 0.4333,
+            "w": 0.2109,
+            "h": 0.475
+          },
+          "constraints": {
+            "max_chars": 160
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "B3_anatomy",
+      "name": "Anatomy (layered)",
+      "class": "knowledge",
+      "canvas": {
+        "w": 1280,
+        "h": 720
+      },
+      "footer_reserved": true,
+      "cell_provenance_required": false,
+      "slots": [
+        {
+          "slot_id": "rubric_label",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 40,
+            "w": 480,
+            "h": 22
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.0556,
+            "w": 0.375,
+            "h": 0.0306
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "title",
+          "kind": "content",
+          "block_type": "h2",
+          "bounds": {
+            "x": 64,
+            "y": 72,
+            "w": 1152,
+            "h": 58
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.1,
+            "w": 0.9,
+            "h": 0.0806
+          },
+          "constraints": {
+            "max_chars": 64
+          }
+        },
+        {
+          "slot_id": "anatomy",
+          "kind": "placeholder",
+          "block_type": "id_illustration",
+          "bounds": {
+            "x": 64,
+            "y": 168,
+            "w": 660,
+            "h": 486
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.2333,
+            "w": 0.5156,
+            "h": 0.675
+          },
+          "route": "diagram_engine",
+          "constraints": {
+            "min_size": 24
+          }
+        },
+        {
+          "slot_id": "label_1",
+          "kind": "content",
+          "block_type": "body_sm",
+          "bounds": {
+            "x": 756,
+            "y": 168,
+            "w": 460,
+            "h": 134
+          },
+          "relative_bounds": {
+            "x": 0.5906,
+            "y": 0.2333,
+            "w": 0.3594,
+            "h": 0.1861
+          },
+          "constraints": {
+            "max_chars": 160
+          }
+        },
+        {
+          "slot_id": "label_2",
+          "kind": "content",
+          "block_type": "body_sm",
+          "bounds": {
+            "x": 756,
+            "y": 318,
+            "w": 460,
+            "h": 134
+          },
+          "relative_bounds": {
+            "x": 0.5906,
+            "y": 0.4417,
+            "w": 0.3594,
+            "h": 0.1861
+          },
+          "constraints": {
+            "max_chars": 160
+          }
+        },
+        {
+          "slot_id": "label_3",
+          "kind": "content",
+          "block_type": "body_sm",
+          "bounds": {
+            "x": 756,
+            "y": 468,
+            "w": 460,
+            "h": 134
+          },
+          "relative_bounds": {
+            "x": 0.5906,
+            "y": 0.65,
+            "w": 0.3594,
+            "h": 0.1861
+          },
+          "constraints": {
+            "max_chars": 160
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "C1_comparison",
+      "name": "Comparison (A vs B)",
+      "class": "evidence",
+      "canvas": {
+        "w": 1280,
+        "h": 720
+      },
+      "footer_reserved": true,
+      "cell_provenance_required": true,
+      "slots": [
+        {
+          "slot_id": "rubric_label",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 40,
+            "w": 480,
+            "h": 22
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.0556,
+            "w": 0.375,
+            "h": 0.0306
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "title",
+          "kind": "content",
+          "block_type": "h2",
+          "bounds": {
+            "x": 64,
+            "y": 72,
+            "w": 1152,
+            "h": 58
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.1,
+            "w": 0.9,
+            "h": 0.0806
+          },
+          "constraints": {
+            "max_chars": 64
+          }
+        },
+        {
+          "slot_id": "col_a",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 168,
+            "w": 560,
+            "h": 24
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.2333,
+            "w": 0.4375,
+            "h": 0.0333
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "col_b",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 656,
+            "y": 168,
+            "w": 560,
+            "h": 24
+          },
+          "relative_bounds": {
+            "x": 0.5125,
+            "y": 0.2333,
+            "w": 0.4375,
+            "h": 0.0333
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "table",
+          "kind": "placeholder",
+          "block_type": "id_graph",
+          "bounds": {
+            "x": 64,
+            "y": 204,
+            "w": 1152,
+            "h": 450
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.2833,
+            "w": 0.9,
+            "h": 0.625
+          },
+          "route": "diagram_engine",
+          "constraints": {
+            "min_size": 24
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "C2_evidence_summary",
+      "name": "Evidence Summary (+grade)",
+      "class": "evidence",
+      "canvas": {
+        "w": 1280,
+        "h": 720
+      },
+      "footer_reserved": true,
+      "cell_provenance_required": true,
+      "slots": [
+        {
+          "slot_id": "rubric_label",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 40,
+            "w": 480,
+            "h": 22
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.0556,
+            "w": 0.375,
+            "h": 0.0306
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "title",
+          "kind": "content",
+          "block_type": "h2",
+          "bounds": {
+            "x": 64,
+            "y": 72,
+            "w": 1152,
+            "h": 58
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.1,
+            "w": 0.9,
+            "h": 0.0806
+          },
+          "constraints": {
+            "max_chars": 64
+          }
+        },
+        {
+          "slot_id": "facts",
+          "kind": "placeholder",
+          "block_type": "id_graph",
+          "bounds": {
+            "x": 64,
+            "y": 168,
+            "w": 1152,
+            "h": 454
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.2333,
+            "w": 0.9,
+            "h": 0.6306
+          },
+          "route": "diagram_engine",
+          "constraints": {
+            "min_size": 24
+          }
+        },
+        {
+          "slot_id": "grade_legend",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 628,
+            "w": 1152,
+            "h": 24
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.8722,
+            "w": 0.9,
+            "h": 0.0333
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "C3_research_chart",
+      "name": "Research Chart",
+      "class": "evidence",
+      "canvas": {
+        "w": 1280,
+        "h": 720
+      },
+      "footer_reserved": true,
+      "cell_provenance_required": true,
+      "slots": [
+        {
+          "slot_id": "rubric_label",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 40,
+            "w": 480,
+            "h": 22
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.0556,
+            "w": 0.375,
+            "h": 0.0306
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "title",
+          "kind": "content",
+          "block_type": "h2",
+          "bounds": {
+            "x": 64,
+            "y": 72,
+            "w": 1152,
+            "h": 58
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.1,
+            "w": 0.9,
+            "h": 0.0806
+          },
+          "constraints": {
+            "max_chars": 64
+          }
+        },
+        {
+          "slot_id": "chart",
+          "kind": "placeholder",
+          "block_type": "id_graph",
+          "bounds": {
+            "x": 64,
+            "y": 168,
+            "w": 1152,
+            "h": 454
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.2333,
+            "w": 0.9,
+            "h": 0.6306
+          },
+          "route": "diagram_engine",
+          "constraints": {
+            "min_size": 24
+          }
+        },
+        {
+          "slot_id": "source_caption",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 628,
+            "w": 1152,
+            "h": 24
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.8722,
+            "w": 0.9,
+            "h": 0.0333
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "D1_title",
+      "name": "Title",
+      "class": "trust",
+      "canvas": {
+        "w": 1280,
+        "h": 720
+      },
+      "footer_reserved": false,
+      "cell_provenance_required": false,
+      "slots": [
+        {
+          "slot_id": "logo",
+          "kind": "placeholder",
+          "block_type": "id_logo",
+          "bounds": {
+            "x": 64,
+            "y": 80,
+            "w": 384,
+            "h": 146
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.1111,
+            "w": 0.3,
+            "h": 0.2028
+          },
+          "route": "logo_registry",
+          "constraints": {
+            "min_size": 40
+          }
+        },
+        {
+          "slot_id": "deck_title",
+          "kind": "content",
+          "block_type": "display_h1",
+          "bounds": {
+            "x": 64,
+            "y": 300,
+            "w": 672,
+            "h": 110
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.4167,
+            "w": 0.525,
+            "h": 0.1528
+          },
+          "constraints": {
+            "max_chars": 50
+          }
+        },
+        {
+          "slot_id": "subtitle",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 64,
+            "y": 420,
+            "w": 640,
+            "h": 44
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.5833,
+            "w": 0.5,
+            "h": 0.0611
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "cover_art",
+          "kind": "placeholder",
+          "block_type": "id_illustration",
+          "bounds": {
+            "x": 760,
+            "y": 96,
+            "w": 456,
+            "h": 528
+          },
+          "relative_bounds": {
+            "x": 0.5938,
+            "y": 0.1333,
+            "w": 0.3563,
+            "h": 0.7333
+          },
+          "route": "diagram_engine",
+          "constraints": {
+            "min_size": 24
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "D2_section",
+      "name": "Section divider",
+      "class": "trust",
+      "canvas": {
+        "w": 1280,
+        "h": 720
+      },
+      "footer_reserved": false,
+      "cell_provenance_required": false,
+      "slots": [
+        {
+          "slot_id": "logo",
+          "kind": "placeholder",
+          "block_type": "id_logo",
+          "bounds": {
+            "x": 64,
+            "y": 120,
+            "w": 320,
+            "h": 122
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.1667,
+            "w": 0.25,
+            "h": 0.1694
+          },
+          "route": "logo_registry",
+          "constraints": {
+            "min_size": 40
+          }
+        },
+        {
+          "slot_id": "part_label",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 300,
+            "w": 480,
+            "h": 22
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.4167,
+            "w": 0.375,
+            "h": 0.0306
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "section_title",
+          "kind": "content",
+          "block_type": "display_h1",
+          "bounds": {
+            "x": 64,
+            "y": 336,
+            "w": 1152,
+            "h": 110
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.4667,
+            "w": 0.9,
+            "h": 0.1528
+          },
+          "constraints": {
+            "max_chars": 50
+          }
+        },
+        {
+          "slot_id": "section_subtitle",
+          "kind": "content",
+          "block_type": "h3",
+          "bounds": {
+            "x": 64,
+            "y": 460,
+            "w": 760,
+            "h": 40
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.6389,
+            "w": 0.5938,
+            "h": 0.0556
+          },
+          "constraints": {
+            "max_chars": 40
+          }
+        }
+      ]
+    },
+    {
+      "layout_id": "D3_closing",
+      "name": "Closing (decision map + badge)",
+      "class": "trust",
+      "canvas": {
+        "w": 1280,
+        "h": 720
+      },
+      "footer_reserved": true,
+      "cell_provenance_required": false,
+      "slots": [
+        {
+          "slot_id": "rubric_label",
+          "kind": "content",
+          "block_type": "caption",
+          "bounds": {
+            "x": 64,
+            "y": 40,
+            "w": 480,
+            "h": 22
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.0556,
+            "w": 0.375,
+            "h": 0.0306
+          },
+          "constraints": {
+            "max_chars": 90
+          }
+        },
+        {
+          "slot_id": "title",
+          "kind": "content",
+          "block_type": "h2",
+          "bounds": {
+            "x": 64,
+            "y": 72,
+            "w": 1152,
+            "h": 58
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.1,
+            "w": 0.9,
+            "h": 0.0806
+          },
+          "constraints": {
+            "max_chars": 64
+          }
+        },
+        {
+          "slot_id": "summary",
+          "kind": "content",
+          "block_type": "body",
+          "bounds": {
+            "x": 64,
+            "y": 168,
+            "w": 720,
+            "h": 486
+          },
+          "relative_bounds": {
+            "x": 0.05,
+            "y": 0.2333,
+            "w": 0.5625,
+            "h": 0.675
+          },
+          "constraints": {
+            "max_chars": 240
+          }
+        },
+        {
+          "slot_id": "badge",
+          "kind": "placeholder",
+          "block_type": "id_logo",
+          "bounds": {
+            "x": 832,
+            "y": 230,
+            "w": 360,
+            "h": 300
+          },
+          "relative_bounds": {
+            "x": 0.65,
+            "y": 0.3194,
+            "w": 0.2812,
+            "h": 0.4167
+          },
+          "route": "logo_registry",
+          "constraints": {
+            "min_size": 80
+          }
+        }
+      ]
+    }
+  ]
+}

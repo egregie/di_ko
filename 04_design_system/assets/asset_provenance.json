@@ -248,5 +248,35 @@
     "attribution": "",
     "generated_by": "ops/scripts/one_time/gen_procedure_diagram.py (engine: gen_diagrams.make_layered_anatomy)",
     "fetched_at": "2026-06-11T00:00:00Z"
+  },
+  "ym_proskin_mark": {
+    "id": "ym_proskin_mark",
+    "type": "logo",
+    "path": "04_design_system/assets/logo/ym_proskin_mark.svg",
+    "source_of_truth": "client-provided (svg_logo_ym_proskin_002.svg, заказчица-approved); viewBox 0 0 654 597; recolored #000000->currentColor for Zero Black",
+    "license": "own/client",
+    "attribution": "",
+    "generated_by": "client (Phase 8.2 Block A integration)",
+    "fetched_at": "2026-06-15T00:00:00Z"
+  },
+  "ym_proskin_badge": {
+    "id": "ym_proskin_badge",
+    "type": "logo",
+    "path": "04_design_system/assets/logo/ym_proskin_badge.svg",
+    "source_of_truth": "client-provided (svg_logo_ym_proskin_004.svg, заказчица-approved); viewBox 0 0 1125 867; recolored #000000->currentColor for Zero Black",
+    "license": "own/client",
+    "attribution": "",
+    "generated_by": "client (Phase 8.2 Block A integration)",
+    "fetched_at": "2026-06-15T00:00:00Z"
+  },
+  "ym_proskin_horizontal": {
+    "id": "ym_proskin_horizontal",
+    "type": "logo",
+    "path": "04_design_system/assets/logo/ym_proskin_horizontal.svg",
+    "source_of_truth": "client-provided (svg_logo_ym_proskin_005.svg, заказчица-approved); viewBox 0 0 1230 469; recolored #000000->currentColor for Zero Black",
+    "license": "own/client",
+    "attribution": "",
+    "generated_by": "client (Phase 8.2 Block A integration)",
+    "fetched_at": "2026-06-15T00:00:00Z"
   }
 }
