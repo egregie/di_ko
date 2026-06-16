@@ -8,7 +8,8 @@ const path = require('path');
   const b = await chromium.launch({ headless: true });
   const p = await b.newPage();
   await p.setViewportSize({ width: 1280, height: 720 });
-  const html = path.resolve(__dirname, '..', '..', '..', '06_render', 'out', deck + '.html').split(path.sep).join('/');
+  const subdir = process.argv[4] || 'out';
+  const html = path.resolve(__dirname, '..', '..', '..', '06_render', subdir, deck + '.html').split(path.sep).join('/');
   await p.goto('file://' + html, { waitUntil: 'load' });
   const secs = await p.$$('section.slide');
   for (const n of nums) {

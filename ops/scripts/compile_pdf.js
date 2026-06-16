@@ -5,9 +5,10 @@ async function main() {
     const browser = await chromium.launch({ headless: true });
     const page = await browser.newPage();
     
-    // Resolve absolute path to the local HTML file
+    // Resolve absolute path to the local HTML file (optional subdir arg, default 'out')
     const baseName = process.argv[2] || 'deck_retinoids_v2';
-    const htmlPath = path.resolve(__dirname, '..', '..', '06_render', 'out', `${baseName}.html`);
+    const subdir = process.argv[5] || 'out';
+    const htmlPath = path.resolve(__dirname, '..', '..', '06_render', subdir, `${baseName}.html`);
     const fileUrl = `file://${htmlPath.replace(/\\/g, '/')}`;
     
     console.log(`Loading file URL: ${fileUrl}`);
@@ -19,7 +20,7 @@ async function main() {
     await page.setViewportSize({ width: W, height: Hh });
 
     // Render PDF with custom width and height, zero margins
-    const pdfPath = path.resolve(__dirname, '..', '..', '06_render', 'out', `${baseName}.pdf`);
+    const pdfPath = path.resolve(__dirname, '..', '..', '06_render', subdir, `${baseName}.pdf`);
     console.log(`Saving PDF to: ${pdfPath} (${W}x${Hh})`);
     await page.pdf({
         path: pdfPath,

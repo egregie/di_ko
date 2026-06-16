@@ -141,7 +141,7 @@ body{{margin:0;background:var(--dark);font-family:'{F["family"]}',sans-serif;col
 .f-num{{font-size:{T["caption"]}px;color:var(--herbal);font-weight:500;}}
 </style></head><body>{"".join(slides_html)}</body></html>"""
 
-    out = os.path.join(root, "06_render", "out", f"{deck['deck_id']}.html")
+    out = os.path.join(root, "06_render", "templates", f"{deck['deck_id']}.html")
     os.makedirs(os.path.dirname(out), exist_ok=True)
     open(out, "w", encoding="utf-8").write(html)
     print(f"wrote {out}  ({len(deck['slides'])} slides, {W}x{H})")
