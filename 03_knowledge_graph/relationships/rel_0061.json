@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0061",
+  "from": "erbium_laser",
+  "type": "treats",
+  "to": "atrophic_acne_scars",
+  "evidence_level": "C",
+  "sources": [
+    "SRC-A085"
+  ]
+}

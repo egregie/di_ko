@@ -1,0 +1,28 @@
+{
+  "entity_id": "hyaluronic_acid_filler",
+  "entity_type": "procedure",
+  "title": "Hyaluronic Acid Filler",
+  "aliases": [
+    "HA filler",
+    "dermal filler"
+  ],
+  "belongs_to": [],
+  "used_for": [
+    "atrophic_acne_scars"
+  ],
+  "contraindications": [],
+  "tags": [
+    "filler",
+    "volumizing",
+    "immediate"
+  ],
+  "evidence_level": "limited",
+  "fact_ids": [
+    "fact_0089"
+  ],
+  "updated": "2026-06-17",
+  "mechanism": "Injectable hyaluronic acid physically elevates depressed atrophic scars and may stimulate neocollagenesis.",
+  "indication": [
+    "atrophic_scars"
+  ]
+}

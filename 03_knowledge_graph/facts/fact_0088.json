@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0088",
+  "entity_id": "atrophic_acne_scars",
+  "statement": "Evidence-based review found stronger support for lasers, platelet-rich plasma, chemical peels, hyaluronic acid fillers and microneedling, and lesser-quality evidence for microdermabrasion, subcision and lipoaspirate grafting in atrophic acne scars.",
+  "confidence": 0.9,
+  "evidence_level": "C",
+  "sources": [
+    "SRC-A088"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-17T18:14:40.146952Z",
+  "verified_by": "verifier",
+  "date": "2026-06-17",
+  "source_title": "Evidence-based management of cutaneous scarring in dermatology part 2: atrophic acne scarring.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

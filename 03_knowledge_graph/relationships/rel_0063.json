@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0063",
+  "from": "hyaluronic_acid_filler",
+  "type": "treats",
+  "to": "atrophic_acne_scars",
+  "evidence_level": "C",
+  "sources": [
+    "SRC-A089"
+  ]
+}

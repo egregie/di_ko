@@ -1,0 +1,19 @@
+{
+  "fact_id": "fact_0086",
+  "entity_id": "platelet_rich_plasma",
+  "statement": "Platelet-rich plasma appears to be a safe and effective treatment for various types of atrophic scars.",
+  "confidence": 0.8,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A086"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-17T18:14:22.896684Z",
+  "verified_by": "verifier",
+  "date": "2026-06-17",
+  "source_title": "Platelet-rich plasma in the treatment of scars, to suggest or not to suggest? A systematic...",
+  "audit_flag": "weak",
+  "audit_verdict": "WEAK",
+  "evidence_ok": true
+}

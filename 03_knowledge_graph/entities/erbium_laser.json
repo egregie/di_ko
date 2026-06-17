@@ -1,0 +1,29 @@
+{
+  "entity_id": "erbium_laser",
+  "entity_type": "procedure",
+  "title": "Erbium:Glass Laser",
+  "aliases": [
+    "1540 nm laser",
+    "1565 nm laser",
+    "non-ablative fractional laser"
+  ],
+  "belongs_to": [],
+  "used_for": [
+    "atrophic_acne_scars"
+  ],
+  "contraindications": [],
+  "tags": [
+    "laser",
+    "collagen_remodeling",
+    "resurfacing"
+  ],
+  "evidence_level": "limited",
+  "fact_ids": [
+    "fact_0085"
+  ],
+  "updated": "2026-06-17",
+  "mechanism": "Mid-infrared erbium:glass laser energy is absorbed by dermal water, inducing collagen remodeling within depressed atrophic scars.",
+  "indication": [
+    "atrophic_scars"
+  ]
+}

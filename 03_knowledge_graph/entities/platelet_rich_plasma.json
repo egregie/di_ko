@@ -1,0 +1,29 @@
+{
+  "entity_id": "platelet_rich_plasma",
+  "entity_type": "procedure",
+  "title": "Platelet-Rich Plasma",
+  "aliases": [
+    "PRP",
+    "autologous PRP"
+  ],
+  "belongs_to": [],
+  "used_for": [
+    "atrophic_acne_scars"
+  ],
+  "contraindications": [],
+  "tags": [
+    "regenerative",
+    "growth_factors",
+    "adjunctive"
+  ],
+  "evidence_level": "moderate",
+  "fact_ids": [
+    "fact_0086",
+    "fact_0087"
+  ],
+  "updated": "2026-06-17",
+  "mechanism": "Autologous platelet concentrate delivers growth factors that stimulate collagen synthesis and tissue regeneration; used adjunctively with microneedling or laser.",
+  "indication": [
+    "atrophic_scars"
+  ]
+}

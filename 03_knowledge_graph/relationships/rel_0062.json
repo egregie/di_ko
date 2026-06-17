@@ -1,0 +1,10 @@
+{
+  "rel_id": "rel_0062",
+  "from": "platelet_rich_plasma",
+  "type": "treats",
+  "to": "atrophic_acne_scars",
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A086"
+  ]
+}

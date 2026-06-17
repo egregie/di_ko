@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0085",
+  "entity_id": "erbium_laser",
+  "statement": "A non-fractional 1540 nm erbium:glass laser is safe and effective in the treatment of atrophic acne scars.",
+  "confidence": 0.9,
+  "evidence_level": "C",
+  "sources": [
+    "SRC-A085"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-17T18:14:14.418464Z",
+  "verified_by": "verifier",
+  "date": "2026-06-17",
+  "source_title": "Integrated Cooling-Vacuum-Assisted Non-Fractional 1540 nm Erbium:Glass Laser is Effective in Treating Acne Scars.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

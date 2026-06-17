@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0089",
+  "entity_id": "hyaluronic_acid_filler",
+  "statement": "Dual-plane hyaluronic acid filler treatment leads to improvement in the depth of atrophic acne scars in only two sessions.",
+  "confidence": 0.9,
+  "evidence_level": "C",
+  "sources": [
+    "SRC-A089"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-17T18:14:46.675931Z",
+  "verified_by": "verifier",
+  "date": "2026-06-17",
+  "source_title": "Dual-plane hyaluronic acid treatment for atrophic acne scars.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

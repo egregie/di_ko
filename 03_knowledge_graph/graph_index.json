@@ -133,6 +133,23 @@
       "evidence_level": "A",
       "path": "entities/copper_tripeptide_1.json"
     },
+    "erbium_laser": {
+      "entity_id": "erbium_laser",
+      "entity_type": "procedure",
+      "title": "Erbium:Glass Laser",
+      "aliases": [
+        "1540 nm laser",
+        "1565 nm laser",
+        "non-ablative fractional laser"
+      ],
+      "tags": [
+        "laser",
+        "collagen_remodeling",
+        "resurfacing"
+      ],
+      "evidence_level": "limited",
+      "path": "entities/erbium_laser.json"
+    },
     "exfoliants": {
       "entity_id": "exfoliants",
       "entity_type": "Concept",
@@ -179,6 +196,22 @@
       ],
       "evidence_level": "A",
       "path": "entities/glycolic_acid.json"
+    },
+    "hyaluronic_acid_filler": {
+      "entity_id": "hyaluronic_acid_filler",
+      "entity_type": "procedure",
+      "title": "Hyaluronic Acid Filler",
+      "aliases": [
+        "HA filler",
+        "dermal filler"
+      ],
+      "tags": [
+        "filler",
+        "volumizing",
+        "immediate"
+      ],
+      "evidence_level": "limited",
+      "path": "entities/hyaluronic_acid_filler.json"
     },
     "kojic_acid": {
       "entity_id": "kojic_acid",
@@ -353,6 +386,22 @@
       ],
       "evidence_level": "n/a",
       "path": "entities/photoaging.json"
+    },
+    "platelet_rich_plasma": {
+      "entity_id": "platelet_rich_plasma",
+      "entity_type": "procedure",
+      "title": "Platelet-Rich Plasma",
+      "aliases": [
+        "PRP",
+        "autologous PRP"
+      ],
+      "tags": [
+        "regenerative",
+        "growth_factors",
+        "adjunctive"
+      ],
+      "evidence_level": "moderate",
+      "path": "entities/platelet_rich_plasma.json"
     },
     "post_inflammatory_hyperpigmentation": {
       "entity_id": "post_inflammatory_hyperpigmentation",
@@ -992,6 +1041,41 @@
       "entity_id": "arbutin",
       "evidence_level": "C",
       "path": "facts/fact_0084.json"
+    },
+    "fact_0085": {
+      "fact_id": "fact_0085",
+      "statement": "A non-fractional 1540 nm erbium:glass laser is safe and effective in the treatment of atrophic acne scars.",
+      "entity_id": "erbium_laser",
+      "evidence_level": "C",
+      "path": "facts/fact_0085.json"
+    },
+    "fact_0086": {
+      "fact_id": "fact_0086",
+      "statement": "Platelet-rich plasma appears to be a safe and effective treatment for various types of atrophic scars.",
+      "entity_id": "platelet_rich_plasma",
+      "evidence_level": "A",
+      "path": "facts/fact_0086.json"
+    },
+    "fact_0087": {
+      "fact_id": "fact_0087",
+      "statement": "Combining microneedling with platelet-rich plasma is more effective and safe with fewer sessions than either alone for atrophic scars.",
+      "entity_id": "platelet_rich_plasma",
+      "evidence_level": "A",
+      "path": "facts/fact_0087.json"
+    },
+    "fact_0088": {
+      "fact_id": "fact_0088",
+      "statement": "Evidence-based review found stronger support for lasers, platelet-rich plasma, chemical peels, hyaluronic acid fillers and microneedling, and lesser-quality evidence for microdermabrasion, subcision and lipoaspirate grafting in atrophic acne scars.",
+      "entity_id": "atrophic_acne_scars",
+      "evidence_level": "C",
+      "path": "facts/fact_0088.json"
+    },
+    "fact_0089": {
+      "fact_id": "fact_0089",
+      "statement": "Dual-plane hyaluronic acid filler treatment leads to improvement in the depth of atrophic acne scars in only two sessions.",
+      "entity_id": "hyaluronic_acid_filler",
+      "evidence_level": "C",
+      "path": "facts/fact_0089.json"
     }
   },
   "relationships": {
@@ -1466,6 +1550,30 @@
       "to": "post_inflammatory_hyperpigmentation",
       "evidence_level": "C",
       "path": "relationships/rel_0060.json"
+    },
+    "rel_0061": {
+      "rel_id": "rel_0061",
+      "from": "erbium_laser",
+      "type": "treats",
+      "to": "atrophic_acne_scars",
+      "evidence_level": "C",
+      "path": "relationships/rel_0061.json"
+    },
+    "rel_0062": {
+      "rel_id": "rel_0062",
+      "from": "platelet_rich_plasma",
+      "type": "treats",
+      "to": "atrophic_acne_scars",
+      "evidence_level": "A",
+      "path": "relationships/rel_0062.json"
+    },
+    "rel_0063": {
+      "rel_id": "rel_0063",
+      "from": "hyaluronic_acid_filler",
+      "type": "treats",
+      "to": "atrophic_acne_scars",
+      "evidence_level": "C",
+      "path": "relationships/rel_0063.json"
     }
   }
 }

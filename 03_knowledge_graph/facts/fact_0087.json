@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0087",
+  "entity_id": "platelet_rich_plasma",
+  "statement": "Combining microneedling with platelet-rich plasma is more effective and safe with fewer sessions than either alone for atrophic scars.",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A087"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-17T18:14:29.496190Z",
+  "verified_by": "verifier",
+  "date": "2026-06-17",
+  "source_title": "Therapeutic effect of microneedling and autologous platelet-rich plasma in the treatment of atrophic scars: A...",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

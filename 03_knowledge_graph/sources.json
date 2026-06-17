@@ -819,6 +819,56 @@
       "pmid": "32720446",
       "doi": "10.1111/dth.14095",
       "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A085",
+      "name": "Integrated Cooling-Vacuum-Assisted Non-Fractional 1540 nm Erbium:Glass Laser is Effective in Treating Acne Scars",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28095548/",
+      "tier": "A",
+      "pmid": "28095548",
+      "doi": "10.0/jdd",
+      "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A086",
+      "name": "Platelet-rich plasma in the treatment of scars: a systematic review and meta-analysis",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35795892/",
+      "tier": "A",
+      "pmid": "35795892",
+      "doi": "10.1002/term.3338",
+      "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A087",
+      "name": "Therapeutic effect of microneedling and autologous platelet-rich plasma in the treatment of atrophic scars: A randomized study",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28504480/",
+      "tier": "A",
+      "pmid": "28504480",
+      "doi": "10.1111/jocd.12356",
+      "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A088",
+      "name": "Evidence-based management of cutaneous scarring part 2: atrophic acne scarring",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38059974/",
+      "tier": "A",
+      "pmid": "38059974",
+      "doi": "10.1007/s00403-023-02737-9",
+      "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A089",
+      "name": "Dual-plane hyaluronic acid treatment for atrophic acne scars",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31074185/",
+      "tier": "A",
+      "pmid": "31074185",
+      "doi": "10.1111/jocd.12991",
+      "accessed": "2026-06-17"
     }
   ]
 }
