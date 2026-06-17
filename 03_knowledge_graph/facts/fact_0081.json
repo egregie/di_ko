@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0081",
+  "entity_id": "tranexamic_acid",
+  "statement": "A network meta-analysis estimated the optimal oral tranexamic acid dose for melasma as 250 mg three times daily for 12 weeks.",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A081"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-17T18:09:34.134029Z",
+  "verified_by": "verifier",
+  "date": "2026-06-17",
+  "source_title": "The optimal dose of oral tranexamic acid in melasma: A network meta-analysis.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

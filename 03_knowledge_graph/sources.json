@@ -769,6 +769,56 @@
       "pmid": "36062400",
       "doi": "10.1111/jocd.15348",
       "accessed": "2026-06-11"
+    },
+    {
+      "source_id": "SRC-A080",
+      "name": "Tranexamic acid as a therapeutic option for melasma management: meta-analysis and systematic review of RCTs",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38843906/",
+      "tier": "A",
+      "pmid": "38843906",
+      "doi": "10.1080/09546634.2024.2361106",
+      "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A081",
+      "name": "The optimal dose of oral tranexamic acid in melasma: A network meta-analysis",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36332095/",
+      "tier": "A",
+      "pmid": "36332095",
+      "doi": "10.25259/IJDVL_530_2021",
+      "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A082",
+      "name": "Kojic acid applications in cosmetic and pharmaceutical preparations",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30537675/",
+      "tier": "A",
+      "pmid": "30537675",
+      "doi": "10.1016/j.biopha.2018.12.006",
+      "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A083",
+      "name": "Inhibition of Human Tyrosinase Requires Molecular Motifs Distinctively Different from Mushroom Tyrosinase",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29427586/",
+      "tier": "A",
+      "pmid": "29427586",
+      "doi": "10.1016/j.jid.2018.01.019",
+      "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A084",
+      "name": "The top 10 cosmeceuticals for facial hyperpigmentation",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32720446/",
+      "tier": "A",
+      "pmid": "32720446",
+      "doi": "10.1111/dth.14095",
+      "accessed": "2026-06-17"
     }
   ]
 }

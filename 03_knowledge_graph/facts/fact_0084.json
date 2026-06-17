@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0084",
+  "entity_id": "arbutin",
+  "statement": "Many cosmeceutical agents for facial hyperpigmentation are thought to work through inhibition of tyrosinase, a key enzyme of melanogenesis.",
+  "confidence": 0.9,
+  "evidence_level": "C",
+  "sources": [
+    "SRC-A084"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-17T18:11:32.302176Z",
+  "verified_by": "verifier",
+  "date": "2026-06-17",
+  "source_title": "The top 10 cosmeceuticals for facial hyperpigmentation.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

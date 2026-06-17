@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0080",
+  "entity_id": "tranexamic_acid",
+  "statement": "Oral tranexamic acid produces the greatest reduction in MASI scores among administration routes for melasma in a meta-analysis of randomized controlled trials.",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A080"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-17T18:09:27.362859Z",
+  "verified_by": "verifier",
+  "date": "2026-06-17",
+  "source_title": "Tranexamic acid as a therapeutic option for melasma management: meta-analysis and systematic review of randomized...",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

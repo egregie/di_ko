@@ -57,6 +57,20 @@
       "evidence_level": "A",
       "path": "entities/adapalene.json"
     },
+    "arbutin": {
+      "entity_id": "arbutin",
+      "entity_type": "Ingredient",
+      "title": "Arbutin",
+      "aliases": [
+        "alpha-arbutin"
+      ],
+      "tags": [
+        "pigmentation",
+        "tyrosinase_inhibitor"
+      ],
+      "evidence_level": "C",
+      "path": "entities/arbutin.json"
+    },
     "ascorbyl_glucoside": {
       "entity_id": "ascorbyl_glucoside",
       "entity_type": "Ingredient",
@@ -165,6 +179,18 @@
       ],
       "evidence_level": "A",
       "path": "entities/glycolic_acid.json"
+    },
+    "kojic_acid": {
+      "entity_id": "kojic_acid",
+      "entity_type": "Ingredient",
+      "title": "Kojic Acid",
+      "aliases": [],
+      "tags": [
+        "pigmentation",
+        "tyrosinase_inhibitor"
+      ],
+      "evidence_level": "C",
+      "path": "entities/kojic_acid.json"
     },
     "lactation": {
       "entity_id": "lactation",
@@ -485,6 +511,34 @@
       ],
       "evidence_level": "A",
       "path": "entities/tazarotene.json"
+    },
+    "thiamidol": {
+      "entity_id": "thiamidol",
+      "entity_type": "Ingredient",
+      "title": "Thiamidol",
+      "aliases": [
+        "isobutylamido thiazolyl resorcinol"
+      ],
+      "tags": [
+        "pigmentation",
+        "tyrosinase_inhibitor"
+      ],
+      "evidence_level": "C",
+      "path": "entities/thiamidol.json"
+    },
+    "tranexamic_acid": {
+      "entity_id": "tranexamic_acid",
+      "entity_type": "Ingredient",
+      "title": "Tranexamic Acid",
+      "aliases": [
+        "TXA"
+      ],
+      "tags": [
+        "pigmentation",
+        "antifibrinolytic"
+      ],
+      "evidence_level": "A",
+      "path": "entities/tranexamic_acid.json"
     },
     "tretinoin": {
       "entity_id": "tretinoin",
@@ -903,6 +957,41 @@
       "entity_id": "radiofrequency_microneedling",
       "evidence_level": "A",
       "path": "facts/fact_0079.json"
+    },
+    "fact_0080": {
+      "fact_id": "fact_0080",
+      "statement": "Oral tranexamic acid produces the greatest reduction in MASI scores among administration routes for melasma in a meta-analysis of randomized controlled trials.",
+      "entity_id": "tranexamic_acid",
+      "evidence_level": "A",
+      "path": "facts/fact_0080.json"
+    },
+    "fact_0081": {
+      "fact_id": "fact_0081",
+      "statement": "A network meta-analysis estimated the optimal oral tranexamic acid dose for melasma as 250 mg three times daily for 12 weeks.",
+      "entity_id": "tranexamic_acid",
+      "evidence_level": "A",
+      "path": "facts/fact_0081.json"
+    },
+    "fact_0082": {
+      "fact_id": "fact_0082",
+      "statement": "Kojic acid is a natural fungal metabolite that inhibits tyrosinase activity in the synthesis of melanin.",
+      "entity_id": "kojic_acid",
+      "evidence_level": "C",
+      "path": "facts/fact_0082.json"
+    },
+    "fact_0083": {
+      "fact_id": "fact_0083",
+      "statement": "Thiamidol (isobutylamido thiazolyl resorcinol) is the most potent inhibitor of human tyrosinase among the resorcinyl-thiazole derivatives screened.",
+      "entity_id": "thiamidol",
+      "evidence_level": "C",
+      "path": "facts/fact_0083.json"
+    },
+    "fact_0084": {
+      "fact_id": "fact_0084",
+      "statement": "Many cosmeceutical agents for facial hyperpigmentation are thought to work through inhibition of tyrosinase, a key enzyme of melanogenesis.",
+      "entity_id": "arbutin",
+      "evidence_level": "C",
+      "path": "facts/fact_0084.json"
     }
   },
   "relationships": {
@@ -1345,6 +1434,38 @@
       "to": "atrophic_acne_scars",
       "evidence_level": "A",
       "path": "relationships/rel_0056.json"
+    },
+    "rel_0057": {
+      "rel_id": "rel_0057",
+      "from": "tranexamic_acid",
+      "type": "treats",
+      "to": "post_inflammatory_hyperpigmentation",
+      "evidence_level": "A",
+      "path": "relationships/rel_0057.json"
+    },
+    "rel_0058": {
+      "rel_id": "rel_0058",
+      "from": "kojic_acid",
+      "type": "treats",
+      "to": "post_inflammatory_hyperpigmentation",
+      "evidence_level": "C",
+      "path": "relationships/rel_0058.json"
+    },
+    "rel_0059": {
+      "rel_id": "rel_0059",
+      "from": "thiamidol",
+      "type": "treats",
+      "to": "post_inflammatory_hyperpigmentation",
+      "evidence_level": "C",
+      "path": "relationships/rel_0059.json"
+    },
+    "rel_0060": {
+      "rel_id": "rel_0060",
+      "from": "arbutin",
+      "type": "treats",
+      "to": "post_inflammatory_hyperpigmentation",
+      "evidence_level": "C",
+      "path": "relationships/rel_0060.json"
     }
   }
 }

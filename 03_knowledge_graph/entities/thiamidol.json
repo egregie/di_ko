@@ -1,0 +1,22 @@
+{
+  "entity_id": "thiamidol",
+  "entity_type": "Ingredient",
+  "title": "Thiamidol",
+  "aliases": [
+    "isobutylamido thiazolyl resorcinol"
+  ],
+  "belongs_to": [],
+  "used_for": [
+    "hyperpigmentation"
+  ],
+  "contraindications": [],
+  "tags": [
+    "pigmentation",
+    "tyrosinase_inhibitor"
+  ],
+  "evidence_level": "C",
+  "fact_ids": [
+    "fact_0083"
+  ],
+  "updated": "2026-06-17"
+}

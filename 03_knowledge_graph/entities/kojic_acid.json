@@ -1,0 +1,20 @@
+{
+  "entity_id": "kojic_acid",
+  "entity_type": "Ingredient",
+  "title": "Kojic Acid",
+  "aliases": [],
+  "belongs_to": [],
+  "used_for": [
+    "hyperpigmentation"
+  ],
+  "contraindications": [],
+  "tags": [
+    "pigmentation",
+    "tyrosinase_inhibitor"
+  ],
+  "evidence_level": "C",
+  "fact_ids": [
+    "fact_0082"
+  ],
+  "updated": "2026-06-17"
+}
