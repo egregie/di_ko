@@ -1,7 +1,17 @@
 # HANDOFF SNAPSHOT — YM PROSKIN
 
 > Канонический ground-truth для передачи в новый чат. Обновлять при каждом изменении графа.
-> Проверено по файлам, не по пересказу. Последняя сверка: **2026-06-15** (Phase 8.2 closed).
+> Проверено по файлам, не по пересказу. Последняя сверка: **2026-06-16** (Phase 8.3 closed).
+
+## Phase 8.3 (Content-Fill) — DONE 2026-06-16
+- Обе деки наполнены из графа: `06_render/content/deck_{postacne,retinoids}_filled.pdf` (18 и 16 слайдов). DEC-027. **Граф НЕ тронут.**
+- 41 фактический блок трассирован к fact_id+grade **by construction** (`gen_content.py` тянет text из fact.statement); грейд-чип A/B/C на каждом; C-факты с рамкой уровня, не как аксиома.
+- 3 забракованных layout'а переделаны (A2 2×2-сетка, C1/C3 плашка+интерпретация+grade, D3 summary+badge); B3 не тронут.
+- Визуал: 21 мини-SVG (Zero-Black) + фон-молекула 0.14 + лого-логика в рендерере.
+- Гейт `validate_content.py` (анти-фабрикация) PASS + negative-control доказан; adversarial fidelity (2 раунда × 41) → 7 правок в источнике.
+- `06_render/`: templates/ (каркасы) + content/ (наполненные) + deprecated/ (легаси-6).
+- **Вне рамок 8.3** (следующая фаза): наполнение id_graph/id_illustration (таблицы/схемы/чарты) детерминированным движком из графа.
+- Опц. бэклог: майор-вот fidelity-проход (3 скептика) — отложен на квоте субагентов, не блокер.
 
 ## Phase 8.2 (Authority Layouts) — DONE 2026-06-15
 - Design-system фаза, **граф НЕ тронут** (validate_graph PASS). DEC-026.

@@ -278,5 +278,15 @@
     "attribution": "",
     "generated_by": "client (Phase 8.2 Block A integration)",
     "fetched_at": "2026-06-15T00:00:00Z"
+  },
+  "ym_proskin_bg": {
+    "id": "ym_proskin_bg",
+    "type": "logo",
+    "path": "04_design_system/assets/logo/ym_proskin_bg.svg",
+    "source_of_truth": "client-provided (svg_logo_bg_ym_proskin.svg); recolored #000->currentColor for Zero Black",
+    "license": "own/client",
+    "attribution": "",
+    "generated_by": "client (Phase 8.3 visual layer)",
+    "fetched_at": "2026-06-16T00:00:00Z"
   }
 }
