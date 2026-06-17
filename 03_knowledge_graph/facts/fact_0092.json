@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0092",
+  "entity_id": "retinaldehyde",
+  "statement": "Irritant reactions are more prominent with tretinoin and tazarotene, whereas retinaldehyde and retinol are considerably less irritating.",
+  "confidence": 0.9,
+  "evidence_level": "C",
+  "sources": [
+    "SRC-A092"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-17T18:17:24.396237Z",
+  "verified_by": "verifier",
+  "date": "2026-06-17",
+  "source_title": "Retinoids in the treatment of skin aging: an overview of clinical efficacy and safety.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

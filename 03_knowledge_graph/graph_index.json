@@ -1076,6 +1076,41 @@
       "entity_id": "hyaluronic_acid_filler",
       "evidence_level": "C",
       "path": "facts/fact_0089.json"
+    },
+    "fact_0090": {
+      "fact_id": "fact_0090",
+      "statement": "Adapalene 0.1% gel is significantly less irritating than tretinoin 0.025% gel when tested in acne patients.",
+      "entity_id": "adapalene",
+      "evidence_level": "A",
+      "path": "facts/fact_0090.json"
+    },
+    "fact_0091": {
+      "fact_id": "fact_0091",
+      "statement": "A significantly greater number of acne patients preferred adapalene gel 0.1% to tretinoin microsphere gel 0.1% (72.5% vs 27.5%).",
+      "entity_id": "adapalene",
+      "evidence_level": "A",
+      "path": "facts/fact_0091.json"
+    },
+    "fact_0092": {
+      "fact_id": "fact_0092",
+      "statement": "Irritant reactions are more prominent with tretinoin and tazarotene, whereas retinaldehyde and retinol are considerably less irritating.",
+      "entity_id": "retinaldehyde",
+      "evidence_level": "C",
+      "path": "facts/fact_0092.json"
+    },
+    "fact_0093": {
+      "fact_id": "fact_0093",
+      "statement": "Most topical anti-aging comparators were found to be less irritating and better tolerated by patients than tretinoin in a systematic review.",
+      "entity_id": "retinoids",
+      "evidence_level": "A",
+      "path": "facts/fact_0093.json"
+    },
+    "fact_0094": {
+      "fact_id": "fact_0094",
+      "statement": "Retinol, retinyl esters and retinaldehyde used in many cosmeceutical products are efficacious, safe and well-tolerated.",
+      "entity_id": "retinaldehyde",
+      "evidence_level": "C",
+      "path": "facts/fact_0094.json"
     }
   },
   "relationships": {

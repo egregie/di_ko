@@ -1,0 +1,19 @@
+{
+  "fact_id": "fact_0091",
+  "entity_id": "adapalene",
+  "statement": "A significantly greater number of acne patients preferred adapalene gel 0.1% to tretinoin microsphere gel 0.1% (72.5% vs 27.5%).",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A091"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-17T18:17:18.533288Z",
+  "verified_by": "verifier",
+  "date": "2026-06-17",
+  "source_title": "Randomized, controlled, bilateral (split-face) comparison trial of the tolerability and patient preference of adapalene gel...",
+  "status": "needs_manual",
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true
+}

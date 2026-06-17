@@ -1,0 +1,18 @@
+{
+  "fact_id": "fact_0090",
+  "entity_id": "adapalene",
+  "statement": "Adapalene 0.1% gel is significantly less irritating than tretinoin 0.025% gel when tested in acne patients.",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A090"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-17T18:17:13.592474Z",
+  "verified_by": "verifier",
+  "date": "2026-06-17",
+  "source_title": "Split-face comparison of adapalene 0.1% gel and tretinoin 0.025% gel in acne patients.",
+  "audit_verdict": "SUPPORTED",
+  "evidence_ok": true
+}

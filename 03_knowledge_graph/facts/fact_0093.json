@@ -1,0 +1,19 @@
+{
+  "fact_id": "fact_0093",
+  "entity_id": "retinoids",
+  "statement": "Most topical anti-aging comparators were found to be less irritating and better tolerated by patients than tretinoin in a systematic review.",
+  "confidence": 0.9,
+  "evidence_level": "A",
+  "sources": [
+    "SRC-A093"
+  ],
+  "contradictions": [],
+  "verified_via": "live",
+  "verified_at": "2026-06-17T18:17:29.521189Z",
+  "verified_by": "verifier",
+  "date": "2026-06-17",
+  "source_title": "Comparing Tretinoin to Other Topical Therapies in the Treatment of Skin Photoaging: A Systematic Review.",
+  "status": "needs_manual",
+  "audit_verdict": "NEEDS_MANUAL",
+  "evidence_ok": true
+}

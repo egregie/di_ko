@@ -869,6 +869,56 @@
       "pmid": "31074185",
       "doi": "10.1111/jocd.12991",
       "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A090",
+      "name": "Split-face comparison of adapalene 0.1% gel and tretinoin 0.025% gel in acne patients",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9204087/",
+      "tier": "A",
+      "pmid": "9204087",
+      "doi": "10.1016/s0190-9622(97)70052-5",
+      "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A091",
+      "name": "Randomized split-face comparison of tolerability and patient preference of adapalene gel 0.1% and tretinoin microsphere gel 0.1%",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11845944/",
+      "tier": "A",
+      "pmid": "11845944",
+      "doi": "",
+      "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A092",
+      "name": "Retinoids in the treatment of skin aging: an overview of clinical efficacy and safety",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18046911/",
+      "tier": "A",
+      "pmid": "18046911",
+      "doi": "10.2147/ciia.2006.1.4.327",
+      "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A093",
+      "name": "Comparing Tretinoin to Other Topical Therapies in the Treatment of Skin Photoaging: A Systematic Review",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39348007/",
+      "tier": "A",
+      "pmid": "39348007",
+      "doi": "10.1007/s40257-024-00893-w",
+      "accessed": "2026-06-17"
+    },
+    {
+      "source_id": "SRC-A094",
+      "name": "Cosmetic retinoid use in photoaged skin: a review of compounds, use and mechanisms",
+      "type": "journal",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39128883/",
+      "tier": "A",
+      "pmid": "39128883",
+      "doi": "10.1111/ics.13013",
+      "accessed": "2026-06-17"
     }
   ]
 }
