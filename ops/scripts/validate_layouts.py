@@ -17,7 +17,7 @@ import os, json, re, sys
 
 root = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 ds = os.path.join(root, "04_design_system")
-out_dir = os.path.join(root, "06_render", "out")
+out_dir = os.path.join(root, "06_render", "templates")
 
 errors = []
 
