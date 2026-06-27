@@ -1,0 +1,21 @@
+# 3d_face_builder dependencies (RTX 2060 SUPER 8GB, Python 3.10+)
+# --- installed & used by the runnable MVP harness ---
+numpy>=1.26
+scipy>=1.11
+opencv-python>=4.10
+trimesh>=4.12
+pydantic>=2.10
+jsonschema>=4.0
+Pillow>=10.0
+
+# --- required to run the full pipeline (install as you reach each Roadmap step) ---
+mediapipe>=0.10        # Agent 3 landmarks (KP-03)
+pymeshlab>=2023.12     # Agent 8b repair (KP-09)
+open3d>=0.18           # mesh ops / validation (optional)
+# torch already present (CUDA build) — used by FLAME / Depth Anything V2
+# pytest                 # test runner (KP-10)
+
+# --- external (NOT pip) ---
+# Blender >= 3.x on PATH    -> Agent 8a boolean (KP-08): winget install BlenderFoundation.Blender
+# FLAME generic_model.pkl   -> Agent 5 'flame' backend (KP-01): manual license at flame.is.tue.mpg.de
+# Depth Anything V2 ViT-S   -> optional depth fusion (download checkpoint, <1.5GB VRAM)

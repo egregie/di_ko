@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Pipeline runtime outputs (artifacts are regenerable; keep dirs via .gitkeep)
+05_output_mesh/staging/*
+!05_output_mesh/staging/.gitkeep
+05_output_mesh/quarantine/*
+!05_output_mesh/quarantine/.gitkeep
+# Exported meshes (regenerable) live in the 05_output_mesh root
+05_output_mesh/*.3mf
+05_output_mesh/*.stl
+05_output_mesh/*.obj
+05_output_mesh/*.glb
+02_processing/depth_maps/*
+!02_processing/depth_maps/.gitkeep
+02_processing/undistorted/*
+!02_processing/undistorted/.gitkeep
+ops/logs/*.jsonl
+ops/logs/_test_*
+
+# Large model assets (licensed / downloaded separately)
+ops/models/
+
+# OS
+Thumbs.db
+.DS_Store
